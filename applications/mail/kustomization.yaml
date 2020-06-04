@@ -1,0 +1,5 @@
+resources:
+  - ingress.yaml
+commonLabels:
+  app: mindspore-mail
+namespace: mail
