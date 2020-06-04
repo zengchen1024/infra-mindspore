@@ -4,7 +4,8 @@ resources:
   - ingress.yaml
   - namespace.yaml
 commonLabels:
-  app: openeuler-meetingbot
+  app: mindspore-meetingbot
 patchesStrategicMerge:
   - configmap.yaml
+  - deployment.yaml
 namespace: meeting

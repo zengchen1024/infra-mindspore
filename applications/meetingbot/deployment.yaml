@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meet-bot
+spec:
+  selector:
+    matchLabels:
+      app: meet-bot
+  template:
+    metadata:
+      labels:
+        app: meet-bot
+    spec:
+      containers:
+        - name: meet-bot
+          env:
+            - name: USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: meetbot-secret
+                  key: username

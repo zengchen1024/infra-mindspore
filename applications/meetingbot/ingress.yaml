@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - meetings.openeuler.org
+        - meetings.mindspore.cn
       secretName: meeting-tls
   rules:
-    - host: meetings.openeuler.org
+    - host: meetings.mindspore.cn
       http:
         paths:
           - backend:
