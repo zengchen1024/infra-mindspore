@@ -1,0 +1,10 @@
+resources:
+  - https://github.com/opensourceways/app-meetingbot/deploy?ref=stable
+  - secrets.yaml
+  - ingress.yaml
+  - namespace.yaml
+commonLabels:
+  app: openeuler-meetingbot
+patchesStrategicMerge:
+  - configmap.yaml
+namespace: meeting

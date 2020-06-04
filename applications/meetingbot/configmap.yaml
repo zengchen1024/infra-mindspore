@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: meetbot-config
+data:
+  ident: openeuler-ci-bot
+  username: openeuler-ci-bot
+  irc_channels: "#openeuler-meeting #openeuler-meeting-1"
+  url_info: https://openeuler.org/en/meetings.html
+  log_url_prefix: https://meetings.openeuler.org/
+  log_pattern: "%(channel)s/%%Y/%(meetingname)s/%%F-%%H.%%M"
