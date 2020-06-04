@@ -8,7 +8,7 @@ data:
   ident: mindspore-mbot
   irc_channels: "#mindspore-discuss #mindspore-tsc"
   url_info: https://mindspore.cn/
-  log_url_prefix: https://meeting.mindspore.cn/
+  log_url_prefix: https://meetings.mindspore.cn/
   log_pattern: "%(channel)s/%%Y/%(meetingname)s/%%F-%%H.%%M"
   username: ""
   nginx.conf: |
