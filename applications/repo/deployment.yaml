@@ -18,6 +18,9 @@ spec:
             - mountPath: /etc/rsyncd.secrets.ro
               name: website-secrets-volume
               subPath: rsyncd_secrets
+            - name: website-secrets-volume
+              mountPath: /etc/nginx/conf/basic_auth_files
+              subPath: auth_files
           resources:
             requests:
               cpu: 4000m
