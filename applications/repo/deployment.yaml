@@ -1,0 +1,57 @@
+# Deployment for repo service
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: repo-server
+spec:
+  template:
+    metadata:
+      labels:
+        app: repo-nginx-pod
+    spec:
+      containers:
+        - name: repo-nginx
+          volumeMounts:
+            - mountPath: /repo/mindspore
+              name: data-volume
+            - mountPath: /etc/rsyncd.secrets.ro
+              name: website-secrets-volume
+              subPath: rsyncd_secrets
+          resources:
+            requests:
+              cpu: 4000m
+              memory: 6000Mi
+          env:
+            - name: TZ
+              value: Asia/Shangha
+          command:
+            - /bin/sh
+            - -c
+            - |
+              mkdir -p /repo/mindspore
+              exec nginx -g "daemon off;"
+        - name: rsync-server
+          volumeMounts:
+            - mountPath: /etc/rsyncd.conf
+              name: repo-nginx-configmap-volume
+              subPath: rsyncd.conf
+            - mountPath: /etc/rsyncd.secrets.ro
+              name: website-secrets-volume
+              subPath: rsyncd_secrets
+            - mountPath: /repo/mindspore
+              name: data-volume
+            - mountPath: /root/.ssh/authorized_keys.ro
+              name: repo-nginx-configmap-volume
+              subPath: ssh.pub
+          resources:
+            requests:
+              cpu: 4000m
+              memory: 6000Mi
+      volumes:
+        - name: website-secrets-volume
+          secret:
+            secretName: website-secrets
+        - name: data-volume
+          persistentVolumeClaim:
+            claimName: mindspore-data-volume
