@@ -10,6 +10,8 @@ spec:
       labels:
         app: repo-nginx-pod
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: 192.168.0.122
       containers:
         - name: repo-nginx
           volumeMounts:
