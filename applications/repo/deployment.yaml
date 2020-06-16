@@ -29,7 +29,7 @@ spec:
               memory: 6000Mi
           env:
             - name: TZ
-              value: Asia/Shangha
+              value: Asia/Shanghai
           command:
             - /bin/sh
             - -c
