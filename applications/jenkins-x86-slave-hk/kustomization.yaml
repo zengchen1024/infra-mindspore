@@ -1,0 +1,4 @@
+resources:
+  - web-sync-slaves.yaml
+  - ubuntu-generic-slaves.yaml
+namespace: jenkins
