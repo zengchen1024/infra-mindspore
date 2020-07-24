@@ -4,6 +4,4 @@ resources:
   - secrets.yaml
   - ubuntu-slaves.yaml
   - generic-slaves.yaml
-commonLabels:
-  app: mindspore-x86-slave
 namespace: jenkins
