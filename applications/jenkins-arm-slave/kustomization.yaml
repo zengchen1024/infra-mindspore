@@ -1,6 +1,4 @@
 resources:
   - euleros-slaves.yaml
   - ubuntu-slaves.yaml
-commonLabels:
-  app: mindspore-arm-slave
 namespace: jenkins
