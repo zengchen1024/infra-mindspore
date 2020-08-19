@@ -1,0 +1,9 @@
+resources:
+  - ingress.yaml
+  - namespace.yaml
+  - mailman-api-service.yaml
+commonLabels:
+  app: mindspore-api
+namespace: mindspore-api
+
+
