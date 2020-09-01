@@ -1,0 +1,77 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: botinfo
+  namespace: bot
+  labels:
+    app: botinfo
+spec:
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: botinfo
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        app: botinfo
+    spec:
+      #this node selector used to select the node that will serve as backend host for mindspore website elb, for the "/cla" stuff.
+      nodeSelector:
+        botnode: "true"
+      containers:
+      - name: botinfod
+        image: swr.cn-south-1.myhuaweicloud.com/openeuler/bot:v1.0.202008062049322032
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: GITEE_TOKEN
+            valueFrom:
+              secretKeyRef:
+                key: gitee_token
+                name: bot
+          - name: WEBHOOK_SECRET
+            valueFrom:
+              secretKeyRef:
+                key: webhook_secret
+                name: bot
+          - name: DATABASE_USERNAME
+            valueFrom:
+              secretKeyRef:
+                key: database_username
+                name: bot
+          - name: DATABASE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: database_password
+                name: bot
+          - name: WEBSITE_URL
+            value: 'https://www.mindspore.cn/'
+          - name: CLA_REDIRECT_URL
+            value: /icla
+          - name: GITEE_OAUTH2_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: bot
+                key: gitee_auth_token
+          - name: GITEE_OAUTH2_CLIENT_CODE
+            valueFrom:
+              secretKeyRef:
+                name: bot
+                key: gitee_auth_clientcode
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /bot/
+          name: configmap-volume
+        args: ["--stderrthreshold=0"]
+      volumes:
+      - name: configmap-volume
+        configMap:
+          name: bot-configmap

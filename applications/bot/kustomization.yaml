@@ -1,0 +1,7 @@
+resources:
+  - configmap.yaml
+  - deployment.yaml
+  - namespace.yaml
+  - secrets.yaml
+  - service.yaml
+namespace: bot

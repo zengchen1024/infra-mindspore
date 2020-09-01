@@ -1,0 +1,33 @@
+apiVersion: v1
+data:
+  config.yaml: |
+    requiringLabels:
+      - mindspore-cla/yes
+    missingLabels:
+      - do-not-merge
+      - ci-pipeline-failed
+      - ci-pipeline-running
+    commitsThreshold: 1
+    squashCommitLabel: stat/need-squash
+    giteeToken: "stored in secrets and will be injected via environment"
+    webhookSecret: "stored in secrets and will be injected via environment"
+    databaseType: "mysql"
+    databaseHost: "192.168.0.58"
+    databasePort: 3306
+    databaseName: "cibot"
+    databaseUserName: "stored in secrets and will be injected via environment"
+    databasePassword: "stored in secrets and will be injected via environment"
+    watchProjectFiles: []
+    watchProjectFileDuration: 3000
+    watchSigFileDuration: 3000
+    watchOwnerFileDuration: 3000
+    botName: mindspore_ci
+    lgtmCountsRequired: 2
+    communityName: MindSpore
+    claLink: https://www.mindspore.cn/icla
+    commandLink: https://gitee.com/mindspore/community/blob/master/command.md
+    contactEmail: contact@mindspore.org
+kind: ConfigMap
+metadata:
+  name: bot-configmap
+  namespace: bot
