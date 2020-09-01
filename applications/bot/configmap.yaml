@@ -13,6 +13,7 @@ data:
     #List of labels that need to be deleted after the commit_id is changed
     delLabels:
      - ci-pipeline-success
+     - lgtm
     commitsThreshold: 1
     squashCommitLabel: stat/need-squash
     giteeToken: "stored in secrets and will be injected via environment"
