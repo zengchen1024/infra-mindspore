@@ -3,10 +3,16 @@ data:
   config.yaml: |
     requiringLabels:
       - mindspore-cla/yes
+      - ci-pipeline-success
     missingLabels:
       - do-not-merge
       - ci-pipeline-failed
       - ci-pipeline-running
+    #the flag that pull request commit_id has changed
+    prUpdateLabelFlag: "source_branch_changed"
+    #List of labels that need to be deleted after the commit_id is changed
+    delLabels:
+     - ci-pipeline-success
     commitsThreshold: 1
     squashCommitLabel: stat/need-squash
     giteeToken: "stored in secrets and will be injected via environment"

@@ -26,7 +26,8 @@ spec:
         botnode: "true"
       containers:
       - name: botinfod
-        image: swr.cn-south-1.myhuaweicloud.com/openeuler/bot:v1.0.202008062049322032
+        #swr.cn-south-1.myhuaweicloud.com/openeuler/bot:v1.0.202008062049322032
+        image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/ci-bot:c15f1522846551a440e7edadb2c70287141f3561.1598931600
         imagePullPolicy: IfNotPresent
         env:
           - name: GITEE_TOKEN
