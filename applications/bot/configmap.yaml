@@ -3,7 +3,7 @@ data:
   config.yaml: |
     requiringLabels:
       - mindspore-cla/yes
-      - ci-pipeline-success
+      - ci-pipeline-passed
     missingLabels:
       - do-not-merge
       - ci-pipeline-failed
@@ -12,7 +12,7 @@ data:
     prUpdateLabelFlag: "source_branch_changed"
     #List of labels that need to be deleted after the commit_id is changed
     delLabels:
-     - ci-pipeline-success
+     - ci-pipeline-passed
      - lgtm
     commitsThreshold: 1
     squashCommitLabel: stat/need-squash
