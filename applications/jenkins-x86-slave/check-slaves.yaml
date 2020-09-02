@@ -101,6 +101,14 @@ spec:
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
               value: http://build.mindspore.cn
+      dnsPolicy: ClusterFirst
+        dnsConfig:
+          nameservers:
+            - 223.5.5.5
+            - 223.6.6.6
+          options:
+            - name: ndots
+              value: "1"
       volumes:
         - name: jenkins-share-config
           emptyDir: {}
