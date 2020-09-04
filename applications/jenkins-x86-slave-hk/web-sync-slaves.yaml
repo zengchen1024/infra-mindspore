@@ -1,4 +1,4 @@
-# Resource for ubuntu generic specification slave pods
+# Resource for web sync specification slave pods
 apiVersion: v1
 kind: Service
 metadata:
@@ -77,6 +77,14 @@ spec:
             - |
               export JENKINS_SECRET=`cat /home/jenkins/share-config/node_secret.id`;
               exec jenkins-agent
+          # Note: terminationMessagePolicy and terminationMessagePath used to get termination log in kubernetes events if it failed to execute terminate command
+          # please use ${} rather than $() in preStop command
+          terminationMessagePath: ""
+          terminationMessagePolicy: "FallbackToLogsOnError"
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "curl ${JENKINS_URL}/jnlpJars/jenkins-cli.jar -o ~/jenkins-cli.jar; java -jar ~/jenkins-cli.jar -auth ${JENKINS_USER_NAME}:${JENKINS_USER_PASSWORD} -s ${JENKINS_URL} delete-node ${JENKINS_NODE_NAME}"]
           resources:
             requests:
               cpu: 2000m
@@ -98,6 +106,17 @@ spec:
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
               value: http://build.mindspore.cn
+            - name: JENKINS_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: JENKINS_USER_NAME
+              value: admin
+            - name: JENKINS_USER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: jenkins-secret
+                  key: password
       volumes:
         - name: jenkins-share-config
           emptyDir: {}
