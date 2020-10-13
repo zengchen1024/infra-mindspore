@@ -9,6 +9,5 @@ commonLabels:
 patchesStrategicMerge:
   - configmap.yaml
   - deployment.yaml
+  - service.yaml
 namespace: repo
-
-
