@@ -6,4 +6,3 @@ metadata:
     kubernetes.io/elb.id: 865ad553-5a78-4167-a0b7-e999df0e1037 
     kubernetes.io/elb.lb-algorithm: ROUND_ROBIN
   name: repo-service
-  #namespace: repo
