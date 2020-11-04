@@ -65,7 +65,7 @@ spec:
       containers:
         - name: jenkins-slave
           image: swr.cn-north-4.myhuaweicloud.com/mindspore/mindspore_euleros_aarch64:0.0.3
-          imagePullPolicy: "Always"
+          imagePullPolicy: "IfNotPresent"
           volumeMounts:
             - mountPath: /home/jenkins/agent-working-dir
               name: euleros-workspace-pvc
