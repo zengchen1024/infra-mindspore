@@ -24,7 +24,7 @@ metadata:
     app: x86-ubuntu-slaves
 spec:
   serviceName: x86-ubuntu-slaves-service
-  replicas: 22
+  replicas: 30
   selector:
     matchLabels:
       app: x86-ubuntu-slaves
@@ -65,7 +65,7 @@ spec:
       containers:
         - name: jenkins-slave
           image: swr.cn-north-4.myhuaweicloud.com/mindspore/mindspore_ubuntu_x86:0.0.3
-          imagePullPolicy: "Always"
+          imagePullPolicy: "IfNotPresent"
           volumeMounts:
             - mountPath: /home/jenkins/agent-working-dir
               name: ubuntu-workspace-pvc
