@@ -10,7 +10,7 @@ spec:
   - port: 8000
     name: website-port-uwsgi-http
     targetPort: 8000
-    protocol: TCP  
+    protocol: TCP
   - port: 80
     name: website-port-http
     targetPort: 80
