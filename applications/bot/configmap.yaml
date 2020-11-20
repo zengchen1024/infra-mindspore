@@ -30,6 +30,18 @@ data:
     watchOwnerFileDuration: 3000
     botName: mindspore_ci
     lgtmCountsRequired: 2
+    checkPrReviewer: true
+    # Tips for setting reviewers
+    setReviewerTip: "Please assign one reviewer at least, visit https://gitee.com/mindspore/community/tree/master/sigs to check all sigs and maintainers in community."
+    # Config option for lgtm label required counts
+    extraLgtmCountRequired:
+      - lcrType: repo
+        lcrName: mindspore/docs
+        lcrCount: 1
+      - lcrType: repo
+        lcrName: mindspore/ms-pipeline
+        lcrCount: 1
+    autoDetectCla: true
     communityName: MindSpore
     claLink: https://www.mindspore.cn/icla
     commandLink: https://gitee.com/mindspore/community/blob/master/command.md

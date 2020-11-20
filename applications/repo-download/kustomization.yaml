@@ -9,6 +9,14 @@ commonLabels:
 patchesStrategicMerge:
   - configmap.yaml
   - deployment.yaml
+  - service.yaml
+patchesJson6902:
+  - target:
+      group: ""
+      version: v1
+      kind: Service
+      name: repo-service
+    path: remove-traffic-strategy.yaml
 namespace: download
 
 

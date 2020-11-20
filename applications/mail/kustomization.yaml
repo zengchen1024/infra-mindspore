@@ -1,5 +1,14 @@
 resources:
   - ingress.yaml
-commonLabels:
-  app: mindspore-mail
+  - config.yaml
+  - mailcore.yaml
+  - mailcore-utils.yaml
+  - maildatabase.yaml
+  - mtaservice.yaml
+  - namespace.yaml
+  - nginx-config.yaml
+  - secrets.yaml
+  - storage.yaml
+  - suiteservice.yaml
+  - webservice.yaml
 namespace: mail

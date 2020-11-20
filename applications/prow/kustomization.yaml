@@ -1,0 +1,10 @@
+resources:
+  - config.yaml
+  - crd.yaml
+  - namespace.yaml
+  - plugins.yaml
+  - secrets.yaml
+  - starter.yaml
+commonLabels:
+  service: common-prow
+
