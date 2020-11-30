@@ -6,7 +6,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mindspore-jenkins
-  namespace: jenkins
+  namespace: jenkins-master
   labels:
     "app.kubernetes.io/name": 'jenkins'
     "helm.sh/chart": "jenkins-1.7.4"
@@ -89,7 +89,7 @@ data:
             </org.csanchez.jenkins.plugins.kubernetes.PodTemplate></templates>
           <serverUrl>https://kubernetes.default</serverUrl>
           <skipTlsVerify>false</skipTlsVerify>
-          <namespace>jenkins</namespace>
+          <namespace>jenkins-master</namespace>
           <jenkinsUrl>http://mindspore-jenkins:80</jenkinsUrl>
           <jenkinsTunnel>mindspore-jenkins-agent:50000</jenkinsTunnel>
           <containerCap>10</containerCap>
@@ -152,7 +152,7 @@ data:
             </org.csanchez.jenkins.plugins.kubernetes.PodTemplate></templates>
           <serverUrl>https://kubernetes.default</serverUrl>
           <skipTlsVerify>false</skipTlsVerify>
-          <namespace>jenkins</namespace>
+          <namespace>jenkins-master</namespace>
           <jenkinsUrl>http://mindspore-jenkins:80</jenkinsUrl>
           <jenkinsTunnel>mindspore-jenkins-agent:50000</jenkinsTunnel>
           <containerCap>10</containerCap>
@@ -226,7 +226,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: mindspore-jenkins
-  namespace: jenkins
+  namespace: jenkins-master
   labels:
     "app.kubernetes.io/name": 'jenkins'
     "helm.sh/chart": "jenkins-1.7.4"
@@ -249,7 +249,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: mindspore-jenkins
-  namespace: jenkins
+  namespace: jenkins-master
   labels:
     "app.kubernetes.io/name": 'jenkins'
     "helm.sh/chart": "jenkins-1.7.4"
@@ -265,7 +265,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: mindspore-jenkins-schedule-agents
-  namespace: jenkins
+  namespace: jenkins-master
   labels:
     "app.kubernetes.io/name": 'jenkins'
     "helm.sh/chart": "jenkins-1.7.4"
@@ -285,7 +285,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: mindspore-jenkins-schedule-agents
-  namespace: jenkins
+  namespace: jenkins-master
   labels:
     "app.kubernetes.io/name": 'jenkins'
     "helm.sh/chart": "jenkins-1.7.4"
@@ -299,7 +299,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: mindspore-jenkins
-  namespace: jenkins
+  namespace: jenkins-master
 
 ---
 
@@ -311,7 +311,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mindspore-jenkins-agent
-  namespace: jenkins
+  namespace: jenkins-master
   labels:
     "app.kubernetes.io/name": 'jenkins'
     "helm.sh/chart": "jenkins-1.7.4"
@@ -335,7 +335,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mindspore-jenkins
-  namespace: jenkins
+  namespace: jenkins-master
   labels:
     "app.kubernetes.io/name": 'jenkins'
     "helm.sh/chart": "jenkins-1.7.4"
@@ -361,7 +361,7 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: mindspore-jenkins
-  namespace: jenkins
+  namespace: jenkins-master
   labels:
     "app.kubernetes.io/name": 'jenkins'
     "helm.sh/chart": "jenkins-1.7.4"
