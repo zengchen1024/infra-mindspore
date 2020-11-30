@@ -2,4 +2,5 @@ resources:
   - jenkins-cluster.yaml
   - namespace.yaml
   - secrets.yaml
+  - ingress.yaml
 namespace: jenkins-master
