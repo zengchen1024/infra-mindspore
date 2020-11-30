@@ -222,25 +222,25 @@ data:
 
 ---
 # Source: jenkins/templates/home-pvc.yaml
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: mindspore-jenkins
-  namespace: jenkins
-  labels:
-    "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-1.7.4"
-    "app.kubernetes.io/managed-by": "Tiller"
-    "app.kubernetes.io/instance": "jenkins"
-    "app.kubernetes.io/component": "jenkins-master"
-spec:
-  volumeMode: Filesystem
-  accessModes:
-    - "ReadWriteMany"
-  resources:
-    requests:
-      storage: "4000Gi"
-  storageClassName: "sas"
+#kind: PersistentVolumeClaim
+#apiVersion: v1
+#metadata:
+#  name: mindspore-jenkins
+#  namespace: jenkins
+#  labels:
+#    "app.kubernetes.io/name": 'jenkins'
+#    "helm.sh/chart": "jenkins-1.7.4"
+#    "app.kubernetes.io/managed-by": "Tiller"
+#    "app.kubernetes.io/instance": "jenkins"
+#    "app.kubernetes.io/component": "jenkins-master"
+#spec:
+#  volumeMode: Filesystem
+#  accessModes:
+#    - "ReadWriteMany"
+#  resources:
+#    requests:
+#      storage: "4000Gi"
+#  storageClassName: "sas"
 
 ---
 # Source: jenkins/templates/service-account.yaml
@@ -524,7 +524,7 @@ spec:
         emptyDir: {}
       - name: jenkins-home
         persistentVolumeClaim:
-          claimName: mindspore-jenkins
+          claimName: cce-evs-import-jenkins-recovery
 ---
 # Source: jenkins/templates/deprecation.yaml
 
