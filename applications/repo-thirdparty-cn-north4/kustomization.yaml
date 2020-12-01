@@ -1,0 +1,5 @@
+resources:
+  - mindspore_thirdparty.yaml
+  - namespace.yaml
+  - secrets.yaml
+namespace: repo-thirdparty
