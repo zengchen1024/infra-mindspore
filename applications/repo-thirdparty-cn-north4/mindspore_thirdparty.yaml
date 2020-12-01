@@ -148,8 +148,6 @@ spec:
               subPath: default.conf
             - mountPath: /repo
               name: mindspore-data-volume
-            - mountPath: /var/log/nginx
-              name: mindspore-log-volume
           command:
             - /bin/sh
             - -c
