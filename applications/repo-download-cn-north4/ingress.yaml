@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - download.mindspore.cn
-      secretName: rsync-secrets
+      secretName: download-secrets
   rules:
     - host: download.mindspore.cn
       http:
