@@ -53,7 +53,7 @@ data:
 
   nginx.conf: |-
     user  root;
-    worker_processes  6;
+    worker_processes  auto;
 
     error_log  /var/log/nginx/error.log warn;
     pid        /var/run/nginx.pid;
@@ -132,9 +132,6 @@ spec:
       labels:
         app: repo-nginx-pod
     spec:
-      nodeSelector:
-        # this used to select pod into the node which has toa enabled.
-        toa_enabled: "true"
       containers:
         - name: repo-nginx
           image: swr.cn-north-1.myhuaweicloud.com/mindspore/nginx-extras:1.10.3
@@ -160,7 +157,7 @@ spec:
           resources:
             requests:
               cpu: 4000m
-              memory: 6000Mi
+              memory: 4000Mi
         - name: rsync-server
           image: mindspore/rsyncd:0.0.5
           imagePullPolicy: "Always"
@@ -178,8 +175,8 @@ spec:
               subPath: ssh.pub
           resources:
             requests:
-              cpu: 4000m
-              memory: 4000Mi
+              cpu: 2000m
+              memory: 2000Mi
           command:
             - /bin/sh
             - -c
