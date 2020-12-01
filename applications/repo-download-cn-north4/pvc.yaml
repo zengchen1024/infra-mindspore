@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mindspore-data-volume-new
+  name: mindspore-data-volume
 spec:
   accessModes:
     - ReadWriteMany
