@@ -213,13 +213,7 @@ kind: Service
 metadata:
   name: mindspore-service
   namespace: repo-thridparty
-  annotations:
-    kubernetes.io/elb.class: union
-    kubernetes.io/elb.id: 8cab8278-eda8-4255-bcc8-cb6aec3d4607
-    kubernetes.io/elb.lb-algorithm: ROUND_ROBIN
 spec:
-  #We need set this into 'Local' since we need get the client IP of elb.
-  externalTrafficPolicy: Local
   ports:
     - port: 873
       name: rsync-server-port
@@ -232,8 +226,7 @@ spec:
       targetPort: 80
     - port: 22
       name: rsync-ssh-server-port
-      targetPort: 22
+      targetPort: 22  
   selector:
     app: repo-nginx-pod
-  type: LoadBalancer
-  loadBalancerIP: 49.4.0.74
+  type: ClusterIP
