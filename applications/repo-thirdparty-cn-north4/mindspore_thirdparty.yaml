@@ -200,9 +200,6 @@ spec:
         - name: mindspore-data-volume
           persistentVolumeClaim:
             claimName: mindspore-data-volume
-        - name: mindspore-log-volume
-          persistentVolumeClaim:
-            claimName: cce-obs-import-mindspore-thirdparty-log
         - name: website-secrets-volume
           secret:
             secretName: website-secrets
