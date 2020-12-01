@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+  name: jenkins-ingress
+spec:
+  tls:
+    - hosts:
+        - jenkins.mindspore.cn
+      secretName: jenkins-tls
+  rules:
+    - host: jenkins.mindspore.cn
+      http:
+        paths:
+          - backend:
+              serviceName: jenkins-service
+              servicePort: 80
+            path: /
