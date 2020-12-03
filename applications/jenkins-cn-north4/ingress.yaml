@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - jenkins.mindspore.cn
-      secretName: mindspore-jenkins
+      secretName: mindspore-jenkins-tls
   rules:
     - host: jenkins.mindspore.cn
       http:
