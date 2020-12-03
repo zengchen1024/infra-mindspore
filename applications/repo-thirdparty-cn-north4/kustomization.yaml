@@ -2,4 +2,5 @@ resources:
   - mindspore_thirdparty.yaml
   - namespace.yaml
   - secrets.yaml
+  - ingress.yaml
 namespace: repo-thirdparty

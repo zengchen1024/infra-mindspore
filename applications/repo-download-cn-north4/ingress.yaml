@@ -12,7 +12,7 @@ spec:
         - download-new.mindspore.cn
       secretName: download-secrets
   rules:
-    - host: download-new.mindspore.cn
+    - host: download.mindspore.cn
       http:
         paths:
           - backend:
