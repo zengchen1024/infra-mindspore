@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - tools.mindspore.cn
-      secretName: repo-tools-tls
+      secretName: repo-tools-secrets
   rules:
     - host: tools.mindspore.cn
       http:
