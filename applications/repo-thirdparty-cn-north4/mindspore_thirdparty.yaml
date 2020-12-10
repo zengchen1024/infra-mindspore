@@ -198,14 +198,19 @@ spec:
         - name: website-secrets-volume
           secret:
             secretName: website-secrets
-
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: mindspore-service
-  namespace: repo-thirdparty
+  namespace: repo-thridparty
+  annotations:
+    kubernetes.io/elb.class: union
+    kubernetes.io/elb.id: 8e61e033-8770-4761-b54b-d9f4b04e75fb
+    kubernetes.io/elb.lb-algorithm: ROUND_ROBIN
 spec:
+#  We need set this into 'Local' since we need get the client IP of elb.
+  externalTrafficPolicy: Local
   ports:
     - port: 873
       name: rsync-server-port
@@ -218,7 +223,8 @@ spec:
       targetPort: 80
     - port: 22
       name: rsync-ssh-server-port
-      targetPort: 22  
+      targetPort: 22
   selector:
     app: repo-nginx-pod
-  type: ClusterIP
+  type: LoadBalancer
+  loadBalancerIP: 114.116.244.255
