@@ -198,7 +198,6 @@ spec:
         - name: website-secrets-volume
           secret:
             secretName: website-secrets
-
 ---
 apiVersion: v1
 kind: Service
@@ -210,9 +209,6 @@ spec:
     - port: 873
       name: rsync-server-port
       targetPort: 873
-    - port: 8081
-      name: nginx-repo-http
-      targetPort: 80
     - port: 80
       name: nginx-repo-http2
       targetPort: 80

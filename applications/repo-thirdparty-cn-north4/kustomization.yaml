@@ -3,4 +3,5 @@ resources:
   - namespace.yaml
   - secrets.yaml
   - ingress.yaml
+  - service.yaml
 namespace: repo-thirdparty
