@@ -1,0 +1,15 @@
+# Config web service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: websiteservice
+spec:
+  ports:
+    - name: httpport
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: mindsporewebsite
+  type: ClusterIP

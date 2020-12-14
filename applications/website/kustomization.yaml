@@ -1,0 +1,8 @@
+resources:
+- deployment.yaml
+- namespace.yaml
+- service.yaml
+- ingress.yaml
+- pvc.yaml
+- secrets.yaml
+namespace: website

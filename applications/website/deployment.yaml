@@ -1,0 +1,63 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mindspore-website
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: mindsporewebsite
+  template:
+    metadata:
+      labels:
+        app: mindsporewebsite
+    spec:
+      containers:
+      - name: website
+        image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore:0.0.2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        env:
+          - name: MS_MYSQL_URL
+            value: jdbc:mysql://192.168.0.86:3306/website?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+          - name: MS_MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: mysql_password
+                name: website-secrets
+          - name: MS_MAIL_URL
+            value: mail.mindspore.cn
+          - name: MS_MAIL_NAME
+            value: news@mindspore.cn
+          - name: MS_MAIL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: mail_password
+                name: website-secrets
+          - name: MS_REDIS_HOST
+            value: 192.168.0.196
+          - name: MS_REDIS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: redis_password
+                name: website-secrets
+          - name: MS_PYTORCH_URL
+            valueFrom:
+              secretKeyRef:
+                key: pytorch_url
+                name: website-secrets
+        volumeMounts:
+          - mountPath: /mnt/share/file
+            name: website-data-volume
+      volumes:
+        - name: website-data-volume
+          persistentVolumeClaim:
+            claimName: website-data
