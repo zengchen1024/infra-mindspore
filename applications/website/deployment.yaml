@@ -57,7 +57,12 @@ spec:
         volumeMounts:
           - mountPath: /mnt/share/file
             name: website-data-volume
+          - mountPath: /mnt/share/mindspore_repository
+            name: website-hub-data-volume
       volumes:
         - name: website-data-volume
           persistentVolumeClaim:
             claimName: website-data
+        - name: website-hub-data-volume
+          persistentVolumeClaim:
+            claimName: website-hub-data
