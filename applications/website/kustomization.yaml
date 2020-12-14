@@ -5,4 +5,5 @@ resources:
 - ingress.yaml
 - pvc.yaml
 - secrets.yaml
+- job.yaml
 namespace: website

@@ -54,6 +54,13 @@ spec:
               secretKeyRef:
                 key: pytorch_url
                 name: website-secrets
+        resources:
+          requests:
+            cpu: 4000m
+            memory: 4000Mi
+          limits:
+            cpu: 4000m
+            memory: 8000Mi
         volumeMounts:
           - mountPath: /mnt/share/file
             name: website-data-volume
