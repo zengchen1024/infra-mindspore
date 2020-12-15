@@ -14,12 +14,12 @@ metadata:
     nginx.ingress.kubernetes.io/server-snippet: |
       proxy_cache statics_cache;
       proxy_cache_lock on;
-      proxy_cache_key $uri$is_args$args;
+      proxy_cache_key $server_name$uri$is_args$args;
       proxy_ignore_headers Cache-Control;
       proxy_ignore_headers Set-Cookie;
       proxy_cache_valid 60m;
       location ~ /purge(/.*) {
-          proxy_cache_purge  statics_cache $1$is_args$args;
+          proxy_cache_purge  statics_cache $server_name$1$is_args$args;
       }
   name: website-ingress
 spec:
