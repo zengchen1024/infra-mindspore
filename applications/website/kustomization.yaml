@@ -6,4 +6,6 @@ resources:
 - pvc.yaml
 - secrets.yaml
 - job.yaml
+- purge-cache.yaml
+- purge-secrets.yaml
 namespace: website
