@@ -4,6 +4,23 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-issuer
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-XSS-Protection "1; mode=block";
+      add_header Strict-Transport-Security "max-age=31536000";
+      add_header X-Frame-Options "SAMEORIGIN";
+      add_header X-Cache-Status $upstream_cache_status;
+      add_header Content-Security-Policy "script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com *.baidu.com busuanzi.ibruce.info api.ip.sb cdn.jsdelivr.net;object-src 'none';frame-ancestors 'self'";
+    nginx.ingress.kubernetes.io/server-snippet: |
+      proxy_cache statics_cache;
+      proxy_cache_lock on;
+      proxy_cache_key $server_name$uri$is_args$args;
+      proxy_ignore_headers Cache-Control;
+      proxy_ignore_headers Set-Cookie;
+      proxy_cache_valid 60m;
+      location ~ /purge(/.*) {
+          proxy_cache_purge  statics_cache $server_name$1$is_args$args;
+      }
   name: website-ingress
 spec:
   tls:
