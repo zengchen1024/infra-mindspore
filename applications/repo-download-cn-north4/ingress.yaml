@@ -9,7 +9,7 @@ metadata:
 spec:
   tls:
     - hosts:
-        - download-new.mindspore.cn
+        - download.mindspore.cn
       secretName: download-secrets
   rules:
     - host: download.mindspore.cn
