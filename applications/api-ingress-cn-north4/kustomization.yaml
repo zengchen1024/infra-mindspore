@@ -1,7 +1,6 @@
 resources:
   - ingress.yaml
   - namespace.yaml
-  - mailman-api-service.yaml
   - nginx-purge.yaml
 commonLabels:
   app: mindspore-api
