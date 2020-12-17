@@ -9,3 +9,9 @@ resources:
 - purge-cache.yaml
 - purge-secrets.yaml
 namespace: website
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
+  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
+  newTag: 09e6946abe0b3c1a6e53aef878736bcc33a9b850
