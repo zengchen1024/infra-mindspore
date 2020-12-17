@@ -16,10 +16,6 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: mailman-service
-              servicePort: 8001
-            path: /mailman(/|$)(.*)
-          - backend:
               serviceName: nginx-purge-service
               servicePort: 80
             path: /nginx-purger(/|$)(.*)
