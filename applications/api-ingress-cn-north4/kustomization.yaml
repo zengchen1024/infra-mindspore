@@ -1,0 +1,7 @@
+resources:
+  - ingress.yaml
+  - namespace.yaml
+  - nginx-purge.yaml
+commonLabels:
+  app: mindspore-api
+namespace: mindspore-api
