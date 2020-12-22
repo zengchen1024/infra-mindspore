@@ -27,7 +27,7 @@ spec:
           protocol: TCP
         env:
           - name: MS_MYSQL_URL
-            value: jdbc:mysql://192.168.0.86:3306/website?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+            value: jdbc:mysql://192.168.0.193:3306/website?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
           - name: MS_MYSQL_PASSWORD
             valueFrom:
               secretKeyRef:
