@@ -108,7 +108,7 @@ spec:
               value: http://build.mindspore.cn
             - name: MINDSPORE_LIB_PATH
               value: /home/jenkins/.local/lib/python3.7/site-packages/mindspore/lib
-            - name: LD_LIBARY_PATH
+            - name: LD_LIBRARY_PATH
               value: /home/jenkins/.local/lib/python3.7/site-packages/mindspore/lib:/usr/lib/x86_64-linux-gnu
             - name: JENKINS_NODE_NAME
               valueFrom:
