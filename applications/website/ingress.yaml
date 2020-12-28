@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-issuer
+#    cert-manager.io/cluster-issuer: letsencrypt-issuer
     nginx.ingress.kubernetes.io/proxy-buffering: "on"
     nginx.ingress.kubernetes.io/configuration-snippet: |
       add_header X-XSS-Protection "1; mode=block";
@@ -24,10 +24,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - new.mindspore.cn
+        - www.mindspore.cn
       secretName: website-tls
   rules:
-    - host: new.mindspore.cn
+    - host: www.mindspore.cn
       http:
         paths:
           - backend:
@@ -49,10 +49,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - new.mindspore.cn
+        - www.mindspore.cn
       secretName: website-tls
   rules:
-    - host: new.mindspore.cn
+    - host: www.mindspore.cn
       http:
         paths:
           - backend:
