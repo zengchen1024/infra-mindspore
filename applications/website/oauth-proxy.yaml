@@ -69,7 +69,7 @@ metadata:
   name: oauth2-proxy
 spec:
   rules:
-    - host: new.mindspore.cn
+    - host: www.mindspore.cn
       http:
         paths:
           - backend:
@@ -78,5 +78,5 @@ spec:
             path: /oauth2
   tls:
     - hosts:
-        - new.mindspore.cn
+        - www.mindspore.cn
       secretName: website-tls
