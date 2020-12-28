@@ -8,6 +8,7 @@ resources:
 - job.yaml
 - purge-cache.yaml
 - purge-secrets.yaml
+- oauth-proxy.yaml
 namespace: website
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
