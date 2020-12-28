@@ -28,6 +28,6 @@ spec:
             - -u
             - $(USERNAME):$(PASSWORD)
             - --fail
-            - https://api.mindspore.cn/nginx-purger/purge?hostname=new.mindspore.cn
+            - https://api.mindspore.cn/nginx-purger/purge?hostname=www.mindspore.cn
       restartPolicy: Never
   backoffLimit: 2
