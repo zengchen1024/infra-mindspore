@@ -20,6 +20,8 @@ metadata:
       location ~ /purge(/.*) {
           proxy_cache_purge  statics_cache $server_name$1$is_args$args;
       }
+      proxy_cache_bypass  $nocache;
+      proxy_no_cache      $nocache;
   name: website-ingress
 spec:
   tls:
