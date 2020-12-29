@@ -56,6 +56,6 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: websiteservice
+              serviceName: websiteservice2
               servicePort: 80
-            path: /community/evangelist
+            path: /blessapi/api

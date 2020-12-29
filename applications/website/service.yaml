@@ -13,3 +13,24 @@ spec:
   selector:
     app: mindsporewebsite
   type: ClusterIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: websiteservice2
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: websiteservice2
+subsets:
+  - addresses:
+      # These machines below are cluster workers in openlookeng cluster.
+      - ip: 119.8.35.102
+    ports:
+      - port: 8080
