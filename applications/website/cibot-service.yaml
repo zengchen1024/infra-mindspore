@@ -1,0 +1,8 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mindspore-bot-internal
+spec:
+  type: ExternalName
+  externalName: botservice.bot.svc.cluster.local
