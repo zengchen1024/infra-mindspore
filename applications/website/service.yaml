@@ -17,7 +17,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: websiteservice2
+  name: newyear-frontend
 spec:
   type: ClusterIP
   ports:
@@ -27,10 +27,29 @@ spec:
 kind: Endpoints
 apiVersion: v1
 metadata:
-  name: websiteservice2
+  name: newyear-frontend
 subsets:
   - addresses:
-      # These machines below are cluster workers in openlookeng cluster.
-      - ip: 119.8.35.102
+      - ip: 159.138.45.71
     ports:
-      - port: 8080
+      - port: 8001
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: newyear-backend
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8081
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: newyear-backend
+subsets:
+  - addresses:
+      - ip: 159.138.45.71
+    ports:
+      - port: 8081
