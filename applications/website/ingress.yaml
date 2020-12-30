@@ -69,4 +69,4 @@ spec:
           - backend:
               serviceName: newyear-frontend
               servicePort: 80
-            path: /2020events/newyear(/|$)(.*)
+            path: /events(/|$)(.*)
