@@ -20,6 +20,8 @@ metadata:
       location ~ /purge(/.*) {
           proxy_cache_purge  statics_cache $server_name$1$is_args$args;
       }
+      proxy_cache_bypass  $nocache;
+      proxy_no_cache      $nocache;
   name: website-ingress
 spec:
   tls:
@@ -34,6 +36,14 @@ spec:
               serviceName: websiteservice
               servicePort: 80
             path: /
+          - backend:
+              serviceName: mindspore-bot-internal
+              servicePort: 8888
+            path: /cla
+          - backend:
+              serviceName: newyear-backend
+              servicePort: 80
+            path: /blessapi
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -45,6 +55,7 @@ metadata:
     nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
     nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
     nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
   name: website-ingress-protected
 spec:
   tls:
@@ -56,6 +67,6 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: websiteservice
+              serviceName: newyear-frontend
               servicePort: 80
-            path: /community/evangelist
+            path: /2020events/newyear(/|$)(.*)

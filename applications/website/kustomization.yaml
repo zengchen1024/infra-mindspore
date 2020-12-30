@@ -9,13 +9,11 @@ resources:
 - purge-cache.yaml
 - purge-secrets.yaml
 - oauth-proxy.yaml
+- cibot-service.yaml
 namespace: website
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
   newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
-  newTag: 16583c712a53b54d30f4d7a60f7d98fe52fb6f41
-- name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore:0.0.2
-  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
-  newTag: 09e6946abe0b3c1a6e53aef878736bcc33a9b850
+  newTag: d588bf33b3a73671a4dfc9986d68d721d490521c

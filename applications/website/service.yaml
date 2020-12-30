@@ -13,3 +13,43 @@ spec:
   selector:
     app: mindsporewebsite
   type: ClusterIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: newyear-frontend
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: newyear-frontend
+subsets:
+  - addresses:
+      - ip: 159.138.45.71
+    ports:
+      - port: 8001
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: newyear-backend
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8081
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: newyear-backend
+subsets:
+  - addresses:
+      - ip: 159.138.45.71
+    ports:
+      - port: 8081
