@@ -1,0 +1,13 @@
+resources:
+- deployment.yaml
+- namespace.yaml
+- service.yaml
+commonLabels:
+  app: summary
+namespace: summary
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server
+  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server
+  newTag: 6a02da500f88597d129cdd39d67f5153e62368a5
