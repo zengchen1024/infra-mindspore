@@ -9,3 +9,6 @@ images:
 - name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server
   newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server
   newTag: 6a02da500f88597d129cdd39d67f5153e62368a5
+- name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-newyear
+  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-newyear
+  newTag: 48634bac1db03eec3895ec20462d5e4a6c24544c
