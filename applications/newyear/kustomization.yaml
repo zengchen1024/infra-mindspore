@@ -2,8 +2,6 @@ resources:
 - deployment.yaml
 - namespace.yaml
 - service.yaml
-commonLabels:
-  app: summary
 namespace: summary
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
