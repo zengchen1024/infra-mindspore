@@ -41,7 +41,7 @@ spec:
               servicePort: 8888
             path: /cla
           - backend:
-              serviceName: newyear-backend
+              serviceName: mindspore-backend
               servicePort: 80
             path: /blessapi
 ---
@@ -67,6 +67,6 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: newyear-frontend
+              serviceName: mindspore-frontend
               servicePort: 80
             path: /2020summary(/|$)(.*)
