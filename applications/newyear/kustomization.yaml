@@ -8,7 +8,7 @@ kind: Kustomization
 images:
 - name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server
   newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server
-  newTag: e76839b21787373faf86dc40943a8f3f67e924ab
+  newTag: 7192fb732a4db41f5746a5ba1e57bad0e2f2d1ad
 - name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-newyear
   newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-newyear
   newTag: 48634bac1db03eec3895ec20462d5e4a6c24544c
