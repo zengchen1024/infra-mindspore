@@ -10,5 +10,5 @@ images:
   newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server
   newTag: e76839b21787373faf86dc40943a8f3f67e924ab
 - name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-newyear
-  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/openeuler-newyear
+  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-newyear
   newTag: 48634bac1db03eec3895ec20462d5e4a6c24544c
