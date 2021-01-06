@@ -6,8 +6,8 @@ resources:
 - pvc.yaml
 - secrets.yaml
 - job.yaml
-- purge-cache.yaml
-- purge-secrets.yaml
+#- purge-cache.yaml
+#- purge-secrets.yaml
 - oauth-proxy.yaml
 - cibot-service.yaml
 namespace: website
