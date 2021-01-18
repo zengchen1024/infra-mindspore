@@ -1,3 +1,5 @@
+#- purge-cache.yaml
+#- purge-secrets.yaml
 resources:
 - deployment.yaml
 - namespace.yaml
@@ -6,8 +8,6 @@ resources:
 - pvc.yaml
 - secrets.yaml
 - job.yaml
-- purge-cache.yaml
-- purge-secrets.yaml
 - oauth-proxy.yaml
 - cibot-service.yaml
 namespace: website
@@ -16,4 +16,4 @@ kind: Kustomization
 images:
 - name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
   newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
-  newTag: ff81b46fbaa78fe9f2174085fa2828fa448cc544
+  newTag: 6ae02860c3e243d493ab8daef1c110842d0037a7

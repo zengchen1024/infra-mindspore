@@ -215,9 +215,9 @@ data:
     workflow-job:2.40
     workflow-aggregator:2.6
     credentials-binding:1.24
-    git:4.4.5
-    gitee:1.1.15
-    ssh-slaves:1.31.2
+    git:4.5.2
+    gitee:1.2.4
+    ssh-slaves:1.31.5
     http_request:1.8.27
     ansicolor:0.7.3
     build-timeout:1.20
@@ -225,9 +225,9 @@ data:
     timestamper:1.11.8
     ws-cleanup:0.38
     log-parser:2.1
-    copyartifact:1.45.2
+    copyartifact:1.45.3
     thinBackup:1.10
-    warnings-ng:8.4.4
+    warnings-ng:8.6.0
     startup-trigger-plugin:2.9.3
     groovy:2.3
     extended-choice-parameter:0.82
@@ -238,7 +238,9 @@ data:
     role-strategy:3.1
     job-import-plugin:3.4
     nodelabelparameter:1.7.2
-
+    build-name-setter:2.1.0
+    build-user-vars-plugin:1.6
+    
 ---
 # Source: jenkins/templates/home-pvc.yaml
 kind: PersistentVolumeClaim
@@ -414,7 +416,7 @@ spec:
       serviceAccountName: "mindspore-jenkins"
       initContainers:
         - name: "copy-default-config"
-          image: "swr.cn-north-1.myhuaweicloud.com/mindspore/jenkins/jenkins:lts"
+          image: "swr.cn-north-4.myhuaweicloud.com/mindspore/jenkins/jenkins:lts"
           imagePullPolicy: "Always"
           command: [ "sh", "/var/jenkins_config/apply_config.sh" ]
           env:
@@ -451,7 +453,7 @@ spec:
               name: plugin-dir
       containers:
         - name: jenkins
-          image: "swr.cn-north-1.myhuaweicloud.com/mindspore/jenkins/jenkins:lts"
+          image: "swr.cn-north-4.myhuaweicloud.com/mindspore/jenkins/jenkins:lts"
           imagePullPolicy: "Always"
           args: [ "--argumentsRealm.passwd.$(ADMIN_USER)=$(ADMIN_PASSWORD)",  "--argumentsRealm.roles.$(ADMIN_USER)=admin"]
           env:
