@@ -6,4 +6,4 @@ kind: Kustomization
 images:
 - name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/website_sync
   newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/website_sync
-  newTag: 9fd136855096f87c4e6efb954dec3afc2228b159
+  newTag: 3dd2c7f8c103643f1be05989586d6a48eb4725ff
