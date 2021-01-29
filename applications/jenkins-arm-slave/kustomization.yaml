@@ -2,4 +2,5 @@ resources:
   - euleros-slaves.yaml
   - ubuntu-slaves.yaml
   - centos-slaves.yaml
+  - secrets.yaml
 namespace: jenkins
