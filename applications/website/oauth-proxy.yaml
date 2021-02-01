@@ -5,7 +5,7 @@ metadata:
     k8s-app: oauth2-proxy
   name: oauth2-proxy
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       k8s-app: oauth2-proxy
@@ -44,39 +44,36 @@ spec:
           ports:
             - containerPort: 4180
               protocol: TCP
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    k8s-app: oauth2-proxy
-  name: oauth2-proxy
-spec:
-  ports:
-    - name: http
-      port: 4180
-      protocol: TCP
-      targetPort: 4180
-  selector:
-    k8s-app: oauth2-proxy
-
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: oauth2-proxy
-spec:
-  rules:
-    - host: www.mindspore.cn
-      http:
-        paths:
-          - backend:
-              serviceName: oauth2-proxy
-              servicePort: 4180
-            path: /oauth2
-  tls:
-    - hosts:
-        - www.mindspore.cn
-      secretName: website-tls
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  labels:
+#    k8s-app: oauth2-proxy
+#  name: oauth2-proxy
+#spec:
+#  ports:
+#    - name: http
+#      port: 4180
+#      protocol: TCP
+#      targetPort: 4180
+#  selector:
+#    k8s-app: oauth2-proxy
+#---
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  name: oauth2-proxy
+#spec:
+#  rules:
+#    - host: www.mindspore.cn
+#      http:
+#        paths:
+#          - backend:
+#              serviceName: oauth2-proxy
+#              servicePort: 4180
+#            path: /oauth2
+#  tls:
+#    - hosts:
+#        - www.mindspore.cn
+#      secretName: website-tls
