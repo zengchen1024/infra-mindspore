@@ -13,59 +13,59 @@ spec:
   selector:
     app: mindsporewebsite
   type: ClusterIP
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: newyear-frontend
-spec:
-  type: ClusterIP
-  ports:
-    - port: 80
-      targetPort: 8003
----
-kind: Endpoints
-apiVersion: v1
-metadata:
-  name: newyear-frontend
-subsets:
-  - addresses:
-      - ip: 159.138.45.71
-    ports:
-      - port: 8003
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: newyear-backend
-spec:
-  type: ClusterIP
-  ports:
-    - port: 80
-      targetPort: 8081
----
-kind: Endpoints
-apiVersion: v1
-metadata:
-  name: newyear-backend
-subsets:
-  - addresses:
-      - ip: 159.138.45.71
-    ports:
-      - port: 8081
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: mindspore-frontend
-spec:
-  type: ExternalName
-  externalName: mindspore-frontend.summary.svc.cluster.local
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: mindspore-backend
-spec:
-  type: ExternalName
-  externalName: bless-server.summary.svc.cluster.local
+#---
+#kind: Service
+#apiVersion: v1
+#metadata:
+#  name: newyear-frontend
+#spec:
+#  type: ClusterIP
+#  ports:
+#    - port: 80
+#      targetPort: 8003
+#---
+#kind: Endpoints
+#apiVersion: v1
+#metadata:
+#  name: newyear-frontend
+#subsets:
+#  - addresses:
+#      - ip: 159.138.45.71
+#    ports:
+#      - port: 8003
+#---
+#kind: Service
+#apiVersion: v1
+#metadata:
+#  name: newyear-backend
+#spec:
+#  type: ClusterIP
+#  ports:
+#    - port: 80
+#      targetPort: 8081
+#---
+#kind: Endpoints
+#apiVersion: v1
+#metadata:
+#  name: newyear-backend
+#subsets:
+#  - addresses:
+#      - ip: 159.138.45.71
+#    ports:
+#      - port: 8081
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: mindspore-frontend
+#spec:
+#  type: ExternalName
+#  externalName: mindspore-frontend.summary.svc.cluster.local
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: mindspore-backend
+#spec:
+#  type: ExternalName
+#  externalName: bless-server.summary.svc.cluster.local
