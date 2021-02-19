@@ -3,6 +3,10 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/server-snippet: |
+      location /resource {
+          rewrite ".*" https://gitee.com/mindspore/book;
+      }
 #    cert-manager.io/cluster-issuer: letsencrypt-issuer
 #    nginx.ingress.kubernetes.io/proxy-buffering: "on"
 #    nginx.ingress.kubernetes.io/configuration-snippet: |
