@@ -12,7 +12,7 @@ spec:
   tls:
     - hosts:
         - mindspore.cn
-      secretName: website-tls
+      secretName: website-tls-2
   rules:
     - host: mindspore.cn
       http:
