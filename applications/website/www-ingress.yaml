@@ -5,7 +5,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/server-snippet: |
-      rewrite ^/ https://www.mindspore.cn redirect;
+      rewrite ^~/ https://www.mindspore.cn redirect;
       rewrite ^~/resource(.*) https://gitee.com/mindspore/book redirect;
   name: mindspore-www-website-ingress
 spec:
