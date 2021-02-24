@@ -1,0 +1,20 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: poetry-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 38999
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: poetry-service
+subsets:
+  - addresses:
+      - ip: 121.37.54.242
+    ports:
+      - port: 38999

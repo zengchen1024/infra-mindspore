@@ -2,6 +2,7 @@ resources:
   - ingress.yaml
   - namespace.yaml
   - nginx-purge.yaml
+  - poetry-service.yaml
 commonLabels:
   app: mindspore-api
 namespace: mindspore-api
