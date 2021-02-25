@@ -5,4 +5,11 @@ resources:
   - poetry-service.yaml
 commonLabels:
   app: mindspore-api
+patchesJson6902:
+  - target:
+      group: ""
+      version: v1
+      kind: Service
+      name: poetry-service
+    path: selector.yaml
 namespace: mindspore-api
