@@ -44,7 +44,7 @@ data:
       - lcrType: repo
         lcrName: mindspore/community
         lcrCount: 1
-    autoDetectCla: true
+    autoDetectCla: false
     communityName: MindSpore
     claLink: https://www.mindspore.cn/icla
     commandLink: https://gitee.com/mindspore/community/blob/master/command.md
