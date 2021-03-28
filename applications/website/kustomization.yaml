@@ -17,4 +17,4 @@ kind: Kustomization
 images:
 - name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
   newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
-  newTag: a3da87db5e8b72a4237ddc9baf93d2ca6251314b
+  newTag: f378edbdc2a9d51212774db7b13fd0acfaa868e5
