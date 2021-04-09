@@ -432,11 +432,11 @@ spec:
                   key: jenkins-admin-user
           resources:
             limits:
-              cpu: 23000m
-              memory: 90000Mi
+              cpu: 15000m
+              memory: 55000Mi
             requests:
-              cpu: 20000m
-              memory: 64000Mi
+              cpu: 8000m
+              memory: 16000Mi
           volumeMounts:
             - mountPath: /tmp
               name: tmp
@@ -495,15 +495,13 @@ spec:
             periodSeconds: 10
             timeoutSeconds: 5
             failureThreshold: 3
-
           resources:
             limits:
-              cpu: 15000m
-              memory: 55000Mi
+              cpu: 23000m
+              memory: 90000Mi
             requests:
-              cpu: 8000m
-              memory: 16000Mi
-            
+              cpu: 20000m
+              memory: 64000Mi
           volumeMounts:
             - mountPath: /tmp
               name: tmp
