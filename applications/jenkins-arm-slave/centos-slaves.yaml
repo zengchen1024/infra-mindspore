@@ -13,7 +13,6 @@ spec:
   clusterIP: None
   selector:
     app: arm-centos-slaves
-
 ---
 kind: StatefulSet
 apiVersion: apps/v1beta1
@@ -54,7 +53,7 @@ spec:
             - name: JENKINS_AGENT_WORKDIR
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
-              value: http://build.mindspore.cn
+              value: http://192.168.0.241:30080
             - name: JENKINS_SHARE_FOLDER
               value: /home/jenkins/share-config
             - name: EXECUTOR_NUMBERS
@@ -85,7 +84,7 @@ spec:
               memory: 40000Mi
           env:
             - name: JENKINS_TUNNEL
-              value: build.mindspore.cn:50000
+              value: 192.168.0.241:30500
             - name: JENKINS_AGENT_NAME
               valueFrom:
                 fieldRef:
@@ -97,7 +96,7 @@ spec:
             - name: JENKINS_AGENT_WORKDIR
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
-              value: http://build.mindspore.cn
+              value: http://192.168.0.241:30080
       volumes:
         - name: jenkins-share-config
           emptyDir: {}
