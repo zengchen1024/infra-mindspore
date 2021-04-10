@@ -61,7 +61,7 @@ spec:
             - name: JENKINS_AGENT_WORKDIR
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
-              value: mindspore-jenkins.jenkins-master.svc.cluster.local
+              value: http://mindspore-jenkins.jenkins-master.svc.cluster.local
             - name: JENKINS_SHARE_FOLDER
               value: /home/jenkins/share-config
             - name: EXECUTOR_NUMBERS
@@ -107,7 +107,7 @@ spec:
             - name: JENKINS_AGENT_WORKDIR
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
-              value: mindspore-jenkins.jenkins-master.svc.cluster.local
+              value: http://mindspore-jenkins.jenkins-master.svc.cluster.local
       dnsPolicy: ClusterFirst
       dnsConfig:
         nameservers:
