@@ -364,17 +364,19 @@ metadata:
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-master"
 spec:
-  ports:
-    - port: 80
-      name: http
-      targetPort: 8080
-    - port: 50000
-      name: agent
-      targetPort: 50000
   selector:
     "app.kubernetes.io/component": "jenkins-master"
     "app.kubernetes.io/instance": "jenkins"
-  type: ClusterIP
+  ports:
+    - port: 80
+      name: http
+      nodePort: 30080
+      targetPort: 8080
+    - port: 50000
+      name: agent
+      nodePort: 30500
+      targetPort: 50000
+  type: NodePort
 ---
 # Source: jenkins/templates/jenkins-master-deployment.yaml
 
