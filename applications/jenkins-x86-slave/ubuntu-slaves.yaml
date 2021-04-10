@@ -54,7 +54,7 @@ spec:
             - name: JENKINS_AGENT_WORKDIR
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
-              value: http://build.mindspore.cn
+              value: http://mindspore-jenkins.jenkins-master.svc.cluster.local
             - name: JENKINS_SHARE_FOLDER
               value: /home/jenkins/share-config
             - name: EXECUTOR_NUMBERS
@@ -88,7 +88,7 @@ spec:
               memory: 44000Mi
           env:
             - name: JENKINS_TUNNEL
-              value: build.mindspore.cn:50000
+              value: mindspore-jenkins.jenkins-master.svc.cluster.local:50000
             - name: JENKINS_AGENT_NAME
               valueFrom:
                 fieldRef:
@@ -100,7 +100,7 @@ spec:
             - name: JENKINS_AGENT_WORKDIR
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
-              value: http://build.mindspore.cn
+              value: http://mindspore-jenkins.jenkins-master.svc.cluster.local
       volumes:
         - name: jenkins-share-config
           emptyDir: {}
