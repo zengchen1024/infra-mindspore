@@ -49,7 +49,7 @@ spec:
       containers:
         - name: mailman-exim4
           #NOTE: This image is directly built from our dockerfile located in exim4 folder
-          image: mindspore/mail-exim4:v0.1.0
+          image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mailman-exim4:e6d42d2b5d5c3f0f0fee051796a32e4e371d361f
           imagePullPolicy: "IfNotPresent"
           volumeMounts:
             - mountPath: /etc/exim4/conf.d/main/25_mm3_macros
@@ -97,15 +97,16 @@ spec:
             - /bin/sh
             - -c
             - |
+              mkdir -p /var/log/exim4
               cp /etc/exim4/passwd.ro /etc/exim4/passwd
               cp /etc/exim4/exim.crt.ro /etc/exim4/exim.crt
               cp /etc/exim4/exim.key.ro /etc/exim4/exim.key
               cp /etc/exim4/dkim/mindspore.key.ro /etc/exim4/dkim/mindspore.key
-              sudo chown root:Debian-exim /etc/exim4/passwd /etc/exim4/exim.crt /etc/exim4/exim.key /etc/exim4/dkim/mindspore.key
-              sudo chmod 640 /etc/exim4/passwd /etc/exim4/exim.crt /etc/exim4/exim.key /etc/exim4/dkim/mindspore.key
+              chown root:Debian-exim /etc/exim4/passwd /etc/exim4/exim.crt /etc/exim4/exim.key /etc/exim4/dkim/mindspore.key
+              chmod 640 /etc/exim4/passwd /etc/exim4/exim.crt /etc/exim4/exim.key /etc/exim4/dkim/mindspore.key
               mkdir -p /opt/mailman/exim_log
               chown Debian-exim:Debian-exim -R /opt/mailman/exim_log
-              sudo update-exim4.conf
+              update-exim4.conf
               exec tini -- exim -bd -v;
       #NOTE: Empty dir can't be used in a production dir. Please upgrade it before using.
       volumes:
