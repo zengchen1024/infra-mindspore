@@ -54,5 +54,6 @@ data:
 
         gzip  on;
 
+        server_tokens off;
         include /etc/nginx/conf.d/*.conf;
     }
