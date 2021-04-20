@@ -44,6 +44,9 @@ spec:
             - mountPath: /root/.ssh/authorized_keys.ro
               name: repo-nginx-configmap-volume
               subPath: ssh.pub
+            - name: rsync-secrets-volume
+              mountPath: /etc/nginx/conf/basic_auth_files
+              subPath: download_auth_secrets
           resources:
             requests:
               cpu: 2000m
