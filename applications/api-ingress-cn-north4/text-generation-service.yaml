@@ -1,0 +1,20 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: text-generation-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 5000
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: text-generation-service
+subsets:
+  - addresses:
+      - ip: 121.37.54.85
+    ports:
+      - port: 5000
