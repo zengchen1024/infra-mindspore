@@ -3,6 +3,7 @@ resources:
   - namespace.yaml
   - nginx-purge.yaml
   - poetry-service.yaml
+  - text-generation-service.yaml
 commonLabels:
   app: mindspore-api
 patchesJson6902:
@@ -11,5 +12,11 @@ patchesJson6902:
       version: v1
       kind: Service
       name: poetry-service
+    path: selector.yaml
+  - target:
+      group: ""
+      version: v1
+      kind: Service
+      name: text-generation-service
     path: selector.yaml
 namespace: mindspore-api

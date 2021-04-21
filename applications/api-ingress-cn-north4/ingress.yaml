@@ -23,3 +23,7 @@ spec:
               serviceName: poetry-service
               servicePort: 80
             path: /poetry(/|$)(.*)
+          - backend:
+              serviceName: text-generation-service
+              servicePort: 80
+            path: /text_generation(/|$)(.*)
