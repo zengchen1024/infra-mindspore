@@ -24,6 +24,9 @@ data:
         include uwsgi_params;
         uwsgi_read_timeout 300;
         }
+        location /accounts/signup {
+        rewrite ^/accounts/signup(.*)$ /postorius/lists/;
+        }
     }
   nginx.conf : |
     user  nginx;
