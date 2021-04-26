@@ -24,7 +24,7 @@ metadata:
     app: arm-euleros-slaves
 spec:
   serviceName: arm-euleros-slaves-service
-  replicas: 7
+  replicas: 4
   selector:
     matchLabels:
       app: arm-euleros-slaves
