@@ -1,4 +1,3 @@
-## define the postgros volume 
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
