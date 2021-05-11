@@ -12,6 +12,7 @@ spec:
     spec:
       containers:
         - name: repo-nginx
+          image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/nginx-extras:1.20.0-with-sshd-repo
           volumeMounts:
             - mountPath: /repo/mindspore
               name: data-volume

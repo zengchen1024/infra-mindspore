@@ -137,7 +137,7 @@ spec:
         toa_enabled: "true"
       containers:
         - name: repo-nginx
-          image: swr.cn-north-1.myhuaweicloud.com/mindspore/nginx-extras:1.10.3
+          image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/nginx-extras:1.20.0-with-sshd-repo
           imagePullPolicy: "Always"
           volumeMounts:
             - mountPath: /etc/nginx/conf/nginx.conf
