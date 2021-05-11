@@ -141,7 +141,7 @@ spec:
               exec docker-entrypoint.sh uwsgi --ini /opt/mailman-web/uwsgi.ini;
       #NOTE: Empty dir can't be used in a production dir. Please upgrade it before using.
         - name: nginx-web
-          image: nginx:1.20.0
+          image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/nginx:latest
           imagePullPolicy: IfNotPresent
           volumeMounts:
           - mountPath: /etc/nginx/nginx.conf
