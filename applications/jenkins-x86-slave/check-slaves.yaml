@@ -128,6 +128,11 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: check-workspace-pvc
+        annotations:
+          volume.beta.kubernetes.io/storage-class: sas
+        labels:
+          failure-domain.beta.kubernetes.io/region: cn-north-4
+          failure-domain.beta.kubernetes.io/zone: cn-north-4g
       spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
