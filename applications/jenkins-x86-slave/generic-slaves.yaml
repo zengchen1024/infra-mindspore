@@ -114,10 +114,10 @@ spec:
     - metadata:
         name: generic-workspace-pvc
         annotations:
-          volume.beta.kubernetes.io/storage-class: sas4g
+          volume.beta.kubernetes.io/storage-class: cn-north4-zone7-storageclass-sas
       spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:
             storage: 200Gi
-        storageClassName: "sas4g"
+        storageClassName: "cn-north4-zone7-storageclass-sas"
