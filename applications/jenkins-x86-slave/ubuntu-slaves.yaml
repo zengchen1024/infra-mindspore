@@ -113,9 +113,11 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: ubuntu-workspace-pvc
+        annotations:
+          volume.beta.kubernetes.io/storage-class: cn-north4-zone7-storageclass-sas
       spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:
             storage: 200Gi
-        storageClassName: "sas"
+        storageClassName: "cn-north4-zone7-storageclass-sas"
