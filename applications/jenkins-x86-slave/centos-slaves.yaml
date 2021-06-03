@@ -112,9 +112,11 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: centos-workspace-pvc
+        annotations:
+          volume.beta.kubernetes.io/storage-class: sas4g
       spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:
             storage: 200Gi
-        storageClassName: "sas"
+        storageClassName: "sas4g"
