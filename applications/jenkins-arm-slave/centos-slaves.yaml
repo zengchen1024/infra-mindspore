@@ -80,8 +80,11 @@ spec:
               exec /tini -- jenkins-agent
           resources:
             requests:
-              cpu: 20000m
-              memory: 40000Mi
+              cpu: 22000m
+              memory: 41000Mi
+            limits:
+              cpu: 24000m
+              memory: 44000Mi
           env:
             - name: JENKINS_TUNNEL
               value: 192.168.0.241:30500
