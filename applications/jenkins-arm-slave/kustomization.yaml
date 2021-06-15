@@ -4,7 +4,7 @@ resources:
   - centos-slaves.yaml
   - secrets.yaml
 commonLabels:
-  owner: tommylikehu
+  owner: gaoxiang
 commonAnnotations:
-  email: "tommylikehu@gmail.com"
+  email: "gx_hw2020@163.com"
 namespace: jenkins

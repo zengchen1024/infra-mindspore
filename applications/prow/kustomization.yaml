@@ -7,6 +7,6 @@ resources:
   - starter.yaml
 commonLabels:
   service: common-prow
-  owner: tommylikehu
+  owner: chenzeng
 commonAnnotations:
-  email: "tommylikehu@gmail.com"
+  email: "chenzeng765@163.com"
