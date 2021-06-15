@@ -12,9 +12,9 @@ resources:
 - cibot-service.yaml
 - www-ingress.yaml
 commonLabels:
-  owner: tommylikehu
+  owner: zhengyuhang
 commonAnnotations:
-  email: "tommylikehu@gmail.com"
+  email: "245462755@qq.com"
 namespace: website
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
