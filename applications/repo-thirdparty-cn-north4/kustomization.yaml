@@ -4,4 +4,8 @@ resources:
   - secrets.yaml
   - ingress.yaml
   - service.yaml
+commonLabels:
+  owner: tommylikehu
+commonAnnotations:
+  email: "tommylikehu@gmail.com"
 namespace: repo-thirdparty

@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: repo-nginx
-          image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/nginx-extras:1.20.0-with-sshd-repo
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/nginx-extras:1.20.0-with-sshd-repo
           volumeMounts:
             - mountPath: /repo/mindspore
               name: data-volume
@@ -36,6 +36,7 @@ spec:
               mkdir -p /repo/mindspore
               exec nginx -g "daemon off;"
         - name: rsync-server
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/rsyncd:0.0.5
           volumeMounts:
             - mountPath: /etc/rsyncd.conf
               name: repo-nginx-configmap-volume

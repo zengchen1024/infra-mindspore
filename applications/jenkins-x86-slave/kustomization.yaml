@@ -5,4 +5,8 @@ resources:
   - ubuntu-slaves.yaml
   - generic-slaves.yaml
   - centos-slaves.yaml
+commonLabels:
+  owner: tommylikehu
+commonAnnotations:
+  email: "tommylikehu@gmail.com"
 namespace: jenkins

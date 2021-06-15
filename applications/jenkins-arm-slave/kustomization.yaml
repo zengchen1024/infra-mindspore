@@ -3,4 +3,8 @@ resources:
   - ubuntu-slaves.yaml
   - centos-slaves.yaml
   - secrets.yaml
+commonLabels:
+  owner: tommylikehu
+commonAnnotations:
+  email: "tommylikehu@gmail.com"
 namespace: jenkins

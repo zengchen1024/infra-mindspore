@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: mailman-database
-          image: postgres:9.6-alpine
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/postgres:9.6-alpine
           imagePullPolicy: "IfNotPresent"
           volumeMounts:
             - mountPath: /var/lib/postgresql/data

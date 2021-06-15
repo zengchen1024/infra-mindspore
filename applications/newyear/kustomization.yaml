@@ -2,13 +2,10 @@ resources:
 - deployment.yaml
 - namespace.yaml
 - service.yaml
+commonLabels:
+  owner: tommylikehu
+commonAnnotations:
+  email: "tommylikehu@gmail.com"
 namespace: summary
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-images:
-- name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server
-  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server
-  newTag: 54fcb24ff0c9854ac62f6e9d3d74cc95782fff19
-- name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-newyear
-  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-newyear
-  newTag: eae5f732929a8b4190bfaa44a6d65a72716db8bf
