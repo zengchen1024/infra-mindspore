@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: website
-        image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website:4bd491e9c59bf13b50d8b8ed9289da289cb6b88a
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-website:d54cbafbf1630235844f2e36116c94aeb18dd85f
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

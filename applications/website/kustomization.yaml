@@ -11,10 +11,13 @@ resources:
 - oauth-proxy.yaml
 - cibot-service.yaml
 - www-ingress.yaml
-commonLabels:
-  owner: zhengyuhang
 commonAnnotations:
+  owner: zhengyuhang
   email: "245462755@qq.com"
 namespace: website
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+images:
+- name: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
+  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
+  newTag: d54cbafbf1630235844f2e36116c94aeb18dd85f

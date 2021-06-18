@@ -4,8 +4,7 @@ resources:
   - namespace.yaml
   - secrets.yaml
   - service.yaml
-commonLabels:
-  owner: tommylikehu
 commonAnnotations:
+  owner: tommylikehu
   email: "tommylikehu@gmail.com"
 namespace: bot

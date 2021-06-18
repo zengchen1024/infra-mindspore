@@ -6,8 +6,8 @@ resources:
   - text-generation-service.yaml
 commonLabels:
   app: mindspore-api
-  owner: tommylikehu
 commonAnnotations:
+  owner: tommylikehu
   email: "tommylikehu@gmail.com"
 patchesJson6902:
   - target:

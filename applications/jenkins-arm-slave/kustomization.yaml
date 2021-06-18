@@ -3,8 +3,7 @@ resources:
   - ubuntu-slaves.yaml
   - centos-slaves.yaml
   - secrets.yaml
-commonLabels:
-  owner: gaoxiang
 commonAnnotations:
+  owner: gaoxiang
   email: "gx_hw2020@163.com"
 namespace: jenkins

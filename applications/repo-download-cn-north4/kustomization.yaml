@@ -6,8 +6,8 @@ resources:
   - ingress.yaml
 commonLabels:
   app: mindspore-cn-north4-download-repo
-  owner: tommylikehu
 commonAnnotations:
+  owner: tommylikehu
   email: "tommylikehu@gmail.com"
 patchesStrategicMerge:
   - configmap.yaml

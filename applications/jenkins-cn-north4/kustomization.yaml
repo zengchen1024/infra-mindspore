@@ -3,8 +3,7 @@ resources:
   - namespace.yaml
   - secrets.yaml
   - ingress.yaml
-commonLabels:
-  owner: tommylikehu
 commonAnnotations:
+  owner: tommylikehu
   email: "tommylikehu@gmail.com"
 namespace: jenkins-master
