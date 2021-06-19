@@ -14,7 +14,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: mindspore-hub-update
-              image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/alpine_with_curl:0.0.1
+              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/alpine_with_curl:0.0.1
               command:
                 - /bin/sh
                 - -c

@@ -5,4 +5,7 @@ resources:
   - ubuntu-slaves.yaml
   - generic-slaves.yaml
   - centos-slaves.yaml
+commonAnnotations:
+  owner: gaoxiang
+  email: "gx_hw2020@163.com"
 namespace: jenkins

@@ -45,7 +45,7 @@ spec:
       containers:
         - name: mailman-web
           # We modified the mail-web image to add static folder.
-          image: mindspore/mail-web:v1.0.2
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/mail-web:v1.0.2
           imagePullPolicy: "Always"
           volumeMounts:
             - mountPath: /opt/mailman-web-config
@@ -141,7 +141,7 @@ spec:
               exec docker-entrypoint.sh uwsgi --ini /opt/mailman-web/uwsgi.ini;
       #NOTE: Empty dir can't be used in a production dir. Please upgrade it before using.
         - name: nginx-web
-          image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/nginx:latest
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/nginx:latest
           imagePullPolicy: IfNotPresent
           volumeMounts:
           - mountPath: /etc/nginx/nginx.conf

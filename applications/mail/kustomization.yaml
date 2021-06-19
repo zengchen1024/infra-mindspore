@@ -11,4 +11,7 @@ resources:
   - storage.yaml
   - suiteservice.yaml
   - webservice.yaml
+commonAnnotations:
+  owner: tommylikehu
+  email: "tommylikehu@gmail.com"
 namespace: mail

@@ -25,7 +25,7 @@ spec:
       terminationGracePeriodSeconds: 180
       containers:
         - name: hook
-          image: mindspore/hook:v20200228-31c76444f
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/hook:v20200228-31c76444f
           imagePullPolicy: Always
           args:
             - --dry-run=false
@@ -111,7 +111,7 @@ spec:
       serviceAccountName: "plank"
       containers:
         - name: plank
-          image: mindspore/plank:v20200228-31c76444b
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/plank:v20200228-31c76444b
           args:
             - --dry-run=false
             - --config-path=/etc/config/config.yaml
@@ -148,7 +148,7 @@ spec:
       serviceAccountName: "sinker"
       containers:
         - name: sinker
-          image: tommylike/sinker:v20190625-9f02db3fe
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/sinker:v20190625-9f02db3fe
           args:
             - --config-path=/etc/config/config.yaml
           volumeMounts:
@@ -184,7 +184,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: deck
-          image: mindspore/deck:v20200228-31c76444bb
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/deck:v20200228-31c76444bb
           args:
             - --config-path=/etc/config/config.yaml
             - --plugin-config=/etc/plugins/plugins.yaml
@@ -271,7 +271,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: horologium
-          image: tommylike/horologium:v20190625-9f02db3fe
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/horologium:v20190625-9f02db3fe
           args:
             - --config-path=/etc/config/config.yaml
           volumeMounts:
@@ -303,7 +303,7 @@ spec:
       serviceAccountName: "tide"
       containers:
         - name: tide
-          image: tommylike/tide:v20190625-9f02db3fe
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/tide:v20190625-9f02db3fe
           args:
             - --dry-run=false
             - --config-path=/etc/config/config.yaml
@@ -390,7 +390,7 @@ spec:
       terminationGracePeriodSeconds: 180
       containers:
         - name: statusreconciler
-          image: tommylike/status-reconciler:v20190625-9f02db3fe
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/status-reconciler:v20190625-9f02db3fe
           args:
             - --dry-run=false
             - --continue-on-error=true
@@ -423,6 +423,8 @@ apiVersion: v1
 metadata:
   namespace: prow
   name: "deck"
+imagePullSecrets:
+  - name: huawei-swr-image-pull-secret
 ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -488,6 +490,8 @@ apiVersion: v1
 metadata:
   namespace: prow
   name: "horologium"
+imagePullSecrets:
+  - name: huawei-swr-image-pull-secret
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -521,6 +525,8 @@ apiVersion: v1
 metadata:
   namespace: prow
   name: "plank"
+imagePullSecrets:
+  - name: huawei-swr-image-pull-secret
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -586,6 +592,8 @@ apiVersion: v1
 metadata:
   namespace: prow
   name: "sinker"
+imagePullSecrets:
+  - name: huawei-swr-image-pull-secret
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -665,6 +673,8 @@ kind: ServiceAccount
 metadata:
   namespace: prow
   name: "hook"
+imagePullSecrets:
+  - name: huawei-swr-image-pull-secret
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -706,6 +716,8 @@ kind: ServiceAccount
 metadata:
   namespace: prow
   name: "tide"
+imagePullSecrets:
+  - name: huawei-swr-image-pull-secret
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -741,6 +753,8 @@ kind: ServiceAccount
 metadata:
   namespace: prow
   name: "statusreconciler"
+imagePullSecrets:
+  - name: huawei-swr-image-pull-secret
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1

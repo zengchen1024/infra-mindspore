@@ -19,7 +19,7 @@ spec:
         - env:
             - name: TZ
               value: Asia/Shanghai
-          image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/bless-server:6a02da500f88597d129cdd39d67f5153e62368a5
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/bless-server:54fcb24ff0c9854ac62f6e9d3d74cc95782fff19
           imagePullPolicy: IfNotPresent
           name: bless-server
           ports:
@@ -47,7 +47,7 @@ spec:
         - env:
             - name: TZ
               value: Asia/Shanghai
-          image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-newyear:5bcbda708b98d6ca2a3d95bbf171e037a98d35af
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-newyear:eae5f732929a8b4190bfaa44a6d65a72716db8bf
           imagePullPolicy: IfNotPresent
           name: mindspore-frontend
           ports:

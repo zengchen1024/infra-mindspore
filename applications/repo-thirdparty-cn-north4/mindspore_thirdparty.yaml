@@ -135,7 +135,7 @@ spec:
     spec:
       containers:
         - name: repo-nginx
-          image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/nginx-extras:1.20.0-with-sshd-repo
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/nginx-extras:1.20.0-with-sshd-repo
           imagePullPolicy: "Always"
           volumeMounts:
             - mountPath: /etc/nginx/conf/nginx.conf
@@ -160,7 +160,7 @@ spec:
               cpu: 4000m
               memory: 4000Mi
         - name: rsync-server
-          image: mindspore/rsyncd:0.0.5
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/rsyncd:0.0.5
           imagePullPolicy: "Always"
           volumeMounts:
             - mountPath: /etc/rsyncd.conf

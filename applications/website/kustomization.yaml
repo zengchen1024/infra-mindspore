@@ -11,6 +11,9 @@ resources:
 - oauth-proxy.yaml
 - cibot-service.yaml
 - www-ingress.yaml
+commonAnnotations:
+  owner: zhengyuhang
+  email: "245462755@qq.com"
 namespace: website
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
