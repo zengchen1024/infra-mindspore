@@ -267,7 +267,7 @@ spec:
 # Source: jenkins/templates/service-account.yaml
 
 apiVersion: v1
-kind: ServiceAccounit
+kind: ServiceAccount
 imagePullSecrets:
   - name: huawei-swr-image-pull-secret
 metadata:
