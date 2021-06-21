@@ -82,10 +82,10 @@ spec:
           resources:
             requests:
               cpu: 7000m
-              memory: 13000Mi
+              memory: 28000Mi
             limits:
               cpu: 8000m
-              memory: 16000Mi
+              memory: 30000Mi
           env:
             - name: JENKINS_TUNNEL
               value: mindspore-jenkins.jenkins-master.svc.cluster.local:50000

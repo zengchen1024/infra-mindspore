@@ -80,8 +80,8 @@ spec:
               exec /tini -- jenkins-agent
           resources:
             requests:
-              cpu: 10000m
-              memory: 40000Mi
+              cpu: 11000m
+              memory: 43000Mi
             limits:
               cpu: 12000m
               memory: 44000Mi
