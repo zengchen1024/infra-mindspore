@@ -1,0 +1,107 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: sendmessages
+spec:
+  schedule: "0 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: meeting-server
+              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:v1.0.20210716
+              env:
+                - name: SECRET_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      key: secret_key
+                      name: meeting-server-secrets
+                - name: DB_USER
+                  valueFrom:
+                    secretKeyRef:
+                      key: db_user
+                      name: meeting-server-secrets
+                - name: DB_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      key: db_password
+                      name: meeting-server-secrets
+                - name: DB_HOST
+                  valueFrom:
+                    secretKeyRef:
+                      key: db_host
+                      name: meeting-server-secrets
+                - name: APP_ID
+                  valueFrom:
+                    secretKeyRef:
+                      key: app_id
+                      name: meeting-server-secrets
+                - name: APP_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      key: app_secret
+                      name: meeting-server-secrets
+                - name: MINDSPORE_MEETING_ATTENTION_TEMPLATE
+                  valueFrom:
+                    secretKeyRef:
+                      key: mindspore_meeting_attention_template
+                      name: meeting-server-secrets
+                - name: DB_PORT
+                  value: "3306"
+                - name: TZ
+                  value: Asia/Shanghai
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  python manage.py sendmessages
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: genegroup
+spec:
+  schedule: "0 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: meeting-server
+              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:v1.0.20210716
+              env:
+                - name: DB_USER
+                  valueFrom:
+                    secretKeyRef:
+                      key: db_user
+                      name: meeting-server-secrets
+                - name: DB_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      key: db_password
+                      name: meeting-server-secrets
+                - name: DB_HOST
+                  valueFrom:
+                    secretKeyRef:
+                      key: db_host
+                      name: meeting-server-secrets
+                - name: DB_PORT
+                  value: "3306"
+                - name: SECRET_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      key: secret_key
+                      name: meeting-server-secrets
+                - name: TZ
+                  value: Asia/Shanghai
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  python manage.py genegroup
