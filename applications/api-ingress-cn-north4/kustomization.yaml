@@ -4,6 +4,7 @@ resources:
   - nginx-purge.yaml
   - poetry-service.yaml
   - text-generation-service.yaml
+  - meetingserver-service.yaml
 commonLabels:
   app: mindspore-api
 commonAnnotations:

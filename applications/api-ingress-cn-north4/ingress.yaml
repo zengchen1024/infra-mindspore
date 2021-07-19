@@ -5,6 +5,10 @@ metadata:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-issuer
     nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/server-snippet: |
+      location ^~ /meetings/participants/ {
+        deny all;
+      }
   name: api-ingress
 spec:
   tls:
@@ -27,3 +31,7 @@ spec:
               serviceName: text-generation-service
               servicePort: 80
             path: /text_generation(/|$)(.*)
+          - backend:
+              serviceName: meetingserver-service
+              servicePort: 80
+            path: /meetings(/|$)(.*)
