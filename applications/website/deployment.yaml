@@ -7,7 +7,7 @@ spec:
   replicas: 4
   strategy:
     rollingUpdate:
-      maxUnavailable: 0
+      maxUnavailable: 2
     type: RollingUpdate
   selector:
     matchLabels:
@@ -17,6 +17,13 @@ spec:
       labels:
         app: mindsporewebsite
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: web
+                operator: Exists
       containers:
       - name: website
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-website:66a4c8d25c244b2f2e18f2d95af1c65862bb8b63
