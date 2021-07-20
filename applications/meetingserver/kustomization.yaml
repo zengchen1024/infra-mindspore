@@ -8,8 +8,11 @@ resources:
 commonLabels:
   app: opengauss-meetingserver
 commonAnnotations:
+  email: 469227928@qq.com
   owner: liuqi
-  email: "469227928@qq.com"
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: meetingserver
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server
+  newTag: 67441a18f49fc244c8e165bf7ee4c139eda702d7
