@@ -136,6 +136,7 @@ spec:
             - -c
             - |
               strip -R .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.11.3
+              touch /work/app-meeting-server/meetings/migrations/__init__.py
               python manage.py collectstatic
               python manage.py makemigrations
               python manage.py migrate
