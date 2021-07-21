@@ -21,10 +21,21 @@ spec:
                 - |
                   [ ! -d "./hub" ] &&  git clone https://gitee.com/mindspore/hub.git;
                   cd hub && git pull origin master
-                  curl http://websiteservice.website.svc.cluster.local/hubInfo/initHubInfo
+                  curl  --user ${API_USER}:${API_PASS} http://websiteservice.website.svc.cluster.local/hubInfo/initHubInfo
               volumeMounts:
                 - mountPath: /mnt/share/mindspore_repository
                   name: website-hub-data-volume
+              env:
+                - name: API_USER
+                  valueFrom:
+                    secretKeyRef:
+                      key: api_user
+                      name: website-secrets
+                - name: API_PASS
+                  valueFrom:
+                    secretKeyRef:
+                      key: api_pass
+                      name: website-secrets
           volumes:
             - name: website-hub-data-volume
               persistentVolumeClaim:
