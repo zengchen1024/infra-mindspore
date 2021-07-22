@@ -3,6 +3,7 @@ resources:
   - namespace.yaml
   - secrets.yaml
   - ingress.yaml
+  - oauth-proxy.yaml
 commonAnnotations:
   owner: tommylikehu
   email: "tommylikehu@gmail.com"
