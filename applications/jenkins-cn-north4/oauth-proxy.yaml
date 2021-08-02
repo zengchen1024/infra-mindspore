@@ -35,6 +35,8 @@ spec:
             # for webhook to be triggered
             - --skip-auth-regex=^/gitee-project/
             - --custom-sign-in-logo=https://openeulerinfrastructure.obs.cn-north-4.myhuaweicloud.com/img/gardener-large.png
+            # used to detect service availability
+            - --skip-auth-regex=^/computer/
           env:
             - name: OAUTH2_PROXY_CLIENT_ID
               valueFrom:
