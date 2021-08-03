@@ -38,6 +38,8 @@ spec:
             # used to detect service availability
             - --skip-auth-regex=^/computer/
             - --skip-auth-regex=^/tcpSlaveAgentListener/
+            # reduce header size in case of 431 error
+            - --session-cookie-minimal=true
           env:
             - name: OAUTH2_PROXY_CLIENT_ID
               valueFrom:
