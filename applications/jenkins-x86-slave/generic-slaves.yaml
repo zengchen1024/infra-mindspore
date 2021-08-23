@@ -35,7 +35,7 @@ spec:
     spec:
       initContainers:
         - name: slave-init
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/jenkins-slave-tools:0.0.1
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/jenkins-slave-tools-x86:v0.0.1.20210729
           volumeMounts:
             - mountPath: /home/jenkins/share-config
               name: jenkins-share-config
