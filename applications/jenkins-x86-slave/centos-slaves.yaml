@@ -23,7 +23,7 @@ metadata:
     app: x86-centos-slaves
 spec:
   serviceName: x86-centos-slaves-service
-  replicas: 24
+  replicas: 22
   selector:
     matchLabels:
       app: x86-centos-slaves
