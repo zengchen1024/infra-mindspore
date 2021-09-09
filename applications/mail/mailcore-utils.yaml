@@ -80,7 +80,8 @@ spec:
             - -c
             - |
               cp -r /opt/mailman-utils/data_source/templates  .;
-              exec docker-entrypoint.sh python -u mailman-core-utils.py
+              docker-entrypoint.sh python -u mailman-core-utils.py
+              sleep infinity
       volumes:
         - name: mailman-core-utils
           emptyDir: {}
