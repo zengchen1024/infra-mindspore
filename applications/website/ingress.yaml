@@ -8,25 +8,6 @@ metadata:
       rewrite ^/icla https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZtaW5kc3BvcmU= redirect;
     nginx.ingress.kubernetes.io/proxy-body-size: 1024m
     nginx.ingress.kubernetes.io/custom-http-errors: '400,500,404'
-#    cert-manager.io/cluster-issuer: letsencrypt-issuer
-#    nginx.ingress.kubernetes.io/proxy-buffering: "on"
-#    nginx.ingress.kubernetes.io/configuration-snippet: |
-#      add_header X-XSS-Protection "1; mode=block";
-#      add_header Strict-Transport-Security "max-age=31536000";
-#      add_header X-Frame-Options "SAMEORIGIN";
-#      add_header X-Cache-Status $upstream_cache_status;
-#    nginx.ingress.kubernetes.io/server-snippet: |
-#      proxy_cache statics_cache;
-#      proxy_cache_lock on;
-#      proxy_cache_key $server_name$uri$is_args$args;
-#      proxy_ignore_headers Cache-Control;
-#      proxy_ignore_headers Set-Cookie;
-#      proxy_cache_valid 60m;
-#      location ~ /purge(/.*) {
-#          proxy_cache_purge  statics_cache $server_name$1$is_args$args;
-#      }
-#      proxy_cache_bypass  $nocache;
-#      proxy_no_cache      $nocache;
   name: website-ingress
 spec:
   tls:
@@ -45,33 +26,29 @@ spec:
               serviceName: mindspore-bot-internal
               servicePort: 8888
             path: /cla
-#          - backend:
-#              serviceName: mindspore-backend
-#              servicePort: 80
-#            path: /blessapi
-#---
-#apiVersion: extensions/v1beta1
-#kind: Ingress
-#metadata:
-#  annotations:
-#    kubernetes.io/ingress.class: nginx
-#    cert-manager.io/cluster-issuer: letsencrypt-issuer
-#    nginx.ingress.kubernetes.io/auth-response-headers: "X-Auth-Request-User, X-Auth-Request-Groups, X-Auth-Request-Email, X-Auth-Request-Preferred-Username"
-#    nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
-#    nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
-#    nginx.ingress.kubernetes.io/enable-cors: "true"
-#    nginx.ingress.kubernetes.io/rewrite-target: /$2
-#  name: website-ingress-protected
-#spec:
-#  tls:
-#    - hosts:
-#        - www.mindspore.cn
-#      secretName: website-tls
-#  rules:
-#    - host: www.mindspore.cn
-#      http:
-#        paths:
-#          - backend:
-#              serviceName: mindspore-frontend
-#              servicePort: 80
-#            path: /2020summary(/|$)(.*)
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    nginx.ingress.kubernetes.io/proxy-body-size: 1024m
+    nginx.ingress.kubernetes.io/custom-http-errors: '400,500,404'
+    nginx.ingress.kubernetes.io/server-snippet: |
+      rewrite ^~/ https://www.mindspore.cn redirect;
+      rewrite ^~/resource(.*) https://gitee.com/mindspore/book redirect;
+  name: mindspore-www-website-ingress
+spec:
+  tls:
+    - hosts:
+        - mindspore.cn
+      secretName: website-tls-2
+  rules:
+    - host: mindspore.cn
+      http:
+        paths:
+          - backend:
+              serviceName: websiteservice
+              servicePort: 80
+            path: /
