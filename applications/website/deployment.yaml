@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: mindspore-website
 spec:
-  replicas: 4
+  replicas: 6
   strategy:
     rollingUpdate:
       maxUnavailable: 2
