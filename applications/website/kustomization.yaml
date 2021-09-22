@@ -10,7 +10,6 @@ resources:
 - job.yaml
 - oauth-proxy.yaml
 - cibot-service.yaml
-- www-ingress.yaml
 commonAnnotations:
   email: 245462755@qq.com
   owner: zhengyuhang
