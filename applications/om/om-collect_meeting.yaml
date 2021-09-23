@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: om-collect
+    common-app: om
+  name: meeting-om-collect
+  namespace: om
+spec:
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      common-app: om
+  template:
+    metadata:
+      labels:
+        app: om-collect
+        common-app: om
+    spec:
+      containers:
+        - image: swr.cn-north-4.myhuaweicloud.com/om/om-collection:0.2.19
+          name: om-collect
+          ports:
+            - containerPort: 3306
+              name: om-collect
+          resources:
+            requests:
+              memory: 500Mi
+          volumeMounts:
+            - mountPath: /var/lib/om/config.ini
+              name: om-collect-secrets-volume
+              subPath: config_ini
+      volumes:
+        - name: om-collect-secrets-volume
+          secret:
+            secretName: meeting-om-secrets
