@@ -1,0 +1,7 @@
+resources:
+  - namespace.yaml
+  - secret_meeting.yaml
+  - om-collect_meeting.yaml
+commonAnnotations:
+  owner: zhongjun
+  email: "526521735@qq.com"
