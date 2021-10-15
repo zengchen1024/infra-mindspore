@@ -3,4 +3,9 @@ kind: Service
 metadata:
   name: repo-service
 spec:
-  type: ClusterIP
+  type: NodePort
+  ports:
+    - name: rsync-ssh-server-port
+      nodePort: 30022
+      port: 22
+      targetPort: 22
