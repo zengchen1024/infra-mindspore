@@ -9,3 +9,6 @@ commonAnnotations:
 namespace: robot-gitee
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-access
+  newTag: v20211026-464ea19
