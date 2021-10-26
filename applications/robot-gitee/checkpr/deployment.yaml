@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: checkpr
+  name: checkpr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: checkpr
+  template:
+    metadata:
+      labels:
+        component: checkpr
+    spec:
+      containers:
+      - args:
+        - --gitee-token-path=/app/conf/robot-gitee/robot_token
+        - --plugin-config=/app/conf/robot-gitee/app_config.yaml
+        image: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/robot/robot-gitee-checkpr:bc480df
+        imagePullPolicy: IfNotPresent
+        name: checkpr
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/robot-gitee/robot_token
+          subPath: robot-token
+          name: secret-volume
+        - mountPath: app/conf/robot-gitee/app_config.yaml
+          subPath: config.yaml
+          name: app-config
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: robot-gitee-secrets
+      - name: app-config
+        configMap:
+          name: robot-gitee-checkpr
