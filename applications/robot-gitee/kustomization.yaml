@@ -1,6 +1,12 @@
 resources:
 - namespace.yaml
 - secrets.yaml
+- access/configmap.yaml
+- access/deployment.yaml
+- access/service.yaml
+- checkpr/configmap.yaml
+- checkpr/deployment.yaml
+- checkpr/service.yaml
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
