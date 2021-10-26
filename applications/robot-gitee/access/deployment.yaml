@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: access
+  name: access
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: access
+  template:
+    metadata:
+      labels:
+        component: access
+    spec:
+      containers:
+      - args:
+        - --port=8888
+        - --plugin-config=/app/conf/robot-gitee/app_config.yaml
+        - --hmac-secret-file=/app/conf/robot-gitee/hmac
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-access:v20211026-464ea19
+        imagePullPolicy: IfNotPresent
+        name: access
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/robot-gitee/hmac
+          subPath: webhook-hmac
+          name: secret-volume
+        - mountPath: app/conf/robot-gitee/app_config.yaml
+          subPath: config.yaml
+          name: app-config
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: robot-gitee-secrets
+      - name: app-config
+        configMap:
+          name: robot-gitee-access
