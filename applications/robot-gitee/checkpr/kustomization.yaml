@@ -9,9 +9,9 @@ patches:
 - path: deployment.json
   target:
     group: apps
-    version: v1
     kind: Deployment
     name: deployment
+    version: v1
 patchesStrategicMerge:
 - secrets.yaml
 nameSuffix: -checkpr
@@ -19,3 +19,5 @@ images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-checkpr
   newTag: v20211026-d4d4998
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-checkpr
+  newTag: v20211027-047be57
