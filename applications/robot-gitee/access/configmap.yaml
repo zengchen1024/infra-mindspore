@@ -11,6 +11,6 @@ data:
 
       plugins:
       - name: checkpr
-        endpoint: http://service-checkpr.robot-gitee.svc.cluster.local:8888
+        endpoint: http://service-checkpr.robot-gitee.svc.cluster.local:8888/gitee-hook
         events:
         - "Merge Request Hook"
