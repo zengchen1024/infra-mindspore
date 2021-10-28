@@ -22,7 +22,7 @@ spec:
         - mountPath: /app/conf/robot-gitee/hmac
           subPath: webhook-hmac
           name: secret-volume
-        - mountPath: app/conf/robot-gitee/app_config.yaml
+        - mountPath: /app/conf/robot-gitee/app_config.yaml
           subPath: config.yaml
           name: app-config
           readOnly: true
