@@ -4,6 +4,7 @@ resources:
 - namespace.yaml
 - access
 - checkpr
+- repo-file-cache
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
