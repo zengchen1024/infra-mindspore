@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/repo-file-cache:master-7193046
+          imagePullPolicy: IfNotPresent
+          name: repo-file-cache
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+          env:
+            - name: MONGODB_CONNECTION
+              valueFrom:
+                secretKeyRef:
+                  name: secret-repo-file-cache
+                  key: mongodb-connection
+            - name: MONGODB_NAME
+              value: "repo_file_cache"
+            - name: HTTP_PORT
+              value: "80"
+            - name: RUN_MODE
+              value: dev
