@@ -10,3 +10,6 @@ nameSuffix: -repo-file-cache
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/repo-file-cache
   newTag: master-1e99029
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/repo-file-cache
+  newTag: master-cc1012f
