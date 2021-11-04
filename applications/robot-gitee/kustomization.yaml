@@ -5,6 +5,7 @@ resources:
 - access
 - checkpr
 - repo-file-cache
+- sync-file-server
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
