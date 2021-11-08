@@ -1,0 +1,27 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cronjob
+spec:
+  schedule: "5 16 * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: sync-repo-file
+            args:
+            - --concurrent-size=300
+            - --config-file=/app/conf/robot-gitee/app_config.yaml
+            image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
+            volumeMounts:
+            - mountPath: /app/conf/robot-gitee/app_config.yaml
+              subPath: config.yaml
+              name: app-config
+              readOnly: true
+          volumes:
+          - name: app-config
+            configMap:
+              name: configmap-sync-repo-file
