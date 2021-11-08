@@ -6,6 +6,7 @@ resources:
 - checkpr
 - repo-file-cache
 - sync-file-server
+- sync-repo-file
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
