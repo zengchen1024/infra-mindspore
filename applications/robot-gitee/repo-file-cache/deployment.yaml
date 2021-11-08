@@ -25,4 +25,4 @@ spec:
             - name: HTTP_PORT
               value: "80"
             - name: RUN_MODE
-              value: dev
+              value: prod
