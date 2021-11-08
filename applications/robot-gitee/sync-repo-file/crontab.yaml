@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: cronjob
 spec:
-  schedule: "56 17 * * *"
+  schedule: "0 1 * * *"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:

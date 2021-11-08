@@ -11,7 +11,7 @@ data:
     sync_files:
     - platform: gitee
       org_repos:
-      - org:
-          mindspore
+      - org: mindspore
+      - org: opengauss
       file_names:
       - OWNERS
