@@ -7,3 +7,4 @@ data:
     config_items:
     - repos:
       - zengchen1024/repo-test
+      - cve-manage-test/config
