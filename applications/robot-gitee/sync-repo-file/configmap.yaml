@@ -13,5 +13,10 @@ data:
       org_repos:
       - org: mindspore
       - org: opengauss
+        repos:
+        - tc
+      - org: openeuler
+        repos:
+        - community
       file_names:
       - OWNERS
