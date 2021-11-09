@@ -7,6 +7,7 @@ resources:
 - repo-file-cache
 - sync-file-server
 - sync-repo-file
+- lifecycle
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
