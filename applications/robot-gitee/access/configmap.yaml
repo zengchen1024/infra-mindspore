@@ -10,9 +10,6 @@ data:
         - checkpr
         - lifecycle
 
-        cve-manage-test/config:
-        - lifecycle
-
       plugins:
       - name: checkpr
         endpoint: http://service-checkpr.robot-gitee.svc.cluster.local:8888/gitee-hook
