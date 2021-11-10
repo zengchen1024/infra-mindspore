@@ -10,7 +10,7 @@ spec:
       - name: access
         args:
         - --port=8888
-        - --plugin-config=/app/conf/robot-gitee/app_config.yaml
+        - --plugin-config=/app/conf/robot-gitee/app_config/config.yaml
         - --hmac-secret-file=/app/conf/robot-gitee/hmac
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
         imagePullPolicy: IfNotPresent
@@ -22,8 +22,7 @@ spec:
         - mountPath: /app/conf/robot-gitee/hmac
           subPath: webhook-hmac
           name: secret-volume
-        - mountPath: /app/conf/robot-gitee/app_config.yaml
-          subPath: config.yaml
+        - mountPath: /app/conf/robot-gitee/app_config/
           name: app-config
           readOnly: true
       volumes:
