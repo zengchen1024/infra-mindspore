@@ -9,6 +9,7 @@ data:
         zengchen1024/repo-test:
         - checkpr
         - lifecycle
+        - welcome
 
       plugins:
       - name: checkpr
