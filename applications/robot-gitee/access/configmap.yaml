@@ -25,3 +25,8 @@ data:
         events:
         - "Issue Hook"
         - "Merge Request Hook"
+      - name: label
+        endpoint: http://service-label.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"

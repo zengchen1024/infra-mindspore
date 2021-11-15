@@ -4,6 +4,7 @@ resources:
 - namespace.yaml
 - lifecycle
 - welcome
+- label
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
