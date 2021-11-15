@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - zengchen1024/repo-test
+      community_name: zengchen1024
+      command_link: https://gitee.com/zengchen1024/repo-test
