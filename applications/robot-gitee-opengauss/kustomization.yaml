@@ -5,6 +5,7 @@ resources:
 - lifecycle
 - welcome
 - label
+- assign-issue
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

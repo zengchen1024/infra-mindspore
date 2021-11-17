@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../bot-base
+- configmap.yaml
+commonLabels:
+  component: assign-issue
+patches:
+- path: deployment.json
+  target:
+    group: apps
+    kind: Deployment
+    name: deployment
+    version: v1
+patchesStrategicMerge:
+- secrets.yaml
+nameSuffix: -assign-issue
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-assign-issue
+  newTag: master-5637c48

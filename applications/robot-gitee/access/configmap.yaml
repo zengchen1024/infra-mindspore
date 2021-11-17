@@ -30,3 +30,7 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: assign-issue
+        endpoint: http://service-assign-issue.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
