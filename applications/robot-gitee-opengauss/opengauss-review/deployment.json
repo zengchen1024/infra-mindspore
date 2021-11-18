@@ -1,0 +1,22 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/name",
+    "value": "opengauss-review"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/volumes/0/secret/secretName",
+    "value": "secret-opengauss-review"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/volumes/1/configMap/name",
+    "value": "configmap-opengauss-review"
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/args/3",
+    "value": "--cache-endpoint=http://service-repo-file-cache.robot-gitee.svc.cluster.local:80/v1/file/"
+  }
+]
