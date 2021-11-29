@@ -18,4 +18,4 @@ nameSuffix: -lifecycle
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-lifecycle
-  newTag: master-f440c31
+  newTag: master-1b71007
