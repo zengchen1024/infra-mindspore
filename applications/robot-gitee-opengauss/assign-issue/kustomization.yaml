@@ -18,4 +18,4 @@ nameSuffix: -assign-issue
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-assign-issue
-  newTag: master-5637c48
+  newTag: master-eecd196
