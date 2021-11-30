@@ -13,6 +13,13 @@ data:
         - assign-issue
         - opengauss-review
 
+        opengauss:
+        - label
+        - lifecycle
+        - welcome
+        - assign-issue
+        - opengauss-review
+
         openlookeng/community:
         - sweepstakes
 
