@@ -7,6 +7,7 @@ resources:
 - label
 - assign-issue
 - opengauss-review
+- repo-watcher
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
