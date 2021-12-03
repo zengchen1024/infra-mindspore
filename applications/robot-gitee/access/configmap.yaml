@@ -62,3 +62,8 @@ data:
         endpoint: http://service-assign-issue.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
         events:
         - "Note Hook"
+      - name: robot-gitee-openeuler-label
+        endpoint: http://service-label.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
