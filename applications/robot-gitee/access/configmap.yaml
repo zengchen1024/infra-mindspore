@@ -23,6 +23,9 @@ data:
         openlookeng/community:
         - sweepstakes
 
+        zengchen1024/openeuler-test:
+        - openeuler-lifecycle
+
       plugins:
       - name: lifecycle
         endpoint: http://service-lifecycle.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
@@ -49,5 +52,9 @@ data:
         - "Note Hook"
       - name: sweepstakes
         endpoint: http://service-sweepstakes.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: openeuler-lifecycle
+        endpoint: http://service-lifecycle.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
         events:
         - "Note Hook"
