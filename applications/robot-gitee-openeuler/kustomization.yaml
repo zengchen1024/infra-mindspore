@@ -5,6 +5,7 @@ resources:
 - lifecycle
 - assign-issue
 - label
+- openeuler-welcome
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
