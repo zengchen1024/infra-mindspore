@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - lifecycle
+- assign-issue
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

@@ -58,3 +58,7 @@ data:
         endpoint: http://service-lifecycle.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
         events:
         - "Note Hook"
+      - name: robot-gitee-openeuler-assign-issue
+        endpoint: http://service-assign-issue.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
