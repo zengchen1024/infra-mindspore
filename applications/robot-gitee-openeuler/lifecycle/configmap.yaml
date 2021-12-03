@@ -4,5 +4,6 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
     - repos:
       - zengchen1024/openeuler-test
