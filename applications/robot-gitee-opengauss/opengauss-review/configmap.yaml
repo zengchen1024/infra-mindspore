@@ -23,7 +23,7 @@ data:
       - opengauss-cla/yes
 
     - repos:
-      - tc
+      - opengauss/tc
       lgtm_counts_required: 2
       check_permission_based_on_sig_owners: true
       sigs_dir: sigs

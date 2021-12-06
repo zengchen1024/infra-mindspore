@@ -4,3 +4,16 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
+    - repos:
+      - openeuler
+      - src-openeuler
+      - openeuler-competition
+      - openeuler-compliance
+      - openeuler-risc-v
+      - openeuler-practice-courses
+      - openeuler-customization
+      - zengchen1024/openeuler-test
+      clear_labels:
+      - ci_successful
+      - kind/wait_for_update

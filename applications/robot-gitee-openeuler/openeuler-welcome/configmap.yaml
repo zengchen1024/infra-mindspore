@@ -4,3 +4,16 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
+    - repos:
+      - openeuler
+      - src-openeuler
+      - openeuler-competition
+      - openeuler-compliance
+      - openeuler-risc-v
+      - openeuler-practice-courses
+      - openeuler-customization
+      - zengchen1024/openeuler-test
+      community_name: openEuler
+      command_link: https://gitee.com/openeuler/community/blob/master/en/sig-infrastructure/command.md
+      sig_file_path: openeuler/community/master:sig/sigs.yaml
