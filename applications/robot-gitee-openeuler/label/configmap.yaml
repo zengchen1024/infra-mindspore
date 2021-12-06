@@ -13,7 +13,7 @@ data:
       - openeuler-risc-v
       - openeuler-practice-courses
       - openeuler-customization
-      - zengchen1024/openeuler-test
+      - ci-bot
       clear_labels:
       - ci_successful
       - kind/wait_for_update
