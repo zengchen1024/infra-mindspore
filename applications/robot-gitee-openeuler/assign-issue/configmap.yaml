@@ -13,4 +13,4 @@ data:
       - openeuler-risc-v
       - openeuler-practice-courses
       - openeuler-customization
-      - zengchen1024/openeuler-test
+      - ci-bot
