@@ -67,6 +67,8 @@ spec:
           env:
             - name: PRIVACY_LINK
               value: https://mindspore.cn/privacy/en/
+            - name: CONDUCT_LINK
+              value: https://gitee.com/mindspore/community/blob/master/code-of-conduct_en.md
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
