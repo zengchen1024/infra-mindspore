@@ -23,8 +23,61 @@ data:
         openlookeng/community:
         - sweepstakes
 
-        zengchen1024/openeuler-test:
-        - openeuler-lifecycle
+        ci-bot:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        
+        openeuler:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        
+        src-openeuler:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        
+        openeuler-competition:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        
+        openeuler-compliance:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        
+        openeuler-risc-v:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        
+        openeuler-practice-courses:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        
+        openeuler-customization:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
 
       plugins:
       - name: lifecycle
@@ -54,7 +107,7 @@ data:
         endpoint: http://service-sweepstakes.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
         events:
         - "Note Hook"
-      - name: openeuler-lifecycle
+      - name: robot-gitee-openeuler-lifecycle
         endpoint: http://service-lifecycle.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
         events:
         - "Note Hook"
