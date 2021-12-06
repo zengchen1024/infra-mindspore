@@ -72,3 +72,8 @@ data:
         events:
         - "Issue Hook"
         - "Merge Request Hook"
+      - name: robot-gitee-openeuler-openeuler-review
+        endpoint: http://service-openeuler-review.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"

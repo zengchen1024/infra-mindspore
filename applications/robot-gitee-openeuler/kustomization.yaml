@@ -6,6 +6,7 @@ resources:
 - assign-issue
 - label
 - openeuler-welcome
+- openeuler-review
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
