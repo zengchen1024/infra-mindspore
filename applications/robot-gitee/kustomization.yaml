@@ -3,12 +3,9 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - access
-- checkpr
 - repo-file-cache
 - sync-file-server
 - sync-repo-file
-- lifecycle
-- welcome
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
