@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config:
+      watching_files:
+        org: openeuler
+        repo: community
+        branch: master
+        repo_file_path: repository/src-openeuler.yaml
+        sig_file_path: sig/sigs.yaml
+        sig_dir: sig
+      concurrent_size: 2000
+      interval: 3
+      enable_creating_obs_meta_project: true
+      obs_meta_project:
+        obs_repo:
+          org: src-openeuler
+          repo: obs_meta
+          branch: master
+        project_dir: master/openEuler:Factory
+        project_file_name: _service
+        project_template_path: /app/conf/robot-gitee/app_config/project
+
+  project: |
+    <services>
+        <service name="tar_scm_kernel_repo">
+          <param name="scm">repo</param>
+          <param name="url">next/openEuler/#projectname#</param>
+        </service>
+    </services>

@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../repo-watcher
+- configmap.yaml
+commonLabels:
+  component: repo-watcher-src-openeuler
+patches:
+- path: deployment.json
+  target:
+    group: apps
+    kind: Deployment
+    name: deployment
+    version: v1
+patchesStrategicMerge:
+- secrets.yaml
+nameSuffix: -repo-watcher-src-openeuler
