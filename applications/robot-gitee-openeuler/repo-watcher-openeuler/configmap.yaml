@@ -6,19 +6,18 @@ data:
   config.yaml: |
     config:
       watching_files:
-        org: ci-bot
+        org: openeuler
         repo: community
         branch: master
-        repo_file_path: repository/georgecaotest.yaml
+        repo_file_path: repository/openeuler.yaml
         sig_file_path: sig/sigs.yaml
         sig_dir: sig
-      concurrent_size: 10
+      concurrent_size: 50
       interval: 3
-      enable_creating_obs_meta_project: true
       obs_meta_project:
         obs_repo:
-          org: ci-bot
-          repo: whtest90
+          org: src-openeuler
+          repo: obs_meta
           branch: master
         project_dir: master/openEuler:Factory
         project_file_name: _service
