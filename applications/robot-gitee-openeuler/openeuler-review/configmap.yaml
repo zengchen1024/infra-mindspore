@@ -29,7 +29,7 @@ data:
     - repos:
       - openeuler/community
       - ci-bot/community
-      lgtm_counts_required: 3
+      lgtm_counts_required: 2
       check_permission_based_on_sig_owners: true
       sigs_dir: sig
       labels_for_merge:
