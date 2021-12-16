@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - sweepstakes
+- checkpr
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

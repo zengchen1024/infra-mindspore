@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../bot-base
+- configmap.yaml
+commonLabels:
+  component: checkpr
+patches:
+- path: deployment.json
+  target:
+    group: apps
+    kind: Deployment
+    name: deployment
+    version: v1
+patchesStrategicMerge:
+- secrets.yaml
+nameSuffix: -checkpr
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-checkpr
+  newTag: master-7f3eed3
