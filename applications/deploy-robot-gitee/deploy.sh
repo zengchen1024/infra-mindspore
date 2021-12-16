@@ -201,7 +201,7 @@ init() {
 
     gen_deploy_yaml $bot $image "$events" $namespace
 
-    submit_pr $bot $git_user $git_user_password "add deployment for bot $bot"
+    submit_pr $bot $git_user $git_user_password "add deployment for bot ${namespace}/${bot}"
 }
 
 update_bot_image() {
@@ -223,7 +223,7 @@ update_bot_image() {
 
     update_image $bot $image $namespace
 
-    submit_pr $bot $git_user $git_user_password "update image for bot $bot"
+    submit_pr $bot $git_user $git_user_password "update image for bot ${namespace}/${bot}"
 }
 
 cmd_help(){

@@ -12,6 +12,4 @@ patches:
     kind: Deployment
     name: deployment
     version: v1
-patchesStrategicMerge:
-- secrets.yaml
 nameSuffix: -{{COMPONENT}}
