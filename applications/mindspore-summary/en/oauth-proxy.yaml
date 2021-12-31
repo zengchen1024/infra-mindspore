@@ -23,7 +23,7 @@ spec:
             - --proxy-prefix=/en/2021summary/oauth2
             - --skip-auth-regex=^/en/2021summary/agreement_ch.html
             - --skip-auth-regex=^/en/2021summary/agreement_en.html
-            - --upstream=http://mindspore-summary.mindspore-summary-zh.svc.cluster.local
+            - --upstream=http://mindspore-summary.mindspore-summary-en.svc.cluster.local
             - --http-address=0.0.0.0:4180
             - --cookie-expire=6h0m0s
             - --set-xauthrequest=true
