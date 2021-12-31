@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mindspore-summary-pod
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/summary/openeuler-summary:e80e6ac14463077d2187693ec0d3728496df9df7
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/summary/mindspore-summary-zh:e80e6ac14463077d2187693ec0d3728496df9df7
           imagePullPolicy: "Always"
           resources:
             requests:
