@@ -18,7 +18,6 @@ spec:
       containers:
         - args:
             - --provider=gitee
-            - --email-domain=*
             - --gitee-org=opensourceway
             - --proxy-prefix=/zh/2021summary/oauth2
             - --skip-auth-regex=^/zh/2021summary/agreement_ch.html
