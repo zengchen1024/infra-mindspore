@@ -1,0 +1,14 @@
+resources:
+  - ingress.yaml
+  - namespace.yaml
+  - service.yaml
+  - secret.yaml
+  - summary-deployment.yaml
+  - summary-service.yaml
+  - oauth-proxy.yaml
+commonLabels:
+  app: mindspore-summary-zh
+commonAnnotations:
+  owner: TommyLike
+  email: "tommylikehu@gmail.com"
+namespace: mindspore-summary-zh

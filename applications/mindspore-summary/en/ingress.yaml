@@ -1,0 +1,20 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: website-summary-ingress
+spec:
+  tls:
+    - hosts:
+        - mindspore.cn
+      secretName: website-summary-tls-secret
+  rules:
+    - host: mindspore.cn
+      http:
+        paths:
+          - backend:
+              serviceName: oauth2-proxy
+              servicePort: 4180
+            path: /en/2021summary/
