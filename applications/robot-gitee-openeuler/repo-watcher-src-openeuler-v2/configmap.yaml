@@ -9,7 +9,7 @@ data:
         org: openeuler
         repo: community
         branch: master
-        repo_file_path: repository/src-openeuler.yaml
+        repo_org: src-openeuler
         sig_file_path: sig/sigs.yaml
         sig_dir: sig
       concurrent_size: 2000
