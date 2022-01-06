@@ -6,6 +6,7 @@ resources:
 - sweepstakes
 - checkpr
 - lgtm
+- associate
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
