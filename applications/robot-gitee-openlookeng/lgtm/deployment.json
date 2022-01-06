@@ -8,5 +8,10 @@
     "op": "replace",
     "path": "/spec/template/spec/volumes/1/configMap/name",
     "value": "configmap-lgtm"
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/args/3",
+    "value": "--cache-server=http://service-repo-file-cache.robot-gitee.svc.cluster.local:80/v1/file/"
   }
 ]
