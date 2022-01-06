@@ -145,3 +145,7 @@ data:
         - "Issue Hook"
         - "Merge Request Hook"
         - "Note Hook"
+      - name: robot-gitee-openlookeng-assign
+        endpoint: http://service-assign.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
