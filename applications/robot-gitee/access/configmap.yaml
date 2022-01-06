@@ -134,3 +134,8 @@ data:
         endpoint: http://service-checkpr.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
         events:
         - "Merge Request Hook"
+      - name: robot-gitee-openlookeng-lgtm
+        endpoint: http://service-lgtm.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
