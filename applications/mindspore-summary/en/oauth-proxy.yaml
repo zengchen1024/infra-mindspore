@@ -20,6 +20,7 @@ spec:
             - --provider=gitee
             - --email-domain=*
             - --proxy-prefix=/en/2021summary/oauth2
+            - --skip-validate-email=true
             - --skip-auth-regex=^/en/2021summary/agreement_ch.html
             - --skip-auth-regex=^/en/2021summary/agreement_en.html
             - --upstream=http://mindspore-summary.mindspore-summary-en.svc.cluster.local
@@ -44,7 +45,7 @@ spec:
                 secretKeyRef:
                   key: cookie_secret
                   name: oauth-secrets
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:662b2634654d5fb1aa65a59da62728c9184a4a9c
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:1091a11b4b3a3ce5895296ed6613b5bd2e14867a
           imagePullPolicy: Always
           name: oauth2-proxy
           ports:
