@@ -6,4 +6,4 @@ resources:
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-repo-watcher
-  newTag: master-9c0e307
+  newTag: repo_manager_v2-22c99e0
