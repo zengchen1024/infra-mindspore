@@ -4,7 +4,7 @@ resources:
 - ../repo-watcher
 - configmap.yaml
 commonLabels:
-  component: repo-watcher-openeuler-v2
+  component: repo-watcher-src-openeuler
 patches:
 - path: deployment.json
   target:
@@ -14,4 +14,4 @@ patches:
     version: v1
 patchesStrategicMerge:
 - secrets.yaml
-nameSuffix: -repo-watcher-openeuler-v2
+nameSuffix: -repo-watcher-src-openeuler
