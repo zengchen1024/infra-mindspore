@@ -4,3 +4,6 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
+    - repos:
+      - openlookeng/hetu-core
