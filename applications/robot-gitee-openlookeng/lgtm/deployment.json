@@ -12,6 +12,6 @@
   {
     "op": "add",
     "path": "/spec/template/spec/containers/0/args/3",
-    "value": "--cache-server=http://service-repo-file-cache.robot-gitee.svc.cluster.local:80/v1/file/"
+    "value": "--cache-server=service-repo-owners-cache.robot-gitee.svc.cluster.local:8888"
   }
 ]
