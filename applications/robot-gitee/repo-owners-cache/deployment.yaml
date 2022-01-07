@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: repo-owners-cache
+        args:
+        - --endpoint=service-sync-file-server.robot-gitee.svc.cluster.local:8888
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8888
+            name: http
+            protocol: TCP
