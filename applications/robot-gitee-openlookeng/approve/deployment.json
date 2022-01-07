@@ -13,5 +13,10 @@
     "op": "add",
     "path": "/spec/template/spec/containers/0/args/3",
     "value": "--cache-server=service-repo-owners-cache.robot-gitee.svc.cluster.local:8888"
-  }
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/args/4",
+    "value": "--command-link=https://prow.osinfra.cn/command-help?repo=openlookeng%2Fhetu-core"
+  }  
 ]
