@@ -9,4 +9,4 @@ nameSuffix: -repo-owners-cache
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/repo-owners-cache
-  newTag: master-b4904e9
+  newTag: master-cba5123
