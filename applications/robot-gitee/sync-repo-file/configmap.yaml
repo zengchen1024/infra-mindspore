@@ -18,5 +18,6 @@ data:
       - org: openeuler
         repos:
         - community
+      - org: openlookeng
       file_names:
       - OWNERS
