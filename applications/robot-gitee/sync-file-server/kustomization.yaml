@@ -10,4 +10,4 @@ nameSuffix: -sync-file-server
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/sync-file-server
-  newTag: master-b4904e9
+  newTag: master-524c9f3
