@@ -4,3 +4,11 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
+    - repos:
+      - openlookeng
+      cla_label_yes: openlookeng-cla/yes
+      cla_label_no: openlookeng-cla/no
+      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/openlookeng
+      sign_url: https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVubG9va2VuZw==
+      faq_url: https://github.com/opensourceways/test-infra/blob/sync-5-22/prow/gitee-plugins/cla/faq/check-by-author/faq.md
