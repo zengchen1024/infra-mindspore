@@ -169,3 +169,9 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: robot-gitee-opengauss-associate
+        endpoint: http://service-associate.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"
