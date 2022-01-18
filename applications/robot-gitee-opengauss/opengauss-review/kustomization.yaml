@@ -12,8 +12,6 @@ patches:
     kind: Deployment
     name: deployment
     version: v1
-patchesStrategicMerge:
-- secrets.yaml
 nameSuffix: -opengauss-review
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee

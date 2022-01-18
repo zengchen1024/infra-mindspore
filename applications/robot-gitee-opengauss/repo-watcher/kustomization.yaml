@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
 - configmap.yaml
 - deployment.yaml
-- secrets.yaml
 commonLabels:
   component: repo-watcher
 nameSuffix: -repo-watcher

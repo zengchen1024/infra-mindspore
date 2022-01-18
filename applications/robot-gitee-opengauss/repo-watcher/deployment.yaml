@@ -23,7 +23,7 @@ spec:
       volumes:
       - name: secret-volume
         secret:
-          secretName: secret-repo-watcher
+          secretName: secret-robot-token
       - name: app-config
         configMap:
           name: configmap-repo-watcher
