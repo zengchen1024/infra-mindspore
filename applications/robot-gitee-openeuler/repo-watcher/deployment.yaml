@@ -23,7 +23,7 @@ spec:
       volumes:
       - name: secret-volume
         secret:
-          secretName: secret
+          secretName: secret-robot-token
       - name: app-config
         configMap:
           name: config
