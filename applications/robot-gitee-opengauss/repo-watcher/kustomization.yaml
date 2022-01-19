@@ -9,4 +9,4 @@ nameSuffix: -repo-watcher
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-repo-watcher
-  newTag: opengauss-9602f30
+  newTag: opengauss-b0f1b84
