@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - opengauss
+      cla_label_yes: opengauss-cla/yes
+      cla_label_no: opengauss-cla/no
+      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/opengauss
+      sign_url: https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=
+      faq_url: https://gitee.com/opengauss/community/blob/master/cla/faq/check-by-author/faq.md

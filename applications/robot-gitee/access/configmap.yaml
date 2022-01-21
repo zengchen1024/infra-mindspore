@@ -19,6 +19,8 @@ data:
         - welcome
         - assign-issue
         - opengauss-review
+        - robot-gitee-opengauss-associate
+        - robot-gitee-opengauss-cla
 
         openlookeng/community:
         - sweepstakes
@@ -173,5 +175,10 @@ data:
         endpoint: http://service-associate.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
         events:
         - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-opengauss-cla
+        endpoint: http://service-cla.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
         - "Merge Request Hook"
         - "Note Hook"

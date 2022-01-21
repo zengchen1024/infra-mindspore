@@ -10,6 +10,7 @@ resources:
 - opengauss-review
 - repo-watcher
 - associate
+- cla
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
