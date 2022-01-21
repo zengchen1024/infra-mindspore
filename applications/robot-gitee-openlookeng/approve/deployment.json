@@ -17,6 +17,6 @@
   {
     "op": "add",
     "path": "/spec/template/spec/containers/0/args/4",
-    "value": "--command-link=https://prow.osinfra.cn/command-help?repo=openlookeng%2Fhetu-core"
+    "value": "--command-link=https://gitee.com/openlookeng/community/blob/master/command.md"
   }  
 ]
