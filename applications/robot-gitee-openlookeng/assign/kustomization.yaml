@@ -16,4 +16,4 @@ nameSuffix: -assign
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-assign
-  newTag: master-9d06f47
+  newTag: master-8955444
