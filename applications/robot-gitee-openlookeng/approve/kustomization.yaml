@@ -16,4 +16,4 @@ nameSuffix: -approve
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-approve
-  newTag: master-fba8eb7
+  newTag: master-7889cdf
