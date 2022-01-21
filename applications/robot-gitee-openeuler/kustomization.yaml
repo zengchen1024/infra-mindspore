@@ -10,6 +10,7 @@ resources:
 - openeuler-review
 - repo-watcher-openeuler
 - repo-watcher-src-openeuler
+- cla
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

@@ -38,6 +38,7 @@ data:
         - robot-gitee-openeuler-assign-issue
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
         
         src-openeuler:
         - robot-gitee-openeuler-label
@@ -45,6 +46,7 @@ data:
         - robot-gitee-openeuler-assign-issue
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
         
         openeuler-competition:
         - robot-gitee-openeuler-label
@@ -52,6 +54,7 @@ data:
         - robot-gitee-openeuler-assign-issue
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
         
         openeuler-compliance:
         - robot-gitee-openeuler-label
@@ -59,6 +62,7 @@ data:
         - robot-gitee-openeuler-assign-issue
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
         
         openeuler-risc-v:
         - robot-gitee-openeuler-label
@@ -66,6 +70,7 @@ data:
         - robot-gitee-openeuler-assign-issue
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
         
         openeuler-practice-courses:
         - robot-gitee-openeuler-label
@@ -73,6 +78,7 @@ data:
         - robot-gitee-openeuler-assign-issue
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
         
         openeuler-customization:
         - robot-gitee-openeuler-label
@@ -80,6 +86,7 @@ data:
         - robot-gitee-openeuler-assign-issue
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
 
         openlookeng:
         - robot-gitee-openlookeng-lgtm
@@ -179,6 +186,11 @@ data:
         - "Note Hook"
       - name: robot-gitee-opengauss-cla
         endpoint: http://service-cla.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openeuler-cla
+        endpoint: http://service-cla.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
         events:
         - "Merge Request Hook"
         - "Note Hook"
