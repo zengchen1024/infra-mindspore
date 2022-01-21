@@ -16,4 +16,4 @@ nameSuffix: -welcome
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-welcome
-  newTag: master-43cb900
+  newTag: master-a0451d5
