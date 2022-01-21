@@ -95,6 +95,9 @@ data:
         - robot-gitee-openlookeng-checkpr
         - robot-gitee-openlookeng-cla
 
+        openlookeng-competition:
+        - robot-gitee-openlookeng-cla
+
         openlookeng/hetu-core:
         - robot-gitee-openlookeng-associate
 
