@@ -16,4 +16,4 @@ nameSuffix: -sweepstakes
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-sweepstakes
-  newTag: master-ae5b075
+  newTag: master-663a5a9
