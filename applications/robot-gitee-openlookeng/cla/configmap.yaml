@@ -11,4 +11,4 @@ data:
       cla_label_no: openlookeng-cla/no
       check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/openlookeng
       sign_url: https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVubG9va2VuZw==
-      faq_url: https://github.com/opensourceways/test-infra/blob/sync-5-22/prow/gitee-plugins/cla/faq/check-by-author/faq.md
+      faq_url: https://gitee.com/openlookeng/community/blob/master/cla/faq/check-by-author/faq.md
