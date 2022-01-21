@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: robot-openeuler-ci-tools
+  namespace: ci-tools-service
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdates
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavaliable: 0
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: robot-openeuler-ci-tools
+      component: web-server
+  template:
+    metadata:
+      labels:
+        app: robot-openeuler-ci-tools
+        component: web-server
+    spec:
+      containers:
+        - name: robot-openeuler-ci-tools
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/robot-openeuler-ci-tools:202201211552
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /health
+              port: 8081
+              scheme: HTTP
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /health/ready
+              port: 8081
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 3
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            requests:
+              cpu: 2000m
+              memory: 2000Mi
+          env:
+            - name: GITEE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: gitee_token
+                  name: robot-openeuler-ci-tools-secrets
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          command:
+            - /bin/sh
+            - -c
+            - |
+              echo "{\"access_token\": \"$NEW_GITEE_TOKEN\"}" > ~/.gitee_personal_token.json
+              exec uwsgi --ini /work/ci_tools/deploy/production/uwsgi.ini
+        dnsConfig:
+          options:
+          - name:
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
