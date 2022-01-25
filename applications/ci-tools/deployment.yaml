@@ -4,12 +4,12 @@ metadata:
   name: robot-openeuler-ci-tools
   namespace: ci-tools
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 1
-      maxUnavaliable: 0
+      maxUnavailable: 0
   progressDeadlineSeconds: 600
   revisionHistoryLimit: 10
   selector:
@@ -23,8 +23,8 @@ spec:
         component: web-server
     spec:
       containers:
-        - name: robot-openeuler-ci-tools
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/robot-openeuler-ci-tools:202201211552
+        - name:  -openeuler-ci-tools
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/robot-openeuler-ci-tools:v0.0.1
           imagePullPolicy: IfNotPresent
           resources:
             requests:
