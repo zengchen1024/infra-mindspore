@@ -2,11 +2,10 @@ resources:
 - deployment.yaml
 - namespace.yaml
 - service.yaml
-- secrets.yaml
-namespace: ci-tools
+- secret.yaml
+namespace: ci-tools-service
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/robot-openeuler-ci-tools
-  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/robot-openeuler-ci-tools
-  newTag: 202201211552
+  newTag: v0.0.1
