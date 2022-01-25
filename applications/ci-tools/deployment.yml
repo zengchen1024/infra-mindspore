@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: robot-openeuler-ci-tools
+  namespace: ci-tools
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavaliable: 0
+  progressDeadlineSeconds: 600
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: citoolwebsite
+      component: web-server
+  template:
+    metadata:
+      labels:
+        app: citoolwebsite
+        component: web-server
+    spec:
+      containers:
+        - name: robot-openeuler-ci-tools
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/robot-openeuler-ci-tools:202201211552
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 2000m
+              memory: 2000Mi
+          env:
+            - name: GITEE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: gitee_token
+                  name: robot-openeuler-ci-tools-secrets
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+          command:
+            - /bin/sh
+            - -c
+            - |
+              echo "{\"access_token\": \"$GITEE_TOKEN\"}" > ~/.gitee_personal_token.json
+              exec uwsgi --ini /work/ci_tools/deploy/production/uwsgi.ini
