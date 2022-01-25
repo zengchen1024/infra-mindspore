@@ -23,7 +23,7 @@ spec:
         component: web-server
     spec:
       containers:
-        - name:  -openeuler-ci-tools
+        - name: robot-openeuler-ci-tools
           image: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/robot-openeuler-ci-tools:v0.0.1
           imagePullPolicy: IfNotPresent
           resources:
