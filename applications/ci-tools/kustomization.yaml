@@ -3,7 +3,7 @@ resources:
 - namespace.yaml
 - service.yaml
 - secret.yaml
-namespace: ci-tools
+namespace: ci-tools-service
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
