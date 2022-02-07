@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - secrets.yaml
+- assign
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

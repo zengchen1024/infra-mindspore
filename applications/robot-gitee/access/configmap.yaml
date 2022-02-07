@@ -197,3 +197,7 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: robot-gitee-ascend-assign
+        endpoint: http://service-assign.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
