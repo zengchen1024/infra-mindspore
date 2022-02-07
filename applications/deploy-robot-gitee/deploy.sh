@@ -108,7 +108,11 @@ gen_deploy_yaml(){
     local namespace=$4
 
     local path=$(pwd)
-
+    
+    if [ ! -d applications/${namespace} ]; then
+         mkdir applications/${namespace}
+    fi
+    
     cd applications/${namespace}
 
     bot=$(underscore_to_hyphen $bot)
