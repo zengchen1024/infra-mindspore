@@ -5,6 +5,7 @@ resources:
 - secrets.yaml
 - assign
 - approve
+- cla
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
