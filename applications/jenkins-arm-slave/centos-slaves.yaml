@@ -31,6 +31,8 @@ spec:
     metadata:
       labels:
         app: arm-centos-slaves
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: runtime/default
     spec:
       initContainers:
         - name: slave-init
