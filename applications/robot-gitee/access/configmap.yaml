@@ -39,6 +39,7 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
+        - ci-tools
         
         src-openeuler:
         - robot-gitee-openeuler-label
@@ -47,6 +48,7 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
+        - ci-tools
         
         openeuler-competition:
         - robot-gitee-openeuler-label
@@ -223,6 +225,11 @@ data:
         - "Note Hook"
       - name: robot-gitee-ascend-tide
         endpoint: http://service-tide.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: ci-tools
+        endpoint: http://citoolservice.ci-tools-service.svc.cluster.local/review/
         events:
         - "Merge Request Hook"
         - "Note Hook"
