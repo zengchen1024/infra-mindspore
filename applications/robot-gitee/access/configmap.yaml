@@ -39,7 +39,6 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
-        - ci-tools
         
         src-openeuler:
         - robot-gitee-openeuler-label
@@ -48,7 +47,6 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
-        - ci-tools
         
         openeuler-competition:
         - robot-gitee-openeuler-label
@@ -102,6 +100,9 @@ data:
 
         openlookeng/hetu-core:
         - robot-gitee-openlookeng-associate
+
+        openeuler/community:
+        - ci-tools
 
       plugins:
       - name: lifecycle
