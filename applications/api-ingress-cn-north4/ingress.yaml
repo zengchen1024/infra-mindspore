@@ -14,7 +14,7 @@ spec:
   tls:
     - hosts:
         - api.mindspore.cn
-      secretName: api-tls
+      secretName: api-mindspore-tls
   rules:
     - host: api.mindspore.cn
       http:
