@@ -47,4 +47,4 @@ spec:
               git config --global user.name liuqi
               git config --global user.email 469227928@qq.com
               echo "{\"access_token\": \"$GITEE_TOKEN\"}" > ~/.gitee_personal_token.json
-              exec uwsgi --ini /work/ci_tools/deploy/production/uwsgi.ini
+              exec uwsgi --ini /work/robot-openeuler-ci-tools/deploy/production/uwsgi.ini
