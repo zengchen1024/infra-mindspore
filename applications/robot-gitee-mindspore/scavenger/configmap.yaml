@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config:
+      repos:
+      - mindspore/graphengine
+      merge_remind_intervals: 30
+      maximum_open_time: 180
+      concurrent_size: 100
