@@ -15,6 +15,6 @@ metadata:
   name: poetry-service
 subsets:
   - addresses:
-      - ip: 121.37.54.242
+      - ip: 123.60.211.2
     ports:
       - port: 38999
