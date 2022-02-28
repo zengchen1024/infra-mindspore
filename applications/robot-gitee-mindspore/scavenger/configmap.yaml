@@ -6,7 +6,7 @@ data:
   config.yaml: |
     config:
       repos:
-      - mindspore/graphengine
+      - mindspore
       merge_remind_intervals: 30
-      maximum_open_time: 180
-      concurrent_size: 100
+      maximum_open_time: 90
+      concurrent_size: 200
