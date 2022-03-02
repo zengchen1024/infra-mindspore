@@ -49,6 +49,6 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: websiteservice
-              servicePort: 80
+              serviceName: oauth2-proxy-admin
+              servicePort: 4180
             path: /
