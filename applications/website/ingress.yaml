@@ -19,8 +19,8 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: websiteservice
-              servicePort: 80
+              serviceName: oauth2-proxy-www-admin
+              servicePort: 4180
             path: /
           - backend:
               serviceName: mindspore-bot-internal
