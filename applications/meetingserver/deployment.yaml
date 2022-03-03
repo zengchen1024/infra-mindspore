@@ -136,6 +136,23 @@ spec:
                 secretKeyRef:
                   key: query_token
                   name: meeting-server-secrets
+            - name: RASP_BACKEND_URL
+              value: http://server.xarmor.heds.huawei.com/raspforx
+            - name: RASP_APPID
+              valueFrom:
+                secretKeyRef:
+                  key: rasp_appid
+                  name: meeting-server-secrets
+            - name: RASP_APP_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: rasp_apptoken
+                  name: meeting-server-secrets
+            - name: RASP_TENANT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: rasp_tenantid
+                  name: meeting-server-secrets
           command:
             - /bin/sh
             - -c
