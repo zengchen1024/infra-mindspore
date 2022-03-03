@@ -19,5 +19,6 @@ data:
         repos:
         - community
       - org: openlookeng
+      - org: ascend
       file_names:
       - OWNERS
