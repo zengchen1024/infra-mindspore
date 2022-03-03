@@ -15,4 +15,4 @@ kind: Kustomization
 namespace: meetingserver
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server
-  newTag: fbc442266b91f7c24ff4715083874de1b7871ead
+  newTag: 44c342addc9718999e4238ef6b5e11e008c50d17
