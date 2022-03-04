@@ -5,33 +5,33 @@ metadata:
   name: arm-ubuntu-slaves-service
   namespace: jenkins
   labels:
-    app: arm-ubuntu-slaves-new
+    app: arm-ubuntu-slaves
 spec:
   ports:
     - port: 80
       name: port-placeholder
   clusterIP: None
   selector:
-    app: arm-ubuntu-slaves-new
+    app: arm-ubuntu-slaves
 
 ---
 kind: StatefulSet
 apiVersion: apps/v1
 metadata:
-  name: arm-ubuntu-slaves-new
+  name: arm-ubuntu-slaves
   namespace: jenkins
   labels:
-    app: arm-ubuntu-slaves-new
+    app: arm-ubuntu-slaves
 spec:
   serviceName: arm-ubuntu-slaves-service
   replicas: 1
   selector:
     matchLabels:
-      app: arm-ubuntu-slaves-new
+      app: arm-ubuntu-slaves
   template:
     metadata:
       labels:
-        app: arm-ubuntu-slaves-new
+        app: arm-ubuntu-slaves
       annotations:
         seccomp.security.alpha.kubernetes.io/pod: runtime/default
     spec:
@@ -66,7 +66,7 @@ spec:
             - name: EXECUTOR_NUMBERS
               value: "1"
             - name: NODE_LABELS
-              value: arm-new-build-ubuntu
+              value: arm arm-build-ubuntu
           args: ["$(JENKINS_URL)", "$(JENKINS_USER_NAME)", "$(JENKINS_USER_PASSWORD)", "$(JENKINS_NODE_NAME)", "$(EXECUTOR_NUMBERS)", "$(JENKINS_AGENT_WORKDIR)", "$(NODE_LABELS)", "$(JENKINS_SHARE_FOLDER)"]
       containers:
         - name: jenkins-slave

@@ -5,33 +5,33 @@ metadata:
   name: x86-generic-slaves-service
   namespace: jenkins
   labels:
-    app: x86-generic-slaves-new
+    app: x86-generic-slaves
 spec:
   ports:
     - port: 80
       name: port-placeholder
   clusterIP: None
   selector:
-    app: x86-generic-slaves-new
+    app: x86-generic-slaves
 
 ---
 kind: StatefulSet
 apiVersion: apps/v1
 metadata:
-  name: x86-generic-slaves-new
+  name: x86-generic-slaves
   namespace: jenkins
   labels:
-    app: x86-generic-slave-new
+    app: x86-generic-slave
 spec:
   serviceName: x86-generic-slaves-service
   replicas: 8
   selector:
     matchLabels:
-      app: x86-generic-slaves-new
+      app: x86-generic-slaves
   template:
     metadata:
       labels:
-        app: x86-generic-slaves-new
+        app: x86-generic-slaves
     spec:
       imagePullSecrets:
         - name: huawei-swr-image-pull-secret
@@ -64,7 +64,7 @@ spec:
             - name: EXECUTOR_NUMBERS
               value: "25"
             - name: NODE_LABELS
-              value: x86-new-generic-slaves
+              value: x86 x86-generic-slaves
           args: ["$(JENKINS_URL)", "$(JENKINS_USER_NAME)", "$(JENKINS_USER_PASSWORD)", "$(JENKINS_NODE_NAME)", "$(EXECUTOR_NUMBERS)", "$(JENKINS_AGENT_WORKDIR)", "$(NODE_LABELS)", "$(JENKINS_SHARE_FOLDER)"]
       containers:
         - name: jenkins-slave

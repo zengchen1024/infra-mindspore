@@ -5,33 +5,33 @@ metadata:
   name: arm-euleros-slaves-service
   namespace: jenkins
   labels:
-    app: arm-euleros-slaves-new
+    app: arm-euleros-slaves
 spec:
   ports:
     - port: 80
       name: port-placeholder
   clusterIP: None
   selector:
-    app: arm-euleros-slaves-new
+    app: arm-euleros-slaves
 
 ---
 kind: StatefulSet
 apiVersion: apps/v1
 metadata:
-  name: arm-euleros-slaves-new
+  name: arm-euleros-slaves
   namespace: jenkins
   labels:
-    app: arm-euleros-slaves-new
+    app: arm-euleros-slaves
 spec:
   serviceName: arm-euleros-slaves-service
   replicas: 1
   selector:
     matchLabels:
-      app: arm-euleros-slaves-new
+      app: arm-euleros-slaves
   template:
     metadata:
       labels:
-        app: arm-euleros-slaves-new
+        app: arm-euleros-slaves
       annotations:
         seccomp.security.alpha.kubernetes.io/pod: runtime/default
     spec:
@@ -66,7 +66,7 @@ spec:
             - name: EXECUTOR_NUMBERS
               value: "1"
             - name: NODE_LABELS
-              value: arm-new-build-euleros
+              value: arm arm-build-euleros
           args: ["$(JENKINS_URL)", "$(JENKINS_USER_NAME)", "$(JENKINS_USER_PASSWORD)", "$(JENKINS_NODE_NAME)", "$(EXECUTOR_NUMBERS)", "$(JENKINS_AGENT_WORKDIR)", "$(NODE_LABELS)", "$(JENKINS_SHARE_FOLDER)"]
       containers:
         - name: jenkins-slave

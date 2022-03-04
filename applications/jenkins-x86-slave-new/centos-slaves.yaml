@@ -5,32 +5,32 @@ metadata:
   name: x86-centos-slaves-service
   namespace: jenkins
   labels:
-    app: x86-centos-slaves-new
+    app: x86-centos-slaves
 spec:
   ports:
     - port: 80
       name: port-placeholder
   clusterIP: None
   selector:
-    app: x86-centos-slaves-new
+    app: x86-centos-slaves
 ---
 kind: StatefulSet
 apiVersion: apps/v1
 metadata:
-  name: x86-centos-slaves-new
+  name: x86-centos-slaves
   namespace: jenkins
   labels:
-    app: x86-centos-slaves-new
+    app: x86-centos-slaves
 spec:
   serviceName: x86-centos-slaves-service
   replicas: 52
   selector:
     matchLabels:
-      app: x86-centos-slaves-new
+      app: x86-centos-slaves
   template:
     metadata:
       labels:
-        app: x86-centos-slaves-new
+        app: x86-centos-slaves
     spec:
       imagePullSecrets:
         - name: huawei-swr-image-pull-secret
@@ -63,7 +63,7 @@ spec:
             - name: EXECUTOR_NUMBERS
               value: "1"
             - name: NODE_LABELS
-              value: x86-new-build-centos
+              value: x86 x86-build-centos
           args: ["$(JENKINS_URL)", "$(JENKINS_USER_NAME)", "$(JENKINS_USER_PASSWORD)", "$(JENKINS_NODE_NAME)", "$(EXECUTOR_NUMBERS)", "$(JENKINS_AGENT_WORKDIR)", "$(NODE_LABELS)", "$(JENKINS_SHARE_FOLDER)"]
       containers:
         - name: jenkins-slave
