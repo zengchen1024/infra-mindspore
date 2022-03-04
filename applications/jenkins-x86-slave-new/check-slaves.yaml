@@ -63,7 +63,7 @@ spec:
             - name: EXECUTOR_NUMBERS
               value: "2"
             - name: NODE_LABELS
-              value: x86-check-ubuntu
+              value: x86 x86-check-ubuntu
           args: ["$(JENKINS_URL)", "$(JENKINS_USER_NAME)", "$(JENKINS_USER_PASSWORD)", "$(JENKINS_NODE_NAME)", "$(EXECUTOR_NUMBERS)", "$(JENKINS_AGENT_WORKDIR)", "$(NODE_LABELS)", "$(JENKINS_SHARE_FOLDER)"]
       containers:
         - name: jenkins-slave
