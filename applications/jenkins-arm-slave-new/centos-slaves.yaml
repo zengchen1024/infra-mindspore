@@ -5,32 +5,32 @@ metadata:
   name: arm-centos-slaves-service
   namespace: jenkins
   labels:
-    app: arm-centos-slaves-new
+    app: arm-centos-slaves
 spec:
   ports:
     - port: 80
       name: port-placeholder
   clusterIP: None
   selector:
-    app: arm-centos-slaves-new
+    app: arm-centos-slaves
 ---
 kind: StatefulSet
 apiVersion: apps/v1
 metadata:
-  name: arm-centos-slaves-new
+  name: arm-centos-slaves
   namespace: jenkins
   labels:
-    app: arm-centos-slaves-new
+    app: arm-centos-slaves
 spec:
   serviceName: arm-centos-slaves-service
   replicas: 20
   selector:
     matchLabels:
-      app: arm-centos-slaves-new
+      app: arm-centos-slaves
   template:
     metadata:
       labels:
-        app: arm-centos-slaves-new
+        app: arm-centos-slaves
       annotations:
         seccomp.security.alpha.kubernetes.io/pod: runtime/default
     spec:
@@ -65,7 +65,7 @@ spec:
             - name: EXECUTOR_NUMBERS
               value: "1"
             - name: NODE_LABELS
-              value: arm-new-build-centos
+              value: arm-build-centos
           args: ["$(JENKINS_URL)", "$(JENKINS_USER_NAME)", "$(JENKINS_USER_PASSWORD)", "$(JENKINS_NODE_NAME)", "$(EXECUTOR_NUMBERS)", "$(JENKINS_AGENT_WORKDIR)", "$(NODE_LABELS)", "$(JENKINS_SHARE_FOLDER)"]
       containers:
         - name: jenkins-slave
