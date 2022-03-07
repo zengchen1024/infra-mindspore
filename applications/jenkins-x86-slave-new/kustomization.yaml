@@ -4,6 +4,7 @@ resources:
   - ubuntu-slaves.yaml
   - generic-slaves.yaml
   - centos-slaves.yaml
+  - euleros-slaves.yaml
   - namespace.yaml
 commonAnnotations:
   owner: gaoxiang
