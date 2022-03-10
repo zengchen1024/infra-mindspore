@@ -22,7 +22,7 @@ spec:
           name: paste
           volumeMounts:
             - mountPath: /var/www/html/data
-            name: paste-data
+              name: paste-data
       volumes:
         - name: paste-data
           persistentVolumeClaim:
