@@ -6,6 +6,8 @@ data:
   config.yaml: |
     config_items:
     - repos:
+      - ascend
+    - repos:
       - ascend/canndev
       - ascend/metadef
       - ascend/parser
