@@ -1,0 +1,12 @@
+resources:
+- deployment.yaml
+- namespace.yaml
+- service.yaml
+- secret.yaml
+- ingress.yaml
+namespace: paste
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/paste
+  newTag: v0.0.1

@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+  name: paste-ingress
+  namespace: paste
+spec:
+  tls:
+    - hosts:
+        - paste.osinfra.cn
+      secretName: paste-tls
+  rules:
+    - host: paste.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: paste-service
+              servicePort: 80
+            path: /

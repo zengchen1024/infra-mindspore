@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paste-deployment
+  namespace: paste
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paste
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: paste
+    spec:
+      containers:
+        - image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/paste:v0.0.1
+          name: paste
+          volumeMounts:
+            - mountPath: /var/www/html/data
+            name: paste-data
+      volumes:
+        - name: paste-data
+          persistentVolumeClaim:
+            claimName: cce-evs-paste-data
