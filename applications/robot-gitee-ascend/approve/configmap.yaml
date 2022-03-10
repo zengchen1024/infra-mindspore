@@ -4,3 +4,12 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
+    - repos:
+      - ascend/canndev
+      - ascend/metadef
+      - ascend/parser
+      - ascend/pytorch
+      - ascend/pytorch-develop
+      - ascend/mindstudio
+      require_self_approval: true
