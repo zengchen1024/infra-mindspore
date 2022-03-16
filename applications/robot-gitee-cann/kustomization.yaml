@@ -3,12 +3,9 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - secrets.yaml
-- scavenger
-- cla
-- label
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
   email: chenzeng765@163.com
   owner: chenzeng
-namespace: robot-gitee-mindspore
+namespace: robot-gitee-cann
