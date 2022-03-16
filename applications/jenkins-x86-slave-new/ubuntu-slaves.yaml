@@ -24,7 +24,7 @@ metadata:
     app: x86-ubuntu-slaves
 spec:
   serviceName: x86-ubuntu-slaves-service
-  replicas: 37
+  replicas: 23
   selector:
     matchLabels:
       app: x86-ubuntu-slaves
