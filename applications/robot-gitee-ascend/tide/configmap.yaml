@@ -56,6 +56,8 @@ data:
       - ascend/tensorflow
       - ascend/modelzoo
       - ascend/samples
+      - ascend/ModelZoo-PyTorch
+      - ascend/ModelZoo-TensorFlow
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
@@ -88,7 +90,7 @@ data:
       - ascend/mindxsdk-referenceapps
       - ascend/ascend-docker-image
       - ascend/ascend-deployer
-      - ascend/atlasshareds
+      - ascend/AtlasShareDS
       - ascend/ascend-pae
       labels:
       - label: lgtm
