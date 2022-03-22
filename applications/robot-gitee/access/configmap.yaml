@@ -266,3 +266,8 @@ data:
         endpoint: http://service-assign.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
         events:
         - "Note Hook"
+      - name: robot-gitee-cann-cla
+        endpoint: http://service-cla.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"

@@ -6,6 +6,7 @@ resources:
 - approve
 - lgtm
 - assign
+- cla
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
