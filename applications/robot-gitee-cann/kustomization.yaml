@@ -8,6 +8,7 @@ resources:
 - assign
 - cla
 - label
+- tide
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
