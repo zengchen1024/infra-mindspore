@@ -5,6 +5,7 @@ resources:
 - secrets.yaml
 - approve
 - lgtm
+- assign
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
