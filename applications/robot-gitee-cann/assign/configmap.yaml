@@ -4,3 +4,11 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
+    - repos:
+      - cann/acl
+      - cann/air
+      - cann/abl-kernel
+      enable_pr_assign: true
+      enable_issue_assign: true
+      enable_issue_collaborator: true

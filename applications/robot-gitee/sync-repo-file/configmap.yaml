@@ -20,5 +20,6 @@ data:
         - community
       - org: openlookeng
       - org: ascend
+      - org: cann
       file_names:
       - OWNERS

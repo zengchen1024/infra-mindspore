@@ -4,3 +4,10 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
+    - repos:
+      - cann/acl
+      - cann/air
+      - cann/abl-kernel
+      clear_labels:
+      - ci-pipeline-passed
