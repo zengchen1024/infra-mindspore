@@ -15,11 +15,16 @@ data:
       - org: opengauss
         repos:
         - tc
-      - org: openeuler
-        repos:
-        - community
       - org: openlookeng
       - org: ascend
       - org: cann
       file_names:
       - OWNERS
+    - platform: gitee
+      org_repos:
+      - org: openeuler
+        repos:
+        - community
+      file_names:
+      - OWNERS
+      - sig-info.yaml
