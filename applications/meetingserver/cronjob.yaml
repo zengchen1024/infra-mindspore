@@ -13,7 +13,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: meeting-server
-              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:v1.0.20210716
+              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:523a62f700ee6d4a30c8d8d4cdd3a75ec4dabdcb
               env:
                 - name: SECRET_KEY
                   valueFrom:
@@ -74,7 +74,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: meeting-server
-              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:v1.0.20210716
+              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:523a62f700ee6d4a30c8d8d4cdd3a75ec4dabdcb
               env:
                 - name: DB_USER
                   valueFrom:
@@ -105,3 +105,43 @@ spec:
                 - -c
                 - |
                   python manage.py genegroup
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: update-activity-status
+spec:
+  schedule: "0 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: meeting-server
+              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:523a62f700ee6d4a30c8d8d4cdd3a75ec4dabdcb
+              env:
+                - name: SECRET_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      key: secret_key
+                      name: meeting-server-secrets
+                - name: DB_USER
+                  value: root
+                - name: DB_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      key: db_password
+                      name: meeting-server-secrets
+                - name: DB_HOST
+                  value: 192.168.0.58
+                - name: DB_PORT
+                  value: "3306"
+                - name: TZ
+                  value: Asia/Shanghai
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  python manage.py update_activity_status
