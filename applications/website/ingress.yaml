@@ -35,6 +35,10 @@ spec:
       http:
         paths:
           - backend:
+              serviceName: covid-shanghai-internal
+              servicePort: 80
+            path: /shanghai-covid
+          - backend:
               serviceName: oauth2-proxy-www-admin
               servicePort: 4180
             path: /
@@ -64,6 +68,10 @@ spec:
     - host: mindspore.cn
       http:
         paths:
+          - backend:
+              serviceName: covid-shanghai-internal
+              servicePort: 80
+            path: /shanghai-covid
           - backend:
               serviceName: oauth2-proxy-admin
               servicePort: 4180
