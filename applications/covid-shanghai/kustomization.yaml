@@ -5,9 +5,13 @@ resources:
 - config.yaml
 - rbac.yaml
 commonLabels:
-  owner: tommylike
   app: covid-shanghai-server
+  owner: tommylike
 commonAnnotations:
   email: tommylikehu@gmail.com
 namespace: covid-shanghai
-
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/landscape
+  newTag: 974f90d7ad0c0d1a95826fdd5d71f3a5c547ba1c
