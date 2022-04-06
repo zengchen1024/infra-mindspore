@@ -15,7 +15,7 @@ spec:
       imagePullSecrets:
         - name: huawei-swr-image-pull-secret
       containers:
-        - image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/covidshanghai:7a7018b83b481c9b62d4c9f3e7cf23399a1c1899
+        - image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/covidshanghai:974f90d7ad0c0d1a95826fdd5d71f3a5c547ba1c
           imagePullPolicy: Always
           name: covid-shanghai-server
           livenessProbe:

@@ -10,6 +10,7 @@ resources:
 - job.yaml
 - oauth-proxy.yaml
 - cibot-service.yaml
+- covid-service.yaml
 commonAnnotations:
   email: 245462755@qq.com
   owner: zhengyuhang
