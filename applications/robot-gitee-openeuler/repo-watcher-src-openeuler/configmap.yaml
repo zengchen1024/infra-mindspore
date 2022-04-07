@@ -26,8 +26,14 @@ data:
 
   project: |
     <services>
-        <service name="tar_scm_kernel_repo">
-          <param name="scm">repo</param>
-          <param name="url">next/openEuler/#projectname#</param>
+        <service name="tar_scm">
+          <param name="scm">git</param>
+          <param name="url">git@gitee.com:src-openEuler/#projectname#.git</param>
+          <param name="exclude">.git</param>
+          <param name="revision">master</param>
+        </service>
+        <service name="extract_file">
+          <param name="archive">*.tar</param>
+          <param name="files">*/*</param>
         </service>
     </services>
