@@ -14,4 +14,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/landscape
-  newTag: 431c9ba4bdf505d400abfac583b07ae707a1ec8c
+  newTag: f4b6ccbfc6a4494be5b77ab201194b35d6973271
