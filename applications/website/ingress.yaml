@@ -22,6 +22,7 @@ metadata:
       rewrite ^/mindquantum/en(/|$)(.*)   https://www.mindspore.cn/mindquantum/docs/en/master/index.html      redirect;
       rewrite ^/reinforcement$            https://www.mindspore.cn/reinforcement/docs/zh-CN/master/index.html redirect;
       rewrite ^/reinforcement/en(/|$)(.*) https://www.mindspore.cn/reinforcement/docs/en/master/index.html    redirect;
+      rewrite ^/docs/api/(.*)/master/(.*) https://www.mindspore.cn/docs/$1/master/$2                          redirect;
     nginx.ingress.kubernetes.io/proxy-body-size: 1024m
     nginx.ingress.kubernetes.io/custom-http-errors: '400,500,404'
   name: website-ingress
