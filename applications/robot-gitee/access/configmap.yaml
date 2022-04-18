@@ -302,3 +302,8 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: robot-gitee-openeuler-tech4dx-label
+        endpoint: http://service-tech4dx-label.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Note Hook"
