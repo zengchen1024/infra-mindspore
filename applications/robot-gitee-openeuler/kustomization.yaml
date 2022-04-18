@@ -11,6 +11,7 @@ resources:
 - repo-watcher-openeuler
 - repo-watcher-src-openeuler
 - cla
+- tech4dx-label
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
