@@ -39,6 +39,7 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
+        - robot-gitee-openeuler-tech4dx-label
         
         src-openeuler:
         - robot-gitee-openeuler-label
@@ -47,6 +48,7 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
+        - robot-gitee-openeuler-tech4dx-label
         
         openeuler-competition:
         - robot-gitee-openeuler-label
