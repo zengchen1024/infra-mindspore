@@ -14,6 +14,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/covidshanghai
-  newTag: f0f2888ae32af956bb1c52e7c3f70231548065d0
+  newTag: b30c7d2d79c271c51a2da73cbeb604fd8691e70e
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/landscape
   newTag: f4b6ccbfc6a4494be5b77ab201194b35d6973271
