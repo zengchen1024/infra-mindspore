@@ -9,4 +9,4 @@ nameSuffix: -scavenger
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-scavenger
-  newTag: master-c4b4fc9
+  newTag: master-7eedb5d
