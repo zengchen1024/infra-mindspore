@@ -6,8 +6,8 @@ data:
   config.yaml: |
     config_items:
     - repos:
-        - openeuler/infrastructure
-        - src-openeuler/ukui-system-monitor
+        - openeuler
+        - src-openeuler
       menter_file_path: /app/conf/robot-gitee/app_config/mentor.json
       issue_comment_tpl_path: /app/conf/robot-gitee/app_config/issueComTemplate.md
       descision_tpl_path: /app/conf/robot-gitee/app_config/decisionTemplate.md
