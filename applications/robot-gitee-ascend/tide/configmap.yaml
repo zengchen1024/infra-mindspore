@@ -92,6 +92,9 @@ data:
       - ascend/ascend-deployer
       - ascend/AtlasShareDS
       - ascend/ascend-pae
+      - ascend/mindx-science
+      - ascend/ascend_community_projects
+      - ascend/ascend-opencv
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
