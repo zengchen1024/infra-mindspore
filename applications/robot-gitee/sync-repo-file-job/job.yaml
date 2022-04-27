@@ -11,7 +11,7 @@ spec:
           image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/sync-repo-file-job:main-f83e60a
           args:
             - --platform=gitee
-            - --orgRepos=openlookeng/openlookeng-manager
+            - --orgRepos=ascend/cann-benchmark
             - --fileNames=OWNERS
             - --endpoint=service-sync-file-server.robot-gitee.svc.cluster.local:8888
       restartPolicy: Never
