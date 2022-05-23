@@ -1,0 +1,12 @@
+resources:
+- deployment.yaml
+- namespace.yaml
+- service.yaml
+- secret.yaml
+- ingress.yaml
+namespace: internship
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/internship-website
+  newTag: a3bdf9a8dcaf6eeecf0093ad4b9f354e272c0092

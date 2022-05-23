@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: internship-service
+  namespace: internship
+spec:
+  ports:
+    - name: httpport
+      port: 80
+      targetPort: 8080
+  selector:
+    app: internship-website
+  type: ClusterIP
