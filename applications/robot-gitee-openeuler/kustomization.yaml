@@ -13,6 +13,7 @@ resources:
 - cla
 - tech4dx-label
 - hook-delivery
+- hook-dispatcher
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
