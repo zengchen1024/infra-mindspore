@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../bot-base
+- configmap.yaml
+commonLabels:
+  component: hook-delivery
+patches:
+- path: deployment.json
+  target:
+    group: apps
+    kind: Deployment
+    name: deployment
+    version: v1
+nameSuffix: -hook-delivery
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-hook-delivery
+  newTag: master-72aa608

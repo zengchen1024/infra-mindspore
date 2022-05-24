@@ -12,6 +12,7 @@ resources:
 - repo-watcher-src-openeuler
 - cla
 - tech4dx-label
+- hook-delivery
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
