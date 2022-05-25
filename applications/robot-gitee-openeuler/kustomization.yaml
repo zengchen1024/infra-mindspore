@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - secrets.yaml
+- secrets_nlp.yaml
 - lifecycle
 - assign-issue
 - label
@@ -14,6 +15,7 @@ resources:
 - tech4dx-label
 - hook-delivery
 - hook-dispatcher
+- synchronizer
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

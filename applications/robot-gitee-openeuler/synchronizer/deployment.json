@@ -1,0 +1,70 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/name",
+    "value": "synchronizer"
+  },
+  {
+    "op":"add",
+    "path":"/spec/template/spec/volumes/2",
+    "value":{
+      "name":"nlp-ak-volume",
+      "secret":{
+        "secretName":"secret-robot-nlp-aksk"
+      }
+    }
+  },
+  {
+    "op":"add",
+    "path":"/spec/template/spec/volumes/3",
+    "value":{
+      "name":"nlp-sk-volume",
+      "secret":{
+        "secretName":"secret-robot-nlp-aksk"
+      }
+    }
+  },
+  {
+    "op":"add",
+    "path":"/spec/template/spec/containers/0/volumeMounts/2",
+    "value":{
+      "mountPath":"/app/conf/robot-gitee/nlp-ak",
+      "subPath":"nlp-ak",
+      "name":"nlp-ak-volume"
+    }
+  },
+  {
+    "op":"add",
+    "path":"/spec/template/spec/containers/0/volumeMounts/3",
+    "value":{
+      "mountPath":"/app/conf/robot-gitee/nlp-sk",
+      "subPath":"nlp-sk",
+      "name":"nlp-sk-volume"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/volumes/1/configMap/name",
+    "value": "configmap-synchronizer"
+  },
+  {
+    "op":"add",
+    "path":"/spec/template/spec/containers/0/args/3",
+    "value":"--ak-path=/app/conf/robot-gitee/nlp-ak"
+  },
+  {
+    "op":"add",
+    "path":"/spec/template/spec/containers/0/args/4",
+    "value":"--sk-path=/app/conf/robot-gitee/nlp-sk"
+  },
+  {
+    "op":"add",
+    "path":"/spec/template/spec/containers/0/args/5",
+    "value":"--region=cn-north-4"
+  },
+  {
+    "op":"add",
+    "path":"/spec/template/spec/containers/0/args/6",
+    "value":"--sync-endpoint=http://localhost:30006/v1"
+  }
+]
