@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: sync-agent
+        args:
+        - --port=8888
+        - --config-file=/app/conf/robot-github/app_config/config.yaml
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/robot-gitee/app_config/
+          name: app-config
+          readOnly: true
+        - mountPath: /app/conf/robot-github/gitee-token
+          subPath: gitee-token
+          name: secret-volume
+        - mountPath: /app/conf/robot-github/github-token
+          subPath: github-token
+          name: secret-volume
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: secret-sync-agent
+      - name: app-config
+        configMap:
+          name: configmap-sync-agent
