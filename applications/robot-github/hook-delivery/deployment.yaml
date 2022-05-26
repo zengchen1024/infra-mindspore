@@ -10,7 +10,7 @@ spec:
       - name: hook-delivery
         args:
         - --port=8888
-        - --plugin-config=/app/conf/robot-github/app_config/config.yaml
+        - --config-file=/app/conf/robot-github/app_config/config.yaml
         - --hmac-secret-file=/app/conf/robot-github/hmac
         - --topic=github-webhook-openeuler
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
