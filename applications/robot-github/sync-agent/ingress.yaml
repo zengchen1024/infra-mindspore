@@ -19,3 +19,9 @@ spec:
               serviceName: service-sync-agent
               servicePort: 8888
             path: /v1
+          - backend:
+              serviceName: service-hook-delivery
+              servicePort: 8888
+            path: /github-hook
+    
+         

@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - sync-agent
+- hook-delivery
 commonLabels:
   app: infrastructure-robot-github
 commonAnnotations:

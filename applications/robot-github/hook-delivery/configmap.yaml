@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config:
+      addresses:
+      - 121.36.22.144:9094
+      - 124.70.16.28:9094
+      - 119.3.250.251:9094
