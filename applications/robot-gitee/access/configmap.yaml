@@ -12,6 +12,7 @@ data:
         - welcome
         - assign-issue
         - opengauss-review
+        - robot-gitee-openeuler-hook-delivery
 
         opengauss:
         - label
@@ -312,13 +313,7 @@ data:
       - name: robot-gitee-openeuler-hook-delivery
         endpoint: http://service-hook-delivery.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
         events:
-        - ""
-      - name: robot-gitee-openeuler-hook-dispatcher
-        endpoint: http://service-hook-dispatcher.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
-        events:
-        - ""
-      - name: robot-gitee-openeuler-synchronizer
-        endpoint: http://service-synchronizer.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
-        events:
-        - "Issue Hook"
         - "Note Hook"
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Push Hook"

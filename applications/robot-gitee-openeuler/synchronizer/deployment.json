@@ -65,6 +65,6 @@
   {
     "op":"add",
     "path":"/spec/template/spec/containers/0/args/6",
-    "value":"--sync-endpoint=http://localhost:30006/v1"
+    "value":"--sync-endpoint=https://robot-github.osinfra.cn/v1"
   }
 ]
