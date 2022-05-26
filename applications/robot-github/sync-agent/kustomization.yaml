@@ -11,3 +11,5 @@ commonLabels:
 nameSuffix: -sync-agent
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/sync-agent
+  newTag: main-4bdc2bd
