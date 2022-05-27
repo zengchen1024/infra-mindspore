@@ -17,6 +17,6 @@ data:
       - name: robot-github-synchronizer
         endpoint: http://service-synchronizer.robot-github.svc.cluster.local:8888/github-hook
         events:
-        - "Issue Hook"
-        - "Note Hook"
+        - "issues"
+        - "issue_comment"
        
