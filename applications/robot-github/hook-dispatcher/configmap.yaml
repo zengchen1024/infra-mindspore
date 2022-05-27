@@ -10,4 +10,13 @@ data:
         - 121.36.22.144:9094
         - 124.70.16.28:9094
         - 119.3.250.251:9094
+      repo_plugins:
+        xwz123/repo-test:
+        - robot-github-synchronizer
+      plugins:
+      - name: robot-github-synchronizer
+        endpoint: http://service-synchronizer.robot-github.svc.cluster.local:8888/github-hook
+        events:
+        - "Issue Hook"
+        - "Note Hook"
        
