@@ -5,6 +5,7 @@ resources:
 - sync-agent
 - hook-delivery
 - hook-dispatcher
+- synchronizer
 commonLabels:
   app: infrastructure-robot-github
 commonAnnotations:
