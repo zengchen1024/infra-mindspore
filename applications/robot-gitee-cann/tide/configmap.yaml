@@ -7,7 +7,7 @@ data:
     config_items:
     - repos:
       - cann/air
-      merge_method: squash
+      merge_method: rebase
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
