@@ -6,6 +6,7 @@ resources:
 - scavenger
 - cla
 - label
+- tide
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

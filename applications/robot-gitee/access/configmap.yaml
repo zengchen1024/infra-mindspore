@@ -328,3 +328,8 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: robot-gitee-mindspore-tide
+        endpoint: http://service-tide.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
