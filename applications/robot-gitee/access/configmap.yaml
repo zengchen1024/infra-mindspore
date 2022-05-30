@@ -136,6 +136,12 @@ data:
         - robot-gitee-cann-lgtm
         - robot-gitee-cann-tide
 
+        edahelper:
+        - robot-gitee-edahelper-cla
+        
+        huadajiutian/wrapper:
+        - robot-gitee-edahelper-cla
+
       plugins:
       - name: lifecycle
         endpoint: http://service-lifecycle.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
@@ -317,3 +323,8 @@ data:
         - "Issue Hook"
         - "Merge Request Hook"
         - "Push Hook"
+      - name: robot-gitee-edahelper-cla
+        endpoint: http://service-cla.robot-gitee-edahelper.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
