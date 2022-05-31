@@ -142,6 +142,18 @@ data:
         huadajiutian/wrapper:
         - robot-gitee-edahelper-cla
 
+        mindspore:
+        - robot-gitee-mindspore-cla
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-tide
+        - robot-gitee-mindspore-lifecycle
+
+        ms-incubator:
+        - robot-gitee-mindspore-cla
+        
+        foundation-models/opt:
+        - robot-gitee-mindspore-cla
+
       plugins:
       - name: lifecycle
         endpoint: http://service-lifecycle.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
@@ -332,4 +344,8 @@ data:
         endpoint: http://service-tide.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
         events:
         - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-mindspore-lifecycle
+        endpoint: http://service-lifecycle.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
         - "Note Hook"
