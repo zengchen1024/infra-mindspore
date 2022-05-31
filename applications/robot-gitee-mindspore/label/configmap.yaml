@@ -4,3 +4,39 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
+    - repos:
+      - mindspore/mindspore
+      - mindspore/docs
+      - mindspore/graphengine
+      - mindspore/mindspore.github.io
+      - mindspore/mindinsight
+      - mindspore/mindvision
+      - mindspore/serving
+      - mindspore/mindquantum
+      - mindspore/mindtext
+      - mindspore/xai
+      - mindspore/sault
+      - mindspore/course
+      - mindspore/hub
+      - mindspore/dataset-plugin
+      - mindspore/mindarmour
+      - mindspore/community
+      - mindspore/akg-full-log
+      - mindspore/book
+      - mindspore/ms-pipeline
+      - mindspore/darglint
+      - mindspore/contrib
+      - mindspore/topenterprise
+      - mindspore/blog
+      - mindspore/ms-operator
+      - mindspore/models
+      - mindspore/mindscience
+      - mindspore/graphlearning
+      - mindspore/vision
+      clear_labels:
+      - ci-pipeline-passed
+      commits_threshold: 1
+    - repos:
+      - mindspore:
+      commits_threshold: 1

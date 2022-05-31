@@ -4,3 +4,96 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
+    - repos:
+      - mindspore/akg
+      - mindspore/vision
+      labels:
+      - label: lgtm
+        tips_if_missing: "Please wait for reviewers to review the code."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add lgtm label manually. Please remove it and wait for reviewers to review your codes."
+
+      - label: approved
+        tips_if_missing: "Please wait for approvers to review the code."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add approved label manually. Please remove it and wait for approvers to review your codes."
+
+      - label: mindspore-cla/yes
+        tips_if_missing: "Please sign CLA. If you have done, comment /check-cla to verify it again."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add mindspore-cla/yes label manually. Please comment /check-cla to verify it again."
+
+      - label: ci-pipeline-passed
+        tips_if_missing: "Please wait for the CI test to be completed."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add ci-pipeline-passed label manually. Please remove it and wait for the CI test to be completed."
+
+    - repos:
+      - mindspore/mindspore
+      - mindspore/docs
+      - mindspore/graphengine
+      - mindspore/mindspore.github.io
+      - mindspore/mindinsight
+      - mindspore/mindvision
+      - mindspore/serving
+      - mindspore/mindquantum
+      - mindspore/mindtext
+      - mindspore/xai
+      - mindspore/sault
+      - mindspore/course
+      - mindspore/hub
+      - mindspore/dataset-plugin
+      - mindspore/mindarmour
+      - mindspore/community
+      - mindspore/akg-full-log
+      - mindspore/book
+      - mindspore/models
+      - mindspore/mindscience
+      - mindspore/reinforcement
+      - mindspore/graphlearning
+      labels:
+      - label: lgtm
+        tips_if_missing: "Please wait for reviewers to review the code."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add lgtm label manually. Please remove it and wait for reviewers to review your codes."
+
+      - label: approved
+        tips_if_missing: "Please wait for approvers to review the code."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add approved label manually. Please remove it and wait for approvers to review your codes."
+
+      - label: mindspore-cla/yes
+        tips_if_missing: "Please sign CLA. If you have done, comment /check-cla to verify it again."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add mindspore-cla/yes label manually. Please comment /check-cla to verify it again."
+
+      - label: ci-pipeline-passed
+        tips_if_missing: "Please wait for the CI test to be completed."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add ci-pipeline-passed label manually. Please remove it and wait for the CI test to be completed."
+        active_time: 24
+        tips_if_expiry: "The ci-pipeline-passed label is valid in 24 hours. Please retest again."
+
+    - repos:
+      - mindspore/ms-pipeline
+      - mindspore/darglint
+      - mindspore/contrib
+      - mindspore/topenterprise
+      - mindspore/blog
+      - mindspore/ms-operator
+      labels:
+      - label: lgtm
+        tips_if_missing: "Please wait for reviewers to review the code."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add lgtm label manually. Please remove it and wait for reviewers to review your codes."
+
+      - label: approved
+        tips_if_missing: "Please wait for approvers to review the code."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add approved label manually. Please remove it and wait for approvers to review your codes."
+
+      - label: mindspore-cla/yes
+        tips_if_missing: "Please sign CLA. If you have done, comment /check-cla to verify it again."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add mindspore-cla/yes label manually. Please comment /check-cla to verify it again." 
