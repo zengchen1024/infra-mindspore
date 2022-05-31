@@ -1,0 +1,143 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - mindspore/models
+      - mindspore/mindscience
+      need_welcome: true
+      review:
+        total_number_of_approvers: 2
+        total_number_of_reviewers: 2
+      ci:
+        job:
+          ci_table:
+            title: "| Project Name | Build Result | Details |"
+            result_column_num: 2
+          job_success_status:
+          - "SUCCESS"
+        number_of_test_cases: 1
+        label_for_ci_passed: "ci-pipeline-passed"
+    - repos:
+      - mindspore/vision
+      need_welcome: true
+      review:
+        total_number_of_approvers: 1
+        total_number_of_reviewers: 2
+      ci:
+        job:
+          ci_table:
+            title: "| Project Name | Build Result | Details |"
+            result_column_num: 2
+          job_success_status:
+          - "SUCCESS"
+        number_of_test_cases: 1
+        label_for_ci_passed: "ci-pipeline-passed"
+      owner:
+        branch_without_owners: ".*"
+    - repos:
+      - mindspore/graphlearning
+      need_welcome: true
+      review:
+        total_number_of_approvers: 2
+        total_number_of_reviewers: 2
+      ci:
+        job:
+          ci_table:
+            title: "| Project Name | Build Result | Details |"
+            result_column_num: 2
+          job_success_status:
+          - "SUCCESS"
+        number_of_test_cases: 1
+        label_for_ci_passed: "ci-pipeline-passed"
+      owner:
+        branch_with_owners:
+        - master
+    - repos:
+      - mindspore/mindspore
+      - mindspore/community
+      - mindspore/mindvision
+      review:
+        number_of_approvers: 1
+        total_number_of_approvers: 1
+        total_number_of_reviewers: 1
+      ci:
+        job:
+          ci_table:
+            title: "| Project Name | Build Result | Details |"
+            result_column_num: 2
+          job_success_status:
+          - "SUCCESS"
+        number_of_test_cases: 1
+        label_for_ci_passed: "ci-pipeline-passed"
+      owner:
+        branch_with_owners:
+        - master
+        - r1.3
+        - r1.4
+        - r1.5
+        - r1.6
+        - r1.7
+    - repos:
+      - mindspore/graphengine
+      - mindspore/mindspore.github.io
+      - mindspore/mindinsight
+      - mindspore/serving
+      - mindspore/mindquantum
+      - mindspore/mindtext
+      - mindspore/xai
+      - mindspore/akg
+      - mindspore/sault
+      - mindspore/course
+      - mindspore/hub
+      - mindspore/dataset-plugin
+      - mindspore/mindarmour
+      - mindspore/akg-full-log
+      - mindspore/book
+      - mindspore/docs
+      review:
+        number_of_approvers: 1
+        total_number_of_approvers: 1
+        total_number_of_reviewers: 1
+      ci:
+        job:
+          ci_table:
+            title: "| Project Name | Build Result | Details |"
+            result_column_num: 2
+          job_success_status:
+          - "SUCCESS"
+        number_of_test_cases: 1
+        label_for_ci_passed: "ci-pipeline-passed"
+      owner:
+        branch_without_owners: ".*"
+    - repos:
+      - mindspore/ms-pipeline
+      - mindspore/darglint
+      - mindspore/contrib
+      - mindspore/topenterprise
+      - mindspore/blog
+      - mindspore/ms-operator
+      review:
+        number_of_approvers: 1
+        total_number_of_approvers: 1
+        total_number_of_reviewers: 1
+      ci:
+        no_ci: true
+      owner:
+        branch_without_owners: ".*"
+    - repos:
+      - mindspore/reinforcement
+      review:
+        number_of_approvers: 1
+        total_number_of_approvers: 1
+        total_number_of_reviewers: 1
+      ci:
+        no_ci: true
+      owner:
+        branch_with_owners:
+        - master
+    commands_endpoint: "https://prow.osinfra.cn/gitee-deck/command-help?repo="
+    doc: "You can get details about the review process of pull-request at [**here**](https://github.com/opensourceways/test-infra/blob/sync-5-22/prow/gitee-plugins/review-trigger/review.md)"

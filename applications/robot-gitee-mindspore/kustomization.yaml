@@ -9,6 +9,7 @@ resources:
 - tide
 - lifecycle
 - assign
+- review-trigger
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

@@ -148,6 +148,7 @@ data:
         - robot-gitee-mindspore-tide
         - robot-gitee-mindspore-lifecycle
         - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
 
         ms-incubator:
         - robot-gitee-mindspore-cla
@@ -353,4 +354,9 @@ data:
       - name: robot-gitee-mindspore-assign
         endpoint: http://service-assign.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
         events:
+        - "Note Hook"
+      - name: robot-gitee-mindspore-review-trigger
+        endpoint: http://service-review-trigger.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
         - "Note Hook"
