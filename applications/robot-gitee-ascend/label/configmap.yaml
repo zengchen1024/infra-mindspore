@@ -6,6 +6,10 @@ data:
   config.yaml: |
     config_items:
     - repos:
+      - ascend
+      commits_threshold: 1
+
+    - repos:
       - ascend/canndev
       - ascend/metadef
       - ascend/parser

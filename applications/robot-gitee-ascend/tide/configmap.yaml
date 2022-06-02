@@ -118,6 +118,7 @@ data:
       - ascend/mindx-science
       - ascend/ascend_community_projects
       - ascend/ascend-opencv
+      - ascend/ascend-industrial
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
