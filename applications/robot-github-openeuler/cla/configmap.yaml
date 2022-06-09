@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    - repos:
+      - xwz123/repo-test
+      cla_label_yes: openeuler-cla/yes
+      cla_label_no: openeuler-cla/no
+      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/openeuler
+      sign_url: https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZXVsZXI=
+      faq_url: https://gitee.com/openeuler/infrastructure/blob/master/docs/cla-guide/faq/faq.md
+      check_by_committer: true
+      lite_pr_committer:
+        email: noreply@github.com
+        name: GitHub
