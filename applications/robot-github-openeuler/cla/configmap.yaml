@@ -4,6 +4,7 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    config_items:
     - repos:
       - xwz123/repo-test
       cla_label_yes: openeuler-cla/yes
