@@ -1,0 +1,167 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: xihe-backend-service
+  namespace: xihe-test
+spec:
+  ports:
+    - name: httpport
+      port: 80
+      targetPort: 80
+  selector:
+    app: xihe-backend
+  type: ClusterIP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xihe-backend
+  namespace: xihe-test
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: xihe-backend
+  template:
+    metadata:
+      labels:
+        app: xihe-backend
+    spec:
+      containers:
+      - name: xihe-backend
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-backend-test:83591b71115290c4e6654e5aad0fe09b1eea8f28
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: OBS_AK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs-ak
+        - name: OBS_SK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs-sk
+        - name: OBS_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs-username
+        - name: OBS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs-password
+        - name: OBS_IAM_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs-iam-username
+        - name: OBS_PROJECTNAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs-projectname
+        - name: OBS_BUCKETNAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs-bucketname
+        - name: OBS_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs-endpoint
+        - name: DATABASE_NAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: database-name
+        - name: DATABASE_USER
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: database-user
+        - name: DATABASE_PASSWORD 
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: database-password
+        - name: DATABASE_HOST
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: database-host
+        - name: DATABASE_PORT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: database-port
+        - name: EMAIL_HOST_USER
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: email-host-user
+        - name: EMAIL_HOST_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: email-host-password
+        - name: EMAIL_FROM
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: email-from
+        - name: AUTHING_APP_ID
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: authing-app-id
+        - name: AUTHING_APP_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: authing-app-secret
+        - name: AUTHING_APP_HOST
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: authing-app-host
+        - name: AUTHING_POOL_ID
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: authing-pool-id
+        - name: AUTHING_POOL_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: authing-pool-secret
+        - name: SETTINGS_DEBUG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: settings-debug
+        - name: ALLOWED_HOSTS
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: allowed-hosts
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
+          limits:
+            cpu: 1000m
+            memory: 1000Mi
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
