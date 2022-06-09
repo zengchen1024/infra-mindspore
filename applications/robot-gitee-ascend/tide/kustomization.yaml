@@ -16,4 +16,4 @@ nameSuffix: -tide
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-tide
-  newTag: main-5b744fa
+  newTag: main-57091a0
