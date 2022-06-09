@@ -6,7 +6,7 @@ data:
   config.yaml: |
     config_items:
     - repos:
-      - zengchen1024/repo-test
+      - xwz123/repo-test
       cla_label_yes: openeuler-cla/yes
       cla_label_no: openeuler-cla/no
       check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/openeuler
