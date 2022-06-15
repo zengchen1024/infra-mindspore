@@ -18,3 +18,25 @@ spec:
               serviceName: xihe-website-service
               servicePort: 80
             path: /
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx   
+  name: xihe-backend-ingress
+  namespace: xihe-test
+spec:
+  tls:
+    - hosts:
+        - xihebackend.test.osinfra.cn
+      secretName: xihe-tls
+  rules:
+    - host: xihebackend.test.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: xihe-backend-service
+              servicePort: 80
+            path: /

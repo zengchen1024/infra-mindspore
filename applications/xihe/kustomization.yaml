@@ -5,6 +5,7 @@ resources:
 - secret.yaml
 - ingress.yaml
 - configmap.yaml
+- oauth-proxy.yaml
 namespace: xihe
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
