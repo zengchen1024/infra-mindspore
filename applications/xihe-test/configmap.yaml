@@ -26,6 +26,8 @@ data:
         }
         location / {
           add_header Cache-Control no-cache;
+          proxy_set_header Host $host;
+          try_files $uri /index.html;
         }
 
         root /usr/share/nginx/html;
@@ -38,12 +40,6 @@ data:
         #  proxy_pass  http://api.vic0.com/api/;
         proxy_pass  http://xihe-backend-service.xihe-test.svc.cluster.local;
       }
-
-      location ~ ^/(home|model|dataset|project|team|user|setting) {
-        proxy_set_header Host $host;
-        try_files $uri /index.html;
-      }
-
 
       error_page 500 501 502 503 504 505 /500.html;
       error_page 401 /401.html;
