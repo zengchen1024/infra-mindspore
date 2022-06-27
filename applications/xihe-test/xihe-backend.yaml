@@ -154,6 +154,26 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: allowed-hosts
+        - name: CACHE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: cache_password
+        - name: CACHE_HOST
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: cache_host
+        - name: CACHE_PORT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: cache_port
+        - name: KUBE_CONFIG_PATH
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: kube_config_path
         resources:
           requests:
             cpu: 1000m
@@ -165,3 +185,11 @@ spec:
         - containerPort: 80
           name: http
           protocol: TCP
+        volumeMounts:
+        - mountPath: /etc/xihe/kubuconfig
+          name: kubeconfig-file
+      volumes:
+      - name: kubeconfig-file
+        secret:
+          secretName: xihe-kubeconfig-secret
+        
