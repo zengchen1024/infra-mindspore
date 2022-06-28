@@ -4,6 +4,7 @@ resources:
   - secrets.yaml
   - ingress.yaml
   - oauth-proxy.yaml
+  - cronjob.yaml
 commonAnnotations:
   owner: tommylikehu
   email: "tommylikehu@gmail.com"
