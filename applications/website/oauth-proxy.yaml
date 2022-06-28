@@ -16,21 +16,22 @@ spec:
     spec:
       containers:
         - args:
-            - --provider=gitee
-            - --email-domain=*
-            - --gitee-org=website-admin
-            - --upstream=http://websiteservice.website.svc.cluster.local
-            - --http-address=0.0.0.0:4180
-            - --cookie-expire=6h0m0s
-            - --set-xauthrequest=true
-            - --reverse-proxy=true
-            - --auth-routers=^/source/
-            - --auth-routers=^/admin/
-            - --auth-routers=^/login.html
-            - --enable-auth-routers=true
-            - --custom-sign-in-logo=https://openeulerinfrastructure.obs.cn-north-4.myhuaweicloud.com/img/gardener-large.png
-            # reduce header size in case of 431 error
-            - --session-cookie-minimal=true
+          - --provider=oidc
+          - --email-domain=*
+          - --upstream=http://websiteservice.website.svc.cluster.local
+          - --http-address=0.0.0.0:4180
+          - --provider-display-name=authing
+          - --cookie-expire=12h0m0s
+          - --auth-routers=^/source/
+          - --auth-routers=^/admin/
+          - --auth-routers=^/login.html
+          - --enable-auth-routers=true
+          - --redirect-url=https://www.mindspore.cn/oauth2/callback
+          - --oidc-issuer-url=https://mindspore-website.authing.cn/oidc
+          - --insecure-oidc-allow-unverified-email=true
+          - --session-cookie-minimal=false
+          - --pass-access-token=true
+          - --cookie-secure=false
           env:
             - name: OAUTH2_PROXY_CLIENT_ID
               valueFrom:
@@ -90,21 +91,22 @@ spec:
     spec:
       containers:
         - args:
-            - --provider=gitee
-            - --email-domain=*
-            - --gitee-org=website-admin
-            - --upstream=http://websiteservice.website.svc.cluster.local
-            - --http-address=0.0.0.0:4180
-            - --cookie-expire=6h0m0s
-            - --set-xauthrequest=true
-            - --reverse-proxy=true
-            - --auth-routers=^/source/
-            - --auth-routers=^/admin/
-            - --auth-routers=^/login.html
-            - --enable-auth-routers=true
-            - --custom-sign-in-logo=https://openeulerinfrastructure.obs.cn-north-4.myhuaweicloud.com/img/gardener-large.png
-            # reduce header size in case of 431 error
-            - --session-cookie-minimal=true
+          - --provider=oidc
+          - --email-domain=*
+          - --upstream=http://websiteservice.website.svc.cluster.local
+          - --http-address=0.0.0.0:4180
+          - --provider-display-name=authing
+          - --cookie-expire=12h0m0s
+          - --auth-routers=^/source/
+          - --auth-routers=^/admin/
+          - --auth-routers=^/login.html
+          - --enable-auth-routers=true
+          - --redirect-url=https://mindspore.cn/oauth2/callback
+          - --oidc-issuer-url=https://mindspore-website2.authing.cn/oidc
+          - --insecure-oidc-allow-unverified-email=true
+          - --session-cookie-minimal=false
+          - --pass-access-token=true
+          - --cookie-secure=false
           env:
             - name: OAUTH2_PROXY_CLIENT_ID
               valueFrom:
