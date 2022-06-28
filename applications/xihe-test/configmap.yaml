@@ -46,6 +46,19 @@ data:
         proxy_pass  http://xihe-backend-service.xihe-test.svc.cluster.local;
       }
 
+      location /ws/ {
+        proxy_pass http://xihe-backend-service.xihe-test.svc.cluster.local;
+        proxy_read_timeout 3600s;
+        proxy_connect_timeout 3600s;
+        proxy_send_timeout 3600s;
+        proxy_set_header Host $host:$server_port;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+      }
+
       error_page 500 501 502 503 504 505 /500.html;
       error_page 401 /401.html;
       error_page 404 /404.html;
