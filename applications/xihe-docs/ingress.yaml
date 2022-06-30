@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: mindspore-xihe-docs-ingress
+  namespace: xihe-docs
+spec:
+  tls:
+    - hosts:
+        - xihe-docs.mindspore.cn
+      secretName: mindspore-xihe-docs-tls
+  rules:
+    - host: xihe-docs.mindspore.cn
+      http:
+        paths:
+          - backend:
+              serviceName: mindspore-xihe-docs-service
+              servicePort: 80
+            path: /

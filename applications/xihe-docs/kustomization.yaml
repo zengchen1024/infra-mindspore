@@ -1,0 +1,12 @@
+resources:
+- namespace.yaml
+- ingress.yaml
+- service.yaml
+- deployment.yaml
+- secret.yaml
+namespace: xihe-docs
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-docs
+  newTag: 5f4638f2c897a21075aa1aa36bb325380f826bc2
