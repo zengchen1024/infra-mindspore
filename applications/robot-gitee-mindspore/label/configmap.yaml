@@ -38,5 +38,5 @@ data:
       - ci-pipeline-passed
       commits_threshold: 1
     - repos:
-      - mindspore:
+      - mindspore
       commits_threshold: 1
