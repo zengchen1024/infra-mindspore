@@ -142,7 +142,10 @@ data:
         huadajiutian/wrapper:
         - robot-gitee-edahelper-cla
 
-        mindspore:
+        mindspore/docs:
+        - robot-gitee-mindspore-review-trigger
+        
+        mindspore-no-need:
         - robot-gitee-mindspore-cla
         - robot-gitee-mindspore-label
         - robot-gitee-mindspore-tide
