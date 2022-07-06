@@ -9,3 +9,6 @@ commonAnnotations:
   owner: tommylikehu
   email: "tommylikehu@gmail.com"
 namespace: jenkins-master
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/openeuler/bak-jenkins
+  newTag: v1.8.0
