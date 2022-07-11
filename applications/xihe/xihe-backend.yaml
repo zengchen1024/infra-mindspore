@@ -159,6 +159,21 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: kube_config_path
+        - name: CACHE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: cache_password
+        - name: CACHE_HOST
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: cache_host
+        - name: CACHE_PORT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: cache_port
         resources:
           requests:
             cpu: 1000m
