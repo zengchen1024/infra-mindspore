@@ -10,6 +10,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-backend-test
-  newTag: d264c58d4f78b24ba2c9506eada020068dacef60
+  newTag: 07357d0a36702ece30430872846c267f806cd406
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
   newTag: 102357767a4ae0d00411c610a580a0fd6703038b
