@@ -10,6 +10,7 @@ resources:
 - assign
 - approve
 - cla
+- synchronizer
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
