@@ -12,7 +12,7 @@ data:
         - welcome
         - assign-issue
         - opengauss-review
-        - robot-gitee-openeuler-hook-delivery
+        - robot-gitee-openlookeng-synchronizer
 
         opengauss:
         - label
@@ -362,4 +362,9 @@ data:
         endpoint: http://service-review-trigger.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
         events:
         - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-synchronizer
+        endpoint: http://service-synchronizer.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
         - "Note Hook"
