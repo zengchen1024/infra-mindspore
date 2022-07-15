@@ -81,6 +81,25 @@ data:
         - r1.5
         - r1.6
         - r1.7
+
+    - repos:
+      - mindspore/course
+      review:
+        number_of_approvers: 1
+        total_number_of_approvers: 2
+        total_number_of_reviewers: 1
+      ci:
+        job:
+          ci_table:
+            title: "| Project Name | Build Result | Details |"
+            result_column_num: 2
+          job_success_status:
+          - "SUCCESS"
+        number_of_test_cases: 1
+        label_for_ci_passed: "ci-pipeline-passed"
+      owner:
+        branch_without_owners: ".*"
+
     - repos:
       - mindspore/graphengine
       - mindspore/mindspore.github.io
@@ -91,7 +110,6 @@ data:
       - mindspore/xai
       - mindspore/akg
       - mindspore/sault
-      - mindspore/course
       - mindspore/hub
       - mindspore/dataset-plugin
       - mindspore/mindarmour
@@ -113,6 +131,7 @@ data:
         label_for_ci_passed: "ci-pipeline-passed"
       owner:
         branch_without_owners: ".*"
+
     - repos:
       - mindspore/ms-pipeline
       - mindspore/darglint
