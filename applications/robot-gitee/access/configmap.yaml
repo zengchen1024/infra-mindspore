@@ -25,6 +25,7 @@ data:
 
         openlookeng/community:
         - sweepstakes
+        - robot-gitee-openlookeng-synchronizer
 
         ci-bot:
         - robot-gitee-openeuler-label

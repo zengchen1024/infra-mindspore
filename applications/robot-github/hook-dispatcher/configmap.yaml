@@ -17,6 +17,9 @@ data:
         wanghao75:
         - robot-github-openeuler-welcome
 
+        openlookeng/community:
+        - robot-github-openlookeng-synchronizer
+
       plugins:
       - name: robot-github-synchronizer
         endpoint: http://service-synchronizer.robot-github.svc.cluster.local:8888/github-hook

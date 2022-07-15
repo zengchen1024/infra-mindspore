@@ -11,3 +11,8 @@ data:
       enable_sync_comment: true
       sync_org_mapping:
         zengchen1024: xwz123
+
+    - repos:
+      - openlookeng/community
+      enable_sync_issue: true
+      enable_sync_comment: true
