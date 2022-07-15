@@ -44,3 +44,8 @@ data:
         events:
         - "issues"
         - "pull_request"
+      - name: robot-github-openeuler-openeuler-review
+        endpoint: http://service-openeuler-review.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - "pull_request"
+        - "issue_comment"
