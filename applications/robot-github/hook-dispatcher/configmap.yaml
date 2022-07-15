@@ -12,7 +12,7 @@ data:
         - 119.3.250.251:9094
       repo_plugins:
         xwz123/repo-test:
-        - robot-github-synchronizer
+        - robot-github-openlookeng-synchronizer
         - robot-github-openeuler-cla
 
       plugins:
@@ -21,6 +21,12 @@ data:
         events:
         - "issues"
         - "issue_comment"
+        
+      - name: robot-github-openlookeng-synchronizer
+        endpoint: http://service-synchronizer.robot-github-openlookeng.svc.cluster.local:8888/github-hook
+        events:
+        - "issues"
+        - "issue_comment"        
        
       - name: robot-github-openeuler-cla
         endpoint: http://service-cla.robot-github-openeuler.svc.cluster.local:8888/github-hook
