@@ -16,4 +16,4 @@ nameSuffix: -synchronizer
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-synchronizer
-  newTag: master-6b388ac
+  newTag: master-fb107a0
