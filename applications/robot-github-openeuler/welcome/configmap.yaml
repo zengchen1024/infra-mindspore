@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - wanghao75
+      community_name: wanghao75
+      community_repo: community
+      branch: master
+      command_link: https://gitee.com/openeuler/community/blob/master/en/sig-infrastructure/command.md
+

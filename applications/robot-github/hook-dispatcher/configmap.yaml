@@ -14,6 +14,8 @@ data:
         xwz123/repo-test:
         - robot-github-openlookeng-synchronizer
         - robot-github-openeuler-cla
+        wanghao75:
+        - robot-github-openeuler-welcome
 
       plugins:
       - name: robot-github-synchronizer
@@ -33,3 +35,9 @@ data:
         events:
         - "pull_request"
         - "issue_comment"
+
+      - name: robot-github-openeuler-welcome
+        endpoint: http://service-openeuler-welcome.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - "issues"
+        - "pull_request"
