@@ -12,11 +12,10 @@ data:
         - 192.168.0.66:9092
       repo_plugins:
         zengchen1024/repo-test:
-        - robot-gitee-openeuler-synchronizer
+        - robot-gitee-openlookeng-synchronizer
       plugins:
-      - name: robot-gitee-openeuler-synchronizer
-        endpoint: http://service-synchronizer.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+      - name: robot-gitee-openlookeng-synchronizer
+        endpoint: http://service-synchronizer.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
         events:
         - "Issue Hook"
         - "Note Hook"
-       
