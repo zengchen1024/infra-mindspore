@@ -146,6 +146,9 @@ data:
         mindspore/docs:
         - robot-gitee-mindspore-review-trigger
         
+        mindspore:
+        - robot-gitee-mindspore-cla
+        
         mindspore-no-need:
         - robot-gitee-mindspore-cla
         - robot-gitee-mindspore-label
