@@ -152,8 +152,7 @@ data:
         mindspore:
         - robot-gitee-mindspore-cla
 
-        mindspore-no-need:
-        - robot-gitee-mindspore-cla
+        mindspore/golden-stick:
         - robot-gitee-mindspore-label
         - robot-gitee-mindspore-tide
         - robot-gitee-mindspore-lifecycle
