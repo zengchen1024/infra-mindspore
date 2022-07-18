@@ -98,7 +98,8 @@ data:
         number_of_test_cases: 1
         label_for_ci_passed: "ci-pipeline-passed"
       owner:
-        branch_without_owners: ".*"
+        branch_with_owners:
+        - master
 
     - repos:
       - mindspore/graphengine
