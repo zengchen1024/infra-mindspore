@@ -6,7 +6,7 @@ resources:
 - cla
 - welcome
 - review
-- openeuler-label
+- label
 commonLabels:
   app: infrastructure-robot-github
 commonAnnotations:

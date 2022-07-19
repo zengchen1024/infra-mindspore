@@ -16,9 +16,11 @@ data:
         - robot-github-openeuler-cla
         - robot-github-openeuler-review
         - robot-github-openeuler-welcome
+        - robot-github-openeuler-label
         wanghao75:
         - robot-github-openeuler-welcome
         - robot-github-openeuler-review
+        - robot-github-openeuler-label
 
         wanghao75/community:
         - robot-github-openeuler-review
@@ -56,7 +58,8 @@ data:
         events:
         - "pull_request"
         - "issue_comment"
-      - name: robot-github-openeuler-openeuler-label
+
+      - name: robot-github-openeuler-label
         endpoint: http://service-openeuler-label.robot-github-openeuler.svc.cluster.local:8888/github-hook
         events:
         - "pull_request"
