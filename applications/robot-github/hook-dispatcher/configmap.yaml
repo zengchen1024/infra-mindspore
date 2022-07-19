@@ -15,6 +15,7 @@ data:
         - robot-github-openlookeng-synchronizer
         - robot-github-openeuler-cla
         - robot-github-openeuler-review
+        - robot-github-openeuler-welcome
         wanghao75:
         - robot-github-openeuler-welcome
         - robot-github-openeuler-review

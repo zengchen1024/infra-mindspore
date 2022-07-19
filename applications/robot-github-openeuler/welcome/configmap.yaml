@@ -7,6 +7,7 @@ data:
     config_items:
     - repos:
       - wanghao75
+      - xwz123/test-repo
       community_name: wanghao75
       community_repo: community
       branch: master
