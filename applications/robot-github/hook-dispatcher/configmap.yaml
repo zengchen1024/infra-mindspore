@@ -18,6 +18,7 @@ data:
         - robot-github-openeuler-welcome
         - robot-github-openeuler-label
         - robot-github-openeuler-lifecycle
+        - robot-github-openeuler-assign
         wanghao75:
         - robot-github-openeuler-welcome
         - robot-github-openeuler-review
@@ -70,7 +71,8 @@ data:
         endpoint: http://service-openeuler-lifecycle.robot-github-openeuler.svc.cluster.local:8888/github-hook
         events:
         - "issue_comment"
-      - name: robot-github-openeuler-openeuler-assign
+
+      - name: robot-github-openeuler-assign
         endpoint: http://service-openeuler-assign.robot-github-openeuler.svc.cluster.local:8888/github-hook
         events:
         - "issue_comment"

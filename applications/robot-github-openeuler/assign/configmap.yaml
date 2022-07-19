@@ -4,3 +4,5 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    - repos:
+      - xwz123/repo-test

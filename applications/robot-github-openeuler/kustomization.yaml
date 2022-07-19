@@ -8,7 +8,7 @@ resources:
 - review
 - label
 - lifecycle
-- openeuler-assign
+- assign
 commonLabels:
   app: infrastructure-robot-github
 commonAnnotations:
