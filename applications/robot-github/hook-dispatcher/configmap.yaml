@@ -14,8 +14,13 @@ data:
         xwz123/repo-test:
         - robot-github-openlookeng-synchronizer
         - robot-github-openeuler-cla
+        - robot-github-openeuler-review
         wanghao75:
         - robot-github-openeuler-welcome
+        - robot-github-openeuler-review
+
+        wanghao75/community:
+        - robot-github-openeuler-review
 
         openlookeng/community:
         - robot-github-openlookeng-synchronizer
@@ -44,7 +49,8 @@ data:
         events:
         - "issues"
         - "pull_request"
-      - name: robot-github-openeuler-openeuler-review
+
+      - name: robot-github-openeuler-review
         endpoint: http://service-openeuler-review.robot-github-openeuler.svc.cluster.local:8888/github-hook
         events:
         - "pull_request"
