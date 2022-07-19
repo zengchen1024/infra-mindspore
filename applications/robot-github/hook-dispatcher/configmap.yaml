@@ -64,3 +64,7 @@ data:
         events:
         - "pull_request"
         - "issue_comment"
+      - name: robot-github-openeuler-openeuler-lifecycle
+        endpoint: http://service-openeuler-lifecycle.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - "issue_comment"
