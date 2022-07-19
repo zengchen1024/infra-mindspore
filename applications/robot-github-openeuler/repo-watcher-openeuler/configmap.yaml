@@ -6,20 +6,20 @@ data:
   config.yaml: |
     config:
       watching_files:
-    org: newwanghao
-    repo: community
-    branch: master
-    repo_org: newwanghao
-    sig_file_path: sig/sigs.yaml
-    sig_dir: sig
-    concurrent_size: 50
-    enable_creating_obs_meta_project: false
-    interval: 3
-    obs_meta_project:
-      obs_repo:
         org: newwanghao
-        repo: release-management
+        repo: community
         branch: master
-      project_dir: master/openEuler-Factory
-      project_file_name: pckg-mgmt.yaml
+        repo_org: newwanghao
+        sig_file_path: sig/sigs.yaml
+        sig_dir: sig
+      concurrent_size: 50
+      enable_creating_obs_meta_project: false
+      interval: 3
+      obs_meta_project:
+        obs_repo:
+          org: newwanghao
+          repo: release-management
+          branch: master
+        project_dir: master/openEuler-Factory
+        project_file_name: pckg-mgmt.yaml
 
