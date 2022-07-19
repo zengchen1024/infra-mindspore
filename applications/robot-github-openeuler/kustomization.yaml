@@ -9,6 +9,7 @@ resources:
 - label
 - lifecycle
 - assign
+- openeuler-repo-watcher
 commonLabels:
   app: infrastructure-robot-github
 commonAnnotations:

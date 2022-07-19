@@ -76,3 +76,7 @@ data:
         endpoint: http://service-openeuler-assign.robot-github-openeuler.svc.cluster.local:8888/github-hook
         events:
         - "issue_comment"
+      - name: robot-github-openeuler-openeuler-repo-watcher
+        endpoint: http://service-openeuler-repo-watcher.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - ""
