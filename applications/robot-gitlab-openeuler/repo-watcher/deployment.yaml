@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: name
+        args:
+        - --gitlab-token-path=/app/conf/robot-gitlab/robot_token
+        - --config-file=/app/conf/robot-gitlab/app_config/config.yaml
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitlab:latest
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: /app/conf/robot-gitlab/robot_token
+          subPath: robot-token
+          name: secret-volume
+        - mountPath: /app/conf/robot-gitlab/app_config/
+          name: app-config
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: secret-robot-token
+      - name: app-config
+        configMap:
+          name: config
