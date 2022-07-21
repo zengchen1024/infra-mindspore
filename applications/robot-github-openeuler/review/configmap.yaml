@@ -6,20 +6,22 @@ data:
   config.yaml: |
     config_items:
     - repos:
-      - xwz123/repo-test
+      - src-openeuler
+    excluded_repos:
+      - src-openeuler/community
     lgtm_counts_required: 1
     labels_for_merge:
     - openeuler-cla/yes
     unable_checking_reviewer_for_pr: true
     freeze_file:
-    - owner: wanghao75
-      repo: community
+    - owner: src-openeuler
+      repo: release-management
       branch: master
-      path: freeze.yaml
+      path: release-management.yaml
 
 
     - repos:
-      - wanghao75/community
+      - src-openeuler/community
     lgtm_counts_required: 2
     check_permission_based_on_sig_owners: true
     sigs_dir: sig
@@ -27,8 +29,8 @@ data:
     - openeuler-cla/yes
     unable_checking_reviewer_for_pr: true
     freeze_file:
-    - owner: wanghao75
-      repo: community
+    - owner: src-openeuler
+      repo: release-management
       branch: master
-      path: freeze.yaml
+      path: release-management.yaml
 

@@ -14,18 +14,14 @@ data:
         xwz123/repo-test:
         - robot-github-openlookeng-synchronizer
         - robot-github-openeuler-cla
-        - robot-github-openeuler-review
+    
+        src-openeuler:
         - robot-github-openeuler-welcome
+        - robot-github-openeuler-review
         - robot-github-openeuler-label
         - robot-github-openeuler-lifecycle
         - robot-github-openeuler-assign
-        wanghao75:
-        - robot-github-openeuler-welcome
-        - robot-github-openeuler-review
-        - robot-github-openeuler-label
-
-        wanghao75/community:
-        - robot-github-openeuler-review
+        - robot-github-openeuler-cla
 
         openlookeng/community:
         - robot-github-openlookeng-synchronizer

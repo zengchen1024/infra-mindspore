@@ -7,6 +7,7 @@ data:
     config_items:
     - repos:
       - xwz123/repo-test
+      - src-openeuler
       cla_label_yes: openeuler-cla/yes
       cla_label_no: openeuler-cla/no
       check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/openeuler

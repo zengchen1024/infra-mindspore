@@ -6,7 +6,7 @@ data:
   config.yaml: |
     config_items:
     - repos:
-      - xwz123
+      - src-openeuler
       clear_labels:
       - ci_successful
       - kind/wait_for_update

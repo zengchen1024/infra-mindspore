@@ -6,7 +6,7 @@ data:
   config.yaml: |
     config:
       watching_files:
-        org: newwanghao
+        org: src-openeuler
         repo: community
         branch: master
         repo_org: newwanghao
@@ -17,7 +17,7 @@ data:
       interval: 3
       obs_meta_project:
         obs_repo:
-          org: newwanghao
+          org: src-openeuler
           repo: release-management
           branch: master
         project_dir: master/openEuler-Factory

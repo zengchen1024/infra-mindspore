@@ -6,4 +6,4 @@ data:
   config.yaml: |
     config_items:
       - repos:
-        - xwz123/repo-test
+        - src-openeuler

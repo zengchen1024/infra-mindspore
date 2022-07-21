@@ -6,9 +6,8 @@ data:
   config.yaml: |
     config_items:
     - repos:
-      - wanghao75
-      - xwz123/repo-test
-      community_name: wanghao75
+      - src-openeuler
+      community_name: src-openeuler
       community_repo: community
       branch: master
       command_link: https://gitee.com/openeuler/community/blob/master/en/sig-infrastructure/command.md

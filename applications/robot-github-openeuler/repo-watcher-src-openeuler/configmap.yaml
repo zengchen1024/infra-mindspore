@@ -6,10 +6,10 @@ data:
   config.yaml: |
     config:
       watching_files:
-        org: newwanghao
+        org: src-openeuler
         repo: community
         branch: master
-        repo_org: src-newwanghao
+        repo_org: src-openeuler
         sig_file_path: sig/sigs.yaml
         sig_dir: sig
       concurrent_size: 2000
@@ -17,7 +17,7 @@ data:
       interval: 3
       obs_meta_project:
         obs_repo:
-          org: newwanghao
+          org: src-openeuler
           repo: release-management
           branch: master
         project_dir: master/openEuler-Factory
