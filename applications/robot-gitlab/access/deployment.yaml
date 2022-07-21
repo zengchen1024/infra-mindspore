@@ -10,7 +10,7 @@ spec:
       - name: access
         args:
         - --port=8888
-        - --plugin-config=/app/conf/robot-gitlab/app_config/config.yaml
+        - --config-file=/app/conf/robot-gitlab/app_config/config.yaml
         - --hmac-secret-file=/app/conf/robot-gitlab/hmac
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitlab:latest
         imagePullPolicy: IfNotPresent
