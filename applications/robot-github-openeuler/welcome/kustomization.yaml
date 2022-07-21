@@ -16,4 +16,4 @@ nameSuffix: -openeuler-welcome
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-github
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-github-openeuler-welcome
-  newTag: main-dda4fcb
+  newTag: main-74f8180
