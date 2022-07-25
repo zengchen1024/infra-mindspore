@@ -6,10 +6,10 @@ metadata:
   namespace: xihe
 spec:
   ports:
-    - name: httpport
+    - name: httpport1
       port: 80
       targetPort: 8000
-    - name: httpport
+    - name: httpport2
       port: 8001
       targetPort: 8001
   selector:
