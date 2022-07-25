@@ -9,6 +9,9 @@ spec:
     - name: httpport
       port: 80
       targetPort: 8000
+    - name: http
+      port: 8001
+      targetPort: 8001
   selector:
     app: xihe-backend
   type: ClusterIP
