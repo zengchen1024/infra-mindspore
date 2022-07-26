@@ -17,20 +17,8 @@ data:
       enable_creating_obs_meta_project: true
       obs_meta_project:
         obs_repo:
-          org: src-openeuler
-          repo: obs_meta
+          org: openeuler
+          repo: release-management
           branch: master
-        project_dir: master/openEuler:Factory
-        project_file_name: _service
-        project_template_path: /app/conf/robot-gitee/app_config/project
-
-  project: |
-    <services>
-        <service name="tar_scm">
-          <param name="scm">git</param>
-          <param name="url">git@gitee.com:src-openeuler/#projectname#.git</param>
-          <param name="exclude">*</param>
-          <param name="extract">*</param>
-          <param name="revision">master</param>
-        </service>
-    </services>
+        project_dir: master/openEuler-Factory
+        project_file_name: pckg-mgmt.yaml
