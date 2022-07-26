@@ -9,4 +9,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-docs
-  newTag: ff6d20fa51d4cb14fc82f4c74354593d73b91c82
+  newTag: 45f8550db73a1f3f109333fcc0e5d93b1bac4db8
