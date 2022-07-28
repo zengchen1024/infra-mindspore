@@ -136,6 +136,7 @@ data:
       - mindspore/akg-full-log
       - mindspore/book
       - mindspore/docs
+      - mindspore/text
       review:
         number_of_approvers: 1
         total_number_of_approvers: 1
@@ -167,6 +168,7 @@ data:
         no_ci: true
       owner:
         branch_without_owners: ".*"
+
     - repos:
       - mindspore/reinforcement
       review:
