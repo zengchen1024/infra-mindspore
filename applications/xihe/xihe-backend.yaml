@@ -177,6 +177,26 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: cache_port
+        - name: OBS_USERNAME_TAICHU
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs_username_taichu
+        - name: OBS_PASSWORD_TAICHU
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs_password_taichu
+        - name: OBS_IAM_USERNAME_TAICHU
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs_iam_username_taichu
+        - name: OBS_PROJECTNAME_TAICHU
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs_projectname_taichu
         resources:
           requests:
             cpu: 1000m

@@ -25,6 +25,7 @@ spec:
           - --cookie-expire=12h0m0s
           - --redirect-url=https://xihebackend.mindspore.cn/oauth2/callback
           - --oidc-issuer-url=https://xihe-backend.authing.cn/oidc
+          - --skip-auth-regex=^/static
           - --insecure-oidc-allow-unverified-email=true
           - --session-cookie-minimal=false
           - --pass-access-token=true
