@@ -171,6 +171,12 @@ data:
         
         foundation-models/opt:
         - robot-gitee-mindspore-cla
+        
+        oepkgs:
+        - robot-gitee-oepkgs-review
+    
+        src-oepkgs:
+        - robot-gitee-oepkgs-review
 
       plugins:
       - name: lifecycle
@@ -380,4 +386,10 @@ data:
         endpoint: http://service-synchronizer.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
         events:
         - "Issue Hook"
+        - "Note Hook"
+      
+      - name: robot-gitee-oepkgs-review
+        endpoint: http://service-oepkgs-review.robot-gitee-oepkgs.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
         - "Note Hook"

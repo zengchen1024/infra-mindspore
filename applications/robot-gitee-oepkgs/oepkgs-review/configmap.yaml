@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - oepkgs
+      - src-oepkgs
+      excluded_repos:
+      - oepkgs/oepkgs-management
+      labels_for_merge:
+      unable_checking_reviewer_for_pr: true
+
+    - repos:
+      - oepkgs/oepkgs-management
+      lgtm_counts_required: 2
+      check_permission_based_on_sig_owners: true
+      sigs_dir: sig
+      labels_for_merge:
+      unable_checking_reviewer_for_pr: true
