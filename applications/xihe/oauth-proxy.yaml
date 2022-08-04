@@ -26,6 +26,7 @@ spec:
           - --redirect-url=https://xihebackend.mindspore.cn/oauth2/callback
           - --oidc-issuer-url=https://xihe-backend.authing.cn/oidc
           - --skip-auth-regex=^/static
+          - --skip-auth-regex=^/api/base/statistics
           - --insecure-oidc-allow-unverified-email=true
           - --session-cookie-minimal=false
           - --pass-access-token=true
