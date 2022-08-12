@@ -1,0 +1,15 @@
+resources:
+- xihe-website.yaml
+- namespace.yaml
+- secret.yaml
+- ingress.yaml
+- configmap.yaml
+- xihe-server.yaml
+namespace: xihe-test-v2
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
+  newTag: f3cfac3b980246d06ae33eab3c42d574f0972238
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-server
+  newTag: 97f347b62bf46f56cedb5886999fa8335b9fcefb
