@@ -90,3 +90,20 @@ data:
 
     encryption_key: "${ENCRYPTION_KEY}"
 
+    resource:
+      covers:
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+
+      protocols:
+      - "apache 2.0"
+      - "mit"
+
+      project_type:
+      - "Gradio"
+      - "Static"
+
+      training_platform:
+      - "ModelArts"
