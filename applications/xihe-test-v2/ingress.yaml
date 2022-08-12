@@ -19,28 +19,3 @@ spec:
               serviceName: xihe-website-service
               servicePort: 80
             path: /
-
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      rewrite ^/server/(.*)$ /api/v1/$1 redirect;
-      rewrite ^/repo/(.*)$ https://gitlab.openeuler.sh/api/v4/$1 redirect;
-  name: xihe-backend-ingress
-  namespace: xihe-test
-spec:
-  tls:
-    - hosts:
-        - xihe2.test.osinfra.cn
-      secretName: xihe-tls
-  rules:
-    - host: xihe2.test.osinfra.cn
-      http:
-        paths:
-          - backend:
-              serviceName: xihe-backend-service
-              servicePort: 80
-            path: /
