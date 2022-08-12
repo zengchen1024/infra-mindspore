@@ -41,6 +41,14 @@ data:
         #   error_page 404 /404.html;
       }
 
+      location ^~ /server/ {
+        proxy_pass http://xihe-backend-service.xihe-test-v2.svc.cluster.local/api/v1/ ;
+      }
+
+      location ^~ /repo/ {
+        proxy_pass https://gitlab.openeuler.sh/api/v4/ ;
+      }
+
       error_page 500 501 502 503 504 505 /500.html;
       error_page 401 /401.html;
       error_page 404 /404.html;
