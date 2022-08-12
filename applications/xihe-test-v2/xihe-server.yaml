@@ -87,6 +87,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: DEFAULT_PASSWORD
+        - name: AUTHING_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: AUTHING_ENDPOINT              
         resources:
           requests:
             cpu: 1000m
