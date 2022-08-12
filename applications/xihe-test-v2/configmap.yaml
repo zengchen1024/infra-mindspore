@@ -78,6 +78,7 @@ data:
     authing_service:
       app_id: "${AUTHING_APP_ID}"
       secret: "${AUTHING_SECRET}"
+      endpoint: "${AUTHING_ENDPOINT}"
 
     mongodb:
       mongodb_conn: "${MONGODB_CONNECTION}"
