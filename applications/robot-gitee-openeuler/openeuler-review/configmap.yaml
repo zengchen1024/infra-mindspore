@@ -7,7 +7,6 @@ data:
     config_items:
     - repos:
       - openeuler
-      - src-openeuler
       - openeuler-competition
       - openeuler-compliance
       - openeuler-risc-v
@@ -19,6 +18,19 @@ data:
       - ci-bot/community
       labels_for_merge:
       - openeuler-cla/yes
+      unable_checking_reviewer_for_pr: true
+      freeze_file:
+      - owner: openeuler
+        repo: release-management
+        branch: master
+        path: release-management.yaml
+
+    - repos:
+      - src-openeuler
+      labels_for_merge:
+      - openeuler-cla/yes
+      labels_not_allow_merge: 
+      - linkpull
       unable_checking_reviewer_for_pr: true
       freeze_file:
       - owner: openeuler
