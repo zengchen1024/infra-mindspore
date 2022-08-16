@@ -16,4 +16,4 @@ nameSuffix: -openeuler-review
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-openeuler-review
-  newTag: master-167e4d9-dirty
+  newTag: master-32426bb-dirty
