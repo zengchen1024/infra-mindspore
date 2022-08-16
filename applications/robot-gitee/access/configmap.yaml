@@ -22,6 +22,7 @@ data:
         - opengauss-review
         - robot-gitee-opengauss-associate
         - robot-gitee-opengauss-cla
+        - robot-gitee-opengauss-sigguide
 
         openlookeng/community:
         - sweepstakes
@@ -393,7 +394,7 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
-      - name: robot-gitee-opengauss-opengauss-sigguide
+      - name: robot-gitee-opengauss-sigguide
         endpoint: http://service-opengauss-sigguide.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
         events:
         - "Issue Hook"
