@@ -11,6 +11,7 @@ resources:
 - repo-watcher
 - associate
 - cla
+- opengauss-sigguide
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
