@@ -10,12 +10,14 @@ data:
       - src-oepkgs
       excluded_repos:
       - oepkgs/oepkgs-management
+      legal_operator: ci-robot
       labels_for_merge:
       unable_checking_reviewer_for_pr: true
 
     - repos:
       - oepkgs/oepkgs-management
-      lgtm_counts_required: 2
+      legal_operator: ci-robot
+      lgtm_counts_required: 1
       check_permission_based_on_sig_owners: true
       sigs_dir: sig
       labels_for_merge:
