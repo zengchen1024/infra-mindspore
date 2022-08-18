@@ -78,7 +78,7 @@ data:
     authing_service:
       app_id: "${AUTHING_APP_ID}"
       secret: "${AUTHING_SECRET}"
-      endpoint: "${AUTHING_ENDPOINT}"
+      redirect_uri: "${AUTHING_REDIRECT_URI_DEV}"
 
     mongodb:
       mongodb_conn: "${MONGODB_CONNECTION}"
@@ -116,3 +116,8 @@ data:
 
       training_platform:
       - "ModelArts"
+
+    mq:
+      address: "${KAFKA_ADDRESS}"
+      topic_like: "xihe_like_dev"
+      topic_following: "xihe_following_dev"

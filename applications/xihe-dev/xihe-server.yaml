@@ -87,11 +87,16 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: DEFAULT_PASSWORD
-        - name: AUTHING_ENDPOINT
+        - name: AUTHING_REDIRECT_URI_DEV
           valueFrom:
             secretKeyRef:
               name: xihe-secret
-              key: AUTHING_ENDPOINT 
+              key: AUTHING_REDIRECT_URI_DEV
+        - name: KAFKA_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: KAFKA_ADDRESS
         resources:
           requests:
             cpu: 1000m
