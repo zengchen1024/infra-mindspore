@@ -197,6 +197,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: obs_projectname_taichu
+        - name: OBS_PROJECTID
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: obs_projectid
         resources:
           requests:
             cpu: 1000m
