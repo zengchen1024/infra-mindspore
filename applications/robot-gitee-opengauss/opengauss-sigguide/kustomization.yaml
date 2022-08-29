@@ -16,4 +16,4 @@ nameSuffix: -opengauss-sigguide
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-opengauss-sigguide
-  newTag: main-8ff917f
+  newTag: main-9d19bb2
