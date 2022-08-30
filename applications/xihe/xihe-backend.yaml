@@ -202,6 +202,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: obs_projectid
+        - name: TAICHU_URL_TEXT_TO_IMG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: taichu_url_text_to_img
         resources:
           requests:
             cpu: 1000m
