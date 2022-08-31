@@ -8,6 +8,8 @@ data:
     - repos:
       - cann/air
       merge_method: squash
+      branch_merge_method：
+        master： merge
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
