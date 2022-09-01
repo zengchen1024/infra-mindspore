@@ -54,6 +54,7 @@ data:
       - mindspore/mindscience
       - mindspore/reinforcement
       - mindspore/graphlearning
+      - mindspore/federated
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
