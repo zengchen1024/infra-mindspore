@@ -207,6 +207,26 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: taichu_url_text_to_img
+        - name: TAICHU_URL_TEXT_TO_IMG_01
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: taichu_url_text_to_img_01
+        - name: TAICHU_URL_TEXT_TO_IMG_02
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: taichu_url_text_to_img_02
+        - name: TAICHU_URL_TEXT_TO_IMG_03
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: taichu_url_text_to_img_03
+        - name: TAICHU_URL_TEXT_TO_3IMG_01
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: taichu_url_text_to_3img_01
         resources:
           requests:
             cpu: 1000m
