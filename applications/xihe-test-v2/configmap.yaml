@@ -88,6 +88,8 @@ data:
       dataset_collection: dataset 
       user_collection: user
       login_collection: login
+      like_collection: like
+      activity_collection: activity
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
