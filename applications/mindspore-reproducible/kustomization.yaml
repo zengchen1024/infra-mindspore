@@ -11,7 +11,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: mindspore-reproducible
 images:
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-reproducible-website
-  newTag: c103ab72e87c87a663d64375b2fc4154d44d28e5
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-reproducible-backend
   newTag: c018a5375b805e264b9cf67b8dc0b3998abc47aa
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-reproducible-website
+  newTag: a8d6781a5fc38728b271fa641144e7ce9a95d241
