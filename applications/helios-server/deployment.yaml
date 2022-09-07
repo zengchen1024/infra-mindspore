@@ -31,10 +31,10 @@ spec:
                   key: GH_CLIENT_ID
                   name: helios-server-secrets
             - name: GH_CLIENT_SECRET
-                valueFrom:
-                  secretKeyRef:
-                    key: GH_CLIENT_SECRET
-                    name: helios-server-secrets
+              valueFrom:
+                secretKeyRef:
+                  key: GH_CLIENT_SECRET
+                  name: helios-server-secrets
             - name: GOOGLE_CLIENT_ID
               valueFrom:
                 secretKeyRef:
@@ -64,7 +64,7 @@ spec:
             failureThreshold: 3        #探测失败的重试次数
             tcpSocket:
               port: 8080
-          volumes:
-            name: helios-data-volume
-            persistentVolumeClaim:
-            claimName: helios-data-volume
+      volumes:
+        name: helios-data-volume
+        persistentVolumeClaim:
+        claimName: helios-data-volume
