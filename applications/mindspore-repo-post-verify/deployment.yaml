@@ -1,0 +1,60 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: repo-post-verify-deployment
+  namespace: mindspore-repo-post-verify
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: repo-post-verify
+  template:
+    metadata:
+      labels:
+        app: repo-post-verify
+    spec:
+      imagePullSecrets:
+        - name: huawei-swr-image-pull-secret
+      containers:
+      - name: repo-post-verify
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-repo-post-verify:v1.0.20220907110155
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 2000Mi
+          limits:
+            cpu: 1000m
+            memory: 2000Mi
+        env:
+        - name: ak
+          valueFrom:
+            secretKeyRef:
+              key: ak
+              name: repo-post-verify-secrets
+        - name: sk
+          valueFrom:
+            secretKeyRef:
+              key: sk
+              name: repo-post-verify-secrets
+        - name: endpoint
+          valueFrom:
+            secretKeyRef:
+              key: endpoint
+              name: repo-post-verify-secrets
+        volumeMounts:
+        - mountPath: /var/log
+          name: log-storage
+      volumes:
+      - name: log-storage
+        persistentVolumeClaim:
+          claimName: mindspore-data-volume
+        
+          
+
+
+
