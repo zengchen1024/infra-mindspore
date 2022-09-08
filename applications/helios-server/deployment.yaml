@@ -65,6 +65,6 @@ spec:
             tcpSocket:
               port: 8080
       volumes:
-        name: helios-data-volume
+      - name: helios-data-volume
         persistentVolumeClaim:
-        claimName: helios-data-volume
+          claimName: helios-data-volume
