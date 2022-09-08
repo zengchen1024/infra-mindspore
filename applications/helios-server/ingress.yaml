@@ -12,6 +12,7 @@ spec:
   tls:
     - hosts:
         - helios-voting.osinfra.cn
+      secretName: heliosserver-tls
   rules:
     - host: helios-voting.osinfra.cn
       http:

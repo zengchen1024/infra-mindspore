@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment
+  namespace: heliosserver
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: helios-server
@@ -14,9 +15,11 @@ spec:
         app: helios-server
         component: vote-server
     spec:
+      nodeSelector:
+        helios: "true"
       containers:
         - name: helios-server
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/helios-server/helios-voting
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/helios-server/helios-voting:master-87a24f1
           volumeMounts:
             - mountPath: /app/helios-server/helios/migrations
               name: helios-data-volume
@@ -50,21 +53,7 @@ spec:
             - containerPort: 8080
               name: http
               protocol: TCP
-          readinessProbe:              #就绪探针
-            initialDelaySeconds: 20    #延迟加载时间
-            periodSeconds: 5           #重试时间间隔
-            timeoutSeconds: 10         #超时时间设置
-            failureThreshold: 5        #探测失败的重试次数
-            tcpSocket:
-              port: 8080
-          livenessProbe:               #存活探针
-            initialDelaySeconds: 60    #延迟加载时间
-            periodSeconds: 5           #重试时间间隔
-            timeoutSeconds: 5          #超时时间设置
-            failureThreshold: 3        #探测失败的重试次数
-            tcpSocket:
-              port: 8080
       volumes:
-      - name: helios-data-volume
-        persistentVolumeClaim:
-          claimName: helios-data-volume
+        - name: helios-data-volume
+          persistentVolumeClaim:
+            claimName: helios-data-volume
