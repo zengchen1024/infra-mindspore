@@ -19,7 +19,7 @@ spec:
         helios: "true"
       containers:
         - name: helios-server
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/helios-server/helios-voting:master-87a24f1
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/helios-server/helios-voting:master-0944cae
           volumeMounts:
             - mountPath: /app/helios-server/helios/migrations
               name: helios-data-volume
