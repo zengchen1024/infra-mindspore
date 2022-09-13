@@ -5,7 +5,6 @@ resources:
   - ingress.yaml
   - secrets.yaml
   - service.yaml
-  - pvc.yaml
   - namespace.yaml
 namespace: heliosserver
 images:
