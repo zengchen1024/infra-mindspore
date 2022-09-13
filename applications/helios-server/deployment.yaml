@@ -19,7 +19,7 @@ spec:
         helios: "true"
       containers:
         - name: helios-server
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/helios-server/helios-voting:master-0944cae
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/helios-server/helios-voting:master-10ac082
           volumeMounts:
             - mountPath: /app/helios-server/helios/migrations
               name: helios-data-volume
@@ -54,6 +54,6 @@ spec:
               name: http
               protocol: TCP
       volumes:
-        - name: helios-data-volume
-          persistentVolumeClaim:
-            claimName: helios-data-volume
+      - name: helios-data-volume
+        persistentVolumeClaim:
+          claimName: helios-data-volume
