@@ -123,3 +123,61 @@ data:
       address: "${KAFKA_ADDRESS}"
       topic_like: "xihe_like_dev"
       topic_following: "xihe_following_dev"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: message-server-configmap
+  namespace: xihe-dev
+data:
+  config.yaml: |
+    default_password: "${DEFAULT_PASSWORD}"
+    authing_service:
+      app_id: "${AUTHING_APP_ID}"
+      secret: "${AUTHING_SECRET}"
+      redirect_uri: "${AUTHING_REDIRECT_URI_DEV}"
+
+    mongodb:
+      mongodb_conn: "${MONGODB_CONNECTION}"
+      mongodb_db: "${MONGODB_NAME}"
+      project_collection: project
+      model_collection: model
+      dataset_collection: dataset 
+      user_collection: user
+      login_collection: login
+      like_collection: like
+      activity_collection: activity
+
+    gitlab:
+      endpoint: "${GITLAB_ENDPOINT}"
+      root_token: "${GITLAB_TOKEN}"
+
+    api:
+      api_token_expiry: 3600
+      api_token_key: "${API_TOKEN_KEY}"
+
+    encryption_key: "${ENCRYPTION_KEY}"
+
+    resource:
+      covers:
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+
+      protocols:
+      - "apache 2.0"
+      - "mit"
+
+      project_type:
+      - "Gradio"
+      - "Static"
+
+      training_platform:
+      - "ModelArts"
+
+    mq:
+      address: "${KAFKA_ADDRESS}"
+      topic_like: "xihe_like_dev"
+      topic_following: "xihe_following_dev"
