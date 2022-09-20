@@ -12,6 +12,6 @@ images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/monitor/k8s_exporter
   newTag: v1.0.4
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/monitor/k8s_exporter_arm
-  newTag: v1.0.3
+  newTag: v1.0.4
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/monitor/promtheus_arm
   newTag: v1.0.1
