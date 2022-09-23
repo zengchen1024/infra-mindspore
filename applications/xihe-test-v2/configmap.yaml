@@ -90,6 +90,7 @@ data:
       login_collection: login
       like_collection: like
       activity_collection: activity
+      tag_collection: tag
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
