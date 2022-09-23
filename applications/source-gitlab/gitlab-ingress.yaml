@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+  name: gitlab-ingress
+  namespace: source
+spec:
+  tls:
+    - hosts:
+        - source.mindspore.cn
+      secretName: gitlab-tls
+  rules:
+    - host: source.mindspore.cn
+      http:
+        paths:
+          - backend:
+              serviceName: gitlab-service
+              servicePort: 80
+            path: /
