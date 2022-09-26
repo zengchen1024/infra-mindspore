@@ -122,8 +122,10 @@ data:
 
     mq:
       address: "${KAFKA_ADDRESS}"
-      topic_like: "xihe_like_dev"
-      topic_following: "xihe_following_dev"
+      topics:
+        fork: "xihe_fork_dev"
+        like: "xihe_like_dev"
+        following: "xihe_following_dev"
 
 ---
 apiVersion: v1
