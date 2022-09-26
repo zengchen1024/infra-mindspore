@@ -19,7 +19,7 @@ spec:
         helios: "true"
       containers:
         - name: helios-server
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/helios-server/helios-voting:master-d956d31
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/helios-server/helios-voting:master-0e6254f
           resources:
             requests:
               cpu: 2000m
