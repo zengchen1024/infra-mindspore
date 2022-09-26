@@ -45,6 +45,16 @@ spec:
                 secretKeyRef:
                   key: GOOGLE_CLIENT_SECRET
                   name: helios-server-secrets
+            - name: GITEE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: GITEE_CLIENT_ID
+                  name: helios-server-secrets
+            - name: GITEE_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: GITEE_CLIENT_SECRET
+                  name: helios-server-secrets
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
