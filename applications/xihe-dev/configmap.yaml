@@ -74,7 +74,6 @@ metadata:
   namespace: xihe-dev
 data:
   config.yaml: |
-    default_password: "${DEFAULT_PASSWORD}"
     authing_service:
       app_id: "${AUTHING_APP_ID}"
       secret: "${AUTHING_SECRET}"
@@ -97,10 +96,21 @@ data:
       root_token: "${GITLAB_TOKEN}"
 
     api:
-      api_token_expiry: 3600
-      api_token_key: "${API_TOKEN_KEY}"
+      token_key: "${API_TOKEN_KEY}"
+      token_expiry: 3600
+      encryption_key: "${ENCRYPTION_KEY}"
+      default_password: "${DEFAULT_PASSWORD}"
 
-    encryption_key: "${ENCRYPTION_KEY}"
+    bigmodel:
+        user: "${BIGMODEL_USER}"
+        password: "${BIGMODEL_PASSWORD}"
+        project: "${BIGMODEL_PROJECT}"
+        auth_endpoint: "${BIGMODEL_AUTH_ENDPOINT}"
+
+        endpoints_of_signle_picture: "${BIGMODEL_DESCRIBE_PICTURE}"
+        endpoints_of_multiple_pictures: 
+        - "${BIGMODEL_DESCRIBE_PICTURE}"
+        endpoint_of_describing_picture: "${BIGMODEL_DESCRIBE_PICTURE}"
 
     resource:
       covers:

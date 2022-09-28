@@ -97,6 +97,31 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: KAFKA_ADDRESS
+        - name: BIGMODEL_AUTH_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_AUTH_ENDPOINT
+        - name: BIGMODEL_DESCRIBE_PICTURE
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_DESCRIBE_PICTURE
+        - name: BIGMODEL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_PASSWORD
+        - name: BIGMODEL_PROJECT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_PROJECT
+        - name: BIGMODEL_USER
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_USER
         resources:
           requests:
             cpu: 1000m
