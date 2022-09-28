@@ -60,6 +60,26 @@ spec:
                 secretKeyRef:
                   key: GITEE_CLIENT_SECRET
                   name: helios-server-secrets
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: DB_HOST
+                  name: helios-server-secrets
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  key: DB_USER
+                  name: helios-server-secrets
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: DB_PASSWORD
+                  name: helios-server-secrets
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: DB_PORT
+                  name: helios-server-secrets
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
