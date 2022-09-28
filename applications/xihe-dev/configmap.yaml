@@ -107,9 +107,9 @@ data:
         project: "${BIGMODEL_PROJECT}"
         auth_endpoint: "${BIGMODEL_AUTH_ENDPOINT}"
 
-        endpoints_of_signle_picture: "${BIGMODEL_DESCRIBE_PICTURE}"
-        endpoints_of_multiple_pictures: 
+        endpoints_of_signle_picture:
         - "${BIGMODEL_DESCRIBE_PICTURE}"
+        endpoints_of_multiple_pictures: "${BIGMODEL_DESCRIBE_PICTURE}"
         endpoint_of_describing_picture: "${BIGMODEL_DESCRIBE_PICTURE}"
 
     resource:
