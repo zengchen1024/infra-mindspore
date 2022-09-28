@@ -145,12 +145,6 @@ metadata:
   namespace: xihe-dev
 data:
   config.yaml: |
-    default_password: "${DEFAULT_PASSWORD}"
-    authing_service:
-      app_id: "${AUTHING_APP_ID}"
-      secret: "${AUTHING_SECRET}"
-      redirect_uri: "${AUTHING_REDIRECT_URI_DEV}"
-
     mongodb:
       mongodb_conn: "${MONGODB_CONNECTION}"
       mongodb_db: "${MONGODB_NAME}"
@@ -161,16 +155,7 @@ data:
       login_collection: login
       like_collection: like
       activity_collection: activity
-
-    gitlab:
-      endpoint: "${GITLAB_ENDPOINT}"
-      root_token: "${GITLAB_TOKEN}"
-
-    api:
-      api_token_expiry: 3600
-      api_token_key: "${API_TOKEN_KEY}"
-
-    encryption_key: "${ENCRYPTION_KEY}"
+      tag_collection: tag
 
     resource:
       covers:
@@ -192,5 +177,7 @@ data:
 
     mq:
       address: "${KAFKA_ADDRESS}"
-      topic_like: "xihe_like_dev"
-      topic_following: "xihe_following_dev"
+      topics:
+        fork: "xihe_fork_dev"
+        like: "xihe_like_dev"
+        following: "xihe_following_dev"
