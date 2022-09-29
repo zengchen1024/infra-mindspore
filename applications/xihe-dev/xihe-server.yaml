@@ -107,6 +107,16 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_DESCRIBE_PICTURE
+        - name: BIGMODEL_SINGLE_PICTURE
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_SINGLE_PICTURE
+        - name: BIGMODEL_MULTI_PICTURES
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_MULTI_PICTURES
         - name: BIGMODEL_PASSWORD
           valueFrom:
             secretKeyRef:
