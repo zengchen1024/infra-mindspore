@@ -80,6 +80,26 @@ spec:
                 secretKeyRef:
                   key: DB_PORT
                   name: helios-server-secrets
+            - name: EMAIL_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: EMAIL_HOST
+                  name: helios-server-secrets
+            - name: EMAIL_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: EMAIL_PORT
+                  name: helios-server-secrets
+            - name: EMAIL_HOST_USER
+              valueFrom:
+                secretKeyRef:
+                  key: EMAIL_HOST_USER
+                  name: helios-server-secrets
+            - name: EMAIL_HOST_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: EMAIL_HOST_PASSWORD
+                  name: helios-server-secrets
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
