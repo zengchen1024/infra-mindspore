@@ -132,6 +132,26 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_USER
+        - name: VQA_OBS_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: VQA_OBS_ENDPOINT
+        - name: VQA_OBS_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: VQA_OBS_ACCESS_KEY
+        - name: VQA_OBS_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: VQA_OBS_SECRET_KEY
+        - name: VQA_OBS_BUCKET
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: VQA_OBS_BUCKET
         resources:
           requests:
             cpu: 1000m
