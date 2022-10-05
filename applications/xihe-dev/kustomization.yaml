@@ -6,6 +6,7 @@ resources:
 - configmap.yaml
 - xihe-server.yaml
 - xihe-message-server.yaml
+- hook-delivery
 namespace: xihe-dev
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
