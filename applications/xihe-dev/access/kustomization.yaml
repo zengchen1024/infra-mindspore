@@ -3,12 +3,11 @@ kind: Kustomization
 resources:
 - configmap.yaml
 - deployment.yaml
-- secrets.yaml
 - service.yaml
 commonLabels:
-  component: hook-delivery
-nameSuffix: -hook-delivery
+  component: access
+nameSuffix: -access
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab
-  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab-hook-delivery
-  newTag: main-9dcfbb0
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/robot-gitlab-access
+  newTag: hook-dispatcher-for-all-6104743
