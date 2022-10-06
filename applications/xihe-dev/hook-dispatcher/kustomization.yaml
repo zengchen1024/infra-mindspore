@@ -5,9 +5,9 @@ resources:
 - deployment.yaml
 - service.yaml
 commonLabels:
-  component: hook-delivery
-nameSuffix: -hook-delivery
+  component: hook-dispatcher
+nameSuffix: -hook-dispatcher
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab
-  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab-hook-delivery
-  newTag: main-9dcfbb0
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/robot-hook-dispatcher
+  newTag: main-15cf065

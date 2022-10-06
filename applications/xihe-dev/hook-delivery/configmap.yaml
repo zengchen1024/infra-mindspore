@@ -8,4 +8,3 @@ data:
       system_hook:
       - push
       topic: xihe-gitlab
-

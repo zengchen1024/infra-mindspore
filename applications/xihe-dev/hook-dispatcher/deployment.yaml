@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: deployment
 spec:
-  replicas: 2
+  replicas: 1
   template:
     spec:
       containers:
@@ -11,7 +11,6 @@ spec:
         args:
         - --port=8888
         - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
-        - --hmac-secret-file=/app/conf/xihe-gitlab/hmac
         - --kafkamq-config-file=/app/conf/xihe-gitlab/kafka
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab:latest
         imagePullPolicy: IfNotPresent
@@ -20,9 +19,6 @@ spec:
           name: http
           protocol: TCP
         volumeMounts:
-        - mountPath: /app/conf/xihe-gitlab/hmac
-          subPath: SYSTEMHOOK_HMAC
-          name: secret-volume
         - mountPath: /app/conf/xihe-gitlab/kafka
           subPath: KAFKA_ADDRESS
           name: secret-volume
@@ -35,4 +31,4 @@ spec:
           secretName: xihe-secret
       - name: app-config
         configMap:
-          name: configmap-hook-delivery
+          name: configmap-hook-dispatcher
