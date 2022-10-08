@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access_endpoint: http://service-hook-delivery.xihe-dev.svc.cluster.local:8888/gitlab-hook
+    access_hmac: "${ACCESS_HMAC}"
+    obs: 
+      obsutil_path: /opt/app/obsutil
+      access_key: "${HW_OBS_AK}"
+      secret_key: "${HW_OBS_SK}"
+      endpoint: "${HW_OBS_ENDPOINT}"
+      bucket: "${HW_OBS_BUCKET}"
+
+    sync:
+      work_dir: "/opt/app/sync_repo"
+      sync_file_shell: /opt/app/sync_file.sh
+      lfs_path: gitlab-lfs
+      repo_path: xihe-repos
+      commit_file: synced_commit
+
+    mysql:
+      conn: "${MYSQL_CONN}"
+      conn_max_life_time: 1
+
+    gitlab:
+      token: "${GITLAB_TOKEN}"
+      host: "${GITLAB_HOST}"

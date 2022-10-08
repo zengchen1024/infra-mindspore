@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-      - name: hook-delivery
+      - name: hook-dispatcher
         args:
         - --port=8888
         - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
