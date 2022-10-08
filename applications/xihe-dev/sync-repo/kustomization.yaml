@@ -9,5 +9,5 @@ commonLabels:
 nameSuffix: -sync-repo
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab
-  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab-sync-repo
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/robot-gitlab-sync-repo
   newTag: main-6617fc4
