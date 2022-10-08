@@ -110,7 +110,7 @@ data:
         endpoints_of_signle_picture: "${BIGMODEL_SINGLE_PICTURE}"
         endpoint_of_multiple_pictures: "${BIGMODEL_MULTI_PICTURES}"
         endpoint_of_describing_picture: "${BIGMODEL_DESCRIBE_PICTURE}"
-        endpoint_of_vqa: "${BIGMODEL_DESCRIBE_PICTURE}"
+        endpoint_of_vqa: "${BIGMODEL_VQA}"
 
         obs:
           endpoint: "${VQA_OBS_ENDPOINT}"
@@ -142,6 +142,7 @@ data:
         fork: "xihe_fork_dev"
         like: "xihe_like_dev"
         following: "xihe_following_dev"
+        related_resource: "xihe_related_resource_dev"
 
 ---
 apiVersion: v1
@@ -187,3 +188,4 @@ data:
         fork: "xihe_fork_dev"
         like: "xihe_like_dev"
         following: "xihe_following_dev"
+        related_resource: "xihe_related_resource_dev"
