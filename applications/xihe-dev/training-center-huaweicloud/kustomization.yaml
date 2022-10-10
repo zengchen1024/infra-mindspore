@@ -5,9 +5,9 @@ resources:
 - deployment.yaml
 - service.yaml
 commonLabels:
-  component: sync-repo
-nameSuffix: -sync-repo
+  component: training-center-huaweicloud
+nameSuffix: -training-center-huaweicloud
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab
-  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/robot-gitlab-sync-repo
-  newTag: main-a4e849e
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-training-center
+  newTag: main-a795052

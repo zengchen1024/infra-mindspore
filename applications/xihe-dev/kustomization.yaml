@@ -10,6 +10,7 @@ resources:
 - hook-dispatcher
 - access
 - sync-repo
+- training-center-huaweicloud
 namespace: xihe-dev
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
