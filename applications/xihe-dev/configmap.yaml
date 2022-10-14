@@ -74,7 +74,7 @@ metadata:
   namespace: xihe-dev
 data:
   config.yaml: |
-    authing_service:
+    authing:
       app_id: "${AUTHING_APP_ID}"
       secret: "${AUTHING_SECRET}"
       redirect_uri: "${AUTHING_REDIRECT_URI_DEV}"
@@ -90,6 +90,7 @@ data:
       like_collection: like
       activity_collection: activity
       tag_collection: tag
+      training_collection: training
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
@@ -100,6 +101,7 @@ data:
       token_expiry: 3600
       encryption_key: "${ENCRYPTION_KEY}"
       default_password: "${DEFAULT_PASSWORD}"
+      max_training_record_num: 5
 
     bigmodel:
         user: "${BIGMODEL_USER}"
@@ -118,7 +120,7 @@ data:
           secret_key: "${VQA_OBS_SECRET_KEY}"
           bucket: "${VQA_OBS_BUCKET}"
 
-    resource:
+    domain:
       covers:
       - "1"
       - "2"
@@ -141,8 +143,16 @@ data:
       topics:
         fork: "xihe_fork_dev"
         like: "xihe_like_dev"
+        training: "xihe_training_dev"
         following: "xihe_following_dev"
         related_resource: "xihe_related_resource_dev"
+
+    training:
+      job_done_status:
+      - "Failed"
+      - "Abnormal"
+      - "Completed"
+      - "Terminated"
 
 ---
 apiVersion: v1
