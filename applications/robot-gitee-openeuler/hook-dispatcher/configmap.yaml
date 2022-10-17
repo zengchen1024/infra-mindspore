@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      broker:
+        addresses:
+        - 192.168.0.242:9092
+        - 192.168.0.222:9092
+        - 192.168.0.66:9092
+      repo_plugins:
+        zengchen1024/repo-test:
+        - robot-gitee-openlookeng-synchronizer
+      plugins:
+      - name: robot-gitee-openlookeng-synchronizer
+        endpoint: http://service-synchronizer.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Note Hook"

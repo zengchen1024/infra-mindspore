@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internship-website
+  namespace: internship
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: internship-website
+  template:
+    metadata:
+      labels:
+        app: internship-website
+    spec:
+      containers:
+        - name: internship-website
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/internship-website:a3bdf9a8dcaf6eeecf0093ad4b9f354e272c0092
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 2000m
+              memory: 2000Mi
+            limits:
+              cpu: 2000m
+              memory: 2000Mi
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP

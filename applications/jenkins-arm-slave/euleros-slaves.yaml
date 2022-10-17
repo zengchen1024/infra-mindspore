@@ -24,7 +24,7 @@ metadata:
     app: arm-euleros-slaves
 spec:
   serviceName: arm-euleros-slaves-service
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: arm-euleros-slaves
@@ -32,6 +32,8 @@ spec:
     metadata:
       labels:
         app: arm-euleros-slaves
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: runtime/default
     spec:
       initContainers:
         - name: slave-init

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    env: release
+    gitee_token_path: /app/conf/robot-github/gitee-token
+    github_token_path: /app/conf/robot-github/github-token

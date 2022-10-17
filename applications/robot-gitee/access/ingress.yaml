@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/custom-http-errors: 400,500
+    nginx.ingress.kubernetes.io/proxy-body-size: 2m
+  name: ingress
+  namespace: robot-gitee
+spec:
+  tls:
+    - hosts:
+        - robot-gitee.osinfra.cn
+      secretName: secret-tls-access
+  rules:
+    - host: robot-gitee.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: service-access
+              servicePort: 8888
+            path: /gitee-hook

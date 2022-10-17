@@ -67,6 +67,8 @@ spec:
           env:
             - name: PRIVACY_LINK
               value: https://mindspore.cn/privacy/en/
+            - name: CONDUCT_LINK
+              value: https://gitee.com/mindspore/community/blob/master/code-of-conduct_en.md
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
@@ -143,6 +145,7 @@ spec:
               cp /opt/mailman-web-config/base.html /usr/lib/python3.6/site-packages/postorius/templates/postorius;
               #disable signup page for mailman web hyperkitty
               cp /opt/mailman-web-config/base2.html /usr/lib/python3.6/site-packages/hyperkitty/templates/hyperkitty/base.html
+              cp /opt/mailman-web-config/email.py /usr/lib/python3.6/site-packages/hyperkitty/models/email.py
               exec docker-entrypoint.sh uwsgi --ini /opt/mailman-web/uwsgi.ini;
       #NOTE: Empty dir can't be used in a production dir. Please upgrade it before using.
         - name: nginx-web

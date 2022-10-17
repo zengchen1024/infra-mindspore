@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      repo_plugins:
+        fixpods:
+        - robot-gitlab-label
+        - robot-gitlab-review
+        - robot-gitlab-welcome
+      plugins:
+      - name: robot-gitlab-label
+        endpoint: http://service-label.robot-gitlab-openeuler.svc.cluster.local:8888/gitlab-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitlab-welcome
+        endpoint: http://service-welcome.robot-gitlab-openeuler.svc.cluster.local:8888/gitlab-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+      - name: robot-gitlab-review
+        endpoint: http://service-review.robot-gitlab-openeuler.svc.cluster.local:8888/gitlab-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"

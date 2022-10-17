@@ -1,10 +1,16 @@
 resources:
-  - jenkins-cluster.yaml
-  - namespace.yaml
-  - secrets.yaml
-  - ingress.yaml
-  - oauth-proxy.yaml
+- jenkins-cluster.yaml
+- namespace.yaml
+- secrets.yaml
+- ingress.yaml
+- oauth-proxy.yaml
+- cronjob.yaml
 commonAnnotations:
+  email: tommylikehu@gmail.com
   owner: tommylikehu
-  email: "tommylikehu@gmail.com"
 namespace: jenkins-master
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/openeuler/bak-jenkins
+  newTag: 0be18a22a74d58443833698a04a05e18a321f399
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

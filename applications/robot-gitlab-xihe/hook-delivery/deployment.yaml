@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+      - name: hook-delivery
+        args:
+        - --port=8888
+        - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
+        - --hmac-secret-file=/app/conf/xihe-gitlab/hmac
+        - --kafkamq-config-file=/app/conf/xihe-gitlab/kafka
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/xihe-gitlab:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/xihe-gitlab/hmac
+          subPath: systemhook-hmac
+          name: secret-volume
+        - mountPath: /app/conf/xihe-gitlab/kafka
+          subPath: kafka
+          name: secret-volume
+        - mountPath: /app/conf/xihe-gitlab/app_config/
+          name: app-config
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: secret-hook-delivery
+      - name: app-config
+        configMap:
+          name: configmap-hook-delivery

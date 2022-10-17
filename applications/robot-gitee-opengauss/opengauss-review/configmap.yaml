@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - opengauss/openGauss-server
+      lgtm_counts_required: 2
+      labels_for_merge:
+      - opengauss-cla/yes
+      - ci-pipeline-success
+
+    - repos:
+      - zengchen1024/repo-test
+      - opengauss
+      excluded_repos:
+      - opengauss/tc
+      - opengauss/openGauss-server
+      lgtm_counts_required: 2
+      labels_for_merge:
+      - opengauss-cla/yes
+
+    - repos:
+      - opengauss/tc
+      lgtm_counts_required: 2
+      check_permission_based_on_sig_owners: true
+      sigs_dir: sigs
+      labels_for_merge:
+      - opengauss-cla/yes

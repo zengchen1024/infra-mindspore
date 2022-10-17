@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - ascend
+      require_self_approval: true      
+    - repos:
+      - ascend/canndev
+      - ascend/Asight
+      - ascend/metadef
+      - ascend/parser
+      - ascend/pytorch
+      - ascend/pytorch-develop
+      - ascend/mindstudio
+      require_self_approval: true

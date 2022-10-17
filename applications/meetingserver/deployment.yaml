@@ -47,7 +47,7 @@ spec:
                 secretKeyRef:
                   key: smtp_server_host
                   name: meeting-server-secrets
-            - name: MINDESPORE_ACCESS_KEY_ID
+            - name: MINDSPORE_ACCESS_KEY_ID
               valueFrom:
                 secretKeyRef:
                   key: mindspore_access_key_id
@@ -135,6 +135,38 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: query_token
+                  name: meeting-server-secrets
+            - name: RASP_BACKEND_URL
+              value: http://server.xarmor.heds.huawei.com/raspforx
+            - name: RASP_APPID
+              valueFrom:
+                secretKeyRef:
+                  key: rasp_appid
+                  name: meeting-server-secrets
+            - name: RASP_APP_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: rasp_apptoken
+                  name: meeting-server-secrets
+            - name: RASP_TENANT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: rasp_tenantid
+                  name: meeting-server-secrets
+            - name: WELINK_HOST_1
+              valueFrom:
+                secretKeyRef:
+                  key: welink_host_1
+                  name: meeting-server-secrets
+            - name: WELINK_HOST_1_ACCOUNT
+              valueFrom:
+                secretKeyRef:
+                  key: welink_host_1_account
+                  name: meeting-server-secrets
+            - name: WELINK_HOST_1_PWD
+              valueFrom:
+                secretKeyRef:
+                  key: welink_host_1_pwd
                   name: meeting-server-secrets
           command:
             - /bin/sh

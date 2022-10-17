@@ -1,0 +1,17 @@
+resources:
+- gitlab-deployment.yaml
+- gitlab-ingress.yaml
+- gitlab-secret.yaml
+- gitlab-service.yaml
+- redis-service.yaml
+- redis-statefulset.yaml
+- namespace.yaml
+- pvc.yaml
+namespace: source
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: sameersbn/gitlab
+  newTag: 15.2.2
+- name: redis
+  newTag: 6.2.6

@@ -1,0 +1,409 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      repo_plugins:
+        zengchen1024/repo-test:
+        - label
+        - lifecycle
+        - welcome
+        - assign-issue
+        - opengauss-review
+        - robot-gitee-openlookeng-synchronizer
+
+        opengauss:
+        - label
+        - lifecycle
+        - welcome
+        - assign-issue
+        - opengauss-review
+        - robot-gitee-opengauss-associate
+        - robot-gitee-opengauss-cla
+        - robot-gitee-opengauss-sigguide
+
+        openlookeng/community:
+        - sweepstakes
+        - robot-gitee-openlookeng-synchronizer
+
+        ci-bot:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        
+        openeuler:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
+        - robot-gitee-openeuler-tech4dx-label
+        
+        src-openeuler:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
+        - robot-gitee-openeuler-tech4dx-label
+        
+        openeuler-competition:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
+        
+        openeuler-compliance:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
+        
+        openeuler-risc-v:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
+        
+        openeuler-practice-courses:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
+        
+        openeuler-customization:
+        - robot-gitee-openeuler-label
+        - robot-gitee-openeuler-lifecycle 
+        - robot-gitee-openeuler-assign-issue
+        - robot-gitee-openeuler-openeuler-review
+        - robot-gitee-openeuler-openeuler-welcome
+        - robot-gitee-openeuler-cla
+
+        openlookeng:
+        - robot-gitee-openlookeng-lgtm
+        - robot-gitee-openlookeng-approve
+        - robot-gitee-openlookeng-assign
+        - robot-gitee-openlookeng-checkpr
+        - robot-gitee-openlookeng-cla
+
+        openlookeng-competition:
+        - robot-gitee-openlookeng-cla
+
+        openlookeng/hetu-core:
+        - robot-gitee-openlookeng-associate
+
+        openeuler/community:
+        - ci-tools
+
+        ascend:
+        - robot-gitee-ascend-assign
+        - robot-gitee-ascend-approve
+        - robot-gitee-ascend-cla
+        - robot-gitee-ascend-label
+        - robot-gitee-ascend-lgtm
+        - robot-gitee-ascend-tide
+
+        cann/acl:
+        - robot-gitee-cann-approve
+        - robot-gitee-cann-assign
+        - robot-gitee-cann-label
+        - robot-gitee-cann-lgtm
+        - robot-gitee-cann-tide
+
+        cann/air:
+        - robot-gitee-cann-approve
+        - robot-gitee-cann-assign
+        - robot-gitee-cann-label
+        - robot-gitee-cann-lgtm
+        - robot-gitee-cann-tide
+
+        cann/abl-kernel:
+        - robot-gitee-cann-approve
+        - robot-gitee-cann-assign
+        - robot-gitee-cann-label
+        - robot-gitee-cann-lgtm
+        - robot-gitee-cann-tide
+
+        edahelper:
+        - robot-gitee-edahelper-cla
+        
+        huadajiutian/wrapper:
+        - robot-gitee-edahelper-cla
+
+        mindspore/docs:
+        - robot-gitee-mindspore-review-trigger
+
+        mindspore/course:
+        - robot-gitee-mindspore-review-trigger
+        
+        mindspore:
+        - robot-gitee-mindspore-cla
+
+        mindspore/golden-stick:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-tide
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
+
+        mindspore/federated:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-tide
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
+
+        mindspore/text:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-tide
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
+
+        ms-incubator:
+        - robot-gitee-mindspore-cla
+        
+        foundation-models/opt:
+        - robot-gitee-mindspore-cla
+        
+        oepkgs:
+        - robot-gitee-oepkgs-review
+    
+        src-oepkgs:
+        - robot-gitee-oepkgs-review
+
+      plugins:
+      - name: lifecycle
+        endpoint: http://service-lifecycle.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: welcome
+        endpoint: http://service-welcome.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+      - name: label
+        endpoint: http://service-label.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: assign-issue
+        endpoint: http://service-assign-issue.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: opengauss-review
+        endpoint: http://service-opengauss-review.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: sweepstakes
+        endpoint: http://service-sweepstakes.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-openeuler-lifecycle
+        endpoint: http://service-lifecycle.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-openeuler-assign-issue
+        endpoint: http://service-assign-issue.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-openeuler-label
+        endpoint: http://service-label.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openeuler-openeuler-welcome
+        endpoint: http://service-openeuler-welcome.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+      - name: robot-gitee-openeuler-openeuler-review
+        endpoint: http://service-openeuler-review.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-checkpr
+        endpoint: http://service-checkpr.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+      - name: robot-gitee-openlookeng-lgtm
+        endpoint: http://service-lgtm.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-associate
+        endpoint: http://service-associate.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-assign
+        endpoint: http://service-assign.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-approve
+        endpoint: http://service-approve.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-cla
+        endpoint: http://service-cla.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-opengauss-associate
+        endpoint: http://service-associate.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-opengauss-cla
+        endpoint: http://service-cla.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openeuler-cla
+        endpoint: http://service-cla.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-assign
+        endpoint: http://service-assign.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-ascend-approve
+        endpoint: http://service-approve.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-cla
+        endpoint: http://service-cla.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-lgtm
+        endpoint: http://service-lgtm.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-label
+        endpoint: http://service-label.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-tide
+        endpoint: http://service-tide.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: ci-tools
+        endpoint: http://citoolservice.ci-tools-service.svc.cluster.local/review/
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-mindspore-cla
+        endpoint: http://service-cla.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-mindspore-label
+        endpoint: http://service-label.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-cann-approve
+        endpoint: http://service-approve.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-cann-lgtm
+        endpoint: http://service-lgtm.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-cann-assign
+        endpoint: http://service-assign.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-cann-cla
+        endpoint: http://service-cla.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-cann-label
+        endpoint: http://service-label.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-cann-tide
+        endpoint: http://service-tide.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openeuler-tech4dx-label
+        endpoint: http://service-tech4dx-label.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Note Hook"
+      - name: robot-gitee-openeuler-hook-delivery
+        endpoint: http://service-hook-delivery.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Push Hook"
+      - name: robot-gitee-edahelper-cla
+        endpoint: http://service-cla.robot-gitee-edahelper.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-mindspore-tide
+        endpoint: http://service-tide.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-mindspore-lifecycle
+        endpoint: http://service-lifecycle.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-mindspore-assign
+        endpoint: http://service-assign.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-mindspore-review-trigger
+        endpoint: http://service-review-trigger.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-synchronizer
+        endpoint: http://service-synchronizer.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Note Hook"
+      
+      - name: robot-gitee-oepkgs-review
+        endpoint: http://service-oepkgs-review.robot-gitee-oepkgs.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-opengauss-sigguide
+        endpoint: http://service-opengauss-sigguide.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"

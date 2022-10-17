@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job
+spec:
+  ttlSecondsAfterFinished: 300
+  template:
+    spec:
+      containers:
+        - name: sync-repo-file-job
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/sync-repo-file-job:main-f83e60a
+          args:
+            - --platform=gitee
+            - --orgRepos=cann/acl
+            - --fileNames=OWNERS
+            - --endpoint=service-sync-file-server.robot-gitee.svc.cluster.local:8888
+      restartPolicy: Never

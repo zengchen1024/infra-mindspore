@@ -1,0 +1,19 @@
+resources:
+- ingress.yaml
+- namespace.yaml
+- service.yaml
+- secret.yaml
+- summary-deployment.yaml
+- summary-service.yaml
+- oauth-proxy.yaml
+commonLabels:
+  app: mindspore-summary-en
+commonAnnotations:
+  email: tommylikehu@gmail.com
+  owner: TommyLike
+namespace: mindspore-summary-en
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/summary/mindspore-summary-en
+  newTag: cc3a9c6b7649fb34445a0cfcf2386d5bb06861ce

@@ -1,0 +1,22 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/name",
+    "value": "approve"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/volumes/1/configMap/name",
+    "value": "configmap-approve"
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/args/3",
+    "value": "--cache-server=service-repo-owners-cache.robot-gitee.svc.cluster.local:8888"
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/args/4",
+    "value": "--command-link=https://gitee.com/ascend/community/blob/master/command.md"
+  } 
+]

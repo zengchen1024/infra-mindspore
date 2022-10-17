@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 5
+  template:
+    spec:
+      containers:
+      - name: access
+        args:
+        - --port=8888
+        - --config-file=/app/conf/robot-gitlab/app_config/config.yaml
+        - --hmac-secret-file=/app/conf/robot-gitlab/hmac
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitlab:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/robot-gitlab/hmac
+          subPath: webhook-hmac
+          name: secret-volume
+        - mountPath: /app/conf/robot-gitlab/app_config/
+          name: app-config
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: secret-access
+      - name: app-config
+        configMap:
+          name: configmap-access

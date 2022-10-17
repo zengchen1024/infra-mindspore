@@ -1,0 +1,16 @@
+resources:
+- xihe-website.yaml
+- xihe-backend.yaml
+- namespace.yaml
+- secret.yaml
+- ingress.yaml
+- configmap.yaml
+- oauth-proxy.yaml
+namespace: xihe
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-backend
+  newTag: 9697ba3fdbacb5de74e943fb70c4a406c08227b3
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website
+  newTag: c5cdb32a3d238d146b77800a5e59d15c078264de

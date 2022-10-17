@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: mindspore-website
 spec:
-  replicas: 6
+  replicas: 4
   strategy:
     rollingUpdate:
       maxUnavailable: 2
@@ -48,6 +48,21 @@ spec:
             valueFrom:
               secretKeyRef:
                 key: mail_password
+                name: website-secrets
+          - name: RASP_TENANTID
+            valueFrom:
+              secretKeyRef:
+                key: rasp_tenantid
+                name: website-secrets
+          - name: RASP_APPID
+            valueFrom:
+              secretKeyRef:
+                key: rasp_appid
+                name: website-secrets
+          - name: RASP_SECRET
+            valueFrom:
+              secretKeyRef:
+                key: rasp_secret
                 name: website-secrets
           - name: MS_REDIS_HOST
             value: 192.168.0.196

@@ -10,6 +10,7 @@ resources:
 - job.yaml
 - oauth-proxy.yaml
 - cibot-service.yaml
+- covid-service.yaml
 commonAnnotations:
   email: 245462755@qq.com
   owner: zhengyuhang
@@ -21,5 +22,5 @@ images:
   newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
   newTag: 66a4c8d25c244b2f2e18f2d95af1c65862bb8b63
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-website
-  newName: swr.ap-southeast-1.myhuaweicloud.com/opensourceway/mindspore-website
-  newTag: 064a5b36b9fbc2cc1944c26dd0d10f01fac7e3a5
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore-website
+  newTag: 88cc483b00e0216b9ba9f0c77b519e8a8407b3da

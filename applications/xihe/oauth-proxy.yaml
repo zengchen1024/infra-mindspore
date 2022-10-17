@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: oauth2-proxy
+  name: oauth2-proxy
+  namespace: xihe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: oauth2-proxy
+  template:
+    metadata:
+      labels:
+        k8s-app: oauth2-proxy
+    spec:
+      containers:
+        - args:
+          - --provider=oidc
+          - --email-domain=*
+          - --upstream=http://xihe-backend-service.xihe.svc.cluster.local
+          - --http-address=0.0.0.0:4180
+          - --provider-display-name=authing
+          - --cookie-expire=12h0m0s
+          - --redirect-url=https://xihebackend.mindspore.cn/oauth2/callback
+          - --oidc-issuer-url=https://xihe-backend.authing.cn/oidc
+          - --skip-auth-regex=^/static
+          - --skip-auth-regex=^/api/base/statistics
+          - --insecure-oidc-allow-unverified-email=true
+          - --session-cookie-minimal=false
+          - --pass-access-token=true
+          - --cookie-secure=false
+          env:
+          - name: OAUTH2_PROXY_CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                key: client_id
+                name: xihe-secret
+          - name: OAUTH2_PROXY_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                key: client_secret
+                name: xihe-secret
+          - name: OAUTH2_PROXY_COOKIE_SECRET
+            valueFrom:
+              secretKeyRef:
+                key: cookie_secret
+                name: xihe-secret
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:4b64a9c04a247dd5da3ff664d9d497c902324c3a
+          imagePullPolicy: Always
+          name: oauth2-proxy
+          ports:
+          - containerPort: 4180
+            protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    k8s-app: oauth2-proxy
+  name: oauth2-proxy
+  namespace: xihe
+spec:
+  ports:
+    - name: http
+      port: 4180
+      protocol: TCP
+      targetPort: 4180
+  selector:
+    k8s-app: oauth2-proxy

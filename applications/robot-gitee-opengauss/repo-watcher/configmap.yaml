@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config:
+      watching_files:
+        org: opengauss
+        repo: tc
+        branch: master
+        repo_file_path: repos.yaml
+        sig_file_path: sigs.yaml
+        sig_dir: sigs
+      concurrent_size: 10
+      interval: 3

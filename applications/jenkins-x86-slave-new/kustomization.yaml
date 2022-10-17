@@ -1,0 +1,12 @@
+resources:
+  - check-slaves.yaml
+  - secrets.yaml
+  - ubuntu-slaves.yaml
+  - generic-slaves.yaml
+  - centos-slaves.yaml
+  - euleros-slaves.yaml
+  - namespace.yaml
+commonAnnotations:
+  owner: gaoxiang
+  email: "gx_hw2020@163.com"
+namespace: jenkins

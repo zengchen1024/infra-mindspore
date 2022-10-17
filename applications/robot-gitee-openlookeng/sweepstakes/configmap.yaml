@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - openlookeng/community
+      congratulation: "恭喜%s，请各位联系openLooKeng小助手（微信号：openLooKengoss），提供您注册的gitee邮箱，领取本次活动纪念品。感谢您的参与。"

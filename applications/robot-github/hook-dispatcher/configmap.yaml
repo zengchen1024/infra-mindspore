@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      broker:
+        addresses:
+        - 121.36.22.144:9094
+        - 124.70.16.28:9094
+        - 119.3.250.251:9094
+      repo_plugins:
+        xwz123/repo-test:
+        - robot-github-openlookeng-synchronizer
+        - robot-github-openeuler-cla
+    
+        src-openeuler:
+        - robot-github-openeuler-welcome
+        - robot-github-openeuler-review
+        - robot-github-openeuler-label
+        - robot-github-openeuler-lifecycle
+        - robot-github-openeuler-assign
+        - robot-github-openeuler-cla
+
+        openlookeng/community:
+        - robot-github-openlookeng-synchronizer
+
+      plugins:
+      - name: robot-github-synchronizer
+        endpoint: http://service-synchronizer.robot-github.svc.cluster.local:8888/github-hook
+        events:
+        - "issues"
+        - "issue_comment"
+        
+      - name: robot-github-openlookeng-synchronizer
+        endpoint: http://service-synchronizer.robot-github-openlookeng.svc.cluster.local:8888/github-hook
+        events:
+        - "issues"
+        - "issue_comment"        
+       
+      - name: robot-github-openeuler-cla
+        endpoint: http://service-cla.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - "pull_request"
+        - "issue_comment"
+
+      - name: robot-github-openeuler-welcome
+        endpoint: http://service-openeuler-welcome.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - "issues"
+        - "pull_request"
+
+      - name: robot-github-openeuler-review
+        endpoint: http://service-openeuler-review.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - "pull_request"
+        - "issue_comment"
+
+      - name: robot-github-openeuler-label
+        endpoint: http://service-openeuler-label.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - "pull_request"
+        - "issue_comment"
+
+      - name: robot-github-openeuler-lifecycle
+        endpoint: http://service-openeuler-lifecycle.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - "issue_comment"
+
+      - name: robot-github-openeuler-assign
+        endpoint: http://service-openeuler-assign.robot-github-openeuler.svc.cluster.local:8888/github-hook
+        events:
+        - "issue_comment"

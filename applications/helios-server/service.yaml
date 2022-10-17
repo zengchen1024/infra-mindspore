@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helios-voting
+  namespace: heliosserver
+spec:
+  ports:
+  - name: httpport
+    port: 80
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: helios-server
+  type: ClusterIP

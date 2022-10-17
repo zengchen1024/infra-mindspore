@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- namespace.yaml
+- access
+- repo-file-cache
+- sync-file-server
+- sync-repo-file
+- repo-owners-cache
+- sync-repo-file-job
+commonLabels:
+  app: infrastructure-robot-gitee
+commonAnnotations:
+  email: chenzeng765@163.com
+  owner: chenzeng
+namespace: robot-gitee

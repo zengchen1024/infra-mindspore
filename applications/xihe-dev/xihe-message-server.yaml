@@ -1,0 +1,102 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xihe-message-server
+  namespace: xihe-dev
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: xihe-message-server
+  template:
+    metadata:
+      labels:
+        app: xihe-message-server
+    spec:
+      containers:
+      - name: xihe-message-server
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-message-server:3d4482ebdcc17188b7853f732bc50226f88e8e2c
+        imagePullPolicy: IfNotPresent
+        args:
+        - --port=8000
+        - --config-file=/opt/app/conf/config.yaml
+        env:
+        - name: AUTHING_APP_ID
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: AUTHING_APP_ID
+        - name: AUTHING_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: AUTHING_SECRET
+        - name: MONGODB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: MONGODB_NAME
+        - name: MONGODB_CONNECTION
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: MONGODB_CONNECTION
+        - name: GITLAB_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: GITLAB_ENDPOINT
+        - name: GITLAB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: GITLAB_TOKEN
+        - name: API_TOKEN_KEY
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: API_TOKEN_KEY
+        - name: ENCRYPTION_KEY
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: ENCRYPTION_KEY
+        - name: DEFAULT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: DEFAULT_PASSWORD
+        - name: AUTHING_REDIRECT_URI_DEV
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: AUTHING_REDIRECT_URI_DEV
+        - name: KAFKA_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: KAFKA_ADDRESS
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
+          limits:
+            cpu: 1000m
+            memory: 1000Mi
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /opt/app/conf
+          name: config
+      volumes:
+      - name: config
+        configMap:
+          name: message-server-configmap

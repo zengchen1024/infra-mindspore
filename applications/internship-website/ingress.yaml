@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: internship-ingress
+  namespace: internship
+spec:
+  tls:
+    - hosts:
+        - internship.mindspore.cn
+      secretName: internship-tls
+  rules:
+    - host: internship.mindspore.cn
+      http:
+        paths:
+          - backend:
+              serviceName: internship-service
+              servicePort: 80
+            path: /
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: new-internship-ingress
+  namespace: internship
+spec:
+  tls:
+    - hosts:
+        - new.mindspore.cn
+      secretName: internship-tls
+  rules:
+    - host: new.mindspore.cn
+      http:
+        paths:
+          - backend:
+              serviceName: internship-service
+              servicePort: 80
+            path: /

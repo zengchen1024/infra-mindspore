@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - ascend
+      commits_threshold: 1
+
+    - repos:
+      - ascend/canndev
+      - ascend/Asight
+      - ascend/metadef
+      - ascend/parser
+      - ascend/tensorflow
+      commits_threshold: 1
+      clear_labels:
+      - ci-pipeline-passed

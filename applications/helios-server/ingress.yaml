@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/custom-http-errors: 400,500
+    nginx.ingress.kubernetes.io/proxy-body-size: 2m
+  name: ingress
+  namespace: heliosserver
+spec:
+  tls:
+    - hosts:
+        - helios-voting.osinfra.cn
+      secretName: heliosserver-tls
+  rules:
+    - host: helios-voting.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: helios-voting
+              servicePort: 80
+            path: /

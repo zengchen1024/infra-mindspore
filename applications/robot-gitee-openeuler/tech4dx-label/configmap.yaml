@@ -1,0 +1,179 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+        - openeuler
+        - src-openeuler
+      menter_file_path: /app/conf/robot-gitee/app_config/mentor.json
+      issue_comment_tpl_path: /app/conf/robot-gitee/app_config/issueComTemplate.md
+      descision_tpl_path: /app/conf/robot-gitee/app_config/decisionTemplate.md
+      pariti_tpl_path: /app/conf/robot-gitee/app_config/partiTemplate.md
+      pariti_ai_tpl_path: /app/conf/robot-gitee/app_config/partiTemplate_ai.md
+      assign_tpl_path: /app/conf/robot-gitee/app_config/assignTemplate.md
+  mentor.json: |
+    [
+      {
+        "words": ["mailinglist", "maillist", "mail", "邮件", "邮箱", "subscribe", "订阅"],
+        "label": "mailing_list",
+        "name": "TommyLike"
+      },
+      {
+        "words": ["etherpad", "meetingrecord", "会议记录"],
+        "label": "etherpad",
+        "name": "zengchen1024"
+      },
+      {
+        "words": ["cla", "CLA", "signagreement", "签署贡献者协议"],
+        "label": "CLA",
+        "name": "zengchen1024"
+      },
+      {
+        "words": ["guarding", "jenkins", "staticcheck", "test", "compile", "robot", "测试", "编译", "检查"],
+        "label": "guarding",
+        "name": "miao_kaibo"
+      },
+      {
+        "words": ["website", "blog", "mirror", "下载", "官网", "博客", "镜像"],
+        "label": "website",
+        "name": "lesliexx"
+      },
+      {
+        "words": ["meeting", "会议", "例会"],
+        "label": "meeting",
+        "name": "liuqi469227928"
+      },
+      {
+        "words": ["sensitivewords", "敏感词"],
+        "label": "kind/sensitive_words",
+        "name": "haml"
+      },
+      {
+        "words": ["log", "日志"],
+        "label": "kind/log",
+        "name": "zhangjianjun_code"
+      },
+      {
+        "words": ["docs", "documents", "文档"],
+        "label": "kind/docs",
+        "name": "lesliexx"
+      },
+      {
+        "words": ["labelsetting", "标签设置"],
+        "label": "kind/label_setting",
+        "name": "zhongjun2"
+      },
+      {
+        "words": ["access", "permission", "权限"],
+        "label": "kind/permission",
+        "name": "georgecao"
+      },
+      {
+        "words": ["requirement", "featurerequest", "需求"],
+        "label": "kind/feature_request",
+        "name": "zhengzhenyu"
+      },
+      {
+        "words": ["translation", "翻译"],
+        "label": "kind/translation",
+        "name": "lesliexx"
+      },
+      {
+        "words": ["bug", "BUG"],
+        "label": "bug/unconfirmed",
+        "name": "zhangjianjun_code"
+      },
+      {
+        "words": ["cve", "CVE"],
+        "label": "cve/pending",
+        "name": "zhangjianjun_code"
+      },
+      {
+        "words": ["gitee", "Gitee"],
+        "label": "gitee",
+        "name": "zhangjianjun_code"
+      },
+      {
+        "words": ["git", "Git"],
+        "label": "git",
+        "name": "zhangjianjun_code"
+      },
+      {
+        "words": ["scheduling", "调度"],
+        "label": "kind/schduling",
+        "name": "georgecao"
+      },
+      {
+        "words": ["obs", "OBS"],
+        "label": "build/obs",
+        "name": "georgecao"
+      },
+      {
+        "words": ["rpm", "RPM"],
+        "label": "build/rpm",
+        "name": "georgecao"
+      },
+      {
+        "words": ["iso", "ISO"],
+        "label": "build/iso",
+        "name": "georgecao"
+      },
+      {
+        "words": ["src-openeuler", "src-openEuler"],
+        "label": "repo/src-openeuler",
+        "name": "georgecao"
+      },
+      {
+        "words": ["openeuler", "openEuler"],
+        "label": "repo/openeuler",
+        "name": "georgecao"
+      },
+      {
+        "words": ["开源实习"],
+        "label": "activity/开源实习",
+        "name": "zhengzhenyu"
+      },
+      {
+        "words": ["合规提升"],
+        "label": "sig/sig-compliance",
+        "name": "xxx"
+      }
+    ]
+  issueComTemplate.md: |
+    Please add labels (comp or sig),also you can visit "https://gitee.com/openeuler/community/blob/master/en/sig-infrastructure/command.md" to find more.
+    为了让问题更快得到响应，请您为该issue打上 **组件(comp)或兴趣组(sig)** 标签，打上标签的问题可以直接推送给责任人进行处理。更多的标签可以查看
+    https://gitee.com/openeuler/community/blob/master/en/sig-infrastructure/label.md
+    以组件问题为例，如果你发现问题是组件OBS造成的，你可以这样评论：
+    //build/obs
+    当然你也可以向Infrastructure SIG组求助，可以这样写：
+    //build/obs
+    //sig/infrastructure
+    如果是一个简单的问题，你可以留给刚进入社区的小伙伴来回答，这时候你可以这样写：
+    //good-first-issue
+    恭喜你，你已经学会了使用命令来打标签，接下来就在下面的评论里打上标签吧！
+  decisionTemplate.md: |
+    Please use this template to give more details,
+    请使用以下问题模板反馈更多需要决策的信息：
+
+    **Solution Analysis(方案分析)：**
+    **Decision Point(决策点)：**
+    **References(相关材料)：**
+    **Person in Charge(责任人):**
+    **Relevant People(相关人):**
+    **Submission Time(提交时间):**
+    **Conclusion(结论):**
+  partiTemplate.md: |
+    hello, @{issueMaker} @{assignee} , we suggest you add some labels like:  
+    你好, @{issueMaker} @{assignee} {goodissue} , 建议您为这个issue打上标签:   
+    {label}
+  partiTemplate_ai.md: |
+    hello, @{issueMaker} , we suggest you assign this issue to:
+    你好, @{issueMaker} , 建议您将这个issue分配给:负责人{issueAssignee}，协作人{issueCoAssignee}
+  assignTemplate.md: |
+    hello, @{issueMaker} , we suggest assign this issue/pr to @{assignee}:  
+    你好, @{issueMaker} , 建议您将这个issue/pr分配给 @{assignee}.
+  
+    

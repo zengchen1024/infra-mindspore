@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - zengchen1024/repo-test
+
+    - repos:
+      - opengauss
+      unable_checking_squash: true

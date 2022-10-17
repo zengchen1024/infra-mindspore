@@ -24,7 +24,7 @@ metadata:
     app: arm-ubuntu-slaves
 spec:
   serviceName: arm-ubuntu-slaves-service
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: arm-ubuntu-slaves
@@ -32,6 +32,8 @@ spec:
     metadata:
       labels:
         app: arm-ubuntu-slaves
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: runtime/default
     spec:
       initContainers:
         - name: slave-init

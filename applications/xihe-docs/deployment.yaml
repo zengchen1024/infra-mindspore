@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mindspore-xihe-docs
+  namespace: xihe-docs
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: mindspore-xihe-docs
+  template:
+    metadata:
+      labels:
+        app: mindspore-xihe-docs
+    spec:
+      containers:
+      - name: mindspore-xihe-docs
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-docs:5f4638f2c897a21075aa1aa36bb325380f826bc2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
+          limits:
+            cpu: 1000m
+            memory: 1000Mi

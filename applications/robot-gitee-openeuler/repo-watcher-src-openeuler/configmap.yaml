@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config:
+      watching_files:
+        org: openeuler
+        repo: community
+        branch: master
+        repo_org: src-openeuler
+        sig_file_path: sig/sigs.yaml
+        sig_dir: sig
+      concurrent_size: 2000
+      interval: 3
+      enable_creating_obs_meta_project: true
+      obs_meta_project:
+        obs_repo:
+          org: openeuler
+          repo: release-management
+          branch: master
+        project_dir: master/openEuler-Factory
+        project_file_name: pckg-mgmt.yaml

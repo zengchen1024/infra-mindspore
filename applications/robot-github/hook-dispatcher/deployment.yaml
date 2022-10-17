@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - args:
+        - --port=8888
+        - --topic=github-webhook-openeuler
+        - --config-file=/app/conf/robot-github/app_config/config.yaml
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
+        imagePullPolicy: IfNotPresent
+        name: hook-dispatcher
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/robot-github/app_config/
+          name: app-config
+          readOnly: true
+      volumes:
+      - configMap:
+          name: configmap-hook-dispatcher
+        name: app-config

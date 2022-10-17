@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - ascend
+      enable_pr_assign: true
+      enable_issue_assign: true
+      enable_issue_collaborator: true

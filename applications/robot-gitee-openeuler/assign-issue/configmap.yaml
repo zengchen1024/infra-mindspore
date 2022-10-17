@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - openeuler
+      - src-openeuler
+      - openeuler-competition
+      - openeuler-compliance
+      - openeuler-risc-v
+      - openeuler-practice-courses
+      - openeuler-customization
+      - ci-bot

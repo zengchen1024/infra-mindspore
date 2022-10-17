@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: sync-file-server
+        args:
+        - --concurrent-size=2000
+        - --platform-token-path=/app/conf/robot-gitee/robot_token
+        - --endpoint=http://service-repo-file-cache.robot-gitee.svc.cluster.local:80/v1/file/
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8888
+            name: http
+            protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/robot-gitee/robot_token
+          subPath: robot-token
+          name: secret-volume
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: secret-sync-file-server

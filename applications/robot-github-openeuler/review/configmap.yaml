@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - src-openeuler
+    excluded_repos:
+      - src-openeuler/community
+    lgtm_counts_required: 1
+    labels_for_merge:
+    - openeuler-cla/yes
+    unable_checking_reviewer_for_pr: true
+    freeze_file:
+    - owner: src-openeuler
+      repo: release-management
+      branch: master
+      path: release-management.yaml
+
+
+    - repos:
+      - src-openeuler/community
+    lgtm_counts_required: 2
+    check_permission_based_on_sig_owners: true
+    sigs_dir: sig
+    labels_for_merge:
+    - openeuler-cla/yes
+    unable_checking_reviewer_for_pr: true
+    freeze_file:
+    - owner: src-openeuler
+      repo: release-management
+      branch: master
+      path: release-management.yaml
+
