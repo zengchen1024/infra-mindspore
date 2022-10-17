@@ -18,7 +18,7 @@ spec:
         common-app: om
     spec:
       containers:
-        - image: swr.cn-north-4.myhuaweicloud.com/om/om-collection:0.4.38
+        - image: swr.cn-north-4.myhuaweicloud.com/om/om-collection:0.4.78
           name: om-collect
           ports:
             - containerPort: 3306
