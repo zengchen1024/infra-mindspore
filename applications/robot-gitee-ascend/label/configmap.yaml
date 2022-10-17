@@ -11,6 +11,8 @@ data:
 
     - repos:
       - ascend/canndev
+      - ascend/cann_op_contrib
+      - ascend/vision
       - ascend/Asight
       - ascend/metadef
       - ascend/parser
