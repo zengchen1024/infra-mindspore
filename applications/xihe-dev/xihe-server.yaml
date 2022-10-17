@@ -157,6 +157,26 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: VQA_OBS_BUCKET
+        - name: HW_OBS_AK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_OBS_AK
+        - name: HW_OBS_SK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_OBS_SK
+        - name: HW_OBS_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_OBS_ENDPOINT
+        - name: HW_OBS_BUCKET
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_OBS_BUCKET
         resources:
           requests:
             cpu: 1000m

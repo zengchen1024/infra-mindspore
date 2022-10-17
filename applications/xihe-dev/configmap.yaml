@@ -95,6 +95,14 @@ data:
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
       root_token: "${GITLAB_TOKEN}"
+      default_branch: main
+      lfs_path: gitlab-lfs
+      download_expiry: 3600
+      obs:
+        endpoint: "${HW_OBS_ENDPOINT}"
+        access_key: "${HW_OBS_AK}"
+        secret_key: "${HW_OBS_SK}"
+        bucket: "${HW_OBS_BUCKET}"
 
     api:
       token_key: "${API_TOKEN_KEY}"
