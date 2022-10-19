@@ -6,7 +6,7 @@ data:
   config.yaml: |
     access:
       plugins:
-        - name: sync-repo
+      - name: sync-repo
         endpoint: http://service-sync-repo.xihe-dev.svc.cluster.local:8888/gitlab-hook
         events:
         - "Push Hook"
