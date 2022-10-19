@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- configmap.yaml
+- deployment.yaml
+- service.yaml
+commonLabels:
+  component: message-server
+nameSuffix: -message-server
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-message-server
+  newTag: 70931b8886b748e1e57340e2f15059911a5c49f9

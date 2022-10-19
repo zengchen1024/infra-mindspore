@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    mongodb:
+      mongodb_conn: "${MONGODB_CONNECTION}"
+      mongodb_db: "${MONGODB_NAME}"
+      project_collection: project
+      model_collection: model
+      dataset_collection: dataset 
+      user_collection: user
+      login_collection: login
+      like_collection: like
+      activity_collection: activity
+      tag_collection: tag
+
+    resource:
+      covers:
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+
+      protocols:
+      - "apache 2.0"
+      - "mit"
+
+      project_type:
+      - "Gradio"
+      - "Static"
+
+      training_platform:
+      - "ModelArts"
+
+    mq:
+      address: "${KAFKA_ADDRESS}"
+      topics:
+        fork: "xihe_fork_dev"
+        like: "xihe_like_dev"
+        training: "xihe_training_dev"
+        following: "xihe_following_dev"
+        related_resource: "xihe_related_resource_dev"

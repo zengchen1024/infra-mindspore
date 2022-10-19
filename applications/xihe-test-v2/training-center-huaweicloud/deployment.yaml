@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: training-center-huaweicloud
+        args:
+        - --port=8888
+        - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/xihe-gitlab/app_config/
+          name: app-config
+          readOnly: true
+        env:
+        - name: HW_MODELARTS_REGION
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_MODELARTS_REGION
+        - name: HW_MODELARTS_PROJECT_NAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_MODELARTS_PROJECT_NAME
+        - name: HW_MODELARTS_PROJECT_ID
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_MODELARTS_PROJECT_ID
+        - name: HW_MODELARTS_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_MODELARTS_ENDPOINT
+        - name: HW_OBS_AK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_OBS_AK
+        - name: HW_OBS_SK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_OBS_SK
+        - name: HW_OBS_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_OBS_ENDPOINT
+        - name: HW_OBS_BUCKET
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: HW_OBS_BUCKET
+        - name: MYSQL_CONN
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: MYSQL_CONN
+        - name: GITLAB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: GITLAB_TOKEN
+        - name: GITLAB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: GITLAB_HOST
+      volumes:
+      - name: app-config
+        configMap:
+          name: configmap-training-center-huaweicloud
