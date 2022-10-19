@@ -94,6 +94,7 @@ data:
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
+      graphql_endpoint: "${GITLAB_GRAPHQL_ENDPOINT}"
       root_token: "${GITLAB_TOKEN}"
       default_branch: main
       lfs_path: gitlab-lfs
@@ -205,5 +206,6 @@ data:
       topics:
         fork: "xihe_fork_dev"
         like: "xihe_like_dev"
+        training: "xihe_training_dev"
         following: "xihe_following_dev"
         related_resource: "xihe_related_resource_dev"

@@ -27,16 +27,6 @@ spec:
         - --port=8000
         - --config-file=/opt/app/conf/config.yaml
         env:
-        - name: AUTHING_APP_ID
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: AUTHING_APP_ID
-        - name: AUTHING_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: AUTHING_SECRET
         - name: MONGODB_NAME
           valueFrom:
             secretKeyRef:
@@ -47,36 +37,6 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: MONGODB_CONNECTION
-        - name: GITLAB_ENDPOINT
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: GITLAB_ENDPOINT
-        - name: GITLAB_TOKEN
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: GITLAB_TOKEN
-        - name: API_TOKEN_KEY
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: API_TOKEN_KEY
-        - name: ENCRYPTION_KEY
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: ENCRYPTION_KEY
-        - name: DEFAULT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: DEFAULT_PASSWORD
-        - name: AUTHING_REDIRECT_URI_DEV
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: AUTHING_REDIRECT_URI_DEV
         - name: KAFKA_ADDRESS
           valueFrom:
             secretKeyRef:

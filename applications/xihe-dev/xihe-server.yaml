@@ -67,6 +67,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: GITLAB_ENDPOINT
+        - name: GITLAB_GRAPHQL_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: GITLAB_GRAPHQL_ENDPOINT
         - name: GITLAB_TOKEN
           valueFrom:
             secretKeyRef:
