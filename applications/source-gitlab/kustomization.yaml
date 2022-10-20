@@ -7,6 +7,7 @@ resources:
 - redis-statefulset.yaml
 - namespace.yaml
 - pvc.yaml
+- xihe-gitlab.yaml
 namespace: source
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
@@ -15,3 +16,5 @@ images:
   newTag: 15.2.2
 - name: redis
   newTag: 6.2.6
+- name: gitlab/gitlab-ee
+  newTag: latest
