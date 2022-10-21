@@ -1,0 +1,68 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openeuler-ipb-deployment
+  namespace: openeuler-ipb
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: openeuler-ipb
+  template:
+    metadata:
+      labels:
+        app: openeuler-ipb
+    spec:
+      imagePullSecrets:
+      - name: huawei-swr-image-pull-secret
+      containers:
+      - name: openeuler-ipb
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/openeuler-ipb-test:5fb920d68f3826f17af93b01b9d159d052f6ac38
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: DBHOST
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: dbhost
+        - name: DBPORT
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: dbport
+        - name: DBUSER
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: dbuser
+        - name: DBPASS
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: dbpass
+        - name: DBNAME
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: dbname
+        - name: AccessToken
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: accesstoken
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 500m
+            memory: 500Mi
+          limits:
+            cpu: 500m
+            memory: 500Mi

@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: openeuler-ipb-ingress
+  namespace: openeuler-ipb
+spec:
+  tls:
+    - hosts:
+        - ipb.test.osinfra.cn
+      secretName: openeuler-ipb-tls
+  rules:
+    - host: ipb.test.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: openeuler-ipb-service
+              servicePort: 80
+            path: /

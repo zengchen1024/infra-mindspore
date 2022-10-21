@@ -1,4 +1,27 @@
 ---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+  name: xihe-gitlab-ingress
+  namespace: source
+spec:
+  tls:
+    - hosts:
+        - source-xihe.test.osinfra.cn
+      secretName: xihe-gitlab-tls
+  rules:
+    - host: source-xihe.test.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: xihe-gitlab-service
+              servicePort: 80
+            path: /
+
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
