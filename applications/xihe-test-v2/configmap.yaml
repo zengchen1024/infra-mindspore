@@ -54,6 +54,10 @@ data:
         proxy_set_header Connection $connection_upgrade;
       }
 
+      location ^~ /api/ {
+        proxy_pass http://xihe-backend-service.xihe-test-v2.svc.cluster.local ;
+      }
+
       location ^~ /repo/ {
         proxy_pass https://gitlab.openeuler.sh/api/v4/ ;
       }
