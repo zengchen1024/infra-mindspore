@@ -55,6 +55,41 @@ spec:
             secretKeyRef:
               name: openeuler-ipb-secrets
               key: accesstoken
+        - name: EnterpriseId
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: enterpriseid
+        - name: V8Token
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: v8token
+        - name: V8RefreshToken
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: v8refreshtoken
+        - name: SMTP_HOST
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: smtp_host
+        - name: SMTP_PORT
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: smtp_port
+        - name: SMTP_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: smtp_username
+        - name: SMTP_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: smtp_password
         ports:
         - containerPort: 8080
           name: http
