@@ -36,6 +36,7 @@ data:
         - robot-gitee-openeuler-openeuler-welcome
         
         openeuler:
+        - openeuler-ipb
         - robot-gitee-openeuler-label
         - robot-gitee-openeuler-lifecycle 
         - robot-gitee-openeuler-assign-issue
@@ -45,6 +46,7 @@ data:
         - robot-gitee-openeuler-tech4dx-label
         
         src-openeuler:
+        - openeuler-ipb
         - robot-gitee-openeuler-label
         - robot-gitee-openeuler-lifecycle 
         - robot-gitee-openeuler-assign-issue
@@ -316,6 +318,12 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: openeuler-ipb
+        endpoint: http://openeuler-ipb-service.openeuler-ipb.svc.cluster.local/hooks
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+        - "Issue Hook"
       - name: robot-gitee-mindspore-cla
         endpoint: http://service-cla.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
         events:
