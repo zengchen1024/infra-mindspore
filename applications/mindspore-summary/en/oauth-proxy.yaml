@@ -17,18 +17,20 @@ spec:
     spec:
       containers:
         - args:
-            - --provider=gitee
-            - --email-domain=*
-            - --proxy-prefix=/en/2021summary/oauth2
-            - --skip-validate-email=true
-            - --skip-auth-regex=^/en/2021summary/agreement_ch.html
-            - --skip-auth-regex=^/en/2021summary/agreement_en.html
-            - --upstream=http://mindspore-summary.mindspore-summary-en.svc.cluster.local
-            - --http-address=0.0.0.0:4180
-            - --cookie-expire=6h0m0s
-            - --set-xauthrequest=true
-            - --custom-templates-dir=/bin/static/login
-            - --custom-templates-sign-in=mindspore-en.html
+          - --provider=oidc
+          - --email-domain=*
+          - --upstream=http://mindspore-summary.mindspore-summary-en.svc.cluster.local
+          - --http-address=0.0.0.0:4180
+          - --provider-display-name=authing
+          - --cookie-expire=6h0m0s
+          - --skip-auth-regex=^/en/2021summary/agreement_ch.html
+          - --skip-auth-regex=^/en/2021summary/agreement_en.html
+          - --redirect-url=https://mindspore.cn/en/2021summary/oauth2
+          - --oidc-issuer-url=https://mindspore-summary-en.authing.cn/oidc
+          - --insecure-oidc-allow-unverified-email=true
+          - --session-cookie-minimal=false
+          - --pass-access-token=true
+          - --cookie-secure=false
           env:
             - name: OAUTH2_PROXY_CLIENT_ID
               valueFrom:
@@ -45,7 +47,7 @@ spec:
                 secretKeyRef:
                   key: cookie_secret
                   name: oauth-secrets
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:1091a11b4b3a3ce5895296ed6613b5bd2e14867a
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:4b64a9c04a247dd5da3ff664d9d497c902324c3a
           imagePullPolicy: Always
           name: oauth2-proxy
           ports:
