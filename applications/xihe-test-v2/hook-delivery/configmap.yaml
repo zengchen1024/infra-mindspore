@@ -7,4 +7,4 @@ data:
     default:
       system_hook:
       - push
-      topic: xihe-gitlab
+      topic: xihe-gitlab-test-v2
