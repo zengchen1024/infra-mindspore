@@ -83,14 +83,14 @@ spec:
         image: gitlab/gitlab-ee:latest
         env:
         - name: GITLAB_OMNIBUS_CONFIG
-          value: "external_url 'http://localhost:80/';"
+          value: "external_url 'http://source-xihe.test.osinfra.cn';"
         resources:
           requests:
             cpu: 3000m
-            memory: 15000Mi
+            memory: 30000Mi
           limits:
             cpu: 3000m
-            memory: 15000Mi
+            memory: 30000Mi
         volumeMounts:
         - mountPath: /etc/gitlab
           name: gitlab-data
