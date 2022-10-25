@@ -166,6 +166,77 @@ spec:
           value: "true"
         - name: IMAP_STARTTLS
           value: "true"
+        
+        - name: GITLAB_LFS_ENABLED
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_enable
+        - name: GITLAB_LFS_OBJECTS_DIR
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_objects_dir
+        - name: GITLAB_LFS_OBJECT_STORE_ENABLED
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_object_store_enabled
+        - name: GITLAB_LFS_OBJECT_STORE_PROXY_DOWNLOAD
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_object_store_proxy_download
+        - name: GITLAB_LFS_OBJECT_STORE_REMOTE_DIRECTORY
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_object_store_remote_directory
+        - name: GITLAB_LFS_OBJECT_STORE_CONNECTION_PROVIDER
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_provider
+        - name: GITLAB_LFS_OBJECT_STORE_CONNECTION_AWS_REGION
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_aws_region
+        - name: GITLAB_LFS_OBJECT_STORE_CONNECTION_AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_aws_access_key_id
+        - name: GITLAB_LFS_OBJECT_STORE_CONNECTION_AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_aws_secret_access_key
+        - name: GITLAB_LFS_OBJECT_STORE_CONNECTION_AWS_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_object_aws_endpoint
+        - name: GITLAB_LFS_OBJECT_STORE_CONNECTION_AWS_SIGNATURE_VERSION
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_object_aws_signature_version
+        - name: GITLAB_LFS_OBJECT_STORE_CONNECTION_AWS_HOST
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_object_aws_host
+        - name: GITLAB_LFS_OBJECT_STORE_CONNECTION_AWS_PATH_STYLE
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_lfs_object_aws_path_style
+        - name: GITLAB_SHELL_CUSTOM_HOOKS_DIR
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-lfs-secrets
+              key: gitlab_shell_custom_hooks_dir
         ports:
         - name: http
           containerPort: 80
