@@ -10,4 +10,4 @@ nameSuffix: -access
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/robot-gitlab-access
-  newTag: hook-dispatcher-for-all-6104743
+  newTag: hook-dispatcher-for-all-dac30ec
