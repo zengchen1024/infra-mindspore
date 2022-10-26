@@ -10,4 +10,4 @@ nameSuffix: -hook-dispatcher
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/robot-hook-dispatcher
-  newTag: main-d229e45
+  newTag: main-db0ce7a
