@@ -4,7 +4,7 @@ metadata:
   name: configmap
 data:
   config.yaml: |
-    training_endpoint: http://service-training-center-huaweicloud.xihe-test-v2.svc.cluster.local:8000/v1/training
+    training_endpoint: http://service-training-center-huaweicloud.xihe-test-v2.svc.cluster.local:8888/v1/training
     mongodb:
       mongodb_conn: "${MONGODB_CONNECTION}"
       mongodb_db: "${MONGODB_NAME}"
