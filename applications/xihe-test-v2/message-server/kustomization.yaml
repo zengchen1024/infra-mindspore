@@ -9,4 +9,4 @@ commonLabels:
 nameSuffix: -message-server
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-message-server
-  newTag: main-a2eba96
+  newTag: main-342e625
