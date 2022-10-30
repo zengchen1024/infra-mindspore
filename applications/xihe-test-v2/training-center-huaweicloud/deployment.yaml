@@ -12,7 +12,7 @@ spec:
         - --port=8888
         - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
         - --enable_debug=true
-        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab:latest
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8888

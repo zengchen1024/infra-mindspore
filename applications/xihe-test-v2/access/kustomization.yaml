@@ -8,6 +8,6 @@ commonLabels:
   component: access
 nameSuffix: -access
 images:
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/robot-gitlab-access
   newTag: hook-dispatcher-for-all-dac30ec

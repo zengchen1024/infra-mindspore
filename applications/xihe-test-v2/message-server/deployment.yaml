@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: message-server
-        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-message-server:3d4482ebdcc17188b7853f732bc50226f88e8e2c
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
         imagePullPolicy: IfNotPresent
         args:
         - --port=8000
