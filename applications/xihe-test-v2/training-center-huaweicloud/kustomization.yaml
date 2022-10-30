@@ -10,4 +10,4 @@ nameSuffix: -training-center-huaweicloud
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-training-center
-  newTag: main-81e91b3
+  newTag: main-678ba5b
