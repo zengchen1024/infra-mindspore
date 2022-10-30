@@ -9,4 +9,4 @@ commonLabels:
 nameSuffix: -internal-server
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-internal-server
-  newTag: main-b4eb5d8
+  newTag: main-8b2041b
