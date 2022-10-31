@@ -5,6 +5,7 @@ resources:
 - ingress.yaml
 - configmap.yaml
 - xihe-server.yaml
+- xihe-inference-evaluate.yaml
 - internal-server
 - message-server
 - hook-delivery
@@ -20,3 +21,5 @@ images:
   newTag: 8b2041ba405689c0ca4780a4800d464c82f27755
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
   newTag: f577eaa2f4d0d88b7c039ae70ef61536b664a7dc
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate
+  newTag: 33b7deed2200e2a4f0ca16cb6642b73929004432
