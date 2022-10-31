@@ -17,9 +17,9 @@ namespace: xihe-test-v2
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate
+  newTag: d9787000235c1decf33f2ffa5c93f2bc8983602c
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-server
   newTag: 8b2041ba405689c0ca4780a4800d464c82f27755
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
   newTag: f577eaa2f4d0d88b7c039ae70ef61536b664a7dc
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate
-  newTag: 33b7deed2200e2a4f0ca16cb6642b73929004432
