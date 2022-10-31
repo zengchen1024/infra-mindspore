@@ -22,6 +22,9 @@ spec:
         - mountPath: /app/conf/xihe-gitlab/app_config/
           name: app-config
           readOnly: true
+        - mountPath: /app/conf/xihe-gitlab/kube/config
+          name: kubeconfig
+          subPath: cluster_kubeconfig
         env:
         - name: HW_MODELARTS_REGION
           valueFrom:
@@ -82,3 +85,6 @@ spec:
       - name: app-config
         configMap:
           name: configmap-inference
+      - name: kubeconfig
+        secret:
+          secretName: xihe-cluster-secret-inference
