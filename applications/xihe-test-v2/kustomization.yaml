@@ -13,6 +13,7 @@ resources:
 - access
 - sync-repo
 - training-center-huaweicloud
+- inference-evaluate
 namespace: xihe-test-v2
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization

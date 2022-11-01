@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-      - name: inference
+      - name: inference-evaluate
         args:
         - --port=8888
         - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
@@ -26,26 +26,6 @@ spec:
           name: kubeconfig
           subPath: cluster_kubeconfig
         env:
-        - name: HW_MODELARTS_REGION
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: HW_MODELARTS_REGION
-        - name: HW_MODELARTS_PROJECT_NAME
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: HW_MODELARTS_PROJECT_NAME
-        - name: HW_MODELARTS_PROJECT_ID
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: HW_MODELARTS_PROJECT_ID
-        - name: HW_MODELARTS_ENDPOINT
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: HW_MODELARTS_ENDPOINT
         - name: HW_OBS_AK
           valueFrom:
             secretKeyRef:
@@ -66,16 +46,6 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: HW_OBS_BUCKET
-        - name: MYSQL_CONN
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: MYSQL_CONN
-        - name: GITLAB_TOKEN
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: GITLAB_TOKEN
         - name: GITLAB_HOST
           valueFrom:
             secretKeyRef:
@@ -84,7 +54,7 @@ spec:
       volumes:
       - name: app-config
         configMap:
-          name: configmap-inference
+          name: configmap-inference-evaluate
       - name: kubeconfig
         secret:
-          secretName: xihe-cluster-secret-inference
+          secretName: xihe-cluster-secret-inference-evaluate
