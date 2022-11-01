@@ -111,6 +111,9 @@ data:
         openeuler/community:
         - ci-tools
 
+        src-openeuler/opendmarc:
+        - ci-tools
+
         ascend:
         - robot-gitee-ascend-assign
         - robot-gitee-ascend-approve
