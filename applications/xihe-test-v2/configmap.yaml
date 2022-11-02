@@ -104,6 +104,8 @@ data:
       activity_collection: activity
       tag_collection: tag
       training_collection: training
+      evaluate_collection: evaluate
+      inference_collection: inference
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
@@ -163,11 +165,13 @@ data:
     mq:
       address: "${KAFKA_ADDRESS}"
       topics:
-        fork: "xihe_fork_dev"
-        like: "xihe_like_dev"
-        training: "xihe_training_dev"
-        following: "xihe_following_dev"
-        related_resource: "xihe_related_resource_dev"
+        fork: "xihe_fork_test"
+        like: "xihe_like_test"
+        evaluate: "xihe_evaluate_test"
+        training: "xihe_training_test"
+        inference: "xihe_inference_test"
+        following: "xihe_following_test"
+        related_resource: "xihe_related_resource_test"
 
     training:
       job_done_status:

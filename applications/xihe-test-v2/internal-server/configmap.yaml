@@ -16,6 +16,8 @@ data:
       activity_collection: activity
       tag_collection: tag
       training_collection: training
+      evaluate_collection: evaluate
+      inference_collection: inference
 
     domain:
       covers:
