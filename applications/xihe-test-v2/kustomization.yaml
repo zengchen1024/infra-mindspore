@@ -19,7 +19,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate
-  newTag: v1.0.20221031202354
+  newTag: v1.0.20221102171340
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-server
   newTag: a33817a60787a6d87c680062552f0cecc5f1b3ac
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
