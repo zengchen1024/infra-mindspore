@@ -12,7 +12,7 @@ data:
         repo_org: src-oepkgs
         sig_file_path: sig/sigs.yaml
         sig_dir: sig
-      concurrent_size: 2000
+      concurrent_size: 1000
       interval: 3
       obs_meta_project:
         obs_repo:
