@@ -14,5 +14,24 @@ data:
         obsutil_path: /usr/src/app/obsutil
         lfs_path: gitlab-lfs
 
+      crd:
+        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:v1.0.20221102171340
+        crd_namespace: xihe-test-v2
+        crd_cpu: 0.5
+        crd_memory: 512
+
+    evaluate:
+      crd:
+        crd_image: todo
+        crd_namespace: xihe-test-v2
+        crd_cpu: 0.5
+        crd_memory: 512
+
     watch:
       inference_endpoint: service-internal-server.xihe-test-v2.svc.cluster.local:8888
+      evaluate_endpoint: service-internal-server.xihe-test-v2.svc.cluster.local:8888
+
+    k8s:
+      kind: CodeServer
+      group: cs.opensourceways.com
+      version: v1alpha1
