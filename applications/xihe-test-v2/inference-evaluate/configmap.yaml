@@ -35,3 +35,4 @@ data:
       kind: CodeServer
       group: cs.opensourceways.com
       version: v1alpha1
+      kube_config_file: /app/conf/xihe-gitlab/kube/config
