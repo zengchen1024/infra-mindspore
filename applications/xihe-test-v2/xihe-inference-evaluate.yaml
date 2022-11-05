@@ -20,7 +20,7 @@ metadata:
   name: xihe-inference-evaluate
   namespace: xihe-test-v2
 spec:
-  replicas: 1
+  replicas: 0
   strategy:
     type: RollingUpdate
     rollingUpdate:
