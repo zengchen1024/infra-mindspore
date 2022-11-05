@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    mongodb:
+      mongodb_conn: "${MONGODB_CONNECTION}"
+      mongodb_db: "${MONGODB_NAME}"
+      project_collection: project
+      model_collection: model
+      dataset_collection: dataset 
+      user_collection: user
+      login_collection: login
+      like_collection: like
+      activity_collection: activity
+      tag_collection: tag
+      training_collection: training
+      evaluate_collection: evaluate
+      inference_collection: inference
+
+    domain:
+      covers:
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+
+      protocols:
+      - "apache 2.0"
+      - "mit"
+
+      project_type:
+      - "Gradio"
+      - "Static"
+
+      training_platform:
+      - "ModelArts"

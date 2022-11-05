@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    default:
+      system_hook:
+      - push
+      topic: xihe-gitlab-test-v2

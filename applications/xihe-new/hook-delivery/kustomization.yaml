@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- configmap.yaml
+- deployment.yaml
+- service.yaml
+commonLabels:
+  component: hook-delivery
+nameSuffix: -hook-delivery
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-gitlab-hook-delivery
+  newTag: main-9dcfbb0

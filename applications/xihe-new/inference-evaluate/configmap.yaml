@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    inference: 
+      gitlab_endpiont: "${GITLAB_HOST}"
+      obs:
+        access_key: "${HW_OBS_AK}"
+        secret_key: "${HW_OBS_SK}"
+        endpoint: "${HW_OBS_ENDPOINT}"
+        bucket: "${HW_OBS_BUCKET}"
+        obsutil_path: /usr/src/app/obsutil
+        lfs_path: gitlab-lfs
+
+      crd:
+        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:v1.0.20221102171340
+        crd_namespace: xihe-new
+        crd_cpu: 0.5
+        crd_memory: 512
+
+    evaluate:
+      crd:
+        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:v1.0.20221104110303
+        crd_namespace: xihe-new
+        crd_cpu: 0.5
+        crd_memory: 512
+
+    watch:
+      inference_endpoint: service-internal-server.xihe-new.svc.cluster.local:8888
+      evaluate_endpoint: service-internal-server.xihe-new.svc.cluster.local:8888
+
+    k8s:
+      kind: CodeServer
+      group: cs.opensourceways.com
+      version: v1alpha1
+      kube_config_file: /app/conf/xihe-gitlab/kube/config

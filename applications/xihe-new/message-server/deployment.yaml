@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: message-server
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
+        imagePullPolicy: IfNotPresent
+        args:
+        - --port=8000
+        - --config-file=/opt/app/conf/config.yaml
+        - --enable_debug=true
+        env:
+        - name: MONGODB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: MONGODB_NAME
+        - name: MONGODB_CONNECTION
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: MONGODB_CONNECTION
+        - name: KAFKA_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: KAFKA_ADDRESS
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
+          limits:
+            cpu: 1000m
+            memory: 1000Mi
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /opt/app/conf
+          name: config
+      volumes:
+      - name: config
+        configMap:
+          name: configmap-message-server
