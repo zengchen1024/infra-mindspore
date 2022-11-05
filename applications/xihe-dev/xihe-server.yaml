@@ -142,6 +142,16 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_VQA
+        - name: BIGMODEL_PANGU
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_PANGU
+        - name: BIGMODEL_LUOJIA
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_LUOJIA
         - name: VQA_OBS_ENDPOINT
           valueFrom:
             secretKeyRef:
@@ -162,6 +172,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: VQA_OBS_BUCKET
+        - name: LUOJIA_OBS_BUCKET
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: LUOJIA_OBS_BUCKET
         - name: HW_OBS_AK
           valueFrom:
             secretKeyRef:
