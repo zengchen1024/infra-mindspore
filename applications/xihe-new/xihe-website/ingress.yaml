@@ -3,16 +3,17 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
   name: xihe-ingress
   namespace: xihe-new
 spec:
   tls:
     - hosts:
-        - xihe2.test.osinfra.cn
+        - xihe-new.test.osinfra.cn
       secretName: xihe-tls
   rules:
-    - host: xihe2.test.osinfra.cn
+    - host: xihe-new.test.osinfra.cn
       http:
         paths:
           - backend:

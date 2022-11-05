@@ -1,19 +1,4 @@
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: xihe-backend-service
-  namespace: xihe-new
-spec:
-  ports:
-    - name: httpport
-      port: 80
-      targetPort: 8000
-  selector:
-    app: xihe-server
-  type: ClusterIP
-
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:

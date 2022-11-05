@@ -1,0 +1,120 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: server-configmap
+  namespace: xihe-new
+data:
+  config.yaml: |
+    authing:
+      app_id: "${AUTHING_APP_ID}"
+      secret: "${AUTHING_SECRET}"
+      redirect_uri: "${AUTHING_REDIRECT_URI_TEST}"
+
+    mongodb:
+      mongodb_conn: "${MONGODB_CONNECTION}"
+      mongodb_db: "${MONGODB_NAME}"
+      project_collection: project
+      model_collection: model
+      dataset_collection: dataset 
+      user_collection: user
+      login_collection: login
+      like_collection: like
+      activity_collection: activity
+      tag_collection: tag
+      training_collection: training
+
+    gitlab:
+      endpoint: "${GITLAB_ENDPOINT}"
+      graphql_endpoint: "${GITLAB_GRAPHQL_ENDPOINT}"
+      root_token: "${GITLAB_TOKEN}"
+      default_branch: main
+      lfs_path: gitlab-lfs
+      download_expiry: 3600
+      obs:
+        endpoint: "${HW_OBS_ENDPOINT}"
+        access_key: "${HW_OBS_AK}"
+        secret_key: "${HW_OBS_SK}"
+        bucket: "${HW_OBS_BUCKET}"
+
+    api:
+      token_key: "${API_TOKEN_KEY}"
+      token_expiry: 3600
+      encryption_key: "${ENCRYPTION_KEY}"
+      default_password: "${DEFAULT_PASSWORD}"
+      max_training_record_num: 5
+      tags:
+        dataset:
+        - app
+        - other
+        model:
+        - app
+        - computer
+        - file_format
+        - framework
+        - other
+        project:
+        - app
+        - training_platform
+        - other
+        global_model:
+        - app
+        - computer
+        - file_format
+        - framework
+        global_project:
+        - app
+        - training_platform
+        global_dataset:
+        - app
+
+    bigmodel:
+        user: "${BIGMODEL_USER}"
+        password: "${BIGMODEL_PASSWORD}"
+        project: "${BIGMODEL_PROJECT}"
+        auth_endpoint: "${BIGMODEL_AUTH_ENDPOINT}"
+
+        endpoints_of_signle_picture: "${BIGMODEL_SINGLE_PICTURE}"
+        endpoint_of_multiple_pictures: "${BIGMODEL_MULTI_PICTURES}"
+        endpoint_of_describing_picture: "${BIGMODEL_DESCRIBE_PICTURE}"
+        endpoint_of_vqa: "${BIGMODEL_VQA}"
+
+        obs:
+          endpoint: "${VQA_OBS_ENDPOINT}"
+          access_key: "${VQA_OBS_ACCESS_KEY}"
+          secret_key: "${VQA_OBS_SECRET_KEY}"
+          bucket: "${VQA_OBS_BUCKET}"
+
+    domain:
+      covers:
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+
+      protocols:
+      - "apache 2.0"
+      - "mit"
+
+      project_type:
+      - "Gradio"
+      - "Static"
+
+      training_platform:
+      - "ModelArts"
+
+    mq:
+      address: "${KAFKA_ADDRESS}"
+      topics:
+        fork: "xihe_fork_dev"
+        like: "xihe_like_dev"
+        training: "xihe_training_dev"
+        following: "xihe_following_dev"
+        related_resource: "xihe_related_resource_dev"
+
+    training:
+      job_done_status:
+      - "Failed"
+      - "Abnormal"
+      - "Completed"
+      - "Terminated"
