@@ -126,6 +126,35 @@ data:
       encryption_key: "${ENCRYPTION_KEY}"
       default_password: "${DEFAULT_PASSWORD}"
       max_training_record_num: 5
+      tags:
+        dataset:
+        - app
+        - other
+
+        model:
+        - app
+        - computer
+        - file_format
+        - framework
+        - other
+
+        project:
+        - app
+        - training_platform
+        - other
+
+        global_model:
+        - app
+        - computer
+        - file_format
+        - framework
+
+        global_project:
+        - app
+        - training_platform
+
+        global_dataset:
+        - app
 
     bigmodel:
         user: "${BIGMODEL_USER}"
