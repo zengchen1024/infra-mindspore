@@ -41,13 +41,13 @@ data:
     mq:
       address: "${KAFKA_ADDRESS}"
       topics:
-        fork: "xihe_fork_test"
-        like: "xihe_like_test"
-        evaluate: "xihe_evaluate_test"
-        training: "xihe_training_test"
-        inference: "xihe_inference_test"
-        following: "xihe_following_test"
-        related_resource: "xihe_related_resource_test"
+        fork: "xihe_fork_new"
+        like: "xihe_like_new"
+        evaluate: "xihe_evaluate_new"
+        training: "xihe_training_new"
+        inference: "xihe_inference_new"
+        following: "xihe_following_new"
+        related_resource: "xihe_related_resource_new"
 
     evaluate:
       endpoint: http://service-inference-evaluate.xihe-new.svc.cluster.local:8888

@@ -106,11 +106,13 @@ data:
     mq:
       address: "${KAFKA_ADDRESS}"
       topics:
-        fork: "xihe_fork_dev"
-        like: "xihe_like_dev"
-        training: "xihe_training_dev"
-        following: "xihe_following_dev"
-        related_resource: "xihe_related_resource_dev"
+        fork: "xihe_fork_new"
+        like: "xihe_like_new"
+        evaluate: "xihe_evaluate_new"
+        training: "xihe_training_new"
+        inference: "xihe_inference_new"
+        following: "xihe_following_new"
+        related_resource: "xihe_related_resource_new"
 
     training:
       job_done_status:
