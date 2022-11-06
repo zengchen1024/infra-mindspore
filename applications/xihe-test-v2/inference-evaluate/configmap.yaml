@@ -19,7 +19,7 @@ data:
         crd_namespace: mindspore-xihe
         crd_cpu: 0.5
         crd_memory: 512
-        crd_template: /opt/app/template/crd-resource.yaml
+        crd_template: /opt/app/template/crd-inference.yaml
 
     evaluate:
       crd:
