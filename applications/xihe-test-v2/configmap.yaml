@@ -179,6 +179,7 @@ data:
         luo_jia_bucket: "${LUOJIA_OBS_BUCKET}"
 
     domain:
+      min_name_length: 3
       covers:
       - "1"
       - "2"
