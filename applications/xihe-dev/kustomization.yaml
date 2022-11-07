@@ -20,4 +20,4 @@ images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-server
   newTag: 84f2566350e03ee972be12ce41581b74255cb50b
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
-  newTag: 63617d56b85cfb57389ff895db35d4a2a7b647b1
+  newTag: 68df04761f6fbaf7db40f2313df32997c79f5c27
