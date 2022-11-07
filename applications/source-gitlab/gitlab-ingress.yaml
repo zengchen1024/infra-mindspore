@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - source.mindspore.cn
-      secretName: gitlab-tls
+        - source-xihe.mindspore.cn
+      secretName: gitlab-xihe-tls
   rules:
-    - host: source.mindspore.cn
+    - host: source-xihe.mindspore.cn
       http:
         paths:
           - backend:

@@ -80,17 +80,17 @@ spec:
         runAsUser: 0
       containers:
       - name: gitlab
-        image: gitlab/gitlab-ee:latest
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/gitlab-ee:lts-20221107
         env:
         - name: GITLAB_OMNIBUS_CONFIG
           value: "external_url 'http://source-xihe.test.osinfra.cn';"
         resources:
           requests:
-            cpu: 3000m
-            memory: 30000Mi
+            cpu: 5000m
+            memory: 20000Mi
           limits:
-            cpu: 3000m
-            memory: 30000Mi
+            cpu: 5000m
+            memory: 20000Mi
         volumeMounts:
         - mountPath: /etc/gitlab
           name: gitlab-data
