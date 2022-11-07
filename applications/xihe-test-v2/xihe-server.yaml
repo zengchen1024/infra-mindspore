@@ -152,6 +152,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_LUOJIA
+        - name: BIGMODEL_CODEGEEX
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_CODEGEEX
         - name: VQA_OBS_ENDPOINT
           valueFrom:
             secretKeyRef:
@@ -177,6 +182,16 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: LUOJIA_OBS_BUCKET
+        - name: CODEGEEX_AK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: CODEGEEX_AK
+        - name: CODEGEEX_SK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: CODEGEEX_SK
         - name: HW_OBS_AK
           valueFrom:
             secretKeyRef:
