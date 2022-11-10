@@ -16,7 +16,6 @@ data:
 
       crd:
         crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:v1.0.20221102171340
-        crd_namespace: mindspore-xihe
         crd_cpu: 0.5
         crd_memory: 512
         crd_template: /opt/app/template/crd-inference.yaml
@@ -24,7 +23,6 @@ data:
     evaluate:
       crd:
         crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:evaluateimpl.v1.0.20221107154539
-        crd_namespace: mindspore-xihe
         crd_cpu: 0.5
         crd_memory: 512
         crd_template: /opt/app/template/crd-evaluate.yaml
@@ -37,4 +35,5 @@ data:
       kind: CodeServer
       group: cs.opensourceways.com
       version: v1alpha1
+      namespace: mindspore-xihe
       kube_config_file: /app/conf/xihe-gitlab/kube/config
