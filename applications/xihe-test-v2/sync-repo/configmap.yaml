@@ -23,8 +23,7 @@ data:
     mysql:
       conn: "${MYSQL_CONN}"
       conn_max_life_time: 1
-      model_table_name: "model"
-      dataset_table_name: "dataset"
+      table_name: "model"
 
     gitlab:
       token: "${GITLAB_TOKEN}"
