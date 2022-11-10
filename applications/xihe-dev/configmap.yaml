@@ -93,19 +93,21 @@ data:
       redirect_uri: "${AUTHING_REDIRECT_URI_DEV}"
 
     mongodb:
-      mongodb_conn: "${MONGODB_CONNECTION}"
-      mongodb_db: "${MONGODB_NAME}"
-      project_collection: project
-      model_collection: model
-      dataset_collection: dataset 
-      user_collection: user
-      login_collection: login
-      like_collection: like
-      activity_collection: activity
-      tag_collection: tag
-      training_collection: training
-      evaluate_collection: evaluate
-      inference_collection: inference
+      db_conn: "${MONGODB_CONNECTION}"
+      db_name: "${MONGODB_NAME}"
+      collections:
+        project: project
+        model: model
+        dataset: dataset 
+        user: user
+        login: login
+        like: like
+        activity: activity
+        tag: tag
+        training: training
+        evaluate: evaluate
+        inference: inference
+        competition: competition
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
@@ -228,16 +230,18 @@ metadata:
 data:
   config.yaml: |
     mongodb:
-      mongodb_conn: "${MONGODB_CONNECTION}"
-      mongodb_db: "${MONGODB_NAME}"
-      project_collection: project
-      model_collection: model
-      dataset_collection: dataset 
-      user_collection: user
-      login_collection: login
-      like_collection: like
-      activity_collection: activity
-      tag_collection: tag
+      db_conn: "${MONGODB_CONNECTION}"
+      db_db: "${MONGODB_NAME}"
+      collections:
+        project: project
+        model: model
+        dataset: dataset 
+        user: user
+        login: login
+        like: like
+        activity: activity
+        tag: tag
+        competition: competition
 
     resource:
       covers:
