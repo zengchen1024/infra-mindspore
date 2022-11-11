@@ -19,7 +19,6 @@ data:
         crd_cpu: 0.5
         crd_memory: 512
         crd_template: /opt/app/template/crd-inference.yaml
-        container_port: 7860
 
     evaluate:
       crd:
