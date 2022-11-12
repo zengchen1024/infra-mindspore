@@ -232,11 +232,6 @@ spec:
             secretKeyRef:
               name: gitlab-lfs-secrets
               key: gitlab_lfs_object_aws_path_style
-        - name: GITLAB_SHELL_CUSTOM_HOOKS_DIR
-          valueFrom:
-            secretKeyRef:
-              name: gitlab-lfs-secrets
-              key: gitlab_shell_custom_hooks_dir
         ports:
         - name: http
           containerPort: 80
