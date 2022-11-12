@@ -65,7 +65,7 @@ spec:
         - name: GITLAB_INCOMING_EMAIL_ADDRESS
           value: reply@feishu.cn
         - name: GITLAB_HOST
-          value: source.mindspore.cn
+          value: source-xihe.mindspore.cn
         - name: GITLAB_PORT
           value: "80"
         - name: GITLAB_SSH_PORT
