@@ -9,3 +9,4 @@ data:
       - cann/acl
       - cann/air
       - cann/abl-kernel
+      - cann/aoe-flow

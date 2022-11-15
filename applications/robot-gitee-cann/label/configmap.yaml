@@ -9,5 +9,6 @@ data:
       - cann/acl
       - cann/air
       - cann/abl-kernel
+      - cann/aoe-flow
       clear_labels:
       - ci-pipeline-passed

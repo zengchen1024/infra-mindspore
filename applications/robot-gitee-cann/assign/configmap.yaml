@@ -9,6 +9,7 @@ data:
       - cann/acl
       - cann/air
       - cann/abl-kernel
+      - cann/aoe-flow
       enable_pr_assign: true
       enable_issue_assign: true
       enable_issue_collaborator: true

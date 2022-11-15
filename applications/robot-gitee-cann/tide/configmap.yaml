@@ -29,6 +29,7 @@ data:
     - repos:
       - cann/acl
       - cann/abl-kernel
+      - cann/aoe-flow
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
