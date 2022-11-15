@@ -143,6 +143,13 @@ data:
         - robot-gitee-cann-lgtm
         - robot-gitee-cann-tide
 
+        cann/aoe-flow:
+        - robot-gitee-cann-approve
+        - robot-gitee-cann-assign
+        - robot-gitee-cann-label
+        - robot-gitee-cann-lgtm
+        - robot-gitee-cann-tide
+
         edahelper:
         - robot-gitee-edahelper-cla
         
