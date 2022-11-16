@@ -104,6 +104,7 @@ data:
         like: like
         activity: activity
         tag: tag
+        luojia: luojia
         training: training
         evaluate: evaluate
         inference: inference
@@ -181,11 +182,8 @@ data:
         vqa_bucket: "${VQA_OBS_BUCKET}"
         luo_jia_bucket: "${LUOJIA_OBS_BUCKET}"
 
-      codegeex:
-        ak: "${CODEGEEX_AK}"
-        sk: "${CODEGEEX_SK}"
-
     domain:
+      min_name_length: 3
       covers:
       - "1"
       - "2"
