@@ -186,6 +186,13 @@ data:
         - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
+        mindspore/mindpandas:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-tide
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
+
         ms-incubator:
         - robot-gitee-mindspore-cla
         

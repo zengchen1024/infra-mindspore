@@ -10,6 +10,7 @@ data:
       - mindspore/vision
       - mindspore/golden-stick
       - mindspore/text
+      - mindspore/mindpandas
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
