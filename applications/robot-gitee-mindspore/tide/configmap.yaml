@@ -11,6 +11,7 @@ data:
       - mindspore/golden-stick
       - mindspore/text
       - mindspore/mindpandas
+      - mindspore/recommender
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."

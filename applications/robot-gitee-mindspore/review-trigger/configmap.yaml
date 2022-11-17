@@ -123,6 +123,7 @@ data:
 
     - repos:
       - mindspore/mindpandas
+      - mindspore/recommender
       review:
         number_of_approvers: 1
         total_number_of_approvers: 1
