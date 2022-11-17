@@ -210,6 +210,7 @@ data:
         training: "xihe_training_test"
         inference: "xihe_inference_test"
         following: "xihe_following_test"
+        submission: "xihe_submission_test"
         related_resource: "xihe_related_resource_test"
 
     training:
@@ -218,3 +219,11 @@ data:
       - "Abnormal"
       - "Completed"
       - "Terminated"
+
+    competition:
+      obs:
+        endpoint: "${HW_OBS_ENDPOINT}"
+        access_key: "${HW_OBS_AK}"
+        secret_key: "${HW_OBS_SK}"
+        bucket: "${HW_OBS_BUCKET}"
+        prefix: "competition"
