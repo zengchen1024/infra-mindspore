@@ -182,6 +182,13 @@ data:
         vqa_bucket: "${VQA_OBS_BUCKET}"
         luo_jia_bucket: "${LUOJIA_OBS_BUCKET}"
 
+      moderation:
+        endpoint: https://moderation.cn-north-4.myhuaweicloud.com
+        access_key: "${HW_OBS_AK}"
+        secret_key: "${HW_OBS_SK}"
+        region: cn-north-4
+        iam_endpoint: https://iam.cn-north-4.myhuaweicloud.com
+
     domain:
       min_name_length: 3
       covers:
