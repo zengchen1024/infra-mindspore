@@ -115,7 +115,7 @@ data:
       graphql_endpoint: "${GITLAB_GRAPHQL_ENDPOINT}"
       root_token: "${GITLAB_TOKEN}"
       default_branch: main
-      lfs_path: gitlab-lfs
+      lfs_path: gitlab-lfs-dev
       download_expiry: 3600
       obs:
         endpoint: "${HW_OBS_ENDPOINT}"
@@ -132,32 +132,32 @@ data:
       tags:
         dataset:
         - app
-        - other
 
         model:
         - app
         - computer
         - file_format
         - framework
-        - other
 
         project:
         - app
-        - training_platform
-        - other
 
         global_model:
         - app
         - computer
         - file_format
         - framework
+        - license
 
         global_project:
         - app
+        - project_type
         - training_platform
+        - license
 
         global_dataset:
         - app
+        - license
 
     bigmodel:
       cloud:
@@ -262,7 +262,7 @@ data:
         access_key: "${HW_OBS_AK}"
         secret_key: "${HW_OBS_SK}"
         bucket: "${HW_OBS_BUCKET}"
-        prefix: "competition"
+        prefix: "competition-dev"
 
 ---
 apiVersion: v1

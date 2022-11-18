@@ -132,32 +132,32 @@ data:
       tags:
         dataset:
         - app
-        - other
 
         model:
         - app
         - computer
         - file_format
         - framework
-        - other
 
         project:
         - app
-        - training_platform
-        - other
 
         global_model:
         - app
         - computer
         - file_format
         - framework
+        - license
 
         global_project:
         - app
+        - project_type
         - training_platform
+        - license
 
         global_dataset:
         - app
+        - license
 
     bigmodel:
       cloud:
