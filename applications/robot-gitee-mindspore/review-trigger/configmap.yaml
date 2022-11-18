@@ -127,7 +127,7 @@ data:
       review:
         number_of_approvers: 1
         total_number_of_approvers: 1
-        total_number_of_reviewers: 1
+        total_number_of_reviewers: 2
       ci:
         job:
           ci_table:
