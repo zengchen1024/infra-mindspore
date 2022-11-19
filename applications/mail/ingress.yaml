@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-issuer
     nginx.ingress.kubernetes.io/server-snippet: |
       location ^~ /admin {
         deny all;
@@ -14,7 +13,7 @@ spec:
   tls:
     - hosts:
         - mailweb.mindspore.cn
-      secretName: mailweb-tls
+      secretName: mindspore-mailweb-tls
   rules:
     - host: mailweb.mindspore.cn
       http:
