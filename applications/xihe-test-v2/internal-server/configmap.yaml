@@ -20,6 +20,7 @@ data:
         training: training
         evaluate: evaluate
         inference: inference
+        aiquestion: aiquestion
         competition: competition
 
     domain:

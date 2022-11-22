@@ -108,6 +108,7 @@ data:
         training: training
         evaluate: evaluate
         inference: inference
+        aiquestion: aiquestion
         competition: competition
 
     gitlab:
@@ -263,6 +264,13 @@ data:
         secret_key: "${HW_OBS_SK}"
         bucket: "${HW_OBS_BUCKET}"
         prefix: "competition-dev"
+
+    challenge:
+      Competition_success_score: 100
+      Competition_success_status: success
+      competitions:
+      - "123"
+      ai_question: "637c3a8ba63cbe7f034b0c45"
 
 ---
 apiVersion: v1
