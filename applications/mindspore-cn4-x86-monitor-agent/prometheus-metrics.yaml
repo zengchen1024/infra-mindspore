@@ -52,11 +52,11 @@ spec:
           name: http
         resources:
           requests:
-            cpu: 100m
-            memory: 1000Mi
-          limits:
             cpu: 200m
             memory: 1000Mi
+          limits:
+            cpu: 400m
+            memory: 2000Mi
         volumeMounts:
         - mountPath: /prometheus
           name: static-data

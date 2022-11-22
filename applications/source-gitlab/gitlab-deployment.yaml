@@ -239,11 +239,11 @@ spec:
           containerPort: 22
         resources:
           requests:
-            cpu: 2000m
-            memory: 5000Mi
+            cpu: 5000m
+            memory: 10000Mi
           limits:
-            cpu: 2000m
-            memory: 5000Mi
+            cpu: 5000m
+            memory: 10000Mi
         volumeMounts:
         - mountPath: /home/git/data
           name: gitlab-data
