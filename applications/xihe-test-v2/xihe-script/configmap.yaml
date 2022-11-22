@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: py-configmap
+  namespace: xihe-test-v2
+data:
+  config.yaml: |
+    mq:
+      address: "${KAFKA_ADDRESS}"
+      topics:
+        submission: "xihe_submission_test"
+    endpoint: "service-internal-server.xihe-test-v2.svc.cluster.local:8888"
+    matchs:
+      - competition_id: "2"
+        competition_type: "text"
+        answer_final_path: "${TEXT_ANSWER_FINAL_PATH}"
+        answer_preliminary_path: "${TEXT_ANSWER_PRELIMINARY_PATH}"
+        fid_weights_final_path: ""
+        fid_weights_preliminary_path: ""
+        real_final_path: ""
+        real_preliminary_path: ""
+        pos: 1
+        cls: 5
+        prefix: "competition"
+      - competition_id: "3"
+        competition_type: "image"
+        answer_final_path: "${IMAGE_ANSWER_FINAL_PATH}"
+        answer_preliminary_path: "${IMAGE_ANSWER_PRELIMINARY_PATH}"
+        fid_weights_final_path: ""
+        fid_weights_preliminary_path: ""
+        real_final_path: ""
+        real_preliminary_path: ""
+        pos: 1
+        cls: 256
+        prefix: "competition"
+      - competition_id: "123"
+        competition_type: "style"
+        answer_final_path: ""
+        answer_preliminary_path: ""
+        fid_weights_final_path: "${FID_WEIGHTS_FINAL_PATH}"
+        fid_weights_preliminary_path: "${FID_WEIGHTS_PRELIMINARY_PATH}"
+        real_final_path: "${REAL_FINAL_PATH}"
+        real_preliminary_path: "${REAL_PRELIMINARY_PATH}"
+        pos: 0
+        cls: 0
+        prefix: "competition"

@@ -1,0 +1,119 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xihe-script
+  namespace: xihe-test-v2
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: xihe-script
+  template:
+    metadata:
+      labels:
+        app: xihe-script
+    spec:
+      containers:
+      - name: xihe-script
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-script:v1.0.20221122113307
+        imagePullPolicy: IfNotPresent
+        args:
+        - --config-file=/opt/app/config/config.yaml
+        env:
+        - name: OBS_SK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: obs_sk
+        - name: OBS_AK
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: obs_ak
+        - name: OBS_BUCKETNAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: obs_bucketname
+        - name: OBS_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: obs_endpoint
+        - name: TEXT_ANSWER_FINAL_PATH
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: text_answer_final_path
+        - name: TEXT_ANSWER_PRELIMINARY_PATH
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: text_answer_preliminary_path
+        - name: IMAGE_ANSWER_FINAL_PATH
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: image_answer_final_path
+        - name: IMAGE_ANSWER_PRELIMINARY_PATH
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: image_answer_preliminary_path
+        - name: FID_WEIGHTS_FINAL_PATH
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: fid_weights_final_path
+        - name: FID_WEIGHTS_PRELIMINARY_PATH
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: fid_weights_preliminary_path
+        - name: REAL_FINAL_PATH
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: real_final_path
+        - name: REAL_PRELIMINARY_PATH
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: real_preliminary_path
+        - name: KAFKA_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: xihe-script-secret
+              key: xihe_script_kafka_address
+        resources:
+          requests:
+            cpu: 2000m
+            memory: 2000Mi
+          limits:
+            cpu: 2000m
+            memory: 4000Mi
+        volumeMounts:
+        - mountPath: /dev/shm
+          name: dshm
+        - mountPath: /opt/app/config/config.yaml
+          name: config
+          subPath: config.yaml
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+      volumes:
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 1Gi
+      - name: config
+        configMap:
+          name: py-configmap
