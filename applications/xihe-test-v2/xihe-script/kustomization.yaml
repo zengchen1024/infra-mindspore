@@ -7,4 +7,4 @@ resources:
 - configmap.yaml
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-script
-  newTag: v1.0.20221123113449
+  newTag: v1.0.20221123143833
