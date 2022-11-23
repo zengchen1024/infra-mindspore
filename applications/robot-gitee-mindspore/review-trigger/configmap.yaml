@@ -140,6 +140,8 @@ data:
       owner:
         branch_with_owners:
         - master
+        - r0.1
+        - r0.1.0
 
     - repos:
       - mindspore/graphengine
