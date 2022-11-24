@@ -24,3 +24,17 @@ spec:
   resources:
     requests:
       storage: 50Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gitlab-hooks-volume
+  namespace: source
+spec:
+  storageClassName: "sas"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

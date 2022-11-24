@@ -247,6 +247,8 @@ spec:
         volumeMounts:
         - mountPath: /home/git/data
           name: gitlab-data
+        - mountPath: /home/git/gitlab-shell/hooks/
+          name: gitlab-hooks-data
         livenessProbe:
           httpGet:
             path: /
@@ -264,3 +266,6 @@ spec:
       - name: gitlab-data
         persistentVolumeClaim:
           claimName: gitlab-data-volume
+      - name: gitlab-hooks-data
+        persistentVolumeClaim:
+          claimName: gitlab-hooks-volume
