@@ -111,6 +111,11 @@ data:
 
     domain:
       min_name_length: 3
+      max_name_length: 35
+      max_desc_length: 200
+      min_training_name_length: 1
+      max_training_name_length: 64
+      max_training_desc_length: 256
       covers:
       - "1"
       - "2"
@@ -118,7 +123,7 @@ data:
       - "4"
 
       protocols:
-      - "apache 2.0"
+      - "apache-2.0"
       - "mit"
       - "cc-by-sa-3.0"
       - "afl-3.0"
@@ -126,26 +131,21 @@ data:
       - "lgpl-3.0"
       - "lgpl-lr"
       - "cc-by-nc-3.0"
-      - "lgpl"
       - "bsd-2-clause"
       - "ecl-2.0"
       - "cc-by-nc-sa-4.0"
       - "cc-by-nc-4.0"
       - "gpl-3.0"
-      - "other"
       - "cc0-1.0"
       - "cc"
       - "bsd-3-clause"
-      - "agpl"
+      - "agpl-3.0"
       - "wtfpl"
       - "artistic-2.0"
       - "postgresql"
-      - "bigscience-bloom-rail-1.0"
       - "gpl-2.0"
       - "isc"
-      - "bsd-3"
-      - "equpl-1.1"
-      - "academic-free-license-v3.0"
+      - "eupl-1.1"
       - "pddl"
       - "bsd-3-clause-clear"
       - "mpl-2.0"
