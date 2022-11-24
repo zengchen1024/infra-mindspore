@@ -27,71 +27,31 @@ spec:
         args:
         - --config-file=/opt/app/config/config.yaml
         env:
-        - name: OBS_SK
-          valueFrom:
-            secretKeyRef:
-              name: xihe-script-secret
-              key: obs_sk
         - name: OBS_AK
           valueFrom:
             secretKeyRef:
-              name: xihe-script-secret
-              key: obs_ak
-        - name: OBS_BUCKETNAME
+              name: xihe-secret
+              key: HW_OBS_AK
+        - name: OBS_SK
           valueFrom:
             secretKeyRef:
-              name: xihe-script-secret
-              key: obs_bucketname
+              name: xihe-secret
+              key: HW_OBS_SK
         - name: OBS_ENDPOINT
           valueFrom:
             secretKeyRef:
-              name: xihe-script-secret
-              key: obs_endpoint
-        - name: TEXT_ANSWER_FINAL_PATH
+              name: xihe-secret
+              key: HW_OBS_ENDPOINT
+        - name: OBS_BUCKETNAME
           valueFrom:
             secretKeyRef:
-              name: xihe-script-secret
-              key: text_answer_final_path
-        - name: TEXT_ANSWER_PRELIMINARY_PATH
-          valueFrom:
-            secretKeyRef:
-              name: xihe-script-secret
-              key: text_answer_preliminary_path
-        - name: IMAGE_ANSWER_FINAL_PATH
-          valueFrom:
-            secretKeyRef:
-              name: xihe-script-secret
-              key: image_answer_final_path
-        - name: IMAGE_ANSWER_PRELIMINARY_PATH
-          valueFrom:
-            secretKeyRef:
-              name: xihe-script-secret
-              key: image_answer_preliminary_path
-        - name: FID_WEIGHTS_FINAL_PATH
-          valueFrom:
-            secretKeyRef:
-              name: xihe-script-secret
-              key: fid_weights_final_path
-        - name: FID_WEIGHTS_PRELIMINARY_PATH
-          valueFrom:
-            secretKeyRef:
-              name: xihe-script-secret
-              key: fid_weights_preliminary_path
-        - name: REAL_FINAL_PATH
-          valueFrom:
-            secretKeyRef:
-              name: xihe-script-secret
-              key: real_final_path
-        - name: REAL_PRELIMINARY_PATH
-          valueFrom:
-            secretKeyRef:
-              name: xihe-script-secret
-              key: real_preliminary_path
+              name: xihe-secret
+              key: HW_OBS_BUCKET
         - name: KAFKA_ADDRESS
           valueFrom:
             secretKeyRef:
-              name: xihe-script-secret
-              key: xihe_script_kafka_address
+              name: xihe-secret
+              key: KAFKA_ADDRESS
         resources:
           requests:
             cpu: 2000m

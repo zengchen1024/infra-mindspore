@@ -13,8 +13,8 @@ data:
     matchs:
       - competition_id: "2"
         competition_type: "text"
-        answer_final_path: "${TEXT_ANSWER_FINAL_PATH}"
-        answer_preliminary_path: "${TEXT_ANSWER_PRELIMINARY_PATH}"
+        answer_final_path: "competition/2/final/result/label-final-public.txt"
+        answer_preliminary_path: "competition/2/preliminary/result/label.txt"
         fid_weights_final_path: ""
         fid_weights_preliminary_path: ""
         real_final_path: ""
@@ -24,8 +24,8 @@ data:
         prefix: "competition"
       - competition_id: "3"
         competition_type: "image"
-        answer_final_path: "${IMAGE_ANSWER_FINAL_PATH}"
-        answer_preliminary_path: "${IMAGE_ANSWER_PRELIMINARY_PATH}"
+        answer_final_path: "competition/3/final/result/label-final-public.txt"
+        answer_preliminary_path: "competition/3/preliminary/result/label.txt"
         fid_weights_final_path: ""
         fid_weights_preliminary_path: ""
         real_final_path: ""
@@ -33,14 +33,14 @@ data:
         pos: 1
         cls: 256
         prefix: "competition"
-      - competition_id: "123"
+      - competition_id: "1"
         competition_type: "style"
         answer_final_path: ""
         answer_preliminary_path: ""
-        fid_weights_final_path: "${FID_WEIGHTS_FINAL_PATH}"
-        fid_weights_preliminary_path: "${FID_WEIGHTS_PRELIMINARY_PATH}"
-        real_final_path: "${REAL_FINAL_PATH}"
-        real_preliminary_path: "${REAL_PRELIMINARY_PATH}"
+        fid_weights_final_path: "competition/1/final/result/pt_inception-2015-12-05-6726825d.pth"
+        fid_weights_preliminary_path: "competition/1/preliminary/result/pt_inception-2015-12-05-6726825d.pth"
+        real_final_path: "competition/1/final/result/target_style_vangogh"
+        real_preliminary_path: "competition/1/preliminary/result/target_style_vangogh"
         pos: 0
         cls: 0
         prefix: "competition"
