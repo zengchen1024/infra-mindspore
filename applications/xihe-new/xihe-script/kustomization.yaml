@@ -3,8 +3,7 @@ kind: Kustomization
 resources:
 - deployment.yaml
 - service.yaml
-- ingress.yaml
-- secret.yaml
+- configmap.yaml
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-script
-  newTag: v1.0.20221105144626
+  newTag: v1.0.20221123164746
