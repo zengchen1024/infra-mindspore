@@ -110,6 +110,7 @@ data:
         inference: inference
         aiquestion: aiquestion
         competition: competition
+        question_pool: questionpool
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
@@ -192,6 +193,11 @@ data:
 
     domain:
       min_name_length: 3
+      max_name_length: 35
+      max_desc_length: 200
+      min_training_name_length: 1
+      max_training_name_length: 64
+      max_training_desc_length: 256
       covers:
       - "1"
       - "2"
@@ -199,7 +205,7 @@ data:
       - "4"
 
       protocols:
-      - "apache 2.0"
+      - "apache-2.0"
       - "mit"
       - "cc-by-sa-3.0"
       - "afl-3.0"
@@ -207,26 +213,21 @@ data:
       - "lgpl-3.0"
       - "lgpl-lr"
       - "cc-by-nc-3.0"
-      - "lgpl"
       - "bsd-2-clause"
       - "ecl-2.0"
       - "cc-by-nc-sa-4.0"
       - "cc-by-nc-4.0"
       - "gpl-3.0"
-      - "other"
       - "cc0-1.0"
       - "cc"
       - "bsd-3-clause"
-      - "agpl"
+      - "agpl-3.0"
       - "wtfpl"
       - "artistic-2.0"
       - "postgresql"
-      - "bigscience-bloom-rail-1.0"
       - "gpl-2.0"
       - "isc"
-      - "bsd-3"
-      - "equpl-1.1"
-      - "academic-free-license-v3.0"
+      - "eupl-1.1"
       - "pddl"
       - "bsd-3-clause-clear"
       - "mpl-2.0"
@@ -270,7 +271,17 @@ data:
       Competition_success_status: success
       competitions:
       - "123"
-      ai_question: "637c3a8ba63cbe7f034b0c45"
+      ai_question:
+        ai_question_id: "637c3a8ba63cbe7f034b0c45"
+        question_pool_id: "63803d1715956e4007ab330d"
+        timeout: 100
+        retry_times: 3
+        choice_questions_num: 7
+        choice_questions_count : 200
+        choice_questions_score : 5
+        completion_questions_num: 3
+        completion_questions_count : 50
+        completion_questions_score : 15
 
 ---
 apiVersion: v1
