@@ -7,4 +7,4 @@ resources:
 - ingress.yaml
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
-  newTag: 6ad79ed6db429f77289ecd28b7a100e86066de80
+  newTag: 506cc4edc8d81564fef345eb087e6d762b781084
