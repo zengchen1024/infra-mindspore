@@ -58,7 +58,7 @@ spec:
             - name: JENKINS_AGENT_WORKDIR
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
-              value: http://192.168.0.241:30080
+              value: http://192.168.0.231:30080
             - name: JENKINS_SHARE_FOLDER
               value: /home/jenkins/share-config
             - name: EXECUTOR_NUMBERS
@@ -92,7 +92,7 @@ spec:
               memory: 58000Mi
           env:
             - name: JENKINS_TUNNEL
-              value: 192.168.0.241:30500
+              value: 192.168.0.231:30500
             - name: JENKINS_AGENT_NAME
               valueFrom:
                 fieldRef:
@@ -104,7 +104,7 @@ spec:
             - name: JENKINS_AGENT_WORKDIR
               value: /home/jenkins/agent-working-dir
             - name: JENKINS_URL
-              value: http://192.168.0.241:30080
+              value: http://192.168.0.231:30080
       volumes:
         - name: jenkins-share-config
           emptyDir: {}
