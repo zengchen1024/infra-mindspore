@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: meeting-data-volume
+  name: meeting-share-volume
+  namespace: meetingserver
 spec:
+  storageClassName: "csi-nas"
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 100Gi
-  storageClassName: ssd
-  volumeMode: Filesystem

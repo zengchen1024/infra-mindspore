@@ -200,4 +200,4 @@ spec:
       volumes:
         - name: meeting-data-volume
           persistentVolumeClaim:
-            claimName: meeting-data-volume
+            claimName: meeting-share-volume
