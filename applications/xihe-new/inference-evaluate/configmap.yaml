@@ -15,7 +15,7 @@ data:
         lfs_path: gitlab-lfs
 
       crd:
-        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:inferenceimpl.v1.0.20221125161530
+        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:inferenceimpl.v1.0.20221126115653
         crd_cpu: 0.5
         crd_memory: 512
         crd_template: /opt/app/template/crd-inference.yaml
