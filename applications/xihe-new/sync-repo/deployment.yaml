@@ -26,6 +26,8 @@ spec:
         - mountPath: /app/conf/xihe-gitlab/app_config/
           name: app-config
           readOnly: true
+        - mountPath: /workspace
+          name: data-volume
         env:
         - name: ACCESS_HMAC
           valueFrom:
@@ -67,9 +69,6 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: GITLAB_HOST
-        volumeMounts:
-        - mountPath: /workspace
-          name: data-volume
       volumes:
       - name: app-config
         configMap:
