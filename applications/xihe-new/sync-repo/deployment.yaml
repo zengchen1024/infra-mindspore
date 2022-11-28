@@ -63,7 +63,13 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: GITLAB_HOST
+        volumeMounts:
+        - mountPath: /workspace
+          name: data-volume
       volumes:
       - name: app-config
         configMap:
           name: configmap-sync-repo
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: rsync-repo-pvc-sync-repo

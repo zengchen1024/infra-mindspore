@@ -4,6 +4,7 @@ resources:
 - configmap.yaml
 - deployment.yaml
 - service.yaml
+- pvc.yaml
 commonLabels:
   component: sync-repo
 nameSuffix: -sync-repo
