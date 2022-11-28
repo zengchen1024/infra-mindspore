@@ -2,6 +2,8 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: xihe-sync-repo-pvc
+  labels:
+    failure-domain.beta.kubernetes.io/zone: cn-north-4b
 spec:
   storageClassName: "ssd"
   accessModes:
