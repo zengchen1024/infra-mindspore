@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: rsync-repo-pvc
+  name: xihe-sync-repo-pvc
 spec:
-  storageClassName: "csi-disk"
+  storageClassName: "ssd"
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 50Gi
+      storage: 40Gi
