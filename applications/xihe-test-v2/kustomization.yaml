@@ -22,6 +22,6 @@ images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate
   newTag: inferenceimpl.v1.0.20221126115653
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-server
-  newTag: fa88e4a14bfecab92cefd42537b86edff7fb6f0e
+  newTag: 7e439f0d39d358d454888707d926d700af98c237
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
   newTag: e887f11b2cbd2d63451b7dc689bf2573a46fd091
