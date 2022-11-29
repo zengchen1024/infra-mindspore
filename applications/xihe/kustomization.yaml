@@ -3,7 +3,6 @@ resources:
 - xihe-backend.yaml
 - namespace.yaml
 - secret.yaml
-- ingress.yaml
 - configmap.yaml
 - oauth-proxy.yaml
 namespace: xihe

@@ -20,7 +20,7 @@ metadata:
   name: xihe-website
   namespace: xihe
 spec:
-  replicas: 2
+  replicas: 0
   strategy:
     type: RollingUpdate
     rollingUpdate:
