@@ -268,19 +268,20 @@ data:
 
     challenge:
       Competition_success_score: 100
-      Competition_success_status: success
       competitions:
-      - "123"
+      - "food_classification"
+      - "xian_travel"
+      - "text_classification"
       ai_question:
         ai_question_id: "637c3a8ba63cbe7f034b0c45"
-        question_pool_id: "63803d1715956e4007ab330d"
+        question_pool_id: "6385f755e3d16c14196fc8c6"
         timeout: 100
         retry_times: 3
         choice_questions_num: 7
-        choice_questions_count : 200
+        choice_questions_count : 74
         choice_questions_score : 5
         completion_questions_num: 3
-        completion_questions_count : 50
+        completion_questions_count : 24
         completion_questions_score : 15
 
 ---
