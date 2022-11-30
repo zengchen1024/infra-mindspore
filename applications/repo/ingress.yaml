@@ -28,3 +28,35 @@ spec:
               serviceName: repo-service
               servicePort: 80
             path: /
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: repo-nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/limit-rpm: "100"
+  name: repo-new-ingress
+  namespace: repo
+spec:
+  tls:
+    - hosts:
+        - repo.mindspore.cn
+        - repo-internal.mindspore.cn
+      secretName: repo-new-tls
+  rules:
+    - host: repo.mindspore.cn
+      http:
+        paths:
+          - backend:
+              serviceName: repo-service
+              servicePort: 80
+            path: /
+    - host: repo-internal.mindspore.cn
+      http:
+        paths:
+          - backend:
+              serviceName: repo-service
+              servicePort: 80
+            path: /
