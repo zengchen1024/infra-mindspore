@@ -173,7 +173,7 @@ data:
     training:
       job_done_status:
       - "Failed"
-      - "Abnormal"
+      - "Timeout"
       - "Completed"
       - "Terminated"
 
