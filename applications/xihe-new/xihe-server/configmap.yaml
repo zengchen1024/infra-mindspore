@@ -187,18 +187,18 @@ data:
 
     challenge:
       Competition_success_score: 100
-      Competition_success_status: success
       competitions:
-      - "1"
-      - "2"
-      - "3"
+      - "food_classification"
+      - "xian_travel"
+      - "text_classification"
+      - "mask_detection"
       ai_question:
         ai_question_id: "637c3d4b493f490b71ef8cff"
-        question_pool_id: "63803d1715956e4007ab330d"
+        question_pool_id: "638855b25f15bb1722f87c35"
         timeout: 100
         retry_times: 3
         choice_questions_num: 7
-        choice_questions_count : 200
+        choice_questions_count : 103
         choice_questions_score : 5
         completion_questions_num: 3
         completion_questions_count : 50

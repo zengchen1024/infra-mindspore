@@ -283,7 +283,7 @@ data:
         timeout: 100
         retry_times: 3
         choice_questions_num: 7
-        choice_questions_count : 200
+        choice_questions_count : 103
         choice_questions_score : 5
         completion_questions_num: 3
         completion_questions_count : 50
