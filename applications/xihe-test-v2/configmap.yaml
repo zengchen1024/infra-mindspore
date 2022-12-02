@@ -281,7 +281,7 @@ data:
         ai_question_id: "637c3a63493f490b71ef8cfc"
         question_pool_id: "63885178cc89dc63db426580"
         timeout: 100
-        retry_times: 3
+        retry_times: 100
         choice_questions_num: 7
         choice_questions_count : 103
         choice_questions_score : 5
