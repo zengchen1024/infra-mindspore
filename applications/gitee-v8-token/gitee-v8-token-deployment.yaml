@@ -1,0 +1,148 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitee-v8-token-deployment
+  namespace: gitee-v8-token
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitee-v8-token
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: gitee-v8-token
+    spec:
+      containers:
+      - env:
+        - name: ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              key: access_key_id
+              name: gitee-v8-token-secret
+        - name: SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              key: secret_access_key
+              name: gitee-v8-token-secret
+        - name: OBS_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              key: obs_endpoint
+              name: gitee-v8-token-secret
+        - name: OBS_BUCKETNAME
+          valueFrom:
+            secretKeyRef:
+              key: obs_bucketname
+              name: gitee-v8-token-secret
+        - name: OBS_OBJECT_KEY
+          valueFrom:
+            secretKeyRef:
+              key: obs_object_key
+              name: gitee-v8-token-secret
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              key: secret_key
+              name: gitee-v8-token-secret
+        - name: QUERY_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: query_token
+              name: gitee-v8-token-secret
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/gitee-v8-token:v1.0.20221206173710
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 80
+          timeoutSeconds: 5
+        name: gitee-v8-token
+        readinessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 80
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1000Mi
+          requests:
+            cpu: 500m
+            memory: 500Mi
+
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: gitee-v8-token-cronjob
+  namespace: gitee-v8-token
+spec:
+  schedule: "0 1 * * *"
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 180
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: gitee-v8-token
+            image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/gitee-v8-token:v1.0.20221206173710
+            command:
+            - /bin/bash
+            - -c 
+            - python3 manage.py refresh
+            env:
+            - name: ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  key: access_key_id
+                  name: gitee-v8-token-secret
+            - name: SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: secret_access_key
+                  name: gitee-v8-token-secret
+            - name: OBS_ENDPOINT
+              valueFrom:
+                secretKeyRef:
+                  key: obs_endpoint
+                  name: gitee-v8-token-secret
+            - name: OBS_BUCKETNAME
+              valueFrom:
+                secretKeyRef:
+                  key: obs_bucketname
+                  name: gitee-v8-token-secret
+            - name: OBS_OBJECT_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: obs_object_key
+                  name: gitee-v8-token-secret
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: secret_key
+                  name: gitee-v8-token-secret
+            - name: QUERY_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: query_token
+                  name: gitee-v8-token-secret
+            resources:
+              limits:
+                cpu: 1000m
+                memory: 1000Mi
+              requests:
+                cpu: 500m
+                memory: 500Mi

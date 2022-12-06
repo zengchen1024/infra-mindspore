@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/gitee-v8-token
+  newTag: v1.0.20221206173710
+kind: Kustomization
+namespace: gitee-v8-token
+resources:
+- namespace.yaml
+- gitee-v8-token-service.yaml
+- gitee-v8-token-secret.yaml
+- gitee-v8-token-deployment.yaml
