@@ -5,6 +5,7 @@ resources:
 - secrets.yaml
 - secrets_nlp.yaml
 - oepkgs-review
+- oepkgs-welcome
 - repo-watcher-oepkgs
 - repo-watcher-src-oepkgs
 commonLabels:

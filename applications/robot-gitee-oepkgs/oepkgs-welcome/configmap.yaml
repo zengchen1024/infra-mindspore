@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - oepkgs
+      - src-oepkgs
+      community_name: oepkgs
+      community_repo: oepkgs-management
+      branch: master
+      command_link: https://gitee.com/oepkgs/oepkgs-management/blob/master/en/command.md

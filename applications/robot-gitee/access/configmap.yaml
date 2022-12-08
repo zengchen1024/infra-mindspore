@@ -208,9 +208,11 @@ data:
         
         oepkgs:
         - robot-gitee-oepkgs-review
+        - robot-gitee-oepkgs-welcome
     
         src-oepkgs:
         - robot-gitee-oepkgs-review
+        - robot-gitee-oepkgs-welcome
 
       plugins:
       - name: lifecycle
@@ -433,6 +435,13 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+
+      - name: robot-gitee-oepkgs-welcome
+        endpoint: http://service-oepkgs-welcome.robot-gitee-oepkgs.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Issue Hook"
+
       - name: robot-gitee-opengauss-sigguide
         endpoint: http://service-opengauss-sigguide.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
         events:
