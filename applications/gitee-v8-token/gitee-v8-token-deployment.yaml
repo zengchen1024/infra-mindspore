@@ -146,3 +146,65 @@ spec:
               requests:
                 cpu: 500m
                 memory: 500Mi
+
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: invite-enterprise-members-cronjob
+  namespace: gitee-v8-token
+spec:
+  schedule: "0 2 * * *"
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 180
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: invite-enterprise-members
+            image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/invite-enterprise-members:v1.0.20221208140446
+            env:
+            - name: V8URL
+              valueFrom:
+                secretKeyRef:
+                  key: v8url
+                  name: invite-enterprise-members-secret
+            - name: QUERY_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: query_token
+                  name: invite-enterprise-members-secret
+            - name: InviteApiUrl
+              valueFrom:
+                secretKeyRef:
+                  key: inviteapiurl
+                  name: invite-enterprise-members-secret
+            - name: RoleId
+              valueFrom:
+                secretKeyRef:
+                  key: roleid
+                  name: invite-enterprise-members-secret
+            - name: UpdateFileApiUrl
+              valueFrom:
+                secretKeyRef:
+                  key: updatefileapiurl
+                  name: invite-enterprise-members-secret
+            - name: FAQFilename
+              valueFrom:
+                secretKeyRef:
+                  key: faqfilename
+                  name: invite-enterprise-members-secret
+            - name: AccessToken
+              valueFrom:
+                secretKeyRef:
+                  key: accesstoken
+                  name: invite-enterprise-members-secret
+            resources:
+              limits:
+                cpu: 1000m
+                memory: 1000Mi
+              requests:
+                cpu: 500m
+                memory: 500Mi

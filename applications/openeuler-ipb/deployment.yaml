@@ -90,6 +90,16 @@ spec:
             secretKeyRef:
               name: openeuler-ipb-secrets
               key: smtp_password
+        - name: V8URL
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: v8url
+        - name: QUERY_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: query_token
         ports:
         - containerPort: 8080
           name: http
@@ -100,4 +110,4 @@ spec:
             memory: 2000Mi
           limits:
             cpu: 1000m
-            memory: 3000Mi
+            memory: 4000Mi
