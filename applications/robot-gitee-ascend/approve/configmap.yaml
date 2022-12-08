@@ -18,4 +18,5 @@ data:
       - ascend/pytorch
       - ascend/pytorch-develop
       - ascend/mindstudio
+      - ascend/msadvisor
       require_self_approval: true
