@@ -150,6 +150,8 @@ data:
       - "pddl"
       - "bsd-3-clause-clear"
       - "mpl-2.0"
+      - "odbl-1.0"
+      - "cc-by-4.0"
 
       project_type:
       - "Gradio"
