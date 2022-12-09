@@ -208,3 +208,50 @@ spec:
               requests:
                 cpu: 500m
                 memory: 500Mi
+
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: pr-statistics-report-cronjob
+  namespace: gitee-v8-token
+spec:
+  schedule: "0 9 * * 3"
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 180
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: pr-statistics-report
+            image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/pr-statistics-report:v1.0.20221209172140
+            env:
+            - name: SMTP_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: smtp_username
+                  name: pr-statistics-report-secret
+            - name: SMTP_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: smtp_port
+                  name: pr-statistics-report-secret
+            - name: SMTP_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: smtp_host
+                  name: pr-statistics-report-secret
+            - name: SMTP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: smtp_password
+                  name: pr-statistics-report-secret
+            resources:
+              limits:
+                cpu: 1000m
+                memory: 1000Mi
+              requests:
+                cpu: 500m
+                memory: 500Mi

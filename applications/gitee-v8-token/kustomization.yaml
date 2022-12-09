@@ -2,6 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/gitee-v8-token
   newTag: v1.0.20221206173710
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/invite-enterprise-members
+  newTag: v1.0.20221208140446
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/pr-statistics-report
+  newTag: v1.0.20221209172140
 kind: Kustomization
 namespace: gitee-v8-token
 resources:
