@@ -1,11 +1,6 @@
 resources:
-- xihe-website.yaml
 - namespace.yaml
 - secret.yaml
-- ingress.yaml
-- configmap.yaml
-- xihe-server.yaml
-- xihe-inference-evaluate.yaml
 - internal-server
 - message-server
 - hook-delivery
@@ -14,14 +9,9 @@ resources:
 - sync-repo
 - training-center-huaweicloud
 - inference-evaluate
+- xihe-website
+- xihe-server
 - xihe-script
 namespace: xihe-test-v2
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-images:
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate
-  newTag: inferenceimpl.v1.0.20221126115653
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-server
-  newTag: 9de1fc070375c0f70ffaef503bcc8de6cb58a3f7
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
-  newTag: 9a012edbe2412677573b7f596c080830a3a70479

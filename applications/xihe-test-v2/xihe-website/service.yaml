@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: xihe-website-service
+  namespace: xihe-test-v2
+spec:
+  ports:
+    - name: httpport
+      port: 80
+      targetPort: 8080
+  selector:
+    app: xihe-website
+  type: ClusterIP
