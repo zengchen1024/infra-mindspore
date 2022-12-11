@@ -1,23 +1,14 @@
 resources:
-- xihe-website.yaml
 - namespace.yaml
 - secret.yaml
-- ingress.yaml
-- configmap.yaml
-- xihe-server.yaml
-- xihe-message-server.yaml
+- message-server
 - hook-delivery
 - hook-dispatcher
 - access
 - sync-repo
 - training-center-huaweicloud
+- xihe-website
+- xihe-server
 namespace: xihe-dev
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-images:
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-message-server
-  newTag: 70931b8886b748e1e57340e2f15059911a5c49f9
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-server
-  newTag: 9de1fc070375c0f70ffaef503bcc8de6cb58a3f7
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
-  newTag: 9a012edbe2412677573b7f596c080830a3a70479

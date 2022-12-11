@@ -4,11 +4,10 @@ resources:
 - configmap.yaml
 - deployment.yaml
 - service.yaml
-- secret.yaml
 commonLabels:
-  component: inference-evaluate
-nameSuffix: -inference-evaluate
+  component: message-server
+nameSuffix: -message-server
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe
-  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-inference-evaluate
-  newTag: main-479415e
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-message-server
+  newTag: main-da281da

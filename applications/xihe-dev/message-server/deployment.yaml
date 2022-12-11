@@ -1,31 +1,19 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: xihe-message-server
-  namespace: xihe-dev
+  name: deployment
 spec:
   replicas: 1
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-  revisionHistoryLimit: 10
-  selector:
-    matchLabels:
-      app: xihe-message-server
   template:
-    metadata:
-      labels:
-        app: xihe-message-server
     spec:
       containers:
-      - name: xihe-message-server
-        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-message-server:3d4482ebdcc17188b7853f732bc50226f88e8e2c
+      - name: message-server
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
         imagePullPolicy: IfNotPresent
         args:
         - --port=8000
         - --config-file=/opt/app/conf/config.yaml
+        - --enable_debug=true
         env:
         - name: MONGODB_NAME
           valueFrom:
@@ -59,4 +47,4 @@ spec:
       volumes:
       - name: config
         configMap:
-          name: message-server-configmap
+          name: configmap-message-server

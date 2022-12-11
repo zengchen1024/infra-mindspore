@@ -1,19 +1,4 @@
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: xihe-backend-service
-  namespace: xihe-dev
-spec:
-  ports:
-    - name: httpport
-      port: 80
-      targetPort: 8000
-  selector:
-    app: xihe-server
-  type: ClusterIP
-
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -41,6 +26,7 @@ spec:
         args:
         - --port=8000
         - --config-file=/opt/app/conf/config.yaml
+        - --enable_debug=true
         env:
         - name: AUTHING_APP_ID
           valueFrom:

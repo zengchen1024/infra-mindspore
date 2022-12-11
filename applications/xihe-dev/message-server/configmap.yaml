@@ -4,6 +4,7 @@ metadata:
   name: configmap
 data:
   config.yaml: |
+    training_endpoint: http://service-training-center-huaweicloud.xihe-dev.svc.cluster.local:8888/api/v1/training
     mongodb:
       db_conn: "${MONGODB_CONNECTION}"
       db_name: "${MONGODB_NAME}"
@@ -72,3 +73,22 @@ data:
 
       training_platform:
       - "ModelArts"
+
+    mq:
+      address: "${KAFKA_ADDRESS}"
+      topics:
+        fork: "xihe_fork_dev"
+        like: "xihe_like_dev"
+        evaluate: "xihe_evaluate_dev"
+        training: "xihe_training_dev"
+        inference: "xihe_inference_dev"
+        following: "xihe_following_dev"
+        submission: "xihe_submission_dev"
+        related_resource: "xihe_related_resource_dev"
+
+    evaluate:
+      endpoint: http://service-inference-evaluate.xihe-dev.svc.cluster.local:8888
+      survival_time: 10800
+
+    inference:
+      endpoint: http://service-inference-evaluate.xihe-dev.svc.cluster.local:8888

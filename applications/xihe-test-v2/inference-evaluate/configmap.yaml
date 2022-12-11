@@ -5,6 +5,7 @@ metadata:
 data:
   config.yaml: |
     inference: 
+      rpc_endpiont: service-internal-server.xihe-test-v2.svc.cluster.local:8888
       gitlab_endpiont: "${GITLAB_HOST}"
       obs:
         access_key: "${HW_OBS_AK}"
@@ -13,23 +14,19 @@ data:
         bucket: "${HW_OBS_BUCKET}"
         obsutil_path: /usr/src/app/obsutil
         lfs_path: gitlab-lfs
-
       crd:
-        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:v1.0.20221102171340
+        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:inferenceimpl.v1.0.20221126115653
         crd_cpu: 0.5
         crd_memory: 512
         crd_template: /opt/app/template/crd-inference.yaml
 
     evaluate:
+      rpc_endpiont: service-internal-server.xihe-test-v2.svc.cluster.local:8888
       crd:
-        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:evaluateimpl.v1.0.20221107154539
+        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:evaluateimpl.v1.0.20221124180204
         crd_cpu: 0.5
         crd_memory: 512
         crd_template: /opt/app/template/crd-evaluate.yaml
-
-    watch:
-      inference_endpoint: service-internal-server.xihe-test-v2.svc.cluster.local:8888
-      evaluate_endpoint: service-internal-server.xihe-test-v2.svc.cluster.local:8888
 
     k8s:
       kind: CodeServer

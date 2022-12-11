@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- deployment.yaml
+- service.yaml
+- configmap.yaml
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-server
+  newTag: 5bfd7f57c17d8152a6bfbddb8defbccb2c27cc24

@@ -176,6 +176,7 @@ data:
       job_done_status:
       - "Failed"
       - "Timeout"
+      - "Abnormal"
       - "Completed"
       - "Terminated"
 
