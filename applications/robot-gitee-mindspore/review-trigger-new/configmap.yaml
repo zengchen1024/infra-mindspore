@@ -14,6 +14,8 @@ data:
     - repos:
       - mindspore/docs
       need_welcome: true
+      ci:
+        no_ci: true
       review:
         number_of_approvers: 1
         total_number_of_approvers: 1
