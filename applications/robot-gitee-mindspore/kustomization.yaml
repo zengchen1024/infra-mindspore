@@ -10,6 +10,7 @@ resources:
 - lifecycle
 - assign
 - review-trigger
+- review-trigger-new
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

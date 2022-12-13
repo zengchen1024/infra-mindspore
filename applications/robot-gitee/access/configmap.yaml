@@ -157,7 +157,7 @@ data:
         - robot-gitee-edahelper-cla
 
         mindspore/docs:
-        - robot-gitee-mindspore-review-trigger
+        - robot-gitee-mindspore-review-trigger-new
 
         mindspore/course:
         - robot-gitee-mindspore-review-trigger
@@ -421,6 +421,11 @@ data:
         - "Note Hook"
       - name: robot-gitee-mindspore-review-trigger
         endpoint: http://service-review-trigger.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-mindspore-review-trigger-new
+        endpoint: http://service-review-trigger-new.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
         events:
         - "Merge Request Hook"
         - "Note Hook"
