@@ -15,6 +15,3 @@ resources:
 namespace: xihe-test-v2
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-images:
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
-  newTag: 4b446a54bb8bbc33ee6b6ff8459a1da2b0c213f6

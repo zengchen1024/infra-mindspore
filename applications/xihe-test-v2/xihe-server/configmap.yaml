@@ -24,6 +24,7 @@ data:
         activity: activity
         tag: tag
         luojia: luojia
+        wukong: wukong
         training: training
         evaluate: evaluate
         inference: inference
@@ -91,6 +92,7 @@ data:
         vqa: "${BIGMODEL_VQA}"
         pangu: "${BIGMODEL_PANGU}"
         luojia: "${BIGMODEL_LUOJIA}"
+        wukong: "${BIGMODEL_WUKONG}"
         codegeex: "${BIGMODEL_CODEGEEX}"
         desc_picture: "${BIGMODEL_DESCRIBE_PICTURE}"
         signle_picture: "${BIGMODEL_SINGLE_PICTURE}"
@@ -109,6 +111,15 @@ data:
         secret_key: "${HW_OBS_SK}"
         region: cn-north-4
         iam_endpoint: https://iam.cn-north-4.myhuaweicloud.com
+
+      wukong:
+        sample_id: "1"
+        sample_num: 5
+        sample_count: 22
+        user: "${BIGMODEL_USER_WUKONG}"
+        password: "${BIGMODEL_PASSWORD_WUKONG}"
+        project: "${BIGMODEL_PROJECT}"
+        auth_endpoint: "${BIGMODEL_AUTH_ENDPOINT}"
 
     domain:
       min_name_length: 3

@@ -108,21 +108,31 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_MULTI_PICTURES
-        - name: BIGMODEL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: BIGMODEL_PASSWORD
-        - name: BIGMODEL_PROJECT
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: BIGMODEL_PROJECT
         - name: BIGMODEL_USER
           valueFrom:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_USER
+        - name: BIGMODEL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_PASSWORD
+        - name: BIGMODEL_USER_WUKONG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_USER_WUKONG
+        - name: BIGMODEL_PASSWORD_WUKONG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_PASSWORD_WUKONG
+        - name: BIGMODEL_PROJECT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_PROJECT
         - name: BIGMODEL_VQA
           valueFrom:
             secretKeyRef:
@@ -138,6 +148,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_LUOJIA
+        - name: BIGMODEL_WUKONG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_WUKONG
         - name: BIGMODEL_CODEGEEX
           valueFrom:
             secretKeyRef:
