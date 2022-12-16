@@ -1,0 +1,259 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitlab-instance-2
+  namespace: source-new
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitlab-instance-2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: gitlab-instance-2
+    spec:
+      containers:
+      - name: gitlab
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/sameersbn-gitlab:15.2.2
+        env:
+        - name: TZ
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: tz
+        - name: GITLAB_TIMEZONE
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab_timezone
+        - name: GITLAB_SECRETS_DB_KEY_BASE
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab-secrets-db-key-base
+        - name: GITLAB_SECRETS_SECRET_KEY_BASE
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab-secrets-secret-key-base
+        - name: GITLAB_SECRETS_OTP_KEY_BASE
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab-secrets-otp-key-base
+        - name: GITLAB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab-root-password
+        - name: GITLAB_ROOT_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab-root-email
+        - name: GITLAB_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab-email
+        - name: GITLAB_EMAIL_REPLY_TO
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab-email-reply-to
+        - name: GITLAB_INCOMING_EMAIL_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab-incoming-email-address
+        - name: GITLAB_EMAIL_DISPLAY_NAME
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab_email_display_name
+        - name: GITLAB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab_host
+        - name: GITLAB_PORT
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab_port
+        - name: GITLAB_SSH_PORT
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab_ssh_port
+        - name: GITLAB_NOTIFY_ON_BROKEN_BUILDS
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab_notify_on_broken_builds
+        - name: GITLAB_NOTIFY_PUSHER
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab_notify_pusher
+        - name: GITLAB_BACKUP_SCHEDULE
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab_backup_schedule
+        - name: GITLAB_BACKUP_TIME
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: gitlab_backup_time
+        - name: DB_TYPE
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: db-type
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: postgres-host
+        - name: DB_PORT
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: db-port
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: postgres-user
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: postgres-password
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: postgres-name
+        - name: REDIS_HOST
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: redis-host
+        - name: REDIS_PORT
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: redis-port
+        - name: SMTP_ENABLED
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: smtp-enabled
+        - name: SMTP_DOMAIN
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: smtp-domain
+        - name: SMTP_HOST
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: smtp-host
+        - name: SMTP_PORT
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: smtp-port
+        - name: SMTP_USER
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: smtp-user
+        - name: SMTP_PASS
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: smtp-password
+        - name: SMTP_STARTTLS
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: smtp-starttls
+        - name: SMTP_AUTHENTICATION
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-instance-2-secrets
+              key: smtp-authentication
+        ports:
+        - name: http
+          containerPort: 80
+        - name: ssh
+          containerPort: 22
+        resources:
+          requests:
+            cpu: 2000m
+            memory: 4000Mi
+          limits:
+            cpu: 4000m
+            memory: 6000Mi
+        volumeMounts:
+        - mountPath: /home/git/data
+          name: gitlab-data
+      restartPolicy: Always
+      volumes:
+      - name: gitlab-data
+        persistentVolumeClaim:
+          claimName: gitlab-instance-2-data-volume
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-instance-2
+  namespace: source-new
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-instance-2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: redis-instance-2
+    spec:
+      containers:
+      - image: swr.cn-north-4.myhuaweicloud.com/openeuler/public/redis:1.6.2.6
+        imagePullPolicy: IfNotPresent
+        name: redis
+        ports:
+        - name: redis
+          containerPort: 6379
+        volumeMounts:
+        - mountPath: /data
+          name: redis-data
+        livenessProbe:
+          exec:
+            command:
+            - redis-cli
+            - ping
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+        readinessProbe:
+          exec:
+            command:
+            - redis-cli
+            - ping
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+      volumes:
+      - name: redis-data
+        persistentVolumeClaim:
+          claimName: redis-instance-2-data-volume

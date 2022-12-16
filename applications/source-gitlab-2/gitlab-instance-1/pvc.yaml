@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gitlab-instance-1-data-volume
+  namespace: source-new
+  labels:
+    failure-domain.beta.kubernetes.io/zone: cn-north-4b
+spec:
+  storageClassName: "csi-disk"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis-instance-1-data-volume
+  namespace: source-new
+  labels:
+    failure-domain.beta.kubernetes.io/zone: cn-north-4b
+spec:
+  storageClassName: "csi-disk"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

@@ -1,0 +1,7 @@
+resources:
+- gitlab-instance-1
+- gitlab-instance-2
+- namespace.yaml
+namespace: source-new
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
