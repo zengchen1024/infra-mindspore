@@ -93,6 +93,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_AUTH_ENDPOINT
+        - name: BIGMODEL_AUTH_ENDPOINT_WUKONG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_AUTH_ENDPOINT_WUKONG
         - name: BIGMODEL_DESCRIBE_PICTURE
           valueFrom:
             secretKeyRef:
@@ -118,6 +123,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_PASSWORD
+        - name: BIGMODEL_DOMAIN_WUKONG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_DOMAIN_WUKONG
         - name: BIGMODEL_USER_WUKONG
           valueFrom:
             secretKeyRef:

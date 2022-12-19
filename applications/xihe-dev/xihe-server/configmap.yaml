@@ -83,6 +83,7 @@ data:
 
     bigmodel:
       cloud:
+        domain: "${BIGMODEL_USER}"
         user: "${BIGMODEL_USER}"
         password: "${BIGMODEL_PASSWORD}"
         project: "${BIGMODEL_PROJECT}"
@@ -116,10 +117,11 @@ data:
         sample_id: "1"
         sample_num: 5
         sample_count: 22
+        domain: "${BIGMODEL_DOMAIN_WUKONG}"
         user: "${BIGMODEL_USER_WUKONG}"
         password: "${BIGMODEL_PASSWORD_WUKONG}"
         project: "${BIGMODEL_PROJECT}"
-        auth_endpoint: "${BIGMODEL_AUTH_ENDPOINT}"
+        auth_endpoint: "${BIGMODEL_AUTH_ENDPOINT_WUKONG}"
 
     domain:
       min_name_length: 3
