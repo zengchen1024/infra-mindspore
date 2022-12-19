@@ -14,6 +14,21 @@ spec:
     requests:
       storage: 100Gi
 
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gitlab-instance-2-hooks-volume
+  namespace: source-new
+  labels:
+    failure-domain.beta.kubernetes.io/zone: cn-north-4b
+spec:
+  storageClassName: "csi-disk"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
 
 ---
 apiVersion: v1
