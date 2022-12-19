@@ -9,6 +9,7 @@ resources:
 - lgtm
 - label
 - tide
+- review-trigger-new
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

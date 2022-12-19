@@ -121,6 +121,7 @@ data:
         - robot-gitee-ascend-label
         - robot-gitee-ascend-lgtm
         - robot-gitee-ascend-tide
+        - robot-gitee-ascend-review-trigger-new
 
         cann/acl:
         - robot-gitee-cann-approve
@@ -336,6 +337,11 @@ data:
         - "Note Hook"
       - name: robot-gitee-ascend-tide
         endpoint: http://service-tide.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-review-trigger-new
+        endpoint: http://service-review-trigger-new.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
         events:
         - "Merge Request Hook"
         - "Note Hook"

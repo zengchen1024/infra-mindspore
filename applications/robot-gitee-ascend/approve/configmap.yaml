@@ -7,7 +7,10 @@ data:
     config_items:
     - repos:
       - ascend
+      excluded_repos:
+      - ascend/pytorch
       require_self_approval: true      
+
     - repos:
       - ascend/canndev
       - ascend/cann_op_contrib
@@ -15,7 +18,6 @@ data:
       - ascend/Asight
       - ascend/metadef
       - ascend/parser
-      - ascend/pytorch
       - ascend/pytorch-develop
       - ascend/mindstudio
       - ascend/msadvisor
