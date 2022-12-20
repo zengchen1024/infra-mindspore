@@ -6,15 +6,11 @@ data:
   config.yaml: |
     commands_endpoint: "https://prow.osinfra.cn/gitee-deck/command-help?repo="
     doc: "You can get details about the review process of pull-request at [**here**](https://gitee.com/I-am-a-robot/community/raw/master/pr_review.svg)"
-    maintainers:
-      mindspore/docs:
-      - gemini524
-
     config_items:
     - repos:
       - ascend/pytorch
-      ci:
-        no_ci: true
+      need_welcome: true
+      cla_label: "ascend-cla/yes"
       review:
         number_of_approvers: 1
         total_number_of_approvers: 2

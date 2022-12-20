@@ -160,6 +160,9 @@ data:
         mindspore/docs:
         - robot-gitee-mindspore-review-trigger-new
 
+        mindspore/mindspore:
+        - robot-gitee-mindspore-review-trigger-new
+
         mindspore/course:
         - robot-gitee-mindspore-review-trigger
         
