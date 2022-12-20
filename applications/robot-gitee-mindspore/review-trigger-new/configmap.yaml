@@ -9,6 +9,8 @@ data:
     maintainers:
       mindspore/docs:
       - gemini524
+      mindspore/mindspore:
+      - baochong
 
     config_items:
     - repos:
@@ -23,7 +25,11 @@ data:
       - mindspore/mindspore
       need_welcome: true
       cla_label: "mindspore-cla/yes"
+      labels_for_basic_ci_passed:
+      - ci-pipeline-passed
       review:
         number_of_approvers: 1
         total_number_of_approvers: 2
         total_number_of_reviewers: 1
+        endpoint_to_recommend_reviewer: https://omapi.test.osinfra.cn/query/reviewer/recommend
+
