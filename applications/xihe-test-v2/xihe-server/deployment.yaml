@@ -188,6 +188,26 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: VQA_OBS_BUCKET
+        - name: WUKONG_OBS_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: WUKONG_OBS_ENDPOINT
+        - name: WUKONG_OBS_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: WUKONG_OBS_ACCESS_KEY
+        - name: WUKONG_OBS_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: WUKONG_OBS_SECRET_KEY
+        - name: WUKONG_OBS_BUCKET
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: WUKONG_OBS_BUCKET
         - name: LUOJIA_OBS_BUCKET
           valueFrom:
             secretKeyRef:

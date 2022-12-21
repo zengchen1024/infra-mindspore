@@ -122,6 +122,10 @@ data:
         password: "${BIGMODEL_PASSWORD_WUKONG}"
         project: "${BIGMODEL_PROJECT}"
         auth_endpoint: "${BIGMODEL_AUTH_ENDPOINT_WUKONG}"
+        endpoint: "${WUKONG_OBS_ENDPOINT}"
+        access_key: "${WUKONG_OBS_ACCESS_KEY}"
+        secret_key: "${WUKONG_OBS_SECRET_KEY}"
+        vqa_bucket: "${WUKONG_OBS_BUCKET}"
 
     domain:
       min_name_length: 3
