@@ -31,6 +31,7 @@ data:
         aiquestion: aiquestion
         competition: competition
         question_pool: questionpool
+        wukong_picture: wukongpicture
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"

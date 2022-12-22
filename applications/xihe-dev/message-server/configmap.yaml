@@ -18,11 +18,14 @@ data:
         activity: activity
         tag: tag
         luojia: luojia
+        wukong: wukong
         training: training
         evaluate: evaluate
         inference: inference
         aiquestion: aiquestion
         competition: competition
+        question_pool: questionpool
+        wukong_picture: wukongpicture
 
     domain:
       min_name_length: 3
