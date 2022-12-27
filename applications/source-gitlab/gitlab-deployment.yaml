@@ -127,7 +127,10 @@ spec:
               name: gitlab-secrets
               key: smtp-host
         - name: SMTP_PORT
-          value: "587"
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-secrets
+              key: smtp-port
         - name: SMTP_USER
           valueFrom:
             secretKeyRef:
