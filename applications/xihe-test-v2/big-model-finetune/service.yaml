@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: big-model-finetune
+  namespace: xihe-test-v2
+spec:
+  ports:
+    - name: httpport
+      port: 80
+      targetPort: 8080
+  selector:
+    app: big-model-finetune
+  type: ClusterIP
