@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    kubernetes.io/ingress.class: nginx
+  name: xihe-statistics-ingress
+  namespace: xihe-test-v2
+spec:
+  rules:
+  - host: xihe-statistics.test.osinfra.cn
+    http:
+      paths:
+      - backend:
+          serviceName: xihe-statistics-service
+          servicePort: 80
+        path: /
+  tls:
+  - hosts:
+    - xihe-statistics.test.osinfra.cn
+    secretName: xihe-statistics-tls
