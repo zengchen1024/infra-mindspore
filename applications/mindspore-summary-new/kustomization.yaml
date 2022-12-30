@@ -9,4 +9,4 @@ resources:
 - namespace.yaml
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/summary
-  newTag: v1.0.20221230211203
+  newTag: v1.0.20221230214432
