@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mindspore-summary-deployment
+  namespace: mindspore-summary-new
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: mindspore-summary
+  template:
+    metadata:
+      labels:
+        app: mindspore-summary
+    spec:
+      imagePullSecrets:
+      - name: huawei-swr-image-pull-secret
+      containers:
+      - image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/summary:v1.0.20221230102811
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 8080
+          timeoutSeconds: 5
+        name: mindspore-summary
+        readinessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 8080
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: 500m
+            memory: 500Mi
+          requests:
+            cpu: 200m
+            memory: 200Mi

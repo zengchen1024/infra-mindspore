@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/server-snippet: |
+      rewrite ^/en/2022/$  https://summary-en.mindspore.cn/en/2022/ redirect;
+  name: mindspore-summary-ingress
+  namespace: mindspore-summary-new
+spec:
+  rules:
+  - host: summary.mindspore.cn
+    http:
+      paths:
+      - backend:
+          serviceName: mindspore-oauth2-proxy
+          servicePort: 4180
+        path: /
+  tls:
+  - hosts:
+    - summary.mindspore.cn
+    secretName: mindspore-summary-tls
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/server-snippet: |
+      rewrite ^/$  /en/2022/ redirect;
+      rewrite ^/zh/2022/$  https://summary.mindspore.cn/zh/2022/ redirect;
+  name: mindspore-en-summary-ingress
+  namespace: mindspore-summary-new
+spec:
+  rules:
+  - host: summary-en.mindspore.cn
+    http:
+      paths:
+      - backend:
+          serviceName: mindspore-en-oauth2-proxy
+          servicePort: 4180
+        path: /
+  tls:
+  - hosts:
+    - summary-en.mindspore.cn
+    secretName: mindspore-summary-en-tls
