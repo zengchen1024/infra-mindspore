@@ -137,10 +137,10 @@ spec:
       - args:
         - --provider=gitee
         - --email-domain=*
-        - --proxy-prefix=/en/oauth2
+        - --proxy-prefix=/oauth2
         - --skip-validate-email=true
-        - --skip-auth-regex=^/en/agreement_ch.html
-        - --skip-auth-regex=^/en/agreement_en.html
+        - --skip-auth-regex=^/agreement_ch.html
+        - --skip-auth-regex=^/agreement_en.html
         - --upstream=http://mindspore-summary-service.mindspore-summary-new.svc.cluster.local
         - --http-address=0.0.0.0:4180
         - --cookie-expire=6h0m0s
