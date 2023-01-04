@@ -30,6 +30,12 @@ spec:
           successThreshold: 1
           timeoutSeconds: 5
         name: big-model-finetune
+        env:
+        - name: CPU_COUNT
+          valueFrom:
+            secretKeyRef:
+              key: big_model_finetune_cpu_count
+              name: big-model-finetune-secret
         readinessProbe:
           failureThreshold: 3
           httpGet:
