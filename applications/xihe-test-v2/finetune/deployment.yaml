@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: finetune
+        args:
+        - --port=8888
+        - --config-file=/app/conf/app_config/config.yaml
+        - --enable_debug=true
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/app_config/
+          name: app-config
+          readOnly: true
+        env:
+        - name: FINETUNE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: FINETUNE_USERNAME
+        - name: FINETUNE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: FINETUNE_PASSWORD
+      volumes:
+      - name: app-config
+        configMap:
+          name: configmap-finetune
