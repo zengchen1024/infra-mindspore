@@ -168,38 +168,34 @@ data:
         
         mindspore:
         - robot-gitee-mindspore-cla
+        - robot-gitee-mindspore-tide
 
         mindspore/golden-stick:
         - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-tide
         - robot-gitee-mindspore-lifecycle
         - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
         mindspore/federated:
         - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-tide
         - robot-gitee-mindspore-lifecycle
         - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
         mindspore/text:
         - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-tide
         - robot-gitee-mindspore-lifecycle
         - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
         mindspore/mindpandas:
         - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-tide
         - robot-gitee-mindspore-lifecycle
         - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
         mindspore/recommender:
         - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-tide
         - robot-gitee-mindspore-lifecycle
         - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
