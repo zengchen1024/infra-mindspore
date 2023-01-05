@@ -199,6 +199,7 @@ data:
         inference: "xihe_inference_test"
         following: "xihe_following_test"
         submission: "xihe_submission_test"
+        operate_log: "xihe_operate_log_test"
         related_resource: "xihe_related_resource_test"
 
     training:

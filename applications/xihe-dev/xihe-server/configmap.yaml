@@ -199,6 +199,7 @@ data:
         inference: "xihe_inference_dev"
         following: "xihe_following_dev"
         submission: "xihe_submission_dev"
+        operate_log: "xihe_operate_log_dev"
         related_resource: "xihe_related_resource_dev"
 
     training:
