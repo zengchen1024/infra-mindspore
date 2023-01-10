@@ -28,3 +28,17 @@ spec:
       storage: 500Gi
   storageClassName: nfs-rw
   volumeMode: Filesystem
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: exim-log-data
+  namespace: mail
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi
+  storageClassName: sas

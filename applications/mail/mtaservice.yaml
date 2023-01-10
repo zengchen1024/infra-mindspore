@@ -53,51 +53,34 @@ spec:
       containers:
         - name: mailman-exim4
           #NOTE: This image is directly built from our dockerfile located in exim4 folder
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/app-mailman/mailman-exim4-build:20985c29f3070ef5875b0d49bbb17672a73aced41668766284
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/app-mailman/mailman-exim-new-build:3d97dff8206e4262c0fa2e218cdacb40e168c56a1672141405
           imagePullPolicy: "IfNotPresent"
           volumeMounts:
-            - mountPath: /etc/exim4/conf.d/main/25_mm3_macros
-              name: mailman-exim4-configmap-volume
-              subPath: 25_mm3_macros
-            - mountPath: /etc/exim4/conf.d/main/01_exim4-config_listmacrosdefs
-              name: mailman-exim4-configmap-volume
-              subPath: 01_exim4-config_listmacrosdefs
-            - mountPath: /etc/exim4/conf.d/auth/30_exim4-config_examples
-              name: mailman-exim4-configmap-volume
-              subPath: 30_exim4-config_examples
-            - mountPath: /etc/exim4/conf.d/main/00_local_macros
-              name: mailman-exim4-configmap-volume
-              subPath: 00_local_macros
-            - mountPath: /etc/exim4/conf.d/transport/55_mm3_transport
-              name: mailman-exim4-configmap-volume
-              subPath: 55_mm3_transport
-            - mountPath: /etc/exim4/conf.d/router/455_mm3_router
-              name: mailman-exim4-configmap-volume
-              subPath: 455_mm3_router
-            - mountPath: /etc/exim4/update-exim4.conf.conf
-              name: mailman-exim4-configmap-volume
-              subPath: update-exim4-conf.conf
-              # This file path also used in command option that used as a exim4 log path
             - mountPath: /opt/mailman/
               name: mailman-core-data
+            - mountPath: /var/log/exim/
+              name: mailman-exim4-log
             - name: mailman-secrets
-              mountPath: /etc/exim4/passwd.ro
+              mountPath: /etc/exim/passwd.ro
               subPath: exim4_credential
             - name: mailman-cert-secrets
-              mountPath: /etc/exim4/exim.crt.ro
+              mountPath: /etc/exim/exim.crt.ro
               subPath: server_crt
             - name: mailman-cert-secrets
-              mountPath: /etc/exim4/exim.key.ro
+              mountPath: /etc/exim/exim.key.ro
               subPath: server_key
             - name: mailman-secrets
-              mountPath: /etc/exim4/dkim/mindspore.key.ro
+              mountPath: /etc/exim/dkim/mindspore.key.ro
               subPath: dkim_key
             - name: exim4-tls-secret
-              mountPath: /etc/exim4/ssl_pool/mindspore.cn.crt
+              mountPath: /etc/exim/ssl_pool/mindspore.cn.crt
               subPath: mindspore_cn_crt
             - name: exim4-tls-secret
-              mountPath: /etc/exim4/ssl_pool/mindspore.cn.key
+              mountPath: /etc/exim/ssl_pool/mindspore.cn.key
               subPath: mindspore_cn_key
+            - name: exim-config
+              mountPath: /etc/exim/exim.conf
+              subPath: exim_conf
           # NOTE: since we added new configuration files we need reload exim4 and start up
           # 1. update password  and key file mode
           # 2. update the log folder permission
@@ -107,26 +90,22 @@ spec:
             - /bin/sh
             - -c
             - |
-              mkdir -p /var/log/exim4
-              chown -R Debian-exim:Debian-exim /var/log/exim4
-              cp /etc/exim4/passwd.ro /etc/exim4/passwd
-              cp /etc/exim4/exim.crt.ro /etc/exim4/exim.crt
-              cp /etc/exim4/exim.key.ro /etc/exim4/exim.key
-              cp /etc/exim4/dkim/mindspore.key.ro /etc/exim4/dkim/mindspore.key
-              chown root:Debian-exim /etc/exim4/passwd /etc/exim4/exim.crt /etc/exim4/exim.key /etc/exim4/dkim/mindspore.key
-              chmod 640 /etc/exim4/passwd /etc/exim4/exim.crt /etc/exim4/exim.key /etc/exim4/dkim/mindspore.key
-              mkdir -p /opt/mailman/exim_log
-              chown Debian-exim:Debian-exim -R /opt/mailman/exim_log
-              update-exim4.conf
+              cp /etc/exim/passwd.ro /etc/exim/passwd
+              cp /etc/exim/exim.crt.ro /etc/exim/exim.crt
+              cp /etc/exim/exim.key.ro /etc/exim/exim.key
+              cp /etc/exim/dkim/mindspore.key.ro /etc/exim/dkim/mindspore.key
+              chown root:exim /etc/exim/passwd /etc/exim/exim.crt /etc/exim/exim.key /etc/exim/dkim/mindspore.key
+              chmod 755 /etc/exim/passwd /etc/exim/exim.crt /etc/exim/exim.key /etc/exim/dkim/mindspore.key
+              mkdir -p /var/log/exim
               exec tini -- exim -bd -v;
       #NOTE: Empty dir can't be used in a production dir. Please upgrade it before using.
       volumes:
-        - name: mailman-exim4-configmap-volume
-          configMap:
-            name: mailman-exim4-configmap
         - name: mailman-core-data
           persistentVolumeClaim:
             claimName: config-vol
+        - name: mailman-exim4-log
+          persistentVolumeClaim:
+            claimName: exim-log-data
         - name: mailman-secrets
           secret:
             secretName: mailman-secrets
@@ -136,4 +115,7 @@ spec:
         - name: exim4-tls-secret
           secret:
             secretName: mailman-tls-secrets
+        - name: exim-config
+          configMap:
+            name: exim-configmap
 

@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mailman-core-service
+  namespace: mail
+spec:
+  ports:
+    - port: 8001
+      name: core-service
+      targetPort: 8001
+      protocol: TCP
+  selector:
+    component: mail-core-service
+  type: ClusterIP

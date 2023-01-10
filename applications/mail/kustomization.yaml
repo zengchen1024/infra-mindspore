@@ -1,8 +1,8 @@
 resources:
+  - exim-configmap.yaml
   - ingress.yaml
-  - config.yaml
   - mailcore.yaml
-  - mailcore-utils.yaml
+  - mailcoreservice.yaml
   - maildatabase.yaml
   - mtaservice.yaml
   - namespace.yaml
