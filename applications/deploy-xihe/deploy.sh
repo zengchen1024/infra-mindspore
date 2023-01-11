@@ -11,6 +11,9 @@ upstream_org=opensourceways
 upstream_repo=infra-mindspore
 upstream=https://github.com/${upstream_org}/${upstream_repo}.git
 
+image_path_prefix=${IMAGE_PATH_PREFIX_OVERRIDE:-xihe/xihe}
+
+
 fetch_parameter() {
     local index=$1
     if [ $pn -lt $index ]; then
@@ -50,7 +53,7 @@ clone_infra_mindspore() {
 
 reset_image(){
     local image=$1
-    kustomize edit set image swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe=$image
+    kustomize edit set image swr.cn-north-4.myhuaweicloud.com/opensourceway/${image_path_prefix}=$image
 }
 
 update_image() {
