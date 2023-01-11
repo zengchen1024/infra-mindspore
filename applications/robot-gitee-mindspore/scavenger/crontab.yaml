@@ -30,4 +30,4 @@ spec:
               name: configmap-scavenger
           - name: secret-volume
             secret:
-              secretName: secret-robot-token
+              secretName: secrets

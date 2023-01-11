@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    topic: robot-gitee-mindspore
+    user_agent: robot-gitee-mindspore
+    kafka_address: "${KAFKA_ADDRESS}"
+    access_endpoint: http://service-access.robot-gitee-mindspore.svc.cluster.local:8888/gitee-access
+    concurrent_size: 40

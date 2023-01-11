@@ -7,22 +7,29 @@ spec:
   template:
     spec:
       containers:
-      - name: name
-        args:
-        - --port=8888
-        - --gitee-token-path=/app/conf/robot-gitee/robot_token
-        - --config-file=/app/conf/robot-gitee/app_config/config.yaml
+      - name: hook-delivery
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
         imagePullPolicy: IfNotPresent
+        args:
+        - --port=8888
+        - --config-file=/app/conf/app_config/config.yaml
+        - --hmac-secret-file=/app/conf/hmac
+        - --enable_debug=true
+        env:
+        - name: KAFKA_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: secrets
+              key: KAFKA_ADDRESS
         ports:
         - containerPort: 8888
           name: http
           protocol: TCP
         volumeMounts:
-        - mountPath: /app/conf/robot-gitee/robot_token
-          subPath: robot-token
+        - mountPath: /app/conf/hmac
+          subPath: webhook-hmac
           name: secret-volume
-        - mountPath: /app/conf/robot-gitee/app_config/
+        - mountPath: /app/conf/app_config/
           name: app-config
           readOnly: true
       volumes:
@@ -31,4 +38,4 @@ spec:
           secretName: secrets
       - name: app-config
         configMap:
-          name: config
+          name: configmap-hook-delivery

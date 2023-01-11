@@ -11,6 +11,8 @@ resources:
 - assign
 - review-trigger
 - review-trigger-new
+- hook-dispatcher
+- hook-delivery
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
