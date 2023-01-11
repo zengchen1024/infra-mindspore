@@ -17,6 +17,7 @@ data:
         
         mindspore:
         - robot-gitee-mindspore-tide
+        - robot-gitee-mindspore-cla
 
         mindspore/golden-stick:
         - robot-gitee-mindspore-label
@@ -49,6 +50,16 @@ data:
         - robot-gitee-mindspore-review-trigger
 
       plugins:
+      - name: robot-gitee-mindspore-cla
+        endpoint: http://service-cla.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-mindspore-label
+        endpoint: http://service-label.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
       - name: robot-gitee-mindspore-tide
         endpoint: http://service-tide.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
         events:
