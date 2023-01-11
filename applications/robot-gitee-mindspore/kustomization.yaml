@@ -13,6 +13,7 @@ resources:
 - review-trigger-new
 - hook-dispatcher
 - hook-delivery
+- access
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

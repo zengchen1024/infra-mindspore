@@ -24,9 +24,6 @@ spec:
           name: app-config
           readOnly: true
       volumes:
-      - name: secret-volume
-        secret:
-          secretName: secrets
       - name: app-config
         configMap:
           name: configmap-hook-dispatcher

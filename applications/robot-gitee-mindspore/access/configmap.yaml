@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml:
+    access:
+      repo_plugins:
+        mindspore/docs:
+        - robot-gitee-mindspore-review-trigger-new
+
+        mindspore/mindspore:
+        - robot-gitee-mindspore-review-trigger-new
+
+        mindspore/course:
+        - robot-gitee-mindspore-review-trigger
+        
+        mindspore:
+        - robot-gitee-mindspore-cla
+        - robot-gitee-mindspore-tide
+
+        mindspore/golden-stick:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
+
+        mindspore/federated:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
+
+        mindspore/text:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
+
+        mindspore/mindpandas:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
+
+        mindspore/recommender:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger
+
+      plugins:
+      - name: robot-gitee-mindspore-tide
+        endpoint: http://service-tide.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-mindspore-lifecycle
+        endpoint: http://service-lifecycle.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-mindspore-assign
+        endpoint: http://service-assign.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-mindspore-review-trigger
+        endpoint: http://service-review-trigger.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-mindspore-review-trigger-new
+        endpoint: http://service-review-trigger-new.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
