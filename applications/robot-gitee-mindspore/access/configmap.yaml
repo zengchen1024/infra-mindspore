@@ -16,7 +16,6 @@ data:
         - robot-gitee-mindspore-review-trigger
         
         mindspore:
-        - robot-gitee-mindspore-cla
         - robot-gitee-mindspore-tide
 
         mindspore/golden-stick:
