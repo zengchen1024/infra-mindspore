@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: configmap
 data:
-  config.yaml:
+  config.yaml: |
     access:
       repo_plugins:
         mindspore/docs:
