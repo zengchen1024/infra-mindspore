@@ -9,4 +9,4 @@ nameSuffix: -hook-dispatcher
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-hook-dispatcher
-  newTag: main-091eae0
+  newTag: main-e6727fc
