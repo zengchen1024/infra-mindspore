@@ -9,5 +9,5 @@ commonLabels:
 nameSuffix: -hook-delivery
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
-  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-hook-delivery
-  newTag: main-db0ce7a
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-hook-delivery
+  newTag: master-5222230
