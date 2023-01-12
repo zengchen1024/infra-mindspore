@@ -83,3 +83,10 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: robot-gitee-mindspore-test
+        endpoint: http://service-test.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Push Hook"
+        - "Note Hook"

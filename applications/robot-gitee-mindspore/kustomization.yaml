@@ -14,6 +14,7 @@ resources:
 - hook-dispatcher
 - hook-delivery
 - access
+- test
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
