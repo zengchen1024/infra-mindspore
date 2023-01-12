@@ -48,6 +48,9 @@ data:
         - robot-gitee-mindspore-lifecycle
         - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
+    
+        YwHql/test：
+        - robot-gitee-mindspore-test
 
       plugins:
       - name: robot-gitee-mindspore-cla
