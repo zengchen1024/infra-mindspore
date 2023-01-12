@@ -49,7 +49,7 @@ data:
         - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
     
-        YwHql/test：
+        YwHql/test:
         - robot-gitee-mindspore-test
 
       plugins:
