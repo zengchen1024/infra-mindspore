@@ -16,4 +16,4 @@ nameSuffix: -test
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-test
-  newTag: master-24369ef
+  newTag: master-ec52b14
