@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+  name: robot-gitee-mindspore-ingress
+spec:
+  tls:
+    - hosts:
+        - robot-gitee-mindspore.osinfra.cn
+      secretName: robot-gitee-mindspore-tls
+  rules:
+    - host: robot-gitee-mindspore.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: service-hook-delivery
+              servicePort: 8888
+            path: /

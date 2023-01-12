@@ -4,6 +4,7 @@ resources:
 - configmap.yaml
 - deployment.yaml
 - service.yaml
+- ingress.yaml
 commonLabels:
   component: hook-delivery
 nameSuffix: -hook-delivery
