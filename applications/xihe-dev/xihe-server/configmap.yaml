@@ -193,6 +193,7 @@ data:
       topics:
         fork: "xihe_fork_dev"
         like: "xihe_like_dev"
+        download: "xihe_download_dev"
         evaluate: "xihe_evaluate_dev"
         training: "xihe_training_dev"
         finetune: "xihe_finetune_dev"
