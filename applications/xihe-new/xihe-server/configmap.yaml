@@ -26,6 +26,7 @@ data:
         luojia: luojia
         wukong: wukong
         training: training
+        finetune: finetune
         evaluate: evaluate
         inference: inference
         aiquestion: aiquestion
@@ -178,16 +179,28 @@ data:
       training_platform:
       - "ModelArts"
 
+      finetunes:
+        opt-caption:
+          tasks:
+          - finetune
+          hyperparameters:
+          - epochs
+          - start_learning_rate
+          - end_learning_rate
+
     mq:
       address: "${KAFKA_ADDRESS}"
       topics:
         fork: "xihe_fork_new"
         like: "xihe_like_new"
+        download: "xihe_download_new"
         evaluate: "xihe_evaluate_new"
         training: "xihe_training_new"
+        finetune: "xihe_finetune_new"
         inference: "xihe_inference_new"
         following: "xihe_following_new"
         submission: "xihe_submission_new"
+        operate_log: "xihe_operate_log_new"
         related_resource: "xihe_related_resource_new"
 
     training:
@@ -197,6 +210,18 @@ data:
       - "Abnormal"
       - "Completed"
       - "Terminated"
+
+    finetune:
+      endpoint: "http://service-finetune.xihe-new.svc.cluster.local:8888"
+      job_done_status:
+      - "Failed"
+      - "Abnormal"
+      - "Completed"
+      - "Terminated"
+      can_terminate_status:
+      - "Pending"
+      - "Running"
+      - "Creating"
 
     competition:
       obs:

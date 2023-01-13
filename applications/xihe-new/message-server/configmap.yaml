@@ -5,6 +5,8 @@ metadata:
 data:
   config.yaml: |
     training_endpoint: http://service-training-center-huaweicloud.xihe-new.svc.cluster.local:8888/api/v1/training
+    finetune_endpoint: http://service-finetune.xihe-new.svc.cluster.local:8888/api/v1/finetune
+
     mongodb:
       db_conn: "${MONGODB_CONNECTION}"
       db_name: "${MONGODB_NAME}"
@@ -18,11 +20,15 @@ data:
         activity: activity
         tag: tag
         luojia: luojia
+        wukong: wukong
         training: training
+        finetune: finetune
         evaluate: evaluate
         inference: inference
         aiquestion: aiquestion
         competition: competition
+        question_pool: questionpool
+        wukong_picture: wukongpicture
 
     domain:
       min_name_length: 3
@@ -74,16 +80,28 @@ data:
       training_platform:
       - "ModelArts"
 
+      finetunes:
+        opt-caption:
+          tasks:
+          - finetune
+          hyperparameters:
+          - epochs
+          - start_learning_rate
+          - end_learning_rate
+
     mq:
       address: "${KAFKA_ADDRESS}"
       topics:
         fork: "xihe_fork_new"
         like: "xihe_like_new"
+        download: "xihe_download_new"
         evaluate: "xihe_evaluate_new"
         training: "xihe_training_new"
+        finetune: "xihe_finetune_new"
         inference: "xihe_inference_new"
         following: "xihe_following_new"
         submission: "xihe_submission_new"
+        operate_log: "xihe_operate_log_new"
         related_resource: "xihe_related_resource_new"
 
     evaluate:
