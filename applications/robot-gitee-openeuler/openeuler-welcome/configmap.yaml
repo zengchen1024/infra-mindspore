@@ -14,7 +14,20 @@ data:
       - openeuler-practice-courses
       - openeuler-customization
       - ci-bot
+      excluded_repos:
+      - openeuler/docs
       community_name: openEuler
       community_repo: community
       branch: master
       command_link: https://gitee.com/openeuler/community/blob/master/en/sig-infrastructure/command.md
+
+    - repos:
+      - openeuler/docs
+      community_name: openEuler
+      community_repo: community
+      branch: master
+      command_link: https://gitee.com/openeuler/community/blob/master/en/sig-infrastructure/command.md
+      file_path: PATH_OWNER_MAPPING.YAML
+      file_branch: master
+      need_assign: true
+      welcome_simpler: true
