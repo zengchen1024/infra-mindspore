@@ -15,4 +15,4 @@ images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-reproducible-backend
   newTag: 74a6fe88adf60e5804b73aa1e47497c3554a516a
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-reproducible-website
-  newTag: d80fbb04e857e524c52a832695b4fb29c2b3dfd9
+  newTag: c302ceca30fe7261bb1087a98680afa4a68ac644
