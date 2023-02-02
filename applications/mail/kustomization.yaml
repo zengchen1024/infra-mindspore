@@ -1,17 +1,22 @@
 resources:
-  - exim-configmap.yaml
-  - ingress.yaml
-  - mailcore.yaml
-  - mailcoreservice.yaml
-  - maildatabase.yaml
-  - mtaservice.yaml
-  - namespace.yaml
-  - nginx-config.yaml
-  - secrets.yaml
-  - storage.yaml
-  - suiteservice.yaml
-  - webservice.yaml
+- exim-configmap.yaml
+- ingress.yaml
+- mailcore.yaml
+- mailcoreservice.yaml
+- maildatabase.yaml
+- mtaservice.yaml
+- namespace.yaml
+- nginx-config.yaml
+- secrets.yaml
+- storage.yaml
+- suiteservice.yaml
+- webservice.yaml
 commonAnnotations:
+  email: tommylikehu@gmail.com
   owner: tommylikehu
-  email: "tommylikehu@gmail.com"
 namespace: mail
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/app-mailman/mailman-web-new-build
+  newTag: 66c6783525d8dafa60f8646d7a08b60d140f11f61675153074
