@@ -18,6 +18,7 @@ data:
       - org: openlookeng
       - org: ascend
       - org: cann
+      - org: huawei-hiai-foundation
       file_names:
       - OWNERS
     - platform: gitee
