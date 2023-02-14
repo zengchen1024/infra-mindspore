@@ -10,3 +10,6 @@ commonAnnotations:
   owner: gaoxiang
   email: "gx_hw2020@163.com"
 namespace: jenkins
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore_centos_x86
+  newTag: centos7.9.2009-20230130
