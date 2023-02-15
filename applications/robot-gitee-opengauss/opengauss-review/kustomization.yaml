@@ -16,4 +16,4 @@ nameSuffix: -opengauss-review
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-opengauss-review
-  newTag: master-93a6deb
+  newTag: master-6c89fc0-dirty
