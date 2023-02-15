@@ -9,7 +9,7 @@ data:
         org: oepkgs
         repo: oepkgs-management
         branch: master
-        repo_org: oepkgs
+        repo_org: echo-oepkgs
         sig_file_path: sig/sigs.yaml
         sig_dir: sig
       concurrent_size: 50
