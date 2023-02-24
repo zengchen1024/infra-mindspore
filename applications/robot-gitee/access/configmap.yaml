@@ -23,6 +23,7 @@ data:
         - robot-gitee-opengauss-associate
         - robot-gitee-opengauss-cla
         - robot-gitee-opengauss-sigguide
+        - datastat-server
 
         openlookeng/community:
         - sweepstakes
@@ -44,6 +45,7 @@ data:
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
         - robot-gitee-openeuler-tech4dx-label
+        - datastat-server
         
         src-openeuler:
         - openeuler-ipb
@@ -54,6 +56,7 @@ data:
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
         - robot-gitee-openeuler-tech4dx-label
+        - datastat-server
         
         openeuler-competition:
         - robot-gitee-openeuler-label
@@ -62,6 +65,7 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
+        - datastat-server
         
         openeuler-compliance:
         - robot-gitee-openeuler-label
@@ -70,6 +74,7 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
+        - datastat-server
         
         openeuler-risc-v:
         - robot-gitee-openeuler-label
@@ -78,6 +83,7 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
+        - datastat-server
         
         openeuler-practice-courses:
         - robot-gitee-openeuler-label
@@ -86,6 +92,7 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
+        - datastat-server
         
         openeuler-customization:
         - robot-gitee-openeuler-label
@@ -94,6 +101,7 @@ data:
         - robot-gitee-openeuler-openeuler-review
         - robot-gitee-openeuler-openeuler-welcome
         - robot-gitee-openeuler-cla
+        - datastat-server
 
         openlookeng:
         - robot-gitee-openlookeng-lgtm
@@ -101,6 +109,7 @@ data:
         - robot-gitee-openlookeng-assign
         - robot-gitee-openlookeng-checkpr
         - robot-gitee-openlookeng-cla
+        - datastat-server
 
         openlookeng-competition:
         - robot-gitee-openlookeng-cla
@@ -172,6 +181,7 @@ data:
         mindspore:
         - robot-gitee-mindspore-cla
         - robot-gitee-mindspore-tide
+        - datastat-server
 
         mindspore/golden-stick:
         - robot-gitee-mindspore-label
@@ -457,6 +467,13 @@ data:
 
       - name: robot-gitee-opengauss-sigguide
         endpoint: http://service-opengauss-sigguide.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"
+
+      - name: datastat-server
+        endpoint: https://dsapi.osinfra.cn/query/gitee/webhook
         events:
         - "Issue Hook"
         - "Merge Request Hook"
