@@ -90,7 +90,7 @@ spec:
             memory: 20000Mi
           limits:
             cpu: 5000m
-            memory: 25000Mi
+            memory: 28000Mi
         volumeMounts:
         - mountPath: /etc/gitlab
           name: gitlab-data
