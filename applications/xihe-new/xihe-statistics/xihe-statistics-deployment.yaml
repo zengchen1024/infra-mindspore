@@ -24,6 +24,21 @@ spec:
             secretKeyRef:
               key: config_path
               name: xihe-statistics-secret
+        - name: GITLAB_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              key: GITLAB_ENDPOINT
+              name: xihe-statistics-secret
+        - name: GITLAB_GRAPHQL_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              key: GITLAB_GRAPHQL_ENDPOINT
+              name: xihe-statistics-secret
+        - name: GITLAB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: GITLAB_TOKEN
+              name: xihe-statistics-secret
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-statistics:a8ed23f7a0180097980ace67e6bc9a11cc63a826
         imagePullPolicy: IfNotPresent
         livenessProbe:
