@@ -1,6 +1,11 @@
 [
   {
     "op": "replace",
+    "path": "/spec/replicas",
+    "value": 2
+  },
+  {
+    "op": "replace",
     "path": "/spec/template/spec/containers/0/name",
     "value": "approve"
   },
