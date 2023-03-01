@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: robot-gitee-om
+  namespace: robot-gitee-om
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: om
+  template:
+    metadata:
+      labels:
+        app: om
+    spec:
+      imagePullSecrets:
+      - name: huawei-swr-image-pull-secret
+      containers:
+      - image: swr.cn-north-4.myhuaweicloud.com/om/ds:0.0.9
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: /var/lib/ds/custom.properties
+          name: om-secret
+          subPath: custom_properties
+        - mountPath: /var/lib/ds/openEuler.properties
+          name: om-secret
+          subPath: openEuler_properties
+        - mountPath: /var/lib/ds/openGauss.properties
+          name: om-secret
+          subPath: openGauss_properties
+        - mountPath: /var/lib/ds/openLookeng.properties
+          name: om-secret
+          subPath: openLookeng_properties
+        - mountPath: /var/lib/ds/mindSpore.properties
+          name: om-secret
+          subPath: mindSpore_properties
+        - mountPath: /var/lib/ds/application.properties
+          name: om-secret
+          subPath: application_properties
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 8888
+          timeoutSeconds: 5
+        name: om
+        readinessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 8888
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1000Mi
+          requests:
+            cpu: 500m
+            memory: 500Mi
+      volumes:
+      - name: om-secret
+        secret:
+          secretName: om-secrets

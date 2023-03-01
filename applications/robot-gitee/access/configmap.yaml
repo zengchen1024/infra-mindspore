@@ -473,7 +473,7 @@ data:
         - "Note Hook"
 
       - name: datastat-server
-        endpoint: https://dsapi.osinfra.cn/query/gitee/webhook
+        endpoint: http://om-service.robot-gitee-om.svc.cluster.local:8888/query/gitee/webhook
         events:
         - "Issue Hook"
         - "Merge Request Hook"
