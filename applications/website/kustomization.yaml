@@ -23,4 +23,4 @@ images:
   newTag: 66a4c8d25c244b2f2e18f2d95af1c65862bb8b63
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-website
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore-website
-  newTag: 942f4948245d3e5de410fb4c1d6ab5dd5a77c54c
+  newTag: a2942b2759df024df1ca187dbbfd2efa8aa0a79c
