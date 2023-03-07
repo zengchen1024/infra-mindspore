@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-usercenter
+  newTag: 0f2c2bf9d7fc0a79ca9ea35fb8dc2588bf7f0bf4
+kind: Kustomization
+namespace: mindspore-usercenter
+resources:
+- namespace.yaml
+- website-ingress.yaml
+- website-service.yaml
+- website-deployment.yaml
+commonAnnotations:
+  kubernetes.ops.cluster: mindspore-cn4-x86
+  kubernetes.ops.email: 377075038@qq.com
+  kubernetes.ops.os.base: openeuler
+  kubernetes.ops.owner: chenqi
+  kubernetes.ops.region: beijing
