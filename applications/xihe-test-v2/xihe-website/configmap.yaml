@@ -59,7 +59,7 @@ data:
       }
 
       location ^~ /oneid/ {
-        proxy_pass https://xiheapi.osinfra.cn/ ;
+        proxy_pass https://xiheapi.osinfra.cn/oneid/ ;
       }
 
       location ^~ /repo/ {

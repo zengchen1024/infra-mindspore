@@ -58,6 +58,10 @@ data:
         proxy_pass http://xihe-backend-service.xihe-new.svc.cluster.local ;
       }
 
+      location ^~ /oneid/ {
+        proxy_pass https://xiheapi.osinfra.cn/oneid/ ;
+      }
+
       location ^~ /repo/ {
         proxy_pass https://gitlab.openeuler.sh/api/v4/ ;
       }
