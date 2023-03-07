@@ -9,7 +9,7 @@ data:
     authing:
       app_id: "${AUTHING_APP_ID}"
       secret: "${AUTHING_SECRET}"
-      redirect_uri: "${AUTHING_REDIRECT_URI_TEST}"
+      endpoint: "https://omapi.osinfra.cn/oneid/oidc"
 
     mongodb:
       db_conn: "${MONGODB_CONNECTION}"
