@@ -6,6 +6,13 @@ metadata:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-issuer
     nginx.ingress.kubernetes.io/proxy-body-size: "1G"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      location /api/graphql/ {
+        return 403;
+      }
+      location /.well-known/openid-configuration {
+        return 403;
+      }
   name: xihe-gitlab-ingress
   namespace: source
 spec:
