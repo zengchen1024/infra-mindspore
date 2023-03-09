@@ -13,6 +13,9 @@ metadata:
       location /.well-known/openid-configuration {
         return 403;
       }
+      location /oauth/discovery/keys {
+        return 403;
+      }
   name: xihe-gitlab-ingress
   namespace: source
 spec:
