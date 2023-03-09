@@ -7,7 +7,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-issuer
     nginx.ingress.kubernetes.io/proxy-body-size: "1G"
     nginx.ingress.kubernetes.io/configuration-snippet: |
-      location /api/graphql/ {
+      location /api/graphql {
         return 403;
       }
       location /.well-known/openid-configuration {

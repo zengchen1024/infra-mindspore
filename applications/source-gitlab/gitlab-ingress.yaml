@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "1800"
     nginx.ingress.kubernetes.io/configuration-snippet: |
-      location /api/graphql/ {
+      location /api/graphql {
         return 403;
       }
       location /.well-known/openid-configuration {
