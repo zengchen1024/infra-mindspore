@@ -9,4 +9,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/openeuler-ipb-test
-  newTag: 94b1c1c0dbf25dfcf12d6de2c243f6b2dfeed478
+  newTag: 54461dd273d8c5e1c36dbd32de2fdc1019186221
