@@ -60,3 +60,7 @@ spec:
             serviceName: openeuler-ipb-service
             servicePort: 80
           path: /verify
+        - backend:
+            serviceName: openeuler-ipb-service
+            servicePort: 80
+          path: /new-issue
