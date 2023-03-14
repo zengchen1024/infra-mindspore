@@ -38,6 +38,7 @@ data:
         competition_player: competition_player
         course: course
         course_player: course_player
+        course_work: course_work
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
