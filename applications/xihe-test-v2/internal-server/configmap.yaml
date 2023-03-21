@@ -26,6 +26,7 @@ data:
         competition: competition
         question_pool: questionpool
         wukong_picture: wukongpicture
+        cloud_conf: cloud_conf
 
     domain:
       min_name_length: 3
@@ -85,3 +86,14 @@ data:
           - epochs
           - start_learning_rate
           - end_learning_rate
+    
+    postgresql:
+      db:
+        host: {{PGSQL_HOST}}
+        user: {{PGSQL_USER}}
+        pwd: {{PGSQL_PWD}}
+        name: {{PGSQL_NAME}}
+        port: {{PGSQL_PORT}}
+        life: 
+      table:
+        pod: pod

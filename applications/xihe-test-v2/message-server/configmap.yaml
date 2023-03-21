@@ -103,6 +103,7 @@ data:
         submission: "xihe_submission_test"
         operate_log: "xihe_operate_log_test"
         related_resource: "xihe_related_resource_test"
+        cloud: "xihe_cloud_test"
 
     evaluate:
       endpoint: http://service-inference-evaluate.xihe-test-v2.svc.cluster.local:8888
@@ -110,3 +111,17 @@ data:
 
     inference:
       endpoint: http://service-inference-evaluate.xihe-test-v2.svc.cluster.local:8888
+    
+    postgresql:
+      db:
+        host: {{PGSQL_HOST}}
+        user: {{PGSQL_USER}}
+        pwd: {{PGSQL_PWD}}
+        name: {{PGSQL_NAME}}
+        port: {{PGSQL_PORT}}
+      table:
+        pod: pod
+    
+    cloud:
+      endpoint: http://service-inference-evaluate.xihe-test-v2.svc.cluster.local:8888
+      survival_time: 10800

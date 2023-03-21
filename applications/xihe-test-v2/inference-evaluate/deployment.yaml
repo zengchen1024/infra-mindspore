@@ -51,6 +51,26 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: GITLAB_HOST
+        - name: JUPYTER_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: JUPYTER_TOKEN
+        - name: CLOUD_CRD_IMAGE
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: CLOUD_CRD_IMAGE
+        - name: CLOUD_CRD_CPU
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: CLOUD_CRD_CPU
+        - name: CLOUD_CRD_MEMORY
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: CLOUD_CRD_MEMORY
       volumes:
       - name: app-config
         configMap:
