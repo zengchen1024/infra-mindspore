@@ -260,11 +260,11 @@ data:
     
     postgresql:
       db:
-        host: {{PGSQL_HOST}}
-        user: {{PGSQL_USER}}
-        pwd: {{PGSQL_PWD}}
-        name: {{PGSQL_NAME}}
-        port: {{PGSQL_PORT}}
+        host: "${PGSQL_HOST}"
+        user: "${PGSQL_USER}"
+        pwd: "${PGSQL_PWD}"
+        name: "${PGSQL_NAME}"
+        port: "${PGSQL_PORT}"
         life: 
       table:
         pod: pod

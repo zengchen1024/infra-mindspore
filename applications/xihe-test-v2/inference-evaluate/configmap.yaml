@@ -30,11 +30,11 @@ data:
 
     cloud:
       rpc_endpiont: service-internal-server.xihe-test-v2.svc.cluster.local:8888
-      jupyter_token: {{JUPYTER_TOKEN}}
+      jupyter_token: "${JUPYTER_TOKEN}"
       crd:
-        crd_image: {{CLOUD_CRD_IMAGE}}
-        crd_cpu: {{CLOUD_CRD_CPU}}
-        crd_memory: {{CLOUD_CRD_MEMORY}}
+        crd_image: "${CLOUD_CRD_IMAGE}"
+        crd_cpu: "${CLOUD_CRD_CPU}"
+        crd_memory: "${CLOUD_CRD_MEMORY}"
         crd_template: /opt/app/template/crd-cloud.yaml
 
     k8s:
