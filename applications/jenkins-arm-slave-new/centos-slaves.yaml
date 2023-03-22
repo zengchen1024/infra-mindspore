@@ -23,7 +23,7 @@ metadata:
     app: arm-centos-slaves
 spec:
   serviceName: arm-centos-slaves-service
-  replicas: 26
+  replicas: 36
   selector:
     matchLabels:
       app: arm-centos-slaves
