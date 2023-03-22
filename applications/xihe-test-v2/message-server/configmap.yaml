@@ -118,7 +118,7 @@ data:
         user: "${PGSQL_USER}"
         pwd: "${PGSQL_PWD}"
         name: "${PGSQL_NAME}"
-        port: "${PGSQL_PORT}"
+        port: ${PGSQL_PORT}
       table:
         pod: pod
     
