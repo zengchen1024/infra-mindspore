@@ -33,8 +33,8 @@ data:
       jupyter_token: "${JUPYTER_TOKEN}"
       crd:
         crd_image: "${CLOUD_CRD_IMAGE}"
-        crd_cpu: "${CLOUD_CRD_CPU}"
-        crd_memory: "${CLOUD_CRD_MEMORY}"
+        crd_cpu: ${CLOUD_CRD_CPU}
+        crd_memory: ${CLOUD_CRD_MEMORY}
         crd_template: /opt/app/template/crd-cloud.yaml
 
     k8s:

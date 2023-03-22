@@ -15,6 +15,7 @@ data:
         model: model
         dataset: dataset 
         user: user
+        registration: registration
         login: login
         like: like
         activity: activity
@@ -29,6 +30,12 @@ data:
         competition: competition
         question_pool: questionpool
         wukong_picture: wukongpicture
+        competition_work: competition_work
+        competition_player: competition_player
+        course: course
+        course_player: course_player
+        course_work: course_work
+        cloud_conf: cloud_conf
 
     domain:
       min_name_length: 3
