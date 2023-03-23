@@ -10,8 +10,9 @@ data:
       collections:
         project: project
         model: model
-        dataset: dataset 
+        dataset: dataset
         user: user
+        registration: registration
         login: login
         like: like
         activity: activity
@@ -26,6 +27,11 @@ data:
         competition: competition
         question_pool: questionpool
         wukong_picture: wukongpicture
+        competition_work: competition_work
+        competition_player: competition_player
+        course: course
+        course_player: course_player
+        course_work: course_work
         cloud_conf: cloud_conf
 
     domain:
@@ -40,7 +46,6 @@ data:
       - "2"
       - "3"
       - "4"
-
       protocols:
       - "apache-2.0"
       - "mit"
@@ -70,14 +75,11 @@ data:
       - "mpl-2.0"
       - "odbl-1.0"
       - "cc-by-4.0"
-
       project_type:
       - "Gradio"
       - "Static"
-
       training_platform:
       - "ModelArts"
-
       finetunes:
         opt-caption:
           tasks:
@@ -86,7 +88,7 @@ data:
           - epochs
           - start_learning_rate
           - end_learning_rate
-    
+
     postgresql:
       db:
         host: "${PGSQL_HOST}"
