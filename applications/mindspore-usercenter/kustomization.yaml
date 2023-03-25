@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-usercenter
-  newTag: 3e91f9116500e0b902ef2e550c4b1fa700582ef8
+  newTag: ddd53e78b4cc886766ea895688a2ca4b3781defd
 kind: Kustomization
 namespace: mindspore-usercenter
 resources:
