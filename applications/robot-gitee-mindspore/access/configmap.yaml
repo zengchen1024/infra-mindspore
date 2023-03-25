@@ -51,6 +51,12 @@ data:
         - robot-gitee-mindspore-lifecycle
         - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
+          
+        mindspore/mindformers:
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-lifecycle
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-review-trigger-new
     
         YwHql/test:
         - robot-gitee-mindspore-test

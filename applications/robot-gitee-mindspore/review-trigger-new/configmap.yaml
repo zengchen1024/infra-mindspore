@@ -15,6 +15,7 @@ data:
     config_items:
     - repos:
       - mindspore/docs
+      - mindspore/mindformers
       need_welcome: true
       cla_label: "mindspore-cla/yes"
       review:

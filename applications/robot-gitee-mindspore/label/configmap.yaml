@@ -34,6 +34,7 @@ data:
       - mindspore/mindscience
       - mindspore/graphlearning
       - mindspore/vision
+      - mindspore/mindformers
       clear_labels:
       - ci-pipeline-passed
       commits_threshold: 1
