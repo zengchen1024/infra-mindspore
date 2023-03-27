@@ -5,6 +5,12 @@ resources:
 - secret.yaml
 - ingress.yaml
 namespace: internship
+commonAnnotations:
+  kubernetes.ops.cluster: mindspore-cn4-x86
+  kubernetes.ops.email: 15622356989@163.com
+  kubernetes.ops.os.base: openeuler
+  kubernetes.ops.owner: gongzhuangbang
+  kubernetes.ops.region: beijing
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
