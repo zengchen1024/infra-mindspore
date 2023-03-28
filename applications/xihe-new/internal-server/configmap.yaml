@@ -12,6 +12,7 @@ data:
         model: model
         dataset: dataset 
         user: user
+        registration: registration
         login: login
         like: like
         activity: activity
@@ -26,6 +27,12 @@ data:
         competition: competition
         question_pool: questionpool
         wukong_picture: wukongpicture
+        competition_work: competition_work
+        competition_player: competition_player
+        course: course
+        course_player: course_player
+        course_work: course_work
+        cloud_conf: cloud_conf
 
     domain:
       min_name_length: 3
@@ -85,3 +92,14 @@ data:
           - epochs
           - start_learning_rate
           - end_learning_rate
+
+    postgresql:
+      db:
+        host: "${PGSQL_HOST}"
+        user: "${PGSQL_USER}"
+        pwd: "${PGSQL_PWD}"
+        name: "${PGSQL_NAME}"
+        port: ${PGSQL_PORT}
+        life: 
+      table:
+        pod: pod

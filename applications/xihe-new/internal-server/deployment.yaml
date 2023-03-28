@@ -26,6 +26,31 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: MONGODB_CONNECTION
+        - name: PGSQL_HOST
+          valueFrom:
+            secretKeyRef:
+              name: xihe-statistics-secret
+              key: PGSQL_HOST
+        - name: PGSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: xihe-statistics-secret
+              key: PGSQL_USER
+        - name: PGSQL_PWD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-statistics-secret
+              key: PGSQL_PWD
+        - name: PGSQL_NAME
+          valueFrom:
+            secretKeyRef:
+              name: xihe-statistics-secret
+              key: PGSQL_NAME
+        - name: PGSQL_PORT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-statistics-secret
+              key: PGSQL_PORT
         resources:
           requests:
             cpu: 1000m

@@ -39,6 +39,7 @@ data:
         course: course
         course_player: course_player
         course_work: course_work
+        cloud_conf: cloud_conf
 
     gitlab:
       endpoint: "${GITLAB_ENDPOINT}"
@@ -208,6 +209,7 @@ data:
         submission: "xihe_submission_new"
         operate_log: "xihe_operate_log_new"
         related_resource: "xihe_related_resource_new"
+        cloud: "xihe_cloud"
 
     training:
       job_done_status:
@@ -255,3 +257,14 @@ data:
         completion_questions_num: 3
         completion_questions_count : 50
         completion_questions_score : 15
+    
+    postgresql:
+      db:
+        host: "${PGSQL_HOST}"
+        user: "${PGSQL_USER}"
+        pwd: "${PGSQL_PWD}"
+        name: "${PGSQL_NAME}"
+        port: ${PGSQL_PORT}
+        life: 
+      table:
+        pod: pod
