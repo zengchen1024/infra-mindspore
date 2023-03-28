@@ -19,10 +19,19 @@ data:
       excluded_repos:
       - opengauss/tc
       - opengauss/openGauss-server
+      - opengauss/docs
       lgtm_counts_required: 2
       legal_operator: opengauss-bot
       labels_for_merge:
       - opengauss-cla/yes
+
+    - repos:
+      - opengauss/docs
+      lgtm_counts_required: 2
+      legal_operator: opengauss-bot
+      labels_for_merge:
+      - opengauss-cla/yes
+      - ci-pipeline-success
 
     - repos:
       - opengauss/tc
