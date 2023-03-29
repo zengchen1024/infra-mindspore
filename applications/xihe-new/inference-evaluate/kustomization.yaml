@@ -13,4 +13,4 @@ images:
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-inference-evaluate
   newTag: main-479415e
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-inference-evaluate
-  newTag: 5b49030f7569d61c90888e0bca1d8aa3607f8658
+  newTag: v1.0.20230328165801
