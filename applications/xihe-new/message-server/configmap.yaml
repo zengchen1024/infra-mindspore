@@ -130,4 +130,4 @@ data:
     
     cloud:
       endpoint: http://service-inference-evaluate.xihe-new.svc.cluster.local:8888
-      survival_time: 10800
+      survival_time: 7200
