@@ -29,21 +29,13 @@ data:
         real_final_path: "competition/1/final/result/target_style_vangogh"
         real_preliminary_path: "competition/1/preliminary/result/target_style_vangogh"
         prefix: "competition"
-      - competition_id: "food_classification"
-        answer_final_path: "competition/food_classification/final/result/label-final-public.txt"
-        answer_preliminary_path: "competition/food_classification/preliminary/result/label.txt"
-        pos: 0
-        cls: 10
+      - competition_id: "learn23-text"
+        answer_preliminary_path: "competition/learn23-text/preliminary/label.txt"
+        pos: 1
+        cls: 5
         prefix: "competition"
-      - competition_id: "text_classification"
-        answer_final_path: "competition/text_classification/final/result/label-final-public.txt"
-        answer_preliminary_path: "competition/text_classification/preliminary/result/label.txt"
+      - competition_id: "learn23-img"
+        answer_preliminary_path: "competition/learn23-img/preliminary/label.txt"
         pos: 0
-        cls: 2
-        prefix: "competition"
-      - competition_id: "xian_travel"
-        answer_final_path: "competition/xian_travel/final/result/label-final-public.txt"
-        answer_preliminary_path: "competition/xian_travel/preliminary/result/label.txt"
-        pos: 0
-        cls: 54
+        cls: 4
         prefix: "competition"
