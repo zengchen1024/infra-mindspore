@@ -39,6 +39,7 @@ data:
         course: course
         course_player: course_player
         course_work: course_work
+        course_record: course_record
         cloud_conf: cloud_conf
 
     gitlab:
