@@ -58,10 +58,7 @@ spec:
               name: xihe-secret
               key: JUPYTER_TOKEN
         - name: CLOUD_CRD_IMAGE
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: CLOUD_CRD_IMAGE
+          value: "swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-jupyter-cpu:v2.1"
         - name: CLOUD_CRD_CPU
           valueFrom:
             secretKeyRef:
