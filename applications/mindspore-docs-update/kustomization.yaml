@@ -1,0 +1,13 @@
+resources:
+- namespace.yaml
+- secret.yaml
+- deployment.yaml
+commonAnnotations:
+  kubernetes.ops.cluster: infra-hk-cluster
+  kubernetes.ops.email: 775517776@qq.com
+  kubernetes.ops.os.base: ubuntu
+  kubernetes.ops.owner: chenyang
+  kubernetes.ops.region: hk
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: mindspore-docs-update

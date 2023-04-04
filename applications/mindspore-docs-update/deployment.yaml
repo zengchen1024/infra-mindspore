@@ -1,0 +1,49 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: docs-deployment
+  namespace: mindspore-docs-update
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: docs
+  template:
+    metadata:
+      labels:
+        app: docs
+    spec:
+      containers:
+      - name: docs
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/docs-whl:62fbce3b07c052a03bfeb15c182c5ccff4b7f490
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
+          limits:
+            cpu: 4000m
+            memory: 4000Mi
+        env:
+        - name: USER
+          valueFrom:
+            secretKeyRef:
+              key: USER
+              name: docs-secrets
+        - name: PD
+          valueFrom:
+            secretKeyRef:
+              key: PD
+              name: docs-secrets
+        - name: GIT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: GIT_USERNAME
+              name: docs-secrets
+        - name: GIT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: GIT_PASSWORD
+              name: docs-secrets
