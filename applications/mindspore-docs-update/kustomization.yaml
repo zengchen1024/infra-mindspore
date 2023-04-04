@@ -1,7 +1,7 @@
 resources:
 - namespace.yaml
 - secret.yaml
-- deployment.yaml
+- job.yaml
 commonAnnotations:
   kubernetes.ops.cluster: infra-hk-cluster
   kubernetes.ops.email: 775517776@qq.com

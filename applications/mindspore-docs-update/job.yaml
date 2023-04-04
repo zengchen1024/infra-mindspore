@@ -1,20 +1,12 @@
 ---
-kind: Deployment
-apiVersion: apps/v1
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: docs-deployment
+  name: docs-update
   namespace: mindspore-docs-update
 spec:
-  replicas: 1
-  strategy:
-    type: Recreate
-  selector:
-    matchLabels:
-      app: docs
+  backoffLimit: 1
   template:
-    metadata:
-      labels:
-        app: docs
     spec:
       containers:
       - name: docs
@@ -47,3 +39,4 @@ spec:
             secretKeyRef:
               key: GIT_PASSWORD
               name: docs-secrets
+      restartPolicy: Never
