@@ -6,4 +6,5 @@ data:
   config.yaml: |
     topic: robot-gitee-mindspore
     user_agent: robot-gitee-mindspore
-    kafka_address: "${KAFKA_ADDRESS}"
+    kafka:
+      address: "${KAFKA_ADDRESS}"
