@@ -6,7 +6,7 @@ metadata:
   namespace: mail
   annotations:
     kubernetes.io/elb.class: union
-    kubernetes.io/elb.id: a3e79c26-493b-4170-b48a-fa3d49c79b30
+    kubernetes.io/elb.id: 96d5b2cf-4e23-49b3-aa75-09e388dad123
     kubernetes.io/elb.lb-algorithm: ROUND_ROBIN
 spec:
   #We need set this into 'Local' since we need get the client IP for relay excluding.
@@ -28,7 +28,7 @@ spec:
 # StatefulSet for exim4 services
 ---
 kind: StatefulSet
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 metadata:
   name: mailman-exim4
   namespace: mail
@@ -48,8 +48,6 @@ spec:
         app: mail-suit-service
         component: mail-exim4-service
     spec:
-      nodeSelector:
-        mail_exim4: "true"
       containers:
         - name: mailman-exim4
           #NOTE: This image is directly built from our dockerfile located in exim4 folder

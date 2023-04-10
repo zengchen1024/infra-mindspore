@@ -2,16 +2,19 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  annotations:
+    everest.io/disk-volume-type: GPSSD
   name: db-data-vol
   namespace: mail
 spec:
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 100Gi
-  storageClassName: sas
+  storageClassName: csi-disk
   volumeMode: Filesystem
+  volumeName: pv-evs-mail-database
 
 ## define the config volume for both mail-core & exim4
 ---
@@ -26,13 +29,16 @@ spec:
   resources:
     requests:
       storage: 500Gi
-  storageClassName: nfs-rw
+  storageClassName: csi-sfsturbo
   volumeMode: Filesystem
+  volumeName: pv-efs-mail-config-vol
 
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  annotations:
+    everest.io/disk-volume-type: GPSSD
   name: exim-log-data
   namespace: mail
 spec:
@@ -41,4 +47,6 @@ spec:
   resources:
     requests:
       storage: 100Gi
-  storageClassName: sas
+  storageClassName: csi-disk
+  volumeMode: Filesystem
+  volumeName: pv-evs-exim-log
