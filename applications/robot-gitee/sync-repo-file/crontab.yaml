@@ -8,6 +8,7 @@ spec:
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
+      suspend: true
       template:
         spec:
           restartPolicy: OnFailure
