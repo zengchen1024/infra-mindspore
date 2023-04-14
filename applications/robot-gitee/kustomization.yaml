@@ -8,6 +8,8 @@ resources:
 - sync-repo-file
 - repo-owners-cache
 - sync-repo-file-job
+- sync-repository-server
+- sync-repository-trigger
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

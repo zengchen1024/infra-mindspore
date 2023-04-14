@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    repos:
+    - platform: gitee
+      org_repos:
+        - org: mindspore
+        - org: opengauss
+          repos:
+            - tc
+        - org: openlookeng
+        - org: ascend
+        - org: cann
+        - org: huawei-hiai-foundation
+      file_names:
+        - OWNERS
+
+    - platform: gitee
+      org_repos:
+        - org: openeuler
+          repos:
+            - community
+      file_names:
+        - OWNERS
+        - sig-info.yaml
+
+    kafka:
+      address: "${KAFKA_ADDRESS}"
+
+    gitee:
+      token: "${ROBOT_TOKEN}"
+
+    message:
+      topics:
+        repo_fetched: sync_repo_fetched

@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    kafka:
+      address: "${KAFKA_ADDRESS}"
+
+    gitee:
+      token: "${ROBOT_TOKEN}"
+
+    topics_to_subscribe:
+      repo_fetched: sync_repo_fetched
+      repo_branch_fetched: sync_repo_branch_fetched
+      repo_file_fetched: sync_repo_file_fetched
+
+    group_name: sync-repository-file
+
+    message:
+      topics:
+        repo_branch_fetched: sync_repo_branch_fetched
+        repo_file_fetched: sync_repo_file_fetched
+
+    repository:
+      endpoint: http://service-repo-file-cache.robot-gitee.svc.cluster.local:80/v1/file/

@@ -1,0 +1,41 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cronjob
+  namespace: robot-gitee
+spec:
+  schedule: "0 1 * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: sync-repository-trigger
+            args:
+            - --config-file=/opt/app/config/config.yaml
+            image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
+            env:
+              - name: KAFKA_ADDRESS
+                valueFrom:
+                  secretKeyRef:
+                    name: robot-gitee-secret
+                    key: kafka_address
+              - name: ROBOT_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    name: robot-gitee-secret
+                    key: robot_token
+            volumeMounts:
+              - mountPath: /opt/app/config/config.yaml
+                name: configmap
+                subPath: config.yaml
+          volumes:
+            - configMap:
+                defaultMode: 420
+                name: configmap
+              name: configmap
+            - name: robot-gitee-secret
+              secret:
+                secretName: robot-gitee-secret
