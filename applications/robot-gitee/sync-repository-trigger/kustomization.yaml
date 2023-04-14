@@ -8,5 +8,5 @@ commonLabels:
 nameSuffix: -sync-repository-trigger
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
-  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/sync-repo-file
-  newTag: master-4893276
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/sync-repository-trigger
+  newTag: main-f77242c
