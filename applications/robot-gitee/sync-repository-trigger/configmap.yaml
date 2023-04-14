@@ -35,4 +35,4 @@ data:
 
     message:
       topics:
-        repo_fetched: sync_repo_fetched
+        repo_fetched: robot_gitee_sync_repo_fetched
