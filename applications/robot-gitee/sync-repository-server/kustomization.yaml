@@ -9,5 +9,5 @@ commonLabels:
 nameSuffix: -sync-repository-server
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
-  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/sync-file-server
-  newTag: master-524c9f3
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/sync-repository-server
+  newTag: main-f77242c
