@@ -26,7 +26,7 @@ spec:
                 valueFrom:
                   secretKeyRef:
                     name: robot-gitee-secret
-                    key: robot_token
+                    key: robot-token
             volumeMounts:
               - mountPath: /opt/app/config/config.yaml
                 name: configmap
