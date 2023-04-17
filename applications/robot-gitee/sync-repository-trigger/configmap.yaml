@@ -15,6 +15,9 @@ data:
         - org: ascend
         - org: cann
         - org: huawei-hiai-foundation
+        - org: euler-ttttt
+          repos:
+            - babel
       file_names:
         - OWNERS
 
