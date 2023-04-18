@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      repo_plugins:
+        openlookeng/community:
+        - sweepstakes
+        - robot-gitee-openlookeng-synchronizer
+        openlookeng:
+        - robot-gitee-openlookeng-lgtm
+        - robot-gitee-openlookeng-approve
+        - robot-gitee-openlookeng-assign
+        - robot-gitee-openlookeng-checkpr
+        - robot-gitee-openlookeng-cla
+        - datastat-server
+
+        openlookeng-competition:
+        - robot-gitee-openlookeng-cla
+
+        openlookeng/hetu-core:
+        - robot-gitee-openlookeng-associate
+
+      plugins:
+      - name: robot-gitee-openlookeng-checkpr
+        endpoint: http://service-checkpr.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+      - name: robot-gitee-openlookeng-lgtm
+        endpoint: http://service-lgtm.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-associate
+        endpoint: http://service-associate.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-assign
+        endpoint: http://service-assign.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-approve
+        endpoint: http://service-approve.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-cla
+        endpoint: http://service-cla.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: sweepstakes
+        endpoint: http://service-sweepstakes.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-openlookeng-synchronizer
+        endpoint: http://service-synchronizer.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Note Hook"
+      - name: datastat-server
+        endpoint: http://om-service.robot-gitee-om.svc.cluster.local:8888/query/gitee/webhook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"

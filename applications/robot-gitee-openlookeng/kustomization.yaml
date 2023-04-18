@@ -11,6 +11,9 @@ resources:
 - approve
 - cla
 - synchronizer
+- hook-dispatcher
+- hook-delivery
+- access
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
