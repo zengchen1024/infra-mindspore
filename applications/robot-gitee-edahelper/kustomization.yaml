@@ -4,6 +4,9 @@ resources:
 - namespace.yaml
 - secrets.yaml
 - cla
+- hook-dispatcher
+- hook-delivery
+- access
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

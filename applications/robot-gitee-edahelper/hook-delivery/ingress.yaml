@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+  name: robot-gitee-edahelper-ingress
+spec:
+  tls:
+    - hosts:
+        - robot-gitee-edahelper.osinfra.cn
+      secretName: robot-gitee-edahelper-tls
+  rules:
+    - host: robot-gitee-edahelper.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: service-hook-delivery
+              servicePort: 8888
+            path: /

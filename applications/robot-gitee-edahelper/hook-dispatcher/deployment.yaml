@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  namespace: robot-gitee-edahelper
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: hook-dispatcher
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
+        imagePullPolicy: IfNotPresent
+        args:
+        - --config-file=/app/conf/app_config/config.yaml
+        - --enable_debug=true
+        env:
+        - name: KAFKA_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: secret-robot-token
+              key: KAFKA_ADDRESS
+        volumeMounts:
+        - mountPath: /app/conf/app_config/
+          name: app-config
+          readOnly: true
+      volumes:
+      - name: app-config
+        configMap:
+          name: configmap-hook-dispatcher

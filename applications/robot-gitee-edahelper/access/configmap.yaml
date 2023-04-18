@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      repo_plugins:
+        edahelper:
+        - robot-gitee-edahelper-cla
+        huadajiutian/wrapper:
+        - robot-gitee-edahelper-cla
+
+      plugins:
+      - name: robot-gitee-edahelper-cla
+        endpoint: http://service-cla.robot-gitee-edahelper.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
