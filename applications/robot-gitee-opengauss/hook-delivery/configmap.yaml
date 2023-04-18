@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    topic: robot-gitee-opengauss
+    user_agent: robot-gitee-opengauss
+    kafka:
+      address: "${KAFKA_ADDRESS}"

@@ -12,6 +12,9 @@ resources:
 - associate
 - cla
 - opengauss-sigguide
+- hook-dispatcher
+- hook-delivery
+- access
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

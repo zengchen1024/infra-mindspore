@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      repo_plugins:
+        opengauss:
+        - label
+        - lifecycle
+        - welcome
+        - assign-issue
+        - opengauss-review
+        - robot-gitee-opengauss-associate
+        - robot-gitee-opengauss-cla
+        - robot-gitee-opengauss-sigguide
+        - datastat-server
+
+      plugins:
+      - name: lifecycle
+        endpoint: http://service-lifecycle.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: welcome
+        endpoint: http://service-welcome.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+      - name: label
+        endpoint: http://service-label.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: assign-issue
+        endpoint: http://service-assign-issue.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: opengauss-review
+        endpoint: http://service-opengauss-review.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-opengauss-associate
+        endpoint: http://service-associate.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-opengauss-cla
+        endpoint: http://service-cla.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-opengauss-sigguide
+        endpoint: http://service-opengauss-sigguide.robot-gitee-opengauss.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: datastat-server
+        endpoint: http://om-service.robot-gitee-om.svc.cluster.local:8888/query/gitee/webhook
+        events:
+        - "Issue Hook"
+        - "Merge Request Hook"
+        - "Note Hook"
