@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      repo_plugins:
+        oepkgs:
+        - robot-gitee-oepkgs-review
+        - robot-gitee-oepkgs-welcome
+    
+        src-oepkgs:
+        - robot-gitee-oepkgs-review
+        - robot-gitee-oepkgs-welcome
+
+      plugins:
+      - name: robot-gitee-oepkgs-review
+        endpoint: http://service-oepkgs-review.robot-gitee-oepkgs.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+
+      - name: robot-gitee-oepkgs-welcome
+        endpoint: http://service-oepkgs-welcome.robot-gitee-oepkgs.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Issue Hook"

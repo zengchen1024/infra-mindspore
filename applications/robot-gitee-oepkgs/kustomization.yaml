@@ -8,6 +8,9 @@ resources:
 - oepkgs-welcome
 - repo-watcher-oepkgs
 - repo-watcher-src-oepkgs
+- hook-dispatcher
+- hook-delivery
+- access
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

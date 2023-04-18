@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+  name: robot-gitee-oepkgs-ingress
+spec:
+  tls:
+    - hosts:
+        - robot-gitee-oepkgs.osinfra.cn
+      secretName: robot-gitee-oepkgs-tls
+  rules:
+    - host: robot-gitee-oepkgs.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: service-hook-delivery
+              servicePort: 8888
+            path: /
