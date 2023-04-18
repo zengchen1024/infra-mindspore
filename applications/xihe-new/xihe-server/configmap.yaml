@@ -57,7 +57,7 @@ data:
 
     api:
       token_key: "${API_TOKEN_KEY}"
-      token_expiry: 3600
+      token_expiry: 432000
       encryption_key: "${ENCRYPTION_KEY}"
       default_password: "${DEFAULT_PASSWORD}"
       max_training_record_num: 5
