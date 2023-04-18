@@ -9,6 +9,7 @@ data:
     config_items:
     - repos:
       - ascend/pytorch
+      - ascend/op-plugin
       need_welcome: true
       cla_label: "ascend-cla/yes"
       review:

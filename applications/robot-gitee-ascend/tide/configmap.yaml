@@ -163,6 +163,7 @@ data:
       - ascend/amit
       - ascend/amtt
       - ascend/ascend-op-common-lib
+      - ascend/op-plugin
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."

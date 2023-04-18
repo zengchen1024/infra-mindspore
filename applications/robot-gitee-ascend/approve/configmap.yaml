@@ -9,6 +9,7 @@ data:
       - ascend
       excluded_repos:
       - ascend/pytorch
+      - ascend/op-plugin
       require_self_approval: true      
 
     - repos:
