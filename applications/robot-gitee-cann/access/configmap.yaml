@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      repo_plugins:
+        cann/acl:
+        - robot-gitee-cann-approve
+        - robot-gitee-cann-assign
+        - robot-gitee-cann-label
+        - robot-gitee-cann-lgtm
+        - robot-gitee-cann-tide
+
+        cann/air:
+        - robot-gitee-cann-approve
+        - robot-gitee-cann-assign
+        - robot-gitee-cann-label
+        - robot-gitee-cann-lgtm
+        - robot-gitee-cann-tide
+
+        cann/abl-kernel:
+        - robot-gitee-cann-approve
+        - robot-gitee-cann-assign
+        - robot-gitee-cann-label
+        - robot-gitee-cann-lgtm
+        - robot-gitee-cann-tide
+
+        cann/aoe-flow:
+        - robot-gitee-cann-approve
+        - robot-gitee-cann-assign
+        - robot-gitee-cann-label
+        - robot-gitee-cann-lgtm
+        - robot-gitee-cann-tide
+
+      plugins:
+      - name: robot-gitee-cann-approve
+        endpoint: http://service-approve.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-cann-lgtm
+        endpoint: http://service-lgtm.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-cann-assign
+        endpoint: http://service-assign.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-cann-cla
+        endpoint: http://service-cla.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-cann-label
+        endpoint: http://service-label.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-cann-tide
+        endpoint: http://service-tide.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"

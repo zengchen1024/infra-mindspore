@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    topic: robot-gitee-cann
+    user_agent: robot-gitee-cann
+    kafka:
+      address: "${KAFKA_ADDRESS}"

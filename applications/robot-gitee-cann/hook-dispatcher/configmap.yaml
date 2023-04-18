@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    topic: robot-gitee-cann
+    user_agent: robot-gitee-cann
+    kafka_address: "${KAFKA_ADDRESS}"
+    access_endpoint: http://service-access.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+    concurrent_size: 140
