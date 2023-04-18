@@ -10,6 +10,9 @@ resources:
 - label
 - tide
 - review-trigger-new
+- hook-delivery
+- hook-dispatcher
+- access
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:

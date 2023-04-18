@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    access:
+      repo_plugins:
+        ascend:
+        - robot-gitee-ascend-assign
+        - robot-gitee-ascend-approve
+        - robot-gitee-ascend-cla
+        - robot-gitee-ascend-label
+        - robot-gitee-ascend-lgtm
+        - robot-gitee-ascend-tide
+        - robot-gitee-ascend-review-trigger-new
+
+      plugins:
+      - name: robot-gitee-ascend-assign
+        endpoint: http://service-assign.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Note Hook"
+      - name: robot-gitee-ascend-approve
+        endpoint: http://service-approve.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-cla
+        endpoint: http://service-cla.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-lgtm
+        endpoint: http://service-lgtm.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-label
+        endpoint: http://service-label.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-tide
+        endpoint: http://service-tide.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-ascend-review-trigger-new
+        endpoint: http://service-review-trigger-new.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"

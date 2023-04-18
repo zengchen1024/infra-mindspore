@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  namespace: robot-gitee-ascend
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: hook-delivery
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
+        imagePullPolicy: IfNotPresent
+        args:
+        - --port=8888
+        - --config-file=/app/conf/app_config/config.yaml
+        - --hmac-secret-file=/app/conf/hmac
+        - --enable_debug=true
+        env:
+        - name: KAFKA_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: secret-robot-token
+              key: KAFKA_ADDRESS
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/hmac
+          subPath: webhook-hmac
+          name: secret-volume
+        - mountPath: /app/conf/app_config/
+          name: app-config
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: secret-robot-token
+      - name: app-config
+        configMap:
+          name: configmap-hook-delivery
