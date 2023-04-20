@@ -4,7 +4,7 @@ metadata:
   name: cronjob
   namespace: robot-gitee-mindspore
 spec:
-  schedule: "0 1 * * *"
+  schedule: "0 5 * * *"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
