@@ -211,6 +211,7 @@ data:
         operate_log: "xihe_operate_log_new"
         related_resource: "xihe_related_resource_new"
         cloud: "xihe_cloud_new"
+        async: "xihe_async_new"
 
     training:
       job_done_status:
@@ -221,7 +222,7 @@ data:
       - "Terminated"
 
     finetune:
-      endpoint: "http://service-finetune.xihe-new.svc.cluster.local:8888"
+      endpoint: "${FINETUNE_ENDPOINT}"
       job_done_status:
       - "Failed"
       - "Abnormal"
@@ -248,17 +249,17 @@ data:
       - "text_classification"
       - "mask_detection"
       ai_question:
-        ai_question_id: "637c3d4b493f490b71ef8cff"
-        question_pool_id: "638855b25f15bb1722f87c35"
+        ai_question_id: "${AI_QUESTION_ID}"
+        question_pool_id: "${QUESTION_POOL_ID}"
         timeout: 100
-        retry_times: 3
+        retry_times: 100
         choice_questions_num: 7
         choice_questions_count : 103
         choice_questions_score : 5
         completion_questions_num: 3
         completion_questions_count : 50
         completion_questions_score : 15
-    
+
     postgresql:
       db:
         host: "${PGSQL_HOST}"
@@ -269,3 +270,4 @@ data:
         life: 
       table:
         pod: pod
+        wukong_task: wukong_task

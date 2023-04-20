@@ -10,7 +10,7 @@ data:
       collections:
         project: project
         model: model
-        dataset: dataset
+        dataset: dataset 
         user: user
         registration: registration
         login: login
@@ -32,6 +32,7 @@ data:
         course: course
         course_player: course_player
         course_work: course_work
+        course_record: course_record
         cloud_conf: cloud_conf
 
     domain:
@@ -99,3 +100,4 @@ data:
         life: 
       table:
         pod: pod
+        wukong_task: wukong_task

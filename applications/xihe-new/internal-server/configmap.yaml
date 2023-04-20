@@ -32,6 +32,7 @@ data:
         course: course
         course_player: course_player
         course_work: course_work
+        course_record: course_record
         cloud_conf: cloud_conf
 
     domain:
@@ -46,7 +47,6 @@ data:
       - "2"
       - "3"
       - "4"
-
       protocols:
       - "apache-2.0"
       - "mit"
@@ -76,14 +76,11 @@ data:
       - "mpl-2.0"
       - "odbl-1.0"
       - "cc-by-4.0"
-
       project_type:
       - "Gradio"
       - "Static"
-
       training_platform:
       - "ModelArts"
-
       finetunes:
         opt-caption:
           tasks:
@@ -103,3 +100,4 @@ data:
         life: 
       table:
         pod: pod
+        wukong_task: wukong_task

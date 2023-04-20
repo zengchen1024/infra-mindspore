@@ -57,7 +57,7 @@ data:
 
     api:
       token_key: "${API_TOKEN_KEY}"
-      token_expiry: 3600
+      token_expiry: 432000
       encryption_key: "${ENCRYPTION_KEY}"
       default_password: "${DEFAULT_PASSWORD}"
       max_training_record_num: 5
@@ -211,6 +211,7 @@ data:
         operate_log: "xihe_operate_log_test"
         related_resource: "xihe_related_resource_test"
         cloud: "xihe_cloud_test"
+        async: "xihe_async_test"
 
     training:
       job_done_status:
@@ -221,7 +222,7 @@ data:
       - "Terminated"
 
     finetune:
-      endpoint: "http://service-finetune.xihe-test-v2.svc.cluster.local:8888"
+      endpoint: "${FINETUNE_ENDPOINT}"
       job_done_status:
       - "Failed"
       - "Abnormal"
@@ -248,8 +249,8 @@ data:
       - "text_classification"
       - "mask_detection"
       ai_question:
-        ai_question_id: "637c3a63493f490b71ef8cfc"
-        question_pool_id: "63885178cc89dc63db426580"
+        ai_question_id: "${AI_QUESTION_ID}"
+        question_pool_id: "${QUESTION_POOL_ID}"
         timeout: 100
         retry_times: 100
         choice_questions_num: 7
@@ -258,7 +259,7 @@ data:
         completion_questions_num: 3
         completion_questions_count : 50
         completion_questions_score : 15
-    
+
     postgresql:
       db:
         host: "${PGSQL_HOST}"
@@ -269,3 +270,4 @@ data:
         life: 
       table:
         pod: pod
+        wukong_task: wukong_task
