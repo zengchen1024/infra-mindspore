@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-async-server
+  newTag: v1.0.20230420194635
+kind: Kustomization
+commonAnnotations:
+  kubernetes.ops.cluster: mindspore-cn4-x86
+  kubernetes.ops.email: victorzhoux@163.com
+  kubernetes.ops.os.base: alpine
+  kubernetes.ops.owner: zhouzixian
+  kubernetes.ops.region: hk
+namespace: xihe-test-v2
+resources:
+- ingress.yaml
+- service.yaml
+- deployment.yaml
+- configmap.yaml
