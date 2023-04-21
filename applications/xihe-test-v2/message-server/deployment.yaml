@@ -56,16 +56,16 @@ spec:
             secretKeyRef:
               name: xihe-statistics-secret
               key: PGSQL_PORT
-        - name: AI_QUESTION_ID
+        - name: INFERENCE_EVALUATE_ENDPOINT
           valueFrom:
             secretKeyRef:
               name: xihe-secret
-              key: AI_QUESTION_ID
-        - name: QUESTION_POOL_ID
+              key: INFERENCE_EVALUATE_ENDPOINT
+        - name: TRAINING_ENDPOINT
           valueFrom:
             secretKeyRef:
               name: xihe-secret
-              key: QUESTION_POOL_ID
+              key: TRAINING_ENDPOINT
         - name: FINETUNE_ENDPOINT
           valueFrom:
             secretKeyRef:
