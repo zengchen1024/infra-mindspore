@@ -9,4 +9,3 @@ data:
       - ascend
       excluded_repos:
       - ascend/pytorch
-      - ascend/op-plugin
