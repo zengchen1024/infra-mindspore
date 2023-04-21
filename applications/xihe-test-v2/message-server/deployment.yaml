@@ -56,6 +56,21 @@ spec:
             secretKeyRef:
               name: xihe-statistics-secret
               key: PGSQL_PORT
+        - name: AI_QUESTION_ID
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: AI_QUESTION_ID
+        - name: QUESTION_POOL_ID
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: QUESTION_POOL_ID
+        - name: FINETUNE_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: FINETUNE_ENDPOINT
         resources:
           requests:
             cpu: 1000m

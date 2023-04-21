@@ -258,6 +258,21 @@ spec:
             secretKeyRef:
               name: xihe-statistics-secret
               key: PGSQL_PORT
+        - name: INFERENCE_EVALUATE_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: INFERENCE_EVALUATE_ENDPOINT
+        - name: TRAINING_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: TRAINING_ENDPOINT
+        - name: FINETUNE_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: FINETUNE_ENDPOINT
         resources:
           requests:
             cpu: 1000m
