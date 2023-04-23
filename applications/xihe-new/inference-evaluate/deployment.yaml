@@ -69,6 +69,31 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: CLOUD_CRD_MEMORY
+        - name: INTERNAL_RPC_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: INTERNAL_RPC_ENDPOINT
+        - name: INFERENCE_CRD_TEMPLATE
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: INFERENCE_CRD_TEMPLATE
+        - name: EVALUATE_CRD_TEMPLATE
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: EVALUATE_CRD_TEMPLATE
+        - name: CLOUD_CRD_TEMPLATE
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: CLOUD_CRD_TEMPLATE
+        - name: KUBE_CONFIG_FILE
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: KUBE_CONFIG_FILE
       volumes:
       - name: app-config
         configMap:
