@@ -12,7 +12,7 @@ data:
         secret_key: "${HW_OBS_SK}"
         endpoint: "${HW_OBS_ENDPOINT}"
         bucket: "${HW_OBS_BUCKET}"
-        obsutil_path: "${OBSUTIL_PATH}"
+        obsutil_path: /usr/src/app/obsutil
         lfs_path: gitlab-lfs
       crd:
         crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:inferenceimpl.v1.0.20221126115653
