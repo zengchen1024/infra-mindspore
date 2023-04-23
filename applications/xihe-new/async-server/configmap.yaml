@@ -67,19 +67,19 @@ data:
     mq:
       address: "${KAFKA_ADDRESS}"
       topics:
-        fork: "xihe_fork_test"
-        like: "xihe_like_test"
-        download: "xihe_download_test"
-        evaluate: "xihe_evaluate_test"
-        training: "xihe_training_test"
-        finetune: "xihe_finetune_test"
-        inference: "xihe_inference_test"
-        following: "xihe_following_test"
-        submission: "xihe_submission_test"
-        operate_log: "xihe_operate_log_test"
-        related_resource: "xihe_related_resource_test"
-        cloud: "xihe_cloud_test"
-        async: "xihe_async_test"
+        fork: "xihe_fork_new"
+        like: "xihe_like_new"
+        download: "xihe_download_new"
+        evaluate: "xihe_evaluate_new"
+        training: "xihe_training_new"
+        finetune: "xihe_finetune_new"
+        inference: "xihe_inference_new"
+        following: "xihe_following_new"
+        submission: "xihe_submission_new"
+        operate_log: "xihe_operate_log_new"
+        related_resource: "xihe_related_resource_new"
+        cloud: "xihe_cloud_new"
+        async: "xihe_async_new"
 
     watcher:
       time:
