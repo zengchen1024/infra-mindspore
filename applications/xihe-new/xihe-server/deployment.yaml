@@ -273,6 +273,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: FINETUNE_ENDPOINT
+        - name: BIGMODEL_WUKONGHF
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_WUKONGHF
         resources:
           requests:
             cpu: 1000m
