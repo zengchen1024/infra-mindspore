@@ -19,7 +19,7 @@ spec:
       nodeSelector:
         gitlab: "true"
       containers:
-      - image: redis:6.2.6
+      - image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/redis:6.2.6
         imagePullPolicy: IfNotPresent
         name: redis
         ports:
