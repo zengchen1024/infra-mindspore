@@ -160,7 +160,7 @@ data:
       - ascend/ascend-opencv
       - ascend/ascend-industrial
       - ascend/msadvisor
-      - ascend/amit
+      - ascend/ait
       - ascend/amtt
       - ascend/op-plugin
       labels:
