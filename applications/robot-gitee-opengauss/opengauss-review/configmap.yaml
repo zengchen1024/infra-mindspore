@@ -41,3 +41,15 @@ data:
       sigs_dir: sigs
       labels_for_merge:
       - opengauss-cla/yes
+
+    - repos:
+        - opengauss/openGauss-OM
+        - opengauss/openGauss-connector-jdbc
+        - opengauss/openGauss-connector-odbc
+        - opengauss/CM
+      lgtm_counts_required: 2
+      legal_operator: opengauss-bot
+      labels_for_merge:
+        - opengauss-cla/yes
+      missing_labels_for_merge:
+        - codecheck-failed
