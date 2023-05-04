@@ -158,11 +158,6 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_LUOJIA
-        - name: BIGMODEL_WUKONG
-          valueFrom:
-            secretKeyRef:
-              name: xihe-secret
-              key: BIGMODEL_WUKONG
         - name: BIGMODEL_CODEGEEX
           valueFrom:
             secretKeyRef:
@@ -278,6 +273,31 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_WUKONGHF
+        - name: BIGMODEL_VQAHF
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_VQAHF
+        - name: BIGMODEL_LUOJIAHF
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_LUOJIAHF
+        - name: BIGMODEL_WUKONG_2IMG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_WUKONG_2IMG
+        - name: BIGMODEL_WUKONG_4IMG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_WUKONG_4IMG
+        - name: BIGMODEL_DESCRIBE_PICTUREHF
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_DESCRIBE_PICTUREHF
         resources:
           requests:
             cpu: 1000m

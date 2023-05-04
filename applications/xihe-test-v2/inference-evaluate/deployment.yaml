@@ -94,6 +94,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: KUBE_CONFIG_FILE
+        - name: KUBE_NAMESPACE
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: KUBE_NAMESPACE
       volumes:
       - name: app-config
         configMap:
