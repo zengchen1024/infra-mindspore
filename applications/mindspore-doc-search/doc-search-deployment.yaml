@@ -45,6 +45,16 @@ spec:
             secretKeyRef:
               key: depp
               name: doc-search-secret
+        - name: GIT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: GIT_USERNAME
+              name: doc-search-secret
+        - name: GIT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: GIT_PASSWORD
+              name: doc-search-secret
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/docs-search:v1.0.20230504101041
         imagePullPolicy: IfNotPresent
         livenessProbe:
