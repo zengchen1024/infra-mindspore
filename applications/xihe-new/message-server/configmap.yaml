@@ -48,7 +48,7 @@ data:
         life: 
       table:
         pod: pod
-        wukong_task: wukong_task
+        async_task: async_task
 
     domain:
       min_name_length: 3
