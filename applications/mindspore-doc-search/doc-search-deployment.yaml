@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doc-search-deployment
+  namespace: mindspore-doc-search
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doc-search
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: doc-search
+    spec:
+      containers:
+      - env:
+        - name: eshost
+          valueFrom:
+            secretKeyRef:
+              key: eshost
+              name: doc-search-secret
+        - name: esusername
+          valueFrom:
+            secretKeyRef:
+              key: esusername
+              name: doc-search-secret
+        - name: espassword
+          valueFrom:
+            secretKeyRef:
+              key: espassword
+              name: doc-search-secret
+        - name: searchsystem
+          valueFrom:
+            secretKeyRef:
+              key: searchsystem
+              name: doc-search-secret
+        - name: depp
+          valueFrom:
+            secretKeyRef:
+              key: depp
+              name: doc-search-secret
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/docs-search:v1.0.20230504101041
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 20
+          periodSeconds: 20
+          successThreshold: 1
+          tcpSocket:
+            port: 8080
+          timeoutSeconds: 5
+        name: doc-search
+        readinessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 8080
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 2000Mi
+          requests:
+            cpu: 1000m
+            memory: 2000Mi

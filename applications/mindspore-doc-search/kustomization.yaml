@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+commonAnnotations:
+  kubernetes.ops.cluster: mindspore-cn4-x86-cluster
+  kubernetes.ops.email: 775517776@qq.com
+  kubernetes.ops.os.base: debian
+  kubernetes.ops.owner: chenyang
+  kubernetes.ops.region: beijing
+kind: Kustomization
+namespace: mindspore-doc-search
+resources:
+- namespace.yaml
+- doc-search-ingress.yaml
+- doc-search-service.yaml
+- doc-search-secret.yaml
+- doc-search-deployment.yaml
