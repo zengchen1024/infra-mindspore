@@ -13,3 +13,6 @@ resources:
 - doc-search-service.yaml
 - doc-search-secret.yaml
 - doc-search-deployment.yaml
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/docs-search
+  newTag: v1.0.20230504173836
