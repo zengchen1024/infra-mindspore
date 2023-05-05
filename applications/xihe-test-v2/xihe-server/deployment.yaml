@@ -158,6 +158,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_LUOJIA
+        - name: BIGMODEL_WUKONG
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: BIGMODEL_WUKONG
         - name: BIGMODEL_CODEGEEX
           valueFrom:
             secretKeyRef:
