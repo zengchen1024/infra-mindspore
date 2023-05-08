@@ -3,7 +3,7 @@ images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/gitee-v8-token
   newTag: v1.0.20221206173710
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/invite-enterprise-members
-  newTag: v1.0.20221208140446
+  newTag: v1.0.20230508195239
 kind: Kustomization
 namespace: gitee-v8-token
 resources:
