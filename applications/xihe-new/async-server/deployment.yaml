@@ -196,6 +196,31 @@ spec:
             secretKeyRef:
               key: KAFKA_ADDRESS
               name: xihe-secret
+        - name: BIGMODEL_WUKONG_2IMG
+          valueFrom:
+            secretKeyRef:
+              key: BIGMODEL_WUKONG_2IMG
+              name: xihe-secret
+        - name: BIGMODEL_WUKONG_4IMG
+          valueFrom:
+            secretKeyRef:
+              key: BIGMODEL_WUKONG_4IMG
+              name: xihe-secret
+        - name: BIGMODEL_DESCRIBE_PICTUREHF
+          valueFrom:
+            secretKeyRef:
+              key: BIGMODEL_DESCRIBE_PICTUREHF
+              name: xihe-secret
+        - name: BIGMODEL_VQAHF
+          valueFrom:
+            secretKeyRef:
+              key: BIGMODEL_VQAHF
+              name: xihe-secret
+        - name: BIGMODEL_LUOJIAHF
+          valueFrom:
+            secretKeyRef:
+              key: BIGMODEL_LUOJIAHF
+              name: xihe-secret
         resources:
           limits:
             cpu: 1000m

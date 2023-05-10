@@ -125,6 +125,7 @@ data:
         related_resource: "xihe_related_resource_new"
         cloud: "xihe_cloud_new"
         async: "xihe_async_new"
+        bigmodel: "xihe_bigmodel_new"
 
     evaluate:
       endpoint: "${INFERENCE_EVALUATE_ENDPOINT}"
