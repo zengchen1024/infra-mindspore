@@ -100,6 +100,11 @@ spec:
             secretKeyRef:
               name: openeuler-ipb-secrets
               key: query_token
+        - name: AUTH_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: openeuler-ipb-secrets
+              key: auth_secret
         ports:
         - containerPort: 8080
           name: http
