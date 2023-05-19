@@ -32,6 +32,18 @@ spec:
           - --session-cookie-minimal=false
           - --pass-access-token=true
           - --cookie-secure=false
+          - --login-url=https://xiheapi.osinfra.cn/oneid/oidc/authorize
+          - --redeem-url=https://xiheapi.osinfra.cn/oneid/oidc/token
+          - --profile-url=https://xiheapi.osinfra.cn/oneid/oidc/user
+          - --skip-oidc-discovery=true
+          - --insecure-oidc-skip-issuer-verification=true
+          - --skip-jwt-bearer-tokens=false
+          - --oidc-jwks-url=https://oauth2-proxy.authing.cn/oidc/.well-known/jwks.json
+          - --set-xauthrequest=true
+          - --skip-auth-strip-headers=false
+          - --set-authorization-header=true
+          - --scope=profile openid email id_token
+          - --signature-key=sha256:81nwm1iqdN3FBtnj4O0kL6BRuLfzMzCKaawnztLSRYQ
           env:
             - name: OAUTH2_PROXY_CLIENT_ID
               valueFrom:
@@ -48,7 +60,7 @@ spec:
                 secretKeyRef:
                   key: www_admin_cookie_secret
                   name: website-secrets
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:9c7661f71a0e7eba04c83f1b2f90a1aad9611480
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:b2d87e8e29285720327bf01aee604f929ea64dd4
           imagePullPolicy: Always
           name: oauth2-proxy
           ports:
@@ -107,6 +119,18 @@ spec:
           - --session-cookie-minimal=false
           - --pass-access-token=true
           - --cookie-secure=false
+          - --login-url=https://xiheapi.osinfra.cn/oneid/oidc/authorize
+          - --redeem-url=https://xiheapi.osinfra.cn/oneid/oidc/token
+          - --profile-url=https://xiheapi.osinfra.cn/oneid/oidc/user
+          - --skip-oidc-discovery=true
+          - --insecure-oidc-skip-issuer-verification=true
+          - --skip-jwt-bearer-tokens=false
+          - --oidc-jwks-url=https://oauth2-proxy.authing.cn/oidc/.well-known/jwks.json
+          - --set-xauthrequest=true
+          - --skip-auth-strip-headers=false
+          - --set-authorization-header=true
+          - --scope=profile openid email id_token
+          - --signature-key=sha256:81nwm1iqdN3FBtnj4O0kL6BRuLfzMzCKaawnztLSRYQ
           env:
             - name: OAUTH2_PROXY_CLIENT_ID
               valueFrom:
@@ -123,7 +147,7 @@ spec:
                 secretKeyRef:
                   key: admin_cookie_secret
                   name: website-secrets
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:9c7661f71a0e7eba04c83f1b2f90a1aad9611480
+          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:b2d87e8e29285720327bf01aee604f929ea64dd4
           imagePullPolicy: Always
           name: oauth2-proxy
           ports:
