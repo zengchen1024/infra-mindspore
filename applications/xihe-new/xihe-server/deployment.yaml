@@ -303,6 +303,16 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: BIGMODEL_DESCRIBE_PICTUREHF
+        - name: AUTHING_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: AUTHING_ENDPOINT
+        - name: CERT_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: CERT_ENDPOINT
         resources:
           requests:
             cpu: 1000m
