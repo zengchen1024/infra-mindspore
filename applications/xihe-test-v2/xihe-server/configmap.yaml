@@ -10,7 +10,6 @@ data:
       app_id: "${AUTHING_APP_ID}"
       secret: "${AUTHING_SECRET}"
       endpoint: "${AUTHING_ENDPOINT}"
-      cert_endpoint: "${CERT_ENDPOINT}"
 
     mongodb:
       db_conn: "${MONGODB_CONNECTION}"
