@@ -8,4 +8,4 @@ resources:
 - secret.yaml
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-website-test
-  newTag: 1ad213606594c69a3d12dcb0e3faa24b706ff832
+  newTag: 70fd70049296829b494f228a0d840d77465696a4
