@@ -29,6 +29,7 @@ data:
         tips_if_added_by_others: "You can't add ascend-cla/yes label manually. Please comment /check-cla to verify it again."
     - repos:
       - ascend/canndev
+      - ascend/ascend-faster-transformer
       merge_method: squash
       labels:
       - label: lgtm

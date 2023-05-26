@@ -22,4 +22,5 @@ data:
       - ascend/mindstudio
       - ascend/msadvisor
       - ascend/op-plugin
+      - ascend/ascend-faster-transformer
       require_self_approval: true
