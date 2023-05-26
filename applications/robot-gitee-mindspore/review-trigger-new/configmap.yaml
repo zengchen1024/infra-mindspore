@@ -24,6 +24,10 @@ data:
         total_number_of_reviewers: 1
     - repos:
       - mindspore/mindspore
+      - mindspore/xihe-website
+      - mindspore/Xihe-docs
+      - mindspore/website-v2
+      - mindspore/website-docs
       need_welcome: true
       cla_label: "mindspore-cla/yes"
       labels_for_basic_ci_passed:

@@ -104,6 +104,10 @@ data:
       - mindspore/graphlearning
       - mindspore/federated
       - mindspore/mindformers
+      - mindspore/xihe-website
+      - mindspore/Xihe-docs
+      - mindspore/website-v2
+      - mindspore/website-docs
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
