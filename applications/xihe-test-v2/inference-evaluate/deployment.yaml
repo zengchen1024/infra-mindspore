@@ -86,7 +86,7 @@ spec:
               key: KUBE_NAMESPACE
               name: xihe-secret
         - name: INFERENCE_CRD_IMAGE
-          value: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:inferenceimpl.v1.0.20230529175218
+          value: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:inferenceimpl.v1.0.20230529200407
         - name: EVALUATE_CRD_IMAGE
           value: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:evaluateimpl.v1.0.20221124180204
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
