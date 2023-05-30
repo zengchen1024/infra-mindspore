@@ -31,8 +31,8 @@ data:
         prefix: "competition"
       - competition_id: "learn23-text"
         answer_preliminary_path: "competition/learn23-text/preliminary/label.txt"
-        pos: 1
-        cls: 5
+        pos: 0
+        cls: 6
         prefix: "competition"
       - competition_id: "learn23-img"
         answer_preliminary_path: "competition/learn23-img/preliminary/label.txt"
