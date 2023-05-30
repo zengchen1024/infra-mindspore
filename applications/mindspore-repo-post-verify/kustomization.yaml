@@ -4,6 +4,7 @@ resources:
 - service.yaml
 - secrets.yaml
 - pvc.yaml
+- ingress.yaml
 commonAnnotations:
   email: 747802914@qq.com
   owner: liuyang
