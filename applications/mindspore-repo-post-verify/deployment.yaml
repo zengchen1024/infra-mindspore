@@ -51,6 +51,11 @@ spec:
             secretKeyRef:
               key: accessToken
               name: repo-post-verify-secrets
+        - name: jasypt.encryptor.password
+          valueFrom:
+            secretKeyRef:
+              key: jasypt.encryptor.password
+              name: repo-post-verify-secrets
         volumeMounts:
         - mountPath: /var/log
           name: log-storage
