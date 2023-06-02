@@ -46,6 +46,11 @@ spec:
             secretKeyRef:
               key: endpoint
               name: repo-post-verify-secrets
+        - name: accessToken
+          valueFrom:
+            secretKeyRef:
+              key: accessToken
+              name: repo-post-verify-secrets
         volumeMounts:
         - mountPath: /var/log
           name: log-storage
