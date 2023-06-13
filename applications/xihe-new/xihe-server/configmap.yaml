@@ -10,7 +10,6 @@ data:
       app_id: "${AUTHING_APP_ID}"
       secret: "${AUTHING_SECRET}"
       endpoint: "${AUTHING_ENDPOINT}"
-      cert_endpoint: "${CERT_ENDPOINT}"
 
     mongodb:
       db_conn: "${MONGODB_CONNECTION}"
@@ -60,20 +59,24 @@ data:
       token_key: "${API_TOKEN_KEY}"
       token_expiry: 432000
       encryption_key: "${ENCRYPTION_KEY}"
+      encryption_key_csrf: "${ENCRYPTION_KEY_CSRF}"
       default_password: "${DEFAULT_PASSWORD}"
       max_training_record_num: 5
       tags:
         dataset:
         - app
+        - industry
 
         model:
         - app
         - computer
         - file_format
         - framework
+        - industry
 
         project:
         - app
+        - industry
 
         global_model:
         - app
@@ -81,16 +84,19 @@ data:
         - file_format
         - framework
         - license
+        - industry
 
         global_project:
         - app
         - project_type
         - training_platform
         - license
+        - industry
 
         global_dataset:
         - app
         - license
+        - industry
 
     bigmodel:
       cloud:
@@ -114,6 +120,7 @@ data:
         desc_picture: "${BIGMODEL_DESCRIBE_PICTURE}"
         signle_picture: "${BIGMODEL_SINGLE_PICTURE}"
         multiple_pictures: "${BIGMODEL_MULTI_PICTURES}"
+        ai_detector: "${BIGMODEL_AI_DETECTOR}"
 
       obs:
         endpoint: "${VQA_OBS_ENDPOINT}"

@@ -99,6 +99,10 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: KUBE_NAMESPACE
+        - name: INFERENCE_CRD_IMAGE
+          value: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:inferenceimpl.v1.0.20230529200407
+        - name: EVALUATE_CRD_IMAGE
+          value: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:evaluateimpl.v1.0.20221124180204
       volumes:
       - name: app-config
         configMap:
