@@ -18,6 +18,7 @@ data:
       - ascend/parser
       - ascend/tensorflow
       - ascend/ascend-faster-transformer
+      - ascend/ascend-inference-ptplugin
       commits_threshold: 1
       clear_labels:
       - ci-pipeline-passed

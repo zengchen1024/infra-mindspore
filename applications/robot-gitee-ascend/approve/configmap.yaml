@@ -23,4 +23,5 @@ data:
       - ascend/msadvisor
       - ascend/op-plugin
       - ascend/ascend-faster-transformer
+      - ascend/ascend-inference-ptplugin
       require_self_approval: true

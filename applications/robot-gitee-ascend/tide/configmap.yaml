@@ -208,3 +208,27 @@ data:
         tips_if_missing: "Please wait for the CI test to be completed."
         person: atlasaccount
         tips_if_added_by_others: "You can't add ci-pipeline-passed label manually. Please remove it and wait for the CI test to be completed."
+        
+    - repos:
+      - ascend/ascend-inference-ptplugin
+      merge_method: squash
+      labels:
+      - label: lgtm
+        tips_if_missing: "Please wait for reviewers to review the code."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add lgtm label manually. Please remove it and wait for reviewers to review your codes."
+        
+      - label: approved
+        tips_if_missing: "Please wait for approvers to review the code."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add approved label manually. Please remove it and wait for approvers to review your codes."
+        
+      - label: ascend-cla/yes
+        tips_if_missing: "Please sign CLA. If you have done, comment /check-cla to recheck again."
+        person: I-am-a-robot
+        tips_if_added_by_others: "You can't add ascend-cla/yes label manually. Please comment /check-cla to verify it again."
+        
+      - label: ci-pipeline-passed
+        tips_if_missing: "Please wait for the CI test to be completed."
+        person: atlasaccount
+        tips_if_added_by_others: "You can't add ci-pipeline-passed label manually. Please remove it and wait for the CI test to be completed."
