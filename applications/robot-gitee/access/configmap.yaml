@@ -186,7 +186,10 @@ data:
 
         mindspore/website-docs:
         - robot-gitee-mindspore-review-trigger-new          
-
+        
+        mindspore/mindinsight:
+        - robot-gitee-mindspore-review-trigger-new
+        
         mindspore/course:
         - robot-gitee-mindspore-review-trigger
         

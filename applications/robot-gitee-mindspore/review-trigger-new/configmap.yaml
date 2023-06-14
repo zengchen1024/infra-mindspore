@@ -16,6 +16,7 @@ data:
     - repos:
       - mindspore/docs
       - mindspore/mindformers
+      - mindspore/mindinsight
       need_welcome: true
       cla_label: "mindspore-cla/yes"
       review:
