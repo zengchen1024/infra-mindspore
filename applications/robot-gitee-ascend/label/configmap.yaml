@@ -19,6 +19,11 @@ data:
       - ascend/tensorflow
       - ascend/ascend-faster-transformer
       - ascend/ascend-inference-ptplugin
+      - ascend/ascend-devkit-imager
+      - ascend/ascend-devkit-model-adapter
+      - ascend/ascend-transformer-acceleration
+      - ascend/ascend-op-common-lib
+      - ascend/ascend-inference
       commits_threshold: 1
       clear_labels:
       - ci-pipeline-passed

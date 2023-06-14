@@ -24,4 +24,9 @@ data:
       - ascend/op-plugin
       - ascend/ascend-faster-transformer
       - ascend/ascend-inference-ptplugin
+      - ascend/ascend-devkit-imager
+      - ascend/ascend-devkit-model-adapter
+      - ascend/ascend-transformer-acceleration
+      - ascend/ascend-op-common-lib
+      - ascend/ascend-inference
       require_self_approval: true
