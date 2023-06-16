@@ -8,7 +8,7 @@ data:
     - repos:
       - opengauss/openGauss-server
       lgtm_counts_required: 2
-      legal_operator: opengauss-bot
+      legal_operator: opengauss_bot
       labels_for_merge:
       - opengauss-cla/yes
       - ci-pipeline-success
@@ -21,14 +21,14 @@ data:
       - opengauss/openGauss-server
       - opengauss/docs
       lgtm_counts_required: 2
-      legal_operator: opengauss-bot
+      legal_operator: opengauss_bot
       labels_for_merge:
       - opengauss-cla/yes
 
     - repos:
       - opengauss/docs
       lgtm_counts_required: 2
-      legal_operator: opengauss-bot
+      legal_operator: opengauss_bot
       labels_for_merge:
       - opengauss-cla/yes
       - ci-pipeline-success
@@ -36,7 +36,7 @@ data:
     - repos:
       - opengauss/tc
       lgtm_counts_required: 2
-      legal_operator: opengauss-bot
+      legal_operator: opengauss_bot
       check_permission_based_on_sig_owners: true
       sigs_dir: sigs
       labels_for_merge:
@@ -48,7 +48,7 @@ data:
         - opengauss/openGauss-connector-odbc
         - opengauss/CM
       lgtm_counts_required: 2
-      legal_operator: opengauss-bot
+      legal_operator: opengauss_bot
       labels_for_merge:
         - opengauss-cla/yes
       missing_labels_for_merge:
