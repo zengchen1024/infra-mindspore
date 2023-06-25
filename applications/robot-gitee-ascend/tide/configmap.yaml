@@ -192,7 +192,6 @@ data:
       - ascend/ascend-transformer-acceleration
       - ascend/ascend-op-common-lib
       - ascend/ascend-inference
-      merge_method: squash
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
