@@ -76,6 +76,11 @@ spec:
               secretKeyRef:
                 key: pytorch_url
                 name: website-secrets
+          - name: MINDSPORE_BOOK
+            valueFrom:
+              secretKeyRef:
+                key: MINDSPORE_BOOK
+                name: website-secrets
         resources:
           requests:
             cpu: 4000m
