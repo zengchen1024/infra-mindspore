@@ -4,7 +4,7 @@ metadata:
   name: deployment
   namespace: xihe-test-v2
 spec:
-  replicas: 1
+  replicas: 0
   template:
     spec:
       containers:
