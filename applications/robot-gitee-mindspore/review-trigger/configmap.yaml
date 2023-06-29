@@ -7,7 +7,6 @@ data:
     config_items:
     - repos:
       - mindspore/models
-      - mindspore/mindscience
       need_welcome: true
       review:
         total_number_of_approvers: 2

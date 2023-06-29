@@ -38,6 +38,7 @@ data:
       - mindspore/Xihe-docs
       - mindspore/website-v2
       - mindspore/website-docs
+      - mindspore/mindscience
       need_welcome: true
       cla_label: "mindspore-cla/yes"
       labels_for_basic_ci_passed:
