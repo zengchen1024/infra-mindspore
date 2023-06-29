@@ -55,6 +55,11 @@ spec:
             secretKeyRef:
               key: GIT_PASSWORD
               name: doc-search-secret
+        - name: MINDSPORE_OFFICIAL
+          valueFrom:
+            secretKeyRef:
+              key: MINDSPORE_OFFICIAL
+              name: doc-search-secret
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/docs-search:v1.0.20230504101041
         imagePullPolicy: IfNotPresent
         livenessProbe:
