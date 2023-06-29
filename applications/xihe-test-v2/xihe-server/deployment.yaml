@@ -323,6 +323,21 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: ENCRYPTION_KEY_CSRF
+        - name: REDIS_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: REDIS_ADDRESS
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: REDIS_PASSWORD
+        - name: KEY_PAIR
+          valueFrom:
+            secretKeyRef:
+              name: xihe-secret
+              key: KEY_PAIR
         resources:
           requests:
             cpu: 1000m
