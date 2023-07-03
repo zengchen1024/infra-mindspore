@@ -323,6 +323,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: ENCRYPTION_KEY_CSRF
+        - name: BIGMODEL_DOMAIN
+          valueFrom:
+            secretKeyRef:
+              key: BIGMODEL_DOMAIN
+              name: xihe-secret
         resources:
           requests:
             cpu: 1000m

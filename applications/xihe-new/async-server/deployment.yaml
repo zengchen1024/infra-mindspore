@@ -221,6 +221,11 @@ spec:
             secretKeyRef:
               key: BIGMODEL_LUOJIAHF
               name: xihe-secret
+        - name: BIGMODEL_DOMAIN
+          valueFrom:
+            secretKeyRef:
+              key: BIGMODEL_DOMAIN
+              name: xihe-secret
         resources:
           limits:
             cpu: 1000m
