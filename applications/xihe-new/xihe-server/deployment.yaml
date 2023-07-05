@@ -328,6 +328,21 @@ spec:
             secretKeyRef:
               key: BIGMODEL_DOMAIN
               name: xihe-secret
+        - name: REDIS_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              key: REDIS_ADDRESS
+              name: xihe-secret
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: REDIS_PASSWORD
+              name: xihe-secret
+        - name: KEY_PAIR
+          valueFrom:
+            secretKeyRef:
+              key: KEY_PAIR
+              name: xihe-secret
         resources:
           requests:
             cpu: 1000m
