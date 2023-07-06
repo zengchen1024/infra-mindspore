@@ -85,3 +85,109 @@ spec:
               serviceName: websiteservice
               servicePort: 80
             path: /robots.txt
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/upstream-vhost: dsapi.osinfra.cn
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  name: www-website-dsapi-ingress
+  namespace: website
+spec:
+  rules:
+  - host: www.mindspore.cn
+    http:
+      paths:
+      - paths:
+        backend:
+          serviceName: dsapi-service
+          servicePort: 443
+        path: /api-dsapi/(.*)
+  tls:
+  - hosts:
+    - www.mindspore.cn
+    secretName: website-tls
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/upstream-vhost: doc-search.mindspore.cn
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  name: www-website-search-ingress
+  namespace: website
+spec:
+  rules:
+  - host: www.mindspore.cn
+    http:
+      paths:
+      - paths:
+        backend:
+          serviceName: search-service
+          servicePort: 443
+        path: /api-search/(.*)
+  tls:
+  - hosts:
+    - www.mindspore.cn
+    secretName: website-tls
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/upstream-vhost: dsapi.osinfra.cn
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  name: website-dsapi-ingress
+  namespace: website
+spec:
+  rules:
+  - host: mindspore.cn
+    http:
+      paths:
+      - paths:
+        backend:
+          serviceName: dsapi-service
+          servicePort: 443
+        path: /api-dsapi/(.*)
+  tls:
+  - hosts:
+    - mindspore.cn
+    secretName: website-tls-2
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/upstream-vhost: doc-search.mindspore.cn
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  name: website-search-ingress
+  namespace: website
+spec:
+  rules:
+  - host: mindspore.cn
+    http:
+      paths:
+      - paths:
+        backend:
+          serviceName: search-service
+          servicePort: 443
+        path: /api-search/(.*)
+  tls:
+  - hosts:
+    - mindspore.cn
+    secretName: website-tls-2
