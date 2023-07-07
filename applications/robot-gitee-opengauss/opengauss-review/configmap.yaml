@@ -7,6 +7,7 @@ data:
     config_items:
     - repos:
       - opengauss/openGauss-server
+      - opengauss/openGauss-workbench
       lgtm_counts_required: 2
       legal_operator: opengauss_bot
       labels_for_merge:
@@ -20,6 +21,7 @@ data:
       - opengauss/tc
       - opengauss/openGauss-server
       - opengauss/docs
+      - opengauss/openGauss-workbench
       lgtm_counts_required: 2
       legal_operator: opengauss_bot
       labels_for_merge:
