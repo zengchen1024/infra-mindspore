@@ -16,4 +16,4 @@ nameSuffix: -openeuler-welcome
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-openeuler-welcome
-  newTag: master-0cc9da7-dirty
+  newTag: master-4c13302-dirty
