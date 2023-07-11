@@ -16,6 +16,8 @@ data:
       - ci-bot
       excluded_repos:
       - openeuler/docs
+      - openeuler/kernel
+      - src-openeuler/kernel
       community_name: openEuler
       community_repo: community
       branch: master
@@ -31,3 +33,12 @@ data:
       file_branch: master
       need_assign: true
       welcome_simpler: true
+
+    - repos:
+      - openeuler/kernel
+      - src-openeuler/kernel
+      community_name: openEuler
+      community_repo: community
+      branch: master
+      command_link: https://gitee.com/openeuler/community/blob/master/en/sig-infrastructure/command.md
+      no_need_to_notice: true
