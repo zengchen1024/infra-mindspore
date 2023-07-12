@@ -343,6 +343,11 @@ spec:
             secretKeyRef:
               key: BIGMODEL_DOMAIN
               name: xihe-secret
+        - name: ENCRYPTION_KEY_GITLAB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: ENCRYPTION_KEY_GITLAB_TOKEN
+              name: xihe-secret
         resources:
           requests:
             cpu: 1000m
