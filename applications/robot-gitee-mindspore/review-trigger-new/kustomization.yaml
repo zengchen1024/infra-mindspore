@@ -16,4 +16,4 @@ nameSuffix: -review-trigger-new
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-review-trigger
-  newTag: mindspore-a1ea4a1
+  newTag: mindspore-42961fd
