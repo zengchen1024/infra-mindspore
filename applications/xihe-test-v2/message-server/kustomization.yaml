@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
 - configmap.yaml
 - deployment.yaml
-- service.yaml
 commonLabels:
   component: message-server
 nameSuffix: -message-server

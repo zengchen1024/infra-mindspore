@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - args:
-        - --port=8888
+        - --port=8000
         - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
         - --enable_debug=true
         env:
@@ -93,7 +93,7 @@ spec:
         imagePullPolicy: IfNotPresent
         name: inference-evaluate
         ports:
-        - containerPort: 8888
+        - containerPort: 8000
           name: http
           protocol: TCP
         volumeMounts:

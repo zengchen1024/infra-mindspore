@@ -12,6 +12,5 @@ commonAnnotations:
 namespace: xihe-test-v2
 resources:
 - ingress.yaml
-- service.yaml
 - deployment.yaml
 - configmap.yaml
