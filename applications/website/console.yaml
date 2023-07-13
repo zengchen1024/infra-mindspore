@@ -1,0 +1,112 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    nginx.ingress.kubernetes.io/proxy-body-size: 20m
+    nginx.ingress.kubernetes.io/whitelist-source-range: 119.3.184.2,202.170.90.255
+  name: mindspore-console-ingress
+  namespace: website
+spec:
+  tls:
+    - hosts:
+        - console.mindspore.cn
+      secretName: console-tls
+  rules:
+    - host: console.mindspore.cn
+      http:
+        paths:
+        - backend:
+            serviceName: console-service
+            servicePort: 8080
+          path: /
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: console-service
+  namespace: website
+spec:
+  ports:
+    - name: httpport
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: console
+  type: ClusterIP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mindspore-console
+  namespace: website
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: console
+  template:
+    metadata:
+      labels:
+        app: console
+    spec:
+      containers:
+      - name: console
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/website-backend:master-4a6107
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        env:
+        - name: MS_MYSQL_URL
+          value: jdbc:mysql://192.168.0.193:3306/website?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+        - name: MS_MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: mysql_password
+              name: website-secrets
+        - name: MS_MYSQL_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: mysql_username
+              name: website-secrets
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
+          limits:
+            cpu: 1000m
+            memory: 2000Mi
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 20
+          periodSeconds: 20
+          successThreshold: 1
+          tcpSocket:
+            port: 8080
+          timeoutSeconds: 5
+        readinessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 8080
+          timeoutSeconds: 5
+        volumeMounts:
+          - mountPath: /mnt/share/file
+            name: website-data-volume
+      volumes:
+        - name: website-data-volume
+          persistentVolumeClaim:
+            claimName: website-data
