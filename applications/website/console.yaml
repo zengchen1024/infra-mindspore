@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-issuer
     nginx.ingress.kubernetes.io/proxy-body-size: 20m
-    nginx.ingress.kubernetes.io/whitelist-source-range: 119.3.184.2,202.170.90.255
+    nginx.ingress.kubernetes.io/whitelist-source-range: 119.3.184.2,202.170.90.255,119.3.238.118
   name: mindspore-console-ingress
   namespace: website
 spec:
