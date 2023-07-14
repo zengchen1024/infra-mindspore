@@ -113,7 +113,11 @@ spec:
             secretKeyRef:
               name: gitlab-secrets
               key: redis-port
-
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-secrets
+              key: redis-password
         - name: SMTP_ENABLED
           value: "true"
         - name: SMTP_DOMAIN
@@ -252,6 +256,12 @@ spec:
           name: gitlab-data
         - mountPath: /home/git/gitlab-shell/hooks/
           name: gitlab-hooks-data
+        - mountPath: /etc/docker-gitlab/runtime/functions
+          name: configmap
+          subPath: functions
+        - mountPath: /etc/docker-gitlab/runtime/config/gitlabhq/resque.yml
+          name: configmap
+          subPath: resque.yml
         livenessProbe:
           httpGet:
             path: /
@@ -272,3 +282,7 @@ spec:
       - name: gitlab-hooks-data
         persistentVolumeClaim:
           claimName: gitlab-hooks-volume
+      - name: configmap
+        configMap:
+          name: gitlab-configmap
+          defaultMode: 436
