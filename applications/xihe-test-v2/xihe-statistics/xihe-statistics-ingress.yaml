@@ -4,6 +4,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-issuer
     kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/whitelist-source-range: 159.138.58.212
   name: xihe-statistics-ingress
   namespace: xihe-test-v2
 spec:
