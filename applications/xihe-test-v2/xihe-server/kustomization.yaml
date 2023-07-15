@@ -6,4 +6,4 @@ resources:
 - configmap.yaml
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-server
-  newTag: 6679b5caf2dd1a74c220c42685a94c03258c9f25
+  newTag: 6bb1b1ea059b37eaafc9c9001ddf5c0f75cfcc87
