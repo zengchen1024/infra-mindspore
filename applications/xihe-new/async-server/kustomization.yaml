@@ -11,6 +11,5 @@ commonAnnotations:
   kubernetes.ops.region: hk
 namespace: xihe-new
 resources:
-- service.yaml
 - deployment.yaml
 - configmap.yaml

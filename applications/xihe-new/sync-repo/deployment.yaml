@@ -10,14 +10,14 @@ spec:
       containers:
       - name: sync-repo
         args:
-        - --port=8888
+        - --port=8000
         - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
         - --kafkamq-config-file=/app/conf/xihe-gitlab/kafka
         - --enable_debug=false
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8888
+        - containerPort: 8000
           name: http
           protocol: TCP
         volumeMounts:

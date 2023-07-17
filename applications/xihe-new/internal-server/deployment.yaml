@@ -12,7 +12,7 @@ spec:
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
         imagePullPolicy: IfNotPresent
         args:
-        - --port=8888
+        - --port=8000
         - --config-file=/opt/app/conf/config.yaml
         - --enable_debug=false
         env:
@@ -59,7 +59,7 @@ spec:
             cpu: 1000m
             memory: 1000Mi
         ports:
-        - containerPort: 8888
+        - containerPort: 8000
           name: http
           protocol: TCP
         volumeMounts:
