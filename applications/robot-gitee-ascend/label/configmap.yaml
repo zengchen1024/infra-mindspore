@@ -12,6 +12,7 @@ data:
     - repos:
       - ascend/canndev
       - ascend/cann_op_contrib
+      - ascend/torchair
       - ascend/vision
       - ascend/Asight
       - ascend/metadef

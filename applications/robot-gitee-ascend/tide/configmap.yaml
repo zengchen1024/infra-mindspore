@@ -53,6 +53,7 @@ data:
         
     - repos:
       - ascend/Asight
+      - ascend/torchair
       merge_method: squash
       labels:
       - label: lgtm
