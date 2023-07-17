@@ -4,11 +4,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/proxy-body-size: 100m
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      if ($http_origin ~* "^https?://(?:.*\.mindspore\.cn)$") {
-        set $xihe_host_name $http_origin;
-      }
-      add_header X-Frame-Options "ALLOW-FROM $xihe_host_name;
   name: xihe-ingress
   namespace: xihe-test-v2
 spec:
