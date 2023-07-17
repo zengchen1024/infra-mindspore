@@ -348,6 +348,11 @@ spec:
             secretKeyRef:
               key: ENCRYPTION_KEY_GITLAB_TOKEN
               name: xihe-secret
+        - name: MONGODB_CERT
+          valueFrom:
+            secretKeyRef:
+              key: MONGODB_CERT
+              name: xihe-secret
         resources:
           requests:
             cpu: 1000m
@@ -362,7 +367,13 @@ spec:
         volumeMounts:
         - mountPath: /opt/app/conf
           name: config
+        - mountPath: /opt/app/conf/ca.crt
+          name: secret
+          subPath: ca-cert
       volumes:
       - name: config
         configMap:
           name: server-configmap
+      - name: secret
+        secret:
+          secretName: xihe-secret
