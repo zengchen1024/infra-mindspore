@@ -367,7 +367,7 @@ spec:
         volumeMounts:
         - mountPath: /opt/app/conf
           name: config
-        - mountPath: /opt/app/conf/ca.crt
+        - mountPath: /opt/mongo/ca.crt
           name: secret
           subPath: ca-cert
       volumes:
