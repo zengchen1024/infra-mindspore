@@ -26,6 +26,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: MONGODB_CONNECTION
+        - name: MONGODB_CERT
+          valueFrom:
+            secretKeyRef:
+              key: MONGODB_CERT
+              name: xihe-secret
         - name: KAFKA_ADDRESS
           valueFrom:
             secretKeyRef:
@@ -85,7 +90,13 @@ spec:
         volumeMounts:
         - mountPath: /opt/app/conf
           name: config
+        - mountPath: /opt/mongo/ca.crt
+          name: secret
+          subPath: ca-cert
       volumes:
       - name: config
         configMap:
           name: configmap-message-server
+      - name: secret
+        secret:
+          secretName: xihe-secret
