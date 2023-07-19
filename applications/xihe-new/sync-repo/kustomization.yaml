@@ -11,6 +11,4 @@ nameSuffix: -sync-repo
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-sync-repo
-  newTag: main-6a60100
-- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-sync-repo
   newTag: main-98ffa1
