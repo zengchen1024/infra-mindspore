@@ -60,6 +60,26 @@ spec:
             secretKeyRef:
               key: MINDSPORE_OFFICIAL
               name: doc-search-secret
+        - name: XARMOR_APP_ID
+          valueFrom:
+            secretKeyRef:
+              key: xarmor_app_id
+              name: doc-search-secret
+        - name: XARMOR_APP_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: xarmor_app_token
+              name: doc-search-secret
+        - name: XARMOR_BACKEND_URL
+          valueFrom:
+            secretKeyRef:
+              key: xarmor_backend_url
+              name: doc-search-secret
+        - name: XARMOR_TENANT_ID
+          valueFrom:
+            secretKeyRef:
+              key: xarmor_tenant_id
+              name: doc-search-secret
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/docs-search:v1.0.20230504101041
         imagePullPolicy: IfNotPresent
         livenessProbe:
