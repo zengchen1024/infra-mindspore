@@ -226,6 +226,11 @@ spec:
             secretKeyRef:
               key: BIGMODEL_DOMAIN
               name: xihe-secret
+        - name: BIGMODEL_AI_DETECTOR
+          valueFrom:
+            secretKeyRef:
+              key: BIGMODEL_AI_DETECTOR
+              name: xihe-secret
         resources:
           limits:
             cpu: 1000m
