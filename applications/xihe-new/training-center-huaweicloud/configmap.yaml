@@ -34,7 +34,7 @@ data:
         upload_folder_shell: /opt/app/upload_folder.sh
 
     watch:
-      endpoint: service-internal-server.xihe-new.svc.cluster.local:8888
+      endpoint: service-internal-server.xihe-new.svc.cluster.local:8000
 
     mysql:
       conn: "${MYSQL_CONN}"

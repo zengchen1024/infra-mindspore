@@ -7,7 +7,7 @@ data:
     access:
       plugins:
       - name: sync-repo
-        endpoint: http://service-sync-repo.xihe-test-v2.svc.cluster.local:8888/gitlab-hook
+        endpoint: http://service-sync-repo.xihe-test-v2.svc.cluster.local:8000/gitlab-hook
         events:
         - "Push Hook"
 

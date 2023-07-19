@@ -22,5 +22,5 @@ data:
       password: "${FINETUNE_PASSWORD}"
 
     watch:
-      endpoint: service-internal-server.xihe-test-v2.svc.cluster.local:8888
+      endpoint: service-internal-server.xihe-test-v2.svc.cluster.local:8000
       max_watch_num: 10

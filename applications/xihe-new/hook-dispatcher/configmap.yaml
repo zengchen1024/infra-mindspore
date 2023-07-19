@@ -7,5 +7,5 @@ data:
     access:
       topic: xihe_gitlab_new
       user_agent: Robot-Gitlab-Hook-Delivery
-      access_endpoint: http://service-access.xihe-new.svc.cluster.local:8888/gitlab-access
+      access_endpoint: http://service-access.xihe-new.svc.cluster.local:8000/gitlab-access
       concurrent_size: 1

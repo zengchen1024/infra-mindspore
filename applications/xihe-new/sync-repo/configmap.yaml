@@ -5,7 +5,7 @@ metadata:
 data:
   config.yaml: |
     syncrepo:
-      access_endpoint: http://service-hook-delivery.xihe-new.svc.cluster.local:8888/gitlab-hook
+      access_endpoint: http://service-hook-delivery.xihe-new.svc.cluster.local:8000/gitlab-hook
       access_hmac: "${ACCESS_HMAC}"
       topic: xihe_gitlab_new
       user_agent: Robot-Gitlab-Hook-Delivery

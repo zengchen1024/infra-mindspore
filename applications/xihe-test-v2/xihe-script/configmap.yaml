@@ -9,7 +9,7 @@ data:
       address: "${KAFKA_ADDRESS}"
       topics:
         submission: "xihe_submission_test"
-    endpoint: "service-internal-server.xihe-test-v2.svc.cluster.local:8888"
+    endpoint: "service-internal-server.xihe-test-v2.svc.cluster.local:8000"
     matchs:
       - competition_id: "2"
         competition_type: "text"
