@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/limit-rmp: "5"
   name: doc-search-ingress
   namespace: mindspore-doc-search
 spec:
