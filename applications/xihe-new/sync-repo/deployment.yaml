@@ -13,7 +13,7 @@ spec:
         - --port=8000
         - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
         - --kafkamq-config-file=/app/conf/xihe-gitlab/kafka
-        - --enable_debug=false
+        - --enable_debug=true
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
         imagePullPolicy: IfNotPresent
         ports:
