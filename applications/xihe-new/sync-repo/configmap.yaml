@@ -33,4 +33,4 @@ data:
 
     gitlab:
       token: "${GITLAB_TOKEN}"
-      host: "${GITLAB_HOST}"
+      host: "${GITLAB_MINDSPORE_HOST}"

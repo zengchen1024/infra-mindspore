@@ -65,11 +65,11 @@ spec:
             secretKeyRef:
               name: xihe-secret
               key: GITLAB_TOKEN
-        - name: GITLAB_HOST
+        - name: GITLAB_MINDSPORE_HOST
           valueFrom:
             secretKeyRef:
               name: xihe-secret
-              key: GITLAB_HOST
+              key: GITLAB_MINDSPORE_HOST
       volumes:
       - name: app-config
         configMap:
