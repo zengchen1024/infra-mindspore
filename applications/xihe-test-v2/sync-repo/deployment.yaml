@@ -12,6 +12,7 @@ spec:
         args:
         - --port=8000
         - --config-file=/app/conf/xihe-gitlab/app_config/config.yaml
+        - --kafkamq-config-file=/app/conf/xihe-gitlab/kafka
         - --enable_debug=true
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe:latest
         imagePullPolicy: IfNotPresent
@@ -20,6 +21,9 @@ spec:
           name: http
           protocol: TCP
         volumeMounts:
+        - mountPath: /app/conf/xihe-gitlab/kafka
+          subPath: KAFKA_ADDRESS
+          name: secret-volume
         - mountPath: /app/conf/xihe-gitlab/app_config/
           name: app-config
           readOnly: true
@@ -68,3 +72,6 @@ spec:
       - name: app-config
         configMap:
           name: configmap-sync-repo
+      - name: secret-volume
+        secret:
+          secretName: xihe-secret
