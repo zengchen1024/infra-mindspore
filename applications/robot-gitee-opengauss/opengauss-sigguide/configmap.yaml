@@ -7,3 +7,15 @@ data:
     config_items:
     - repos:
       - opengauss
+      excluded_repos:
+      - opengauss/distribution-evaluation
+      - opengauss/distribution-certification
+      - opengauss/service-partner-certification
+      - opengauss/compatible-certification
+
+    - repos:
+      - opengauss/distribution-evaluation
+      - opengauss/distribution-certification
+      - opengauss/service-partner-certification
+      - opengauss/compatible-certification
+      customize_members: true
