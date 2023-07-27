@@ -25,6 +25,7 @@ data:
       - ascend/ascend-transformer-acceleration
       - ascend/ascend-op-common-lib
       - ascend/ascend-inference
+      - ascend/att
       commits_threshold: 1
       clear_labels:
       - ci-pipeline-passed

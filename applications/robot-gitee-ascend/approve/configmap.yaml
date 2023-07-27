@@ -30,4 +30,5 @@ data:
       - ascend/ascend-transformer-acceleration
       - ascend/ascend-op-common-lib
       - ascend/ascend-inference
+      - ascend/att
       require_self_approval: true

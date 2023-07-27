@@ -162,7 +162,7 @@ data:
       - ascend/ascend-industrial
       - ascend/msadvisor
       - ascend/ait
-      - ascend/amtt
+      - ascend/att
       - ascend/op-plugin
       labels:
       - label: lgtm
