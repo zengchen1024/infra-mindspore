@@ -23,6 +23,14 @@ metadata:
       rewrite ^/reinforcement$            https://www.mindspore.cn/reinforcement/docs/zh-CN/master/index.html redirect;
       rewrite ^/reinforcement/en(/|$)(.*) https://www.mindspore.cn/reinforcement/docs/en/master/index.html    redirect;
       rewrite ^/docs/api/(.*)/master/(.*) https://www.mindspore.cn/docs/$1/master/$2                          redirect;
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com ers.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header X-XSS-Protection "1; mode=block";
+      add_header X-Frame-Options "DENY";
+      add_header Cache-Control "no-cache";
+      add_header Pragma "no-cache";
+      add_header X-Content-Type-Options "nosniff";
+    nginx.ingress.kubernetes.io/limit-rpm: "200"
     nginx.ingress.kubernetes.io/proxy-body-size: 1024m
     nginx.ingress.kubernetes.io/custom-http-errors: '400,500,404'
   name: website-ingress
@@ -60,6 +68,13 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-issuer
     nginx.ingress.kubernetes.io/proxy-body-size: 1024m
     nginx.ingress.kubernetes.io/custom-http-errors: '400,500,404'
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com ers.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header X-XSS-Protection "1; mode=block";
+      add_header X-Frame-Options "DENY";
+      add_header Cache-Control "no-cache";
+      add_header Pragma "no-cache";
+      add_header X-Content-Type-Options "nosniff";
     nginx.ingress.kubernetes.io/server-snippet: |
       rewrite ^~/ https://www.mindspore.cn redirect;
       rewrite ^~/resource(.*) https://gitee.com/mindspore/book redirect;
@@ -95,6 +110,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/upstream-vhost: dsapi.osinfra.cn
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Content-Type-Options "nosniff";
+      add_header X-XSS-Protection "1; mode=block";
+      add_header X-Frame-Options "DENY";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com ers.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Cache-Control "no-cache";
+      add_header Pragma "no-cache";
   name: www-website-dsapi-ingress
   namespace: website
 spec:
@@ -121,6 +143,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/upstream-vhost: doc-search.mindspore.cn
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Content-Type-Options "nosniff";
+      add_header X-XSS-Protection "1; mode=block";
+      add_header X-Frame-Options "DENY";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com ers.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Cache-Control "no-cache";
+      add_header Pragma "no-cache";
   name: www-website-search-ingress
   namespace: website
 spec:
@@ -148,6 +177,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/upstream-vhost: dsapi.osinfra.cn
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Content-Type-Options "nosniff";
+      add_header X-XSS-Protection "1; mode=block";
+      add_header X-Frame-Options "DENY";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com ers.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Cache-Control "no-cache";
+      add_header Pragma "no-cache";
   name: website-dsapi-ingress
   namespace: website
 spec:
@@ -175,6 +211,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/upstream-vhost: doc-search.mindspore.cn
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Content-Type-Options "nosniff";
+      add_header X-XSS-Protection "1; mode=block";
+      add_header X-Frame-Options "DENY";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com ers.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Cache-Control "no-cache";
+      add_header Pragma "no-cache";
   name: website-search-ingress
   namespace: website
 spec:
