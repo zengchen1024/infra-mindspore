@@ -13,6 +13,6 @@ kind: Kustomization
 namespace: mindspore-reproducible
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-reproducible-backend
-  newTag: v1.0.20230203153053
+  newTag: v1.0.20230802095139
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-reproducible-website
   newTag: c302ceca30fe7261bb1087a98680afa4a68ac644
