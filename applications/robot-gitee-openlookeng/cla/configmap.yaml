@@ -10,6 +10,6 @@ data:
       - openlookeng-competition
       cla_label_yes: openlookeng-cla/yes
       cla_label_no: openlookeng-cla/no
-      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/openlookeng
-      sign_url: https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVubG9va2VuZw==
+      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee_openlookeng-1614322910578209320
+      sign_url: https://clasign.osinfra.cn/sign/gitee_openlookeng-1614322910578209320
       faq_url: https://gitee.com/openlookeng/community/blob/master/cla/faq/check-by-author/faq.md

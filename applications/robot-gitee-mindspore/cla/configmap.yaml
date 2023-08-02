@@ -11,6 +11,6 @@ data:
       - foundation-models/opt
       cla_label_yes: mindspore-cla/yes
       cla_label_no: mindspore-cla/no
-      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/mindspore
+      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee_mindspore-1614155835277678289
       sign_url: https://www.mindspore.cn/icla
       faq_url: https://github.com/opensourceways/test-infra/blob/sync-5-22/prow/gitee-plugins/cla/faq/check-by-author/faq.md

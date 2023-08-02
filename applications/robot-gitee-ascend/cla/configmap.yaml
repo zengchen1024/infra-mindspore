@@ -9,6 +9,6 @@ data:
       - ascend
       cla_label_yes: ascend-cla/yes
       cla_label_no: ascend-cla/no
-      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/ascend
-      sign_url: https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZhc2NlbmQ=
+      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee_ascend-1611222220829317930
+      sign_url: https://clasign.osinfra.cn/sign/gitee_ascend-1611222220829317930
       faq_url: https://gitee.com/ascend/community/blob/master/cla/faq/check-by-author/faq.md

@@ -10,6 +10,6 @@ data:
       - huadajiutian/wrapper
       cla_label_yes: edahelper-cla/yes
       cla_label_no: edahelper-cla/no
-      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee/edahelper
-      sign_url: https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZhc2NlbmQ=
+      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee_edahelper-1620887083478580559
+      sign_url: https://clasign.osinfra.cn/sign/gitee_edahelper-1620887083478580559
       faq_url: https://github.com/opensourceways/test-infra/blob/sync-5-22/prow/gitee-plugins/cla/faq/check-by-author/faq.md
