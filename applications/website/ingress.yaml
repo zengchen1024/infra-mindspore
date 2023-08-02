@@ -5,7 +5,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/server-snippet: |
       rewrite ^~/resource/ https://gitee.com/mindspore/book redirect;
-      rewrite ^/icla https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZtaW5kc3BvcmU= redirect;
+      rewrite ^/icla https://clasign.osinfra.cn/sign/gitee_mindspore-1614155835277678289 redirect;
       rewrite ^/mindinsight$              https://www.mindspore.cn/mindinsight/docs/zh-CN/master/index.html   redirect;
       rewrite ^/mindinsight/en(/|$)(.*)   https://www.mindspore.cn/mindinsight/docs/en/master/index.html      redirect;
       rewrite ^/hub$                      https://www.mindspore.cn/hub/docs/zh-CN/master/index.html           redirect;
@@ -78,6 +78,7 @@ metadata:
     nginx.ingress.kubernetes.io/server-snippet: |
       rewrite ^~/ https://www.mindspore.cn redirect;
       rewrite ^~/resource(.*) https://gitee.com/mindspore/book redirect;
+      rewrite ^/icla https://clasign.osinfra.cn/sign/gitee_mindspore-1614155835277678289 redirect;
   name: mindspore-www-website-ingress
 spec:
   tls:
