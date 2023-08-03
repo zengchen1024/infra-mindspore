@@ -24,7 +24,7 @@ metadata:
       rewrite ^/reinforcement/en(/|$)(.*) https://www.mindspore.cn/reinforcement/docs/en/master/index.html    redirect;
       rewrite ^/docs/api/(.*)/master/(.*) https://www.mindspore.cn/docs/$1/master/$2                          redirect;
     nginx.ingress.kubernetes.io/configuration-snippet: |
-      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' https://cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
       add_header X-XSS-Protection "1; mode=block";
       add_header X-Frame-Options "DENY";
       add_header Cache-Control "no-cache";
@@ -69,7 +69,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: 1024m
     nginx.ingress.kubernetes.io/custom-http-errors: '400,500,404'
     nginx.ingress.kubernetes.io/configuration-snippet: |
-      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' https://cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
       add_header X-XSS-Protection "1; mode=block";
       add_header X-Frame-Options "DENY";
       add_header Cache-Control "no-cache";
@@ -115,7 +115,7 @@ metadata:
       add_header X-Content-Type-Options "nosniff";
       add_header X-XSS-Protection "1; mode=block";
       add_header X-Frame-Options "DENY";
-      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' https://cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
       add_header Cache-Control "no-cache";
       add_header Pragma "no-cache";
   name: www-website-dsapi-ingress
@@ -148,7 +148,7 @@ metadata:
       add_header X-Content-Type-Options "nosniff";
       add_header X-XSS-Protection "1; mode=block";
       add_header X-Frame-Options "DENY";
-      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' https://cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
       add_header Cache-Control "no-cache";
       add_header Pragma "no-cache";
   name: www-website-search-ingress
@@ -182,7 +182,7 @@ metadata:
       add_header X-Content-Type-Options "nosniff";
       add_header X-XSS-Protection "1; mode=block";
       add_header X-Frame-Options "DENY";
-      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' https://cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
       add_header Cache-Control "no-cache";
       add_header Pragma "no-cache";
   name: website-dsapi-ingress
@@ -216,7 +216,7 @@ metadata:
       add_header X-Content-Type-Options "nosniff";
       add_header X-XSS-Protection "1; mode=block";
       add_header X-Frame-Options "DENY";
-      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' cdn.bootcss.com https://cdn.mathjax.org; object-src 'none'; frame-src https://player.bilibili.com";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval' https://cdn.bootcss.com https://cdn.mathjax.org https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; object-src 'none'; frame-src https://player.bilibili.com";
       add_header Cache-Control "no-cache";
       add_header Pragma "no-cache";
   name: website-search-ingress
