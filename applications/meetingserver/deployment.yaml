@@ -20,159 +20,41 @@ spec:
         - name: meeting-server
           image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:v1.0.20210716
           volumeMounts:
-            - mountPath: /work/app-meeting-server/meetings/migrations
-              name: meeting-data-volume
+          - mountPath: /work/app-meeting-server/meetings/migrations
+            name: meeting-data-volume
+          - mountPath: /vault/secrets/secrets.yaml.bak
+            name: secret
+            subPath: secrets-yaml
           resources:
             requests:
               cpu: 2000m
               memory: 2000Mi
           env:
-            - name: SECRET_KEY
-              valueFrom:
-                secretKeyRef:
-                  key: secret_key
-                  name: meeting-server-secrets
-            - name: GMAIL_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  key: gmail_username
-                  name: meeting-server-secrets
-            - name: GMAIL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: gmail_password
-                  name: meeting-server-secrets
-            - name: SMTP_SERVER_HOST
-              valueFrom:
-                secretKeyRef:
-                  key: smtp_server_host
-                  name: meeting-server-secrets
-            - name: MINDSPORE_ACCESS_KEY_ID
-              valueFrom:
-                secretKeyRef:
-                  key: mindspore_access_key_id
-                  name: meeting-server-secrets
-            - name: MINDSPORE_SECRET_ACCESS_KEY
-              valueFrom:
-                secretKeyRef:
-                  key: mindspore_secret_access_key
-                  name: meeting-server-secrets
-            - name: MINDSPORE_OBS_ENDPOINT
-              valueFrom:
-                secretKeyRef:
-                  key: mindspore_obs_endpoint
-                  name: meeting-server-secrets
-            - name: MINDSPORE_OBS_BUCKETNAME
-              valueFrom:
-                secretKeyRef:
-                  key: mindspore_obs_bucketname
-                  name: meeting-server-secrets
-            - name: DB_USER
-              valueFrom:
-                secretKeyRef:
-                  key: db_user
-                  name: meeting-server-secrets
-            - name: TZ
-              value: Asia/Shanghai
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: db_password
-                  name: meeting-server-secrets
-            - name: DB_HOST
-              valueFrom:
-                secretKeyRef:
-                  key: db_host
-                  name: meeting-server-secrets
-            - name: DB_PORT
-              value: "3306"
-            - name: TX_MEETING_APPID
-              valueFrom:
-                secretKeyRef:
-                  key: tx_meeting_appid
-                  name: meeting-server-secrets
-            - name: TX_MEETING_SDKID
-              valueFrom:
-                secretKeyRef:
-                  key: tx_meeting_sdkid
-                  name: meeting-server-secrets
-            - name: TX_MEETING_SECRETKEY
-              valueFrom:
-                secretKeyRef:
-                  key: tx_meeting_secretkey
-                  name: meeting-server-secrets
-            - name: TX_MEETING_SECRETID
-              valueFrom:
-                secretKeyRef:
-                  key: tx_meeting_secretid
-                  name: meeting-server-secrets
-            - name: MINDSPORE_MEETING_ATTENTION_TEMPLATE
-              valueFrom:
-                secretKeyRef:
-                  key: mindspore_meeting_attention_template
-                  name: meeting-server-secrets
-            - name: MINDSPORE_CANCEL_MEETING_TEMPLATE
-              valueFrom:
-                secretKeyRef:
-                  key: mindspore_cancel_meeting_template
-                  name: meeting-server-secrets
-            - name: RECORDING_RECEIVER
-              valueFrom:
-                secretKeyRef:
-                  key: recording_receiver
-                  name: meeting-server-secrets
-            - name: APP_ID
-              valueFrom:
-                secretKeyRef:
-                  key: app_id
-                  name: meeting-server-secrets
-            - name: APP_SECRET
-              valueFrom:
-                secretKeyRef:
-                  key: app_secret
-                  name: meeting-server-secrets
-            - name: QUERY_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  key: query_token
-                  name: meeting-server-secrets
-            - name: RASP_BACKEND_URL
-              value: http://server.xarmor.heds.huawei.com/raspforx
-            - name: RASP_APPID
-              valueFrom:
-                secretKeyRef:
-                  key: rasp_appid
-                  name: meeting-server-secrets
-            - name: RASP_APP_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  key: rasp_apptoken
-                  name: meeting-server-secrets
-            - name: RASP_TENANT_ID
-              valueFrom:
-                secretKeyRef:
-                  key: rasp_tenantid
-                  name: meeting-server-secrets
-            - name: WELINK_HOST_1
-              valueFrom:
-                secretKeyRef:
-                  key: welink_host_1
-                  name: meeting-server-secrets
-            - name: WELINK_HOST_1_ACCOUNT
-              valueFrom:
-                secretKeyRef:
-                  key: welink_host_1_account
-                  name: meeting-server-secrets
-            - name: WELINK_HOST_1_PWD
-              valueFrom:
-                secretKeyRef:
-                  key: welink_host_1_pwd
-                  name: meeting-server-secrets
+          - name: TZ
+            value: Asia/Shanghai
+          - name: RASP_BACKEND_URL
+            value: http://server.xarmor.heds.huawei.com/raspforx
+          - name: RASP_APPID
+            valueFrom:
+              secretKeyRef:
+                key: rasp_appid
+                name: meeting-server-secrets
+          - name: RASP_APP_TOKEN
+            valueFrom:
+              secretKeyRef:
+                key: rasp_apptoken
+                name: meeting-server-secrets
+          - name: RASP_TENANT_ID
+            valueFrom:
+              secretKeyRef:
+                key: rasp_tenantid
+                name: meeting-server-secrets
           command:
             - /bin/sh
             - -c
             - |
               strip -R .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.11.3
+              cp /vault/secrets/secrets.yaml.bak /vault/secrets/secrets.yaml
               touch /work/app-meeting-server/meetings/migrations/__init__.py
               python manage.py collectstatic
               python manage.py makemigrations
@@ -198,6 +80,13 @@ spec:
             tcpSocket:
               port: 8080
       volumes:
-        - name: meeting-data-volume
-          persistentVolumeClaim:
-            claimName: meeting-share-volume
+      - name: meeting-data-volume
+        persistentVolumeClaim:
+          claimName: meeting-share-volume
+      - name: secret
+        secret:
+          secretName: meeting-server-secrets
+
+
+
+        
