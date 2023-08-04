@@ -5,7 +5,7 @@ metadata:
   name: website-deployment
   namespace: mindspore-reproducible
 spec:
-  replicas: 2
+  replicas: 0
   strategy:
     rollingUpdate:
       maxUnavailable: 1
