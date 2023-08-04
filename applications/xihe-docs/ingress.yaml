@@ -5,6 +5,13 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/server-snippet: |
       rewrite ^/$                           /zh/introduction/ redirect;
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Content-Type-Options "nosniff";
+      add_header X-XSS-Protection "1; mode=block";
+      add_header X-Frame-Options "DENY";
+      add_header Content-Security-Policy "script-src 'self' *.baidu.com 'unsafe-inline' 'unsafe-eval'; object-src 'none'; frame-src *.mindspore.cn";
+      add_header Cache-Control "no-cache";
+      add_header Pragma "no-cache";
   name: mindspore-xihe-docs-ingress
   namespace: xihe-docs
 spec:
