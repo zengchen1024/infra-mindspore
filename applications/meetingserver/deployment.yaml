@@ -12,19 +12,31 @@ spec:
       component: web-server
   template:
     metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject: 'true'
+        vault.hashicorp.com/role: 'mindspore-meeting'
+        vault.hashicorp.com/agent-inject-secret-secrets.yaml: 'internal/data/mindspore/mindspore-meeting'
+        vault.hashicorp.com/agent-pre-populate-only: "true"
+        vault.hashicorp.com/agent-inject-template-secrets.yaml: |  
+          {{- with secret "internal/data/mindspore/mindspore-meeting" -}}  
+          {{ .Data.data.config }}
+          {{- end }}
+        vault.hashicorp.com/agent-inject-secret-xarmor_pyrasp.ini: 'internal/data/mindspore/mindspore-meeting'
+        vault.hashicorp.com/agent-inject-template-xarmor_pyrasp.ini: |  
+          {{- with secret "internal/data/mindspore/mindspore-meeting" -}}  
+          {{ .Data.data.rasp }}
+          {{- end }}
       labels:
         app: meeting-server
         component: web-server
     spec:
+      serviceAccountName: mindspore-meeting
       containers:
         - name: meeting-server
           image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:v1.0.20210716
           volumeMounts:
           - mountPath: /work/app-meeting-server/meetings/migrations
             name: meeting-data-volume
-          - mountPath: /vault/secrets/secrets.yaml.bak
-            name: secret
-            subPath: secrets-yaml
           resources:
             requests:
               cpu: 2000m
@@ -54,7 +66,6 @@ spec:
             - -c
             - |
               strip -R .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.11.3
-              cp /vault/secrets/secrets.yaml.bak /vault/secrets/secrets.yaml
               touch /work/app-meeting-server/meetings/migrations/__init__.py
               python manage.py collectstatic
               python manage.py makemigrations
@@ -83,9 +94,6 @@ spec:
       - name: meeting-data-volume
         persistentVolumeClaim:
           claimName: meeting-share-volume
-      - name: secret
-        secret:
-          secretName: meeting-server-secrets
 
 
 
