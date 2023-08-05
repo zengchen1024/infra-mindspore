@@ -68,19 +68,11 @@ spec:
             env:
             - name: TZ
               value: Asia/Shanghai
-            volumeMounts:
-            - mountPath: /vault/secrets/secrets.yaml
-              name: secret
-              subPath: secrets-yaml
             command:
               - /bin/sh
               - -c
               - |
                 python manage.py genegroup
-          volumes:
-          - name: secret
-            secret:
-              secretName: meeting-server-secrets
               
 ---
 apiVersion: batch/v1beta1
@@ -114,16 +106,8 @@ spec:
             env:
             - name: TZ
               value: Asia/Shanghai
-            volumeMounts:
-            - mountPath: /vault/secrets/secrets.yaml
-              name: secret
-              subPath: secrets-yaml
             command:
               - /bin/sh
               - -c
               - |
                 python manage.py update_activity_status
-          volumes:
-          - name: secret
-            secret:
-              secretName: meeting-server-secrets
