@@ -30,6 +30,8 @@ spec:
         app: meeting-server
         component: web-server
     spec:
+      imagePullSecrets:
+      - name: huawei-swr-image-pull-secret
       serviceAccountName: mindspore-meeting
       containers:
         - name: meeting-server

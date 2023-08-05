@@ -9,56 +9,33 @@ spec:
   jobTemplate:
     spec:
       template:
+        metadata:
+          annotations:
+            vault.hashicorp.com/agent-inject: 'true'
+            vault.hashicorp.com/role: 'mindspore-meeting'
+            vault.hashicorp.com/agent-inject-secret-secrets.yaml: 'internal/data/mindspore/mindspore-meeting'
+            vault.hashicorp.com/agent-pre-populate-only: "true"
+            vault.hashicorp.com/agent-inject-template-secrets.yaml: |  
+              {{- with secret "internal/data/mindspore/mindspore-meeting" -}}  
+              {{ .Data.data.config }}
+              {{- end }}
         spec:
+          imagePullSecrets:
+          - name: huawei-swr-image-pull-secret
+          serviceAccountName: mindspore-meeting
           restartPolicy: OnFailure
           containers:
-            - name: meeting-server
-              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:523a62f700ee6d4a30c8d8d4cdd3a75ec4dabdcb
-              env:
-                - name: SECRET_KEY
-                  valueFrom:
-                    secretKeyRef:
-                      key: secret_key
-                      name: meeting-server-secrets
-                - name: DB_USER
-                  valueFrom:
-                    secretKeyRef:
-                      key: db_user
-                      name: meeting-server-secrets
-                - name: DB_PASSWORD
-                  valueFrom:
-                    secretKeyRef:
-                      key: db_password
-                      name: meeting-server-secrets
-                - name: DB_HOST
-                  valueFrom:
-                    secretKeyRef:
-                      key: db_host
-                      name: meeting-server-secrets
-                - name: APP_ID
-                  valueFrom:
-                    secretKeyRef:
-                      key: app_id
-                      name: meeting-server-secrets
-                - name: APP_SECRET
-                  valueFrom:
-                    secretKeyRef:
-                      key: app_secret
-                      name: meeting-server-secrets
-                - name: MINDSPORE_MEETING_ATTENTION_TEMPLATE
-                  valueFrom:
-                    secretKeyRef:
-                      key: mindspore_meeting_attention_template
-                      name: meeting-server-secrets
-                - name: DB_PORT
-                  value: "3306"
-                - name: TZ
-                  value: Asia/Shanghai
-              command:
-                - /bin/sh
-                - -c
-                - |
-                  python manage.py sendmessages
+          - name: meeting-server
+            image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:523a62f700ee6d4a30c8d8d4cdd3a75ec4dabdcb
+            env:
+            - name: TZ
+              value: Asia/Shanghai
+            command:
+              - /bin/sh
+              - -c
+              - |
+                python manage.py sendmessages
+
 ---
 apiVersion: batch/v1beta1
 kind: CronJob
@@ -70,41 +47,41 @@ spec:
   jobTemplate:
     spec:
       template:
+        metadata:
+          annotations:
+            vault.hashicorp.com/agent-inject: 'true'
+            vault.hashicorp.com/role: 'mindspore-meeting'
+            vault.hashicorp.com/agent-inject-secret-secrets.yaml: 'internal/data/mindspore/mindspore-meeting'
+            vault.hashicorp.com/agent-pre-populate-only: "true"
+            vault.hashicorp.com/agent-inject-template-secrets.yaml: |  
+              {{- with secret "internal/data/mindspore/mindspore-meeting" -}}  
+              {{ .Data.data.config }}
+              {{- end }}
         spec:
+          imagePullSecrets:
+          - name: huawei-swr-image-pull-secret
+          serviceAccountName: mindspore-meeting
           restartPolicy: OnFailure
           containers:
-            - name: meeting-server
-              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:523a62f700ee6d4a30c8d8d4cdd3a75ec4dabdcb
-              env:
-                - name: DB_USER
-                  valueFrom:
-                    secretKeyRef:
-                      key: db_user
-                      name: meeting-server-secrets
-                - name: DB_PASSWORD
-                  valueFrom:
-                    secretKeyRef:
-                      key: db_password
-                      name: meeting-server-secrets
-                - name: DB_HOST
-                  valueFrom:
-                    secretKeyRef:
-                      key: db_host
-                      name: meeting-server-secrets
-                - name: DB_PORT
-                  value: "3306"
-                - name: SECRET_KEY
-                  valueFrom:
-                    secretKeyRef:
-                      key: secret_key
-                      name: meeting-server-secrets
-                - name: TZ
-                  value: Asia/Shanghai
-              command:
-                - /bin/sh
-                - -c
-                - |
-                  python manage.py genegroup
+          - name: meeting-server
+            image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:523a62f700ee6d4a30c8d8d4cdd3a75ec4dabdcb
+            env:
+            - name: TZ
+              value: Asia/Shanghai
+            volumeMounts:
+            - mountPath: /vault/secrets/secrets.yaml
+              name: secret
+              subPath: secrets-yaml
+            command:
+              - /bin/sh
+              - -c
+              - |
+                python manage.py genegroup
+          volumes:
+          - name: secret
+            secret:
+              secretName: meeting-server-secrets
+              
 ---
 apiVersion: batch/v1beta1
 kind: CronJob
@@ -116,38 +93,37 @@ spec:
   jobTemplate:
     spec:
       template:
+        metadata:
+          annotations:
+            vault.hashicorp.com/agent-inject: 'true'
+            vault.hashicorp.com/role: 'mindspore-meeting'
+            vault.hashicorp.com/agent-inject-secret-secrets.yaml: 'internal/data/mindspore/mindspore-meeting'
+            vault.hashicorp.com/agent-pre-populate-only: "true"
+            vault.hashicorp.com/agent-inject-template-secrets.yaml: |  
+              {{- with secret "internal/data/mindspore/mindspore-meeting" -}}  
+              {{ .Data.data.config }}
+              {{- end }}
         spec:
+          imagePullSecrets:
+          - name: huawei-swr-image-pull-secret
+          serviceAccountName: mindspore-meeting
           restartPolicy: OnFailure
           containers:
-            - name: meeting-server
-              image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:523a62f700ee6d4a30c8d8d4cdd3a75ec4dabdcb
-              env:
-                - name: SECRET_KEY
-                  valueFrom:
-                    secretKeyRef:
-                      key: secret_key
-                      name: meeting-server-secrets
-                - name: DB_USER
-                  valueFrom:
-                    secretKeyRef:
-                      key: db_user
-                      name: meeting-server-secrets
-                - name: DB_PASSWORD
-                  valueFrom:
-                    secretKeyRef:
-                      key: db_password
-                      name: meeting-server-secrets
-                - name: DB_HOST
-                  valueFrom:
-                    secretKeyRef:
-                      key: db_host
-                      name: meeting-server-secrets
-                - name: DB_PORT
-                  value: "3306"
-                - name: TZ
-                  value: Asia/Shanghai
-              command:
-                - /bin/sh
-                - -c
-                - |
-                  python manage.py update_activity_status
+          - name: meeting-server
+            image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-meeting-server:523a62f700ee6d4a30c8d8d4cdd3a75ec4dabdcb
+            env:
+            - name: TZ
+              value: Asia/Shanghai
+            volumeMounts:
+            - mountPath: /vault/secrets/secrets.yaml
+              name: secret
+              subPath: secrets-yaml
+            command:
+              - /bin/sh
+              - -c
+              - |
+                python manage.py update_activity_status
+          volumes:
+          - name: secret
+            secret:
+              secretName: meeting-server-secrets
