@@ -17,12 +17,6 @@ spec:
       labels:
         app: big-model-finetune
     spec:
-      securityContext:
-        sysctls:
-        - name: kernel.sem
-          value: "32000 1024000000 500 64000"
-      nodeSelector:
-        kubernetes.kernel.sem: "true"
       containers:
       - image: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/big-model-finetune:c409315983b32f9ea44dae3c51e2a54123a5673e
         imagePullPolicy: IfNotPresent
