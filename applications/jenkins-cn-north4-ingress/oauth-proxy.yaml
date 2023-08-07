@@ -1,0 +1,108 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: oauth2-proxy
+  name: oauth2-proxy
+  namespace: jenkins-master-ingress
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      k8s-app: oauth2-proxy
+  template:
+    metadata:
+      labels:
+        k8s-app: oauth2-proxy
+    spec:
+      containers:
+      - args:
+        - --provider=oidc
+        - --email-domain=*
+        - --upstream=http://jenkins-master-service.jenkins-master-ingress.svc.cluster.local
+        - --http-address=0.0.0.0:4180
+        - --provider-display-name=authing
+        - --cookie-expire=12h0m0s
+        - --skip-auth-regex=^/queue/
+        - --skip-auth-regex=^/view/
+        - --skip-auth-regex=^/static/
+        - --skip-auth-regex=^/adjuncts/
+        - --skip-auth-regex=^/images/
+        - --skip-auth-regex=^/blue/            
+        - --skip-auth-regex=^/gitee-project/
+        - --skip-auth-regex=^/computer/
+        - --skip-auth-regex=^/tcpSlaveAgentListener/
+        - --redirect-url=https://build.mindspore.cn/oauth2/callback
+        - --oidc-issuer-url=https://mindspore-jenkins-test.authing.cn/oidc
+        - --insecure-oidc-allow-unverified-email=true
+        - --session-cookie-minimal=false
+        - --pass-access-token=true
+        - --cookie-secure=false
+        - --login-url=https://xiheapi.osinfra.cn/oneid/oidc/authorize
+        - --redeem-url=https://xiheapi.osinfra.cn/oneid/oidc/token
+        - --profile-url=https://xiheapi.osinfra.cn/oneid/oidc/user
+        - --skip-oidc-discovery=true
+        - --insecure-oidc-skip-issuer-verification=true
+        - --skip-jwt-bearer-tokens=false
+        - --oidc-jwks-url=https://oauth2-proxy.authing.cn/oidc/.well-known/jwks.json
+        - --set-xauthrequest=true
+        - --skip-auth-strip-headers=false
+        - --set-authorization-header=true
+        - --scope=profile openid email id_token
+        - --signature-key=sha256:81nwm1iqdN3FBtnj4O0kL6BRuLfzMzCKaawnztLSRYQ
+        env:
+        - name: OAUTH2_PROXY_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              key: client_id
+              name: jenkins-oauth-secret
+        - name: OAUTH2_PROXY_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: client_secret
+              name: jenkins-oauth-secret
+        - name: OAUTH2_PROXY_COOKIE_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: cookie_secret
+              name: jenkins-oauth-secret
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/common/oauth2-proxy:b2d87e8e29285720327bf01aee604f929ea64dd4
+        imagePullPolicy: Always
+        name: oauth2-proxy
+        ports:
+        - containerPort: 4180
+          protocol: TCP
+        readinessProbe:
+          tcpSocket:
+            port: 4180
+          initialDelaySeconds: 10
+          failureThreshold: 3
+          successThreshold: 1
+          periodSeconds: 10
+          timeoutSeconds: 5
+        livenessProbe:
+          tcpSocket:
+            port: 4180
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+          timeoutSeconds: 5
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    k8s-app: oauth2-proxy
+  name: oauth2-proxy
+  namespace: jenkins-master-ingress
+spec:
+  ports:
+  - name: http
+    port: 4180
+    protocol: TCP
+    targetPort: 4180
+  selector:
+    k8s-app: oauth2-proxy
+

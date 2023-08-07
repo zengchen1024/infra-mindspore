@@ -2,7 +2,6 @@ resources:
 - jenkins-cluster.yaml
 - namespace.yaml
 - secrets.yaml
-- ingress.yaml
 - oauth-proxy.yaml
 - cronjob.yaml
 commonAnnotations:
@@ -11,6 +10,6 @@ commonAnnotations:
 namespace: jenkins-master
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/openeuler/bak-jenkins
-  newTag: 0be18a22a74d58443833698a04a05e18a321f399
+  newTag: e11282b187faf28ea02f9c73edc29f7c081675fa
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization

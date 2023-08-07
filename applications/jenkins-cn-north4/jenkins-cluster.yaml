@@ -394,7 +394,7 @@ metadata:
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-master"
 spec:
-  replicas: 1
+  replicas: 0
   strategy:
     type: Recreate
   selector:

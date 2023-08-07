@@ -16,6 +16,12 @@ metadata:
       location /oauth/discovery/keys {
         return 403;
       }
+      location /users/sign_in {
+        return 403;
+      }
+      location /users/sign_up {
+        return 403;
+      }
   name: xihe-gitlab-ingress
   namespace: source
 spec:

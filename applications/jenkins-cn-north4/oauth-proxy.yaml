@@ -35,7 +35,7 @@ spec:
           # used to detect service availability
           - --skip-auth-regex=^/computer/
           - --skip-auth-regex=^/tcpSlaveAgentListener/
-          - --redirect-url=https://build.mindspore.cn/oauth2/callback
+          - --redirect-url=https://build-mindspore.test.osinfra.cn/oauth2/callback
           - --oidc-issuer-url=https://mindspore-jenkins.authing.cn/oidc
           - --insecure-oidc-allow-unverified-email=true
           - --session-cookie-minimal=false

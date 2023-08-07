@@ -1,0 +1,15 @@
+resources:
+- ingress.yaml
+- namespace.yaml
+- oauth-proxy.yaml
+- secrets.yaml
+- service.yaml
+commonAnnotations:
+  kubernetes.ops.cluster: mindspore-cn4-cluster
+  kubernetes.ops.email: ""
+  kubernetes.ops.os.base: alpine
+  kubernetes.ops.owner: liuyang
+  kubernetes.ops.region: beijing
+namespace: jenkins-master-ingress
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
