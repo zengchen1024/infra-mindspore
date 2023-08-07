@@ -45,30 +45,15 @@ spec:
               memory: 2000Mi
           env:
           - name: TZ
-            value: Asia/Shanghai
-          - name: RASP_BACKEND_URL
-            value: http://server.xarmor.heds.huawei.com/raspforx
-          - name: RASP_APPID
-            valueFrom:
-              secretKeyRef:
-                key: rasp_appid
-                name: meeting-server-secrets
-          - name: RASP_APP_TOKEN
-            valueFrom:
-              secretKeyRef:
-                key: rasp_apptoken
-                name: meeting-server-secrets
-          - name: RASP_TENANT_ID
-            valueFrom:
-              secretKeyRef:
-                key: rasp_tenantid
-                name: meeting-server-secrets
+            value: Asia/Shanghai        
           command:
             - /bin/sh
             - -c
             - |
-              strip -R .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.11.3
+              strip -R .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.11.3              
               touch /work/app-meeting-server/meetings/migrations/__init__.py
+              cp /vault/secrets/xarmor_pyrasp.ini /work/app-meeting-server/xarmor_pyrasp.ini
+              rm -rf /vault/secrets/xarmor_pyrasp.ini
               python manage.py collectstatic
               python manage.py makemigrations
               python manage.py migrate
