@@ -50,7 +50,7 @@ spec:
             - /bin/sh
             - -c
             - |
-              strip -R .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.11.3              
+              strip -R .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.11.3
               touch /work/app-meeting-server/meetings/migrations/__init__.py
               cp /vault/secrets/xarmor_pyrasp.ini /work/app-meeting-server/xarmor_pyrasp.ini
               rm -rf /vault/secrets/xarmor_pyrasp.ini
