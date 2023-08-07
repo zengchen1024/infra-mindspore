@@ -45,7 +45,7 @@ spec:
               memory: 2000Mi
           env:
           - name: TZ
-            value: Asia/Shanghai        
+            value: Asia/Shanghai
           command:
             - /bin/sh
             - -c
