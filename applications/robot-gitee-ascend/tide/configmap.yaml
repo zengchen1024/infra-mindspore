@@ -96,6 +96,7 @@ data:
       - ascend/samples
       - ascend/ModelZoo-PyTorch
       - ascend/ModelZoo-TensorFlow
+      - ascend/op-plugin
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
@@ -163,7 +164,6 @@ data:
       - ascend/msadvisor
       - ascend/ait
       - ascend/att
-      - ascend/op-plugin
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
