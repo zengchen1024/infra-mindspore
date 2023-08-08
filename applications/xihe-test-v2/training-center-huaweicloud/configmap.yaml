@@ -29,7 +29,7 @@ data:
         commit_file: synced_commit
         obsutil_path: /opt/app/obsutil
         sync_work_dir: "/opt/app/sync_repo"
-        sync_file_shell: /opt/app/sync_file.sh
+        sync_file_shell: /opt/app/sync_files.sh
         upload_work_dir: "/opt/app/upload_folder"
         upload_folder_shell: /opt/app/upload_folder.sh
 
