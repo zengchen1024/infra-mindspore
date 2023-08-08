@@ -81,6 +81,8 @@ spec:
               secretKeyRef:
                 key: MINDSPORE_BOOK
                 name: website-secrets
+          - name: APPLICATION_PATH
+            value: "/mnt/share/website/WEB-INF/classes/application.yml"
         resources:
           requests:
             cpu: 4000m
