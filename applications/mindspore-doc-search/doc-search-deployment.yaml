@@ -81,7 +81,7 @@ spec:
               key: xarmor_tenant_id
               name: doc-search-secret
         - name: APPLICATION_PATH
-          value: "/EaseSearch/target/classes/application.yml"
+          value: "/home/easysearch/EaseSearch/target/classes/application.yml"
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/docs-search:v1.0.20230504101041
         imagePullPolicy: IfNotPresent
         livenessProbe:
