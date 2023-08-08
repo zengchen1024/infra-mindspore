@@ -10,4 +10,4 @@ nameSuffix: -finetune
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe
   newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/xihe/xihe-finetune
-  newTag: main-fd925bb
+  newTag: main-268926
