@@ -27,7 +27,7 @@ spec:
         - mountPath: /app/conf/xihe-gitlab/app_config/
           name: app-config
           readOnly: true
-        - mountPath: /workspace
+        - mountPath: /opt/app/workspace
           name: data-volume
         env:
         - name: ACCESS_HMAC

@@ -20,8 +20,8 @@ data:
       bucket: "${HW_OBS_BUCKET}"
 
     app:
-      work_dir: "/workspace"
-      sync_file_shell: /opt/app/sync_file.sh
+      work_dir: "/opt/app/workspace"
+      sync_file_shell: /opt/app/sync_files.sh
       lfs_path: gitlab-lfs
       repo_path: xihe-repos
       commit_file: synced_commit
