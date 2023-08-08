@@ -23,7 +23,7 @@ spec:
         image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-docs:5f4638f2c897a21075aa1aa36bb325380f826bc2
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           name: http
           protocol: TCP
         resources:
