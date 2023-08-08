@@ -97,6 +97,11 @@ data:
       - ascend/ModelZoo-PyTorch
       - ascend/ModelZoo-TensorFlow
       - ascend/op-plugin
+      - ascend/ascend-op-common-lib
+      - ascend/ascend-transformer-acceleration
+      - ascend/ascend-inference
+      - ascend/ascend-faster-transformer
+      - ascend/ascend-inference-ptplugin
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
@@ -186,13 +191,9 @@ data:
         tips_if_added_by_others: "You can't add ci-pipeline-passed label manually. Please remove it and wait for the CI test to be completed."
         
     - repos:
-      - ascend/ascend-faster-transformer
-      - ascend/ascend-inference-ptplugin
       - ascend/ascend-devkit-imager
       - ascend/ascend-devkit-model-adapter
-      - ascend/ascend-transformer-acceleration
-      - ascend/ascend-op-common-lib
-      - ascend/ascend-inference
+
       labels:
       - label: lgtm
         tips_if_missing: "Please wait for reviewers to review the code."
