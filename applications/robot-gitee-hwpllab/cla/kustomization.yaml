@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../bot-base
+- configmap.yaml
+commonLabels:
+  component: cla
+patches:
+- path: deployment.json
+  target:
+    group: apps
+    kind: Deployment
+    name: deployment
+    version: v1
+nameSuffix: -cla
+images:
+- name: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee
+  newName: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee-cla
+  newTag: master-90305d1

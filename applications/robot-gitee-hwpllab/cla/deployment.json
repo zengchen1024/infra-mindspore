@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/name",
+    "value": "cla"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/volumes/1/configMap/name",
+    "value": "configmap-cla"
+  }
+]

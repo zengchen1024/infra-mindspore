@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  namespace: robot-gitee-hwpllab
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: name
+        args:
+        - --port=8888
+        - --gitee-token-path=/app/conf/robot-gitee/robot_token
+        - --config-file=/app/conf/robot-gitee/app_config/config.yaml
+        image: swr.cn-north-4.myhuaweicloud.com/opensourceway/robot/robot-gitee:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /app/conf/robot-gitee/robot_token
+          subPath: robot-token
+          name: secret-volume
+        - mountPath: /app/conf/robot-gitee/app_config/
+          name: app-config
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: secret-robot-token
+      - name: app-config
+        configMap:
+          name: config

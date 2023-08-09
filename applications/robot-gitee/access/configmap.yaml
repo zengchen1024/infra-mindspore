@@ -171,6 +171,9 @@ data:
         huadajiutian/wrapper:
         - robot-gitee-edahelper-cla
 
+        HW-PLLab:
+        - robot-gitee-hwpllab-cla
+
         mindspore/docs:
         - robot-gitee-mindspore-review-trigger-new
 
@@ -444,6 +447,11 @@ data:
         - "Push Hook"
       - name: robot-gitee-edahelper-cla
         endpoint: http://service-cla.robot-gitee-edahelper.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
+        - "Note Hook"
+      - name: robot-gitee-hwpllab-cla
+        endpoint: http://service-cla.robot-gitee-hwpllab.svc.cluster.local:8888/gitee-hook
         events:
         - "Merge Request Hook"
         - "Note Hook"

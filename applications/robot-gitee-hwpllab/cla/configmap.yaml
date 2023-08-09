@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  config.yaml: |
+    config_items:
+    - repos:
+      - HW-PLLab
+      cla_label_yes: pllab-cla/yes
+      cla_label_no: pllab-cla/no
+      check_url: https://clasign.osinfra.cn/api/v1/individual-signing/gitee_HW-PLLab-1628740605522948013
+      sign_url: https://clasign.osinfra.cn/sign/gitee_HW-PLLab-1628740605522948013
+      faq_url: https://github.com/opensourceways/test-infra/blob/sync-5-22/prow/gitee-plugins/cla/faq/check-by-author/faq.md
