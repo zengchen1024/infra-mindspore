@@ -130,9 +130,11 @@ data:
         - robot-gitee-ascend-label
         - robot-gitee-ascend-lgtm
         - robot-gitee-ascend-tide
+        - robot-gitee-ascend-checkpr
         - robot-gitee-ascend-review-trigger-new
 
         cann/acl:
+        - robot-gitee-cann-checkpr
         - robot-gitee-cann-approve
         - robot-gitee-cann-assign
         - robot-gitee-cann-label
@@ -140,6 +142,7 @@ data:
         - robot-gitee-cann-tide
 
         cann/air:
+        - robot-gitee-cann-checkpr
         - robot-gitee-cann-approve
         - robot-gitee-cann-assign
         - robot-gitee-cann-label
@@ -147,6 +150,7 @@ data:
         - robot-gitee-cann-tide
 
         cann/abl-kernel:
+        - robot-gitee-cann-checkpr
         - robot-gitee-cann-approve
         - robot-gitee-cann-assign
         - robot-gitee-cann-label
@@ -154,6 +158,7 @@ data:
         - robot-gitee-cann-tide
 
         cann/aoe-flow:
+        - robot-gitee-cann-checkpr
         - robot-gitee-cann-approve
         - robot-gitee-cann-assign
         - robot-gitee-cann-label
@@ -367,6 +372,10 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: robot-gitee-ascend-checkpr
+        endpoint: http://service-checkpr.robot-gitee-ascend.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
       - name: ci-tools
         endpoint: http://citoolservice.ci-tools-service.svc.cluster.local/review/
         events:
@@ -417,6 +426,10 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: robot-gitee-cann-checkpr
+        endpoint: http://service-checkpr.robot-gitee-cann.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
       - name: robot-gitee-openeuler-tech4dx-label
         endpoint: http://service-tech4dx-label.robot-gitee-openeuler.svc.cluster.local:8888/gitee-hook
         events:

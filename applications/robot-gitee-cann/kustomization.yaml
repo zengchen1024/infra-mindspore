@@ -12,6 +12,7 @@ resources:
 - hook-dispatcher
 - hook-delivery
 - access
+- checkpr
 commonLabels:
   app: infrastructure-robot-gitee
 commonAnnotations:
