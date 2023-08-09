@@ -199,36 +199,25 @@ data:
         mindspore:
         - robot-gitee-mindspore-cla
         - robot-gitee-mindspore-tide
+        - robot-gitee-mindspore-label
+        - robot-gitee-mindspore-assign
+        - robot-gitee-mindspore-checkpr
+        - robot-gitee-mindspore-lifecycle
         - datastat-server
 
         mindspore/golden-stick:
-        - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-lifecycle
-        - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
         mindspore/federated:
-        - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-lifecycle
-        - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
         mindspore/text:
-        - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-lifecycle
-        - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
         mindspore/mindpandas:
-        - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-lifecycle
-        - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
         mindspore/recommender:
-        - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-lifecycle
-        - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger
 
         ms-incubator:
@@ -246,9 +235,6 @@ data:
         - robot-gitee-oepkgs-welcome
           
         mindspore/mindformers:
-        - robot-gitee-mindspore-label
-        - robot-gitee-mindspore-lifecycle
-        - robot-gitee-mindspore-assign
         - robot-gitee-mindspore-review-trigger-new
 
       plugins:
@@ -471,12 +457,15 @@ data:
         events:
         - "Merge Request Hook"
         - "Note Hook"
+      - name: robot-gitee-mindspore-checkpr
+        endpoint: http://service-checkpr.robot-gitee-mindspore.svc.cluster.local:8888/gitee-hook
+        events:
+        - "Merge Request Hook"
       - name: robot-gitee-openlookeng-synchronizer
         endpoint: http://service-synchronizer.robot-gitee-openlookeng.svc.cluster.local:8888/gitee-hook
         events:
         - "Issue Hook"
         - "Note Hook"
-      
       - name: robot-gitee-oepkgs-review
         endpoint: http://service-oepkgs-review.robot-gitee-oepkgs.svc.cluster.local:8888/gitee-hook
         events:

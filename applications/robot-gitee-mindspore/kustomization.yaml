@@ -9,6 +9,7 @@ resources:
 - tide
 - lifecycle
 - assign
+- checkpr
 - review-trigger
 - review-trigger-new
 - hook-dispatcher
